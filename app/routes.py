@@ -4,12 +4,26 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Post
 from app.forms import LoginForm, RegistrationForm, PostForm
 from werkzeug.urls import url_parse
+import git
 
 
 @app.route('/')
 def index():
     print(Post.query.all())
     return render_template("index.html")
+
+
+@app.route('/update_server', methods=['POST'])
+def webhook():
+    if request.method == 'POST':
+        repo = git.Repo('https://github.com/Arsbul-hub/Dari_Dobro.git')
+        origin = repo.remotes.origin
+
+        origin.pull()
+
+        return 'Updated PythonAnywhere successfully', 200
+    else:
+        return 'Wrong event type', 400
 
 
 @app.route('/logout')
@@ -61,7 +75,6 @@ def profile():
 @app.route("/Добавить пост", methods=['GET', 'POST'])
 @login_required
 def add_post():
-
     if current_user.admin:
         form = PostForm()
         if form.validate_on_submit():
