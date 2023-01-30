@@ -31,8 +31,7 @@
     {% endwith %}
 
     <header class="l-header l-header-main js-header-main layout-logo-left--by-logo ">
-        <div
-                style="margin-left: auto;">
+        <div style="margin-left: auto;">
             <div class="l-header__cont ">
                 <div class="l-header__row">
                     <div class="l-header__col0 l-header__col l-header__mobile--box"></div>
@@ -43,7 +42,7 @@
                                     style="margin-left: auto;width:50%;height:50%;"> </a></div>
                         </div>
                     </div>
-                    <div class="l-header__col2 l-header__col l-header__menu--box">
+                    <div class="l-header__col2 l-header__col l-header__menu--box" style="white-space: nowrap;">
                         <nav class='md-menu' data-menu-type="origin">
                             <ul class="menu md-menu__main js--menu__main is--level1 mod--menu_underline mod--menu_left">
                                 <li id="2196185" data-id="2196185"
@@ -56,33 +55,33 @@
                                             <li class="md-menu__li-l2 "><a class="md-menu__href-l2 f__sub-menu"
                                                                            href="/">О ФОНДЕ</a></li>
                                             <li class="md-menu__li-l2 "><a class="md-menu__href-l2 f__sub-menu"
-                                                                           href="/documents">Уставные
+                                                                           href="{{ url_for('documents') }}">Уставные
                                                 документы</a></li>
                                             <li class="md-menu__li-l2 "><a class="md-menu__href-l2 f__sub-menu"
-                                                                           href="/reporting">Отчетность </a>
+                                                                           href="{{ url_for('reporting') }}">Отчетность </a>
                                             </li>
                                             <li class="md-menu__li-l2 "><a class="md-menu__href-l2 f__sub-menu"
-                                                                           href="/smi">СМИ о
+                                                                           href="{{ url_for('smi') }}">СМИ о
                                                 нас</a></li>
                                             <li class="md-menu__li-l2 "><a class="md-menu__href-l2 f__sub-menu"
-                                                                           href="/partners">Партнеры</a>
+                                                                           href="{{ url_for('partners') }}">Партнеры</a>
                                             </li>
                                             <li class="md-menu__li-l2 "><a class="md-menu__href-l2 f__sub-menu"
-                                                                           href="/materials">Полезные
+                                                                           href="{{ url_for('materials') }}">Полезные
                                                 материалы</a></li>
                                             <li class="md-menu__li-l2 "><a class="md-menu__href-l2 f__sub-menu"
-                                                                           href="/contacts">КОНТАКТЫ </a>
+                                                                           href="/">КОНТАКТЫ </a>
                                             </li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li id="5993422" data-id="5993422" class="md-menu__li-l1 menu-item js--menu__li-l1 "><a
                                         class="md-menu__href-l1 is--link-level1 f__menu height2 big-height5"
-                                        href="/Наши животные">НАШИ ЖИВОТНЫЕ</a></li>
+                                        href="{{ url_for('our_animals') }}">НАШИ ЖИВОТНЫЕ</a></li>
                                 <li id="2196770" data-id="2196770"
                                     class="md-menu__li-l1 menu-item js--menu__li-l1 with-sub"><a
                                         class="md-menu__href-l1 js--menu-mobile-sildetoggle is--link-level1 f__menu height2 big-height5"
-                                        href="/Программы">ПРОГРАММЫ</a>
+                                        href="/">ПРОГРАММЫ</a>
                                     <div class="md-menu__wrap-l2 js--menu-submenu" id="sub-2196770"
                                          data-parent-id="2196770">
                                         <ul class="mod--submenu-center js--menu-submenu__ul mod--custom-scrollbar__not-mac">
@@ -102,7 +101,7 @@
                                 </li>
                                 <li id="2477276" data-id="2477276" class="md-menu__li-l1 menu-item js--menu__li-l1 "><a
                                         class="md-menu__href-l1 is--link-level1 f__menu height2 big-height5"
-                                        href="/Партнёрам">ПАРТНЕРАМ</a></li>
+                                        href="{{ url_for('partners') }}">ПАРТНЕРАМ</a></li>
                                 <li id="2393936" data-id="2393936"
                                     class="md-menu__li-l1 menu-item js--menu__li-l1 with-sub"><a
                                         class="md-menu__href-l1 js--menu-mobile-sildetoggle is--link-level1 f__menu height2 big-height5">
@@ -135,10 +134,10 @@
 
                                 <li id="2196752" data-id="2196752" class="md-menu__li-l1 menu-item js--menu__li-l1 "><a
                                         class="md-menu__href-l1 is--link-level1 f__menu height2 big-height5"
-                                        href="/Контакты">КОНТАКТЫ </a></li>
+                                        href="/">КОНТАКТЫ </a></li>
                                 <li id="5602181" data-id="5602181" class="md-menu__li-l1 menu-item js--menu__li-l1 "><a
                                         class="md-menu__href-l1 is--link-level1 f__menu height2 big-height5"
-                                        href="/Помогите финансово" rel="ext noopener noreferrer">ГОРЯЧАЯ ЛИНИЯ</a></li>
+                                        href="{{ url_for('help_money') }}" rel="ext noopener noreferrer">ГОРЯЧАЯ ЛИНИЯ</a></li>
                             </ul>
                             <div class="md-menu-mobile__socials social-icons">
                                 <div class="social-icons-wrapper"></div>
@@ -163,8 +162,14 @@
                                     </div>
                                 </div>
                             </div>
+
                         </nav>
+
                     </div>
+
+                        <div style="margin: auto;" >
+                            <a style="font-size: 16px; white-space: nowrap;" href="{{ url_for('profile') }}">Я администратор</a>
+                        </div>
                     <div class="col col-md-8">
                         <div class="widget" id="widget_73304434"
                              data-id="73304434" data-type="post-indent">
@@ -191,6 +196,10 @@
                                      #w_37846913 .asi-icon-box-ok a:hover i { color: #8f8f8f; }
 
                                      #w_37846913 .asi-icon-box-ok i {color: #ff800d;font-size: 32px; line-height: 32px; }
+
+
+
+
 
                                 </style>
                                 <div class="widget-content social-icons-content center">

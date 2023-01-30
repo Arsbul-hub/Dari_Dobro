@@ -1,12 +1,14 @@
-from flask import render_template, send_from_directory, url_for, render_template_string, flash, redirect
-from app import app
-from flask_login import current_user, login_user, logout_user
-from app.models import User
-from app.forms import LoginForm
+from flask import render_template, send_from_directory, url_for, render_template_string, flash, redirect, request
+from app import app, db
+from flask_login import current_user, login_user, logout_user, login_required
+from app.models import User, Post
+from app.forms import LoginForm, RegistrationForm, PostForm
+from werkzeug.urls import url_parse
 
 
 @app.route('/')
 def index():
+    print(Post.query.all())
     return render_template("index.html")
 
 
@@ -22,37 +24,85 @@ def login():
         return redirect("/")
     form = LoginForm()
     if form.validate_on_submit():
-        
+
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
             return redirect("/login")
         login_user(user, remember=form.remember_me.data)
-        return redirect("/")
+        next_page = request.args.get('next')
+        if not next_page or url_parse(next_page).netloc != '':
+            next_page = url_for('index')
+        return redirect(next_page)
     return render_template('login.html', title='Sign In', form=form)
 
 
-@app.route('/reporting')
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(username=form.username.data, email=form.email.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Congratulations, you are now a registered user!')
+        return redirect(url_for('login'))
+    return render_template('register.html', title='Register', form=form)
+
+
+@app.route("/Профиль")
+@login_required
+def profile():
+    return render_template("Профиль.html", user=current_user)
+
+
+@app.route("/Добавить пост", methods=['GET', 'POST'])
+@login_required
+def add_post():
+
+    if current_user.admin:
+        form = PostForm()
+        if form.validate_on_submit():
+            new_post = Post(title=form.title.data, body=form.text.data)
+            db.session.add(new_post)
+            db.session.commit()
+            flash('Вы опубликовали новый пост!')
+            return redirect(url_for("index"))
+        return render_template("Добавить пост.html", form=form)
+    else:
+        return redirect(url_for("profile"))
+
+
+@app.route("/Добавить новость")
+@login_required
+def add_news():
+    return render_template("Добавить новость.html", user=current_user)
+
+
+@app.route('/Отчётность')
 def reporting():
     return render_template("Отчетность.html")
 
 
-@app.route('/documents')
+@app.route('/Документы')
 def documents():
     return render_template("Уставные документы.html")
 
 
-@app.route('/smi')
+@app.route('/Сми')
+@login_required
 def smi():
     return render_template("СМИ о нас.html")
 
 
-@app.route('/materials')
+@app.route('/Материалы')
 def materials():
     return render_template("Полезные материалы.html")
 
 
-@app.route('/partners')
+@app.route('/Партнёры')
 def partners():
     return render_template("Партнеры.html")
 
