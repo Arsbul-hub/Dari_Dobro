@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bc725d2b-eaa7-415e-8546-381a5a2dd07a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,11 +70,19 @@
       <option name="project" value="LOCAL" />
       <updated>1675104812207</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="webhooks">
+      <created>1675105472893</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675105472893</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавлена система добавления постов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена система добавления постов" />
+    <MESSAGE value="webhooks" />
+    <option name="LAST_COMMIT_MESSAGE" value="webhooks" />
   </component>
 </project>
