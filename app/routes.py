@@ -52,16 +52,19 @@ def login():
 
 
 @app.route('/register', methods=['GET', 'POST'])
+@login_required
 def register():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
+    if not current_user.admin:
+        return redirect(url_for("index"))
+
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data, email=form.email.data)
+        user = User(username=form.username.data, email=form.email.data, admin=True)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Congratulations, you are now a registered user!')
+        login_user(user, remember=form.remember_me.data)
+        flash('Congratulations, you are now a registered admin!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
@@ -75,17 +78,16 @@ def profile():
 @app.route("/Добавить пост", methods=['GET', 'POST'])
 @login_required
 def add_post():
-    if current_user.admin:
-        form = PostForm()
-        if form.validate_on_submit():
-            new_post = Post(title=form.title.data, body=form.text.data)
-            db.session.add(new_post)
-            db.session.commit()
-            flash('Вы опубликовали новый пост!')
-            return redirect(url_for("index"))
-        return render_template("Добавить пост.html", form=form)
-    else:
+    if not current_user.admin:
         return redirect(url_for("profile"))
+    form = PostForm()
+    if form.validate_on_submit():
+        new_post = Post(title=form.title.data, body=form.text.data)
+        db.session.add(new_post)
+        db.session.commit()
+        flash('Вы опубликовали новый пост!')
+        return redirect(url_for("index"))
+    return render_template("Добавить пост.html", form=form)
 
 
 @app.route("/Добавить новость")

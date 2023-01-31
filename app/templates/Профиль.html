@@ -18,6 +18,15 @@
         <button>Создать новость</button>
     </form>
 </div>
+<div style="margin: auto;">
+
+    <form action="{{ url_for('register') }}" target="_blank">
+        <button>Регистрация нового администратора</button>
+    </form>
+    <form action="{{ url_for('logout') }}">
+        <button>Выйти</button>
+    </form>
+</div>
 
 {% endblock %}
 </body>
