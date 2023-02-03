@@ -4278,7 +4278,7 @@ body.dialog-active #dialog-wrap {
     touch-action: none
 }
 
-.aside-social-icons i, .aside-social-icons > label, .setting-social-icons i, .setting-social-icons > label, .widget-social-icons i, .widget-social-icons > label {
+.aside-social-icons i, .aside-social-icons > label, .setting-social-icons i, .setting-social-icons > label,{
     font-family: social-icons-v5;
     speak: none;
     font-style: normal;
@@ -28109,7 +28109,7 @@ body.desktop .md-select-custom select {
     padding: 0
 }
 
-.aside-social-icons i, .aside-social-icons > label, .setting-social-icons i, .setting-social-icons > label, .widget-social-icons i, .widget-social-icons > label {
+.aside-social-icons i, .aside-social-icons > label, .setting-social-icons i, .setting-social-icons > label {
     font-family: social-icons-v5;
     speak: none;
     font-style: normal;

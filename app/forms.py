@@ -1,3 +1,4 @@
+from flask_ckeditor import CKEditorField
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.widgets import TextArea
@@ -33,5 +34,5 @@ class RegistrationForm(FlaskForm):
 
 class PostForm(FlaskForm):
     title = StringField("Название поста:", validators=[DataRequired()])
-    text = StringField("Текст поста:", widget=TextArea(), validators=[DataRequired()])
+    body = CKEditorField("Текст поста:", validators=[DataRequired()])
     submit = SubmitField("Опубликовать")

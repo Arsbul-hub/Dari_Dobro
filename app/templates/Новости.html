@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for new in news %}
+<div class="new">
+  <h2>{{ new.title }}</h2>
+    {{ new.body|safe }}
+</div>
+{% endfor %}
+{% endblock %}
+</body>
+</html>

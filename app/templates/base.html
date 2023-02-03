@@ -14,11 +14,13 @@
 
     <script src="/static/js/jquery.js"></script>
     {% block head %}{% endblock %}
+    <script src="https://kit.fontawesome.com/6957c188ce.js" crossorigin="anonymous"></script>
 </head>
 <body data-template="bruno2"
       class="f__preset-box f__site f__2 loading locale_ru bruno2 mod--search-disable mod--img-logo mod--header-static mod--menu-action-on-scroll mod--menu-static-on-scroll desktop adaptive-desktop mod--horizontal-menu mod--infoline-disable js--loading-cascade mod--font-none-preset layout-logo-left--by-logo "
       data-preview="">
 <div class="l-wrap js-wrap">
+
     <hr>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
@@ -72,6 +74,9 @@
                                             <li class="md-menu__li-l2 "><a class="md-menu__href-l2 f__sub-menu"
                                                                            href="/">КОНТАКТЫ </a>
                                             </li>
+                                            <li class="md-menu__li-l2 "><a class="md-menu__href-l2 f__sub-menu"
+                                                                           href="/">Новости </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </li>
@@ -102,6 +107,23 @@
                                 <li id="2477276" data-id="2477276" class="md-menu__li-l1 menu-item js--menu__li-l1 "><a
                                         class="md-menu__href-l1 is--link-level1 f__menu height2 big-height5"
                                         href="{{ url_for('partners') }}">ПАРТНЕРАМ</a></li>
+                                <li id="23939361" data-id="2393936"
+                                    class="md-menu__li-l1 menu-item js--menu__li-l1 with-sub"><a
+                                        class="md-menu__href-l1 js--menu-mobile-sildetoggle is--link-level1 f__menu height2 big-height5">
+                                    НОВОСТИ </a>
+                                    <div class="md-menu__wrap-l2 js--menu-submenu" id="sub-2393936"
+                                         data-parent-id="2393936">
+                                        <ul class="mod--submenu-center js--menu-submenu__ul mod--custom-scrollbar__not-mac">
+                                            <li class="md-menu__li-l2 "><a class="md-menu__href-l2 f__sub-menu"
+                                                                           href="/Новости"
+                                                                           rel="ext noopener noreferrer">Новостная лента</a>
+                                            </li>
+                                            <li class="md-menu__li-l2 "><a class="md-menu__href-l2 f__sub-menu"
+                                                                           href="/Отчётность">Отчётность</a></li>
+
+                                        </ul>
+                                    </div>
+                                </li>
                                 <li id="2393936" data-id="2393936"
                                     class="md-menu__li-l1 menu-item js--menu__li-l1 with-sub"><a
                                         class="md-menu__href-l1 js--menu-mobile-sildetoggle is--link-level1 f__menu height2 big-height5">
@@ -137,51 +159,40 @@
                                         href="/">КОНТАКТЫ </a></li>
                                 <li id="5602181" data-id="5602181" class="md-menu__li-l1 menu-item js--menu__li-l1 "><a
                                         class="md-menu__href-l1 is--link-level1 f__menu height2 big-height5"
-                                        href="{{ url_for('help_money') }}" rel="ext noopener noreferrer">ГОРЯЧАЯ ЛИНИЯ</a></li>
+                                        href="{{ url_for('help_money') }}" rel="ext noopener noreferrer">ГОРЯЧАЯ
+                                    ЛИНИЯ</a></li>
                             </ul>
                             <div class="md-menu-mobile__socials social-icons">
                                 <div class="social-icons-wrapper"></div>
                             </div>
-                            <div class="js--menu-icons md-menu__icons md-menu__li-l1 md-menu__has-separator "
-                                 style="display: none">
-                                <div class="l-header__icons--box f__menu"> &nbsp;
-                                    <div class="l-header__icons--wrap">
-                                        <div class="js--iconBasketWrapper">
-                                            <div class="js--iconBasketView l-header__icon l-header__icon--cart"
-                                                 style="display: none;"><a href='/gifts/cart'
-                                                                           class='shop-basket--box lnk-cart design_editor-icons'
-                                                                           data-id='shop-cart-widget'> <span
-                                                    class='shop-basket'> <svg xmlns="http://www.w3.org/2000/svg"
-                                                                              viewBox="0 0 14.57 17.5"><path
-                                                    class="basket-svg-style basket-svg-edit-round basket-svg-edit-limit"
-                                                    d="M4.58,7.15V3.42A2.69,2.69,0,0,1,7.29.75h0A2.69,2.69,0,0,1,10,3.42V7.15"/><polygon
-                                                    class="basket-svg-style basket-svg-edit-limit"
-                                                    points="13.79 16.75 0.79 16.75 1.33 5.02 13.24 5.02 13.79 16.75"/></svg> </span>
-                                                <span class='shop-cart-widget-amount'> </span> </a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
 
                         </nav>
 
                     </div>
 
-                        <div style="margin: auto;" >
-                            <a style="font-size: 16px; white-space: nowrap;" href="{{ url_for('profile') }}">Я администратор</a>
-                        </div>
+                    <div style="margin: auto;">
+                        <a style="font-size: 16px; white-space: nowrap;" href="{{ url_for('profile') }}">Я
+                            администратор</a>
+                    </div>
+
                     <div class="col col-md-8">
+
                         <div class="widget" id="widget_73304434"
                              data-id="73304434" data-type="post-indent">
+
                             <div class="wg-post-indent" id="w_73304434">
                                 <div class="wg-post-indent__inner"
                                      style="width: 100%; height: 11px;"></div>
                             </div>
                         </div>
+
                         <div class="widget" id="widget_37846913"
                              data-id="37846913" data-type="social-icons">
+
                             <div class="element widget-social-icons"
                                  id="w_37846913">
+
                                 <style>
                                     #w_37846913 .social-icons-content {margin: -34px -17px 0;}
                                      #w_37846913 .asi-icon-box-vk { margin: 34px 17px 0 17px; }
@@ -201,23 +212,31 @@
 
 
 
+
+
+
+
+
+
+
                                 </style>
+
                                 <div class="widget-content social-icons-content center">
+
                                     <div class="asi-icon-box-vk" id="fff">
                                         <a href="https://t.me/fondnika"
-                                           target="_blank" rel="noopener"> <i
-                                                class="widget-social-icon-vkontakte-circle-with-border"
-                                        ></i>
+                                           target="_blank" rel="noopener">
+                                            <i class="fab fa-telegram-plane" style="font-size:30px"></i>
                                         </a></div>
                                     <div class="asi-icon-box-vk"><a
                                             href="https://vk.com/ournika"
-                                            target="_blank" rel="noopener"> <i
-                                            class="widget-social-icon-vkontakte-circle-with-border"></i>
+                                            target="_blank" rel="noopener">
+                                        <i class="fab fa-vk" style="font-size:30px"></i>
                                     </a></div>
                                     <div class="asi-icon-box-ok"><a
                                             href="https://ok.ru/group/61591464575063"
-                                            target="_blank" rel="noopener"> <i
-                                            class="widget-social-icon-odnoklassniki-circle-with-border"></i>
+                                            target="_blank" rel="noopener">
+                                        <i class="fab fa-odnoklassniki" style="font-size:30px"></i>
                                     </a></div>
                                 </div>
                             </div>

@@ -5,3 +5,4 @@ Werkzeug~=2.0.0
 Flask
 alembic
 SQLAlchemy==1.3.23
+flask-ckeditor

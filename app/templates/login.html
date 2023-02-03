@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Вход</title>
+
 </head>
 <body>
 {% extends "base.html" %}
 
 {% block content %}
 <h1>Войти</h1>
+
 <form action="" method="post" novalidate>
     {{ form.hidden_tag() }}
     <p>
@@ -27,6 +29,7 @@
     </p>
     <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
     <p>{{ form.submit() }}</p>
+
 </form>
 {% endblock %}
 </body>

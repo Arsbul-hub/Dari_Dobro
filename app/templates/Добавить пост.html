@@ -8,6 +8,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+{{ ckeditor.load() }}
 <h1>Добавить пост</h1>
 <form action="" method="post">
     {{ form.hidden_tag() }}
@@ -19,14 +20,16 @@
         {% endfor %}
     </p>
     <p>
-        {{ form.text.label }}<br>
-        {{ form.text(size=64) }}<br>
-        {% for error in form.text.errors %}
+        {{ form.body() }}<br>
+
+        {% for error in form.body.errors %}
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
     </p>
     <p>{{ form.submit() }}</p>
 </form>
+{{ ckeditor.load() }}
+{{ ckeditor.config(name='body') }}
 {% endblock %}
 </body>
 </html>

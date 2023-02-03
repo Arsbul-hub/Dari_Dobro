@@ -62,7 +62,10 @@
     --DE-menu__mobile-menu-color: rgba(0, 0, 0, 1);
     --DE-menu__mobile-menu-color-active: rgba(204, 204, 204, 1)
 }
-
+.social-icons {
+    width:30;
+    height:30;
+}
 .de--site-bg-color {
     background-color: var(--DE-common__site-bg-color-editor)
 }

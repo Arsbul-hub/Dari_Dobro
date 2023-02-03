@@ -82,7 +82,7 @@ def add_post():
         return redirect(url_for("profile"))
     form = PostForm()
     if form.validate_on_submit():
-        new_post = Post(title=form.title.data, body=form.text.data)
+        new_post = Post(title=form.title.data, body=form.body.data)
         db.session.add(new_post)
         db.session.commit()
         flash('Вы опубликовали новый пост!')
@@ -93,7 +93,15 @@ def add_post():
 @app.route("/Добавить новость")
 @login_required
 def add_news():
-    return render_template("Добавить новость.html", user=current_user)
+    return render_template("Добавить новость.html")
+
+
+@app.route("/Новости")
+def news():
+    news = Post.query.all()
+    news.reverse()
+    print(news)
+    return render_template("Новости.html", news=news)
 
 
 @app.route('/Отчётность')
