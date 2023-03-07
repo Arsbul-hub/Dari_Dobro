@@ -1,0 +1,150 @@
+
+.title {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+.item-block span {
+
+  font-size:x-large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.animals-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+.animals-date {
+  display: flex;
+  justify-content: center;
+
+  width: 50%;
+}
+/* .title-block {
+  font-size: medium;
+  margin-left: 30px;
+
+  vertical-align: top;
+  display: inline;
+} */
+.item-block {
+  display: block;
+  width: 500px;
+  margin: 50px;
+}
+.animals {
+
+  display: block;
+
+  margin-left: 10px;
+
+  vertical-align: top;
+
+}
+.animals-body {
+  overflow: hidden;
+
+  display: grid;
+
+  margin-left: 5px;
+  max-height: 180px;
+}
+.animals-body p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: smaller;
+  color: grey;
+
+
+  }
+.animals-body h1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: medium;
+  color: grey;
+
+  }
+.animals-body h2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: medium;
+  color: grey;
+  max-width: max-content;
+
+  }
+.is-empty {
+  margin-top: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.confirm-remove-dialog {
+  visibility: hidden;
+  position: fixed;
+  top: 30%;
+  height: 200px;
+
+}
+.confirm-remove-dialog .buttons {
+  display: flex;
+
+  margin-top: 10px;
+
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+
+
+}
+.confirm-remove-dialog .dialog-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.confirm-remove-dialog .buttons a {
+  margin-left: 25px;
+  color: black;
+
+}
+.tools a {
+  display: inline-flex;
+  justify-content: flex-end;
+  margin-left: 10px;
+}
+.tools {
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: center;
+}
+.view-all {
+
+  margin-top: 10px;
+  color: black;
+}
+
+.content {
+
+  display: block;
+
+  background-color: white;
+
+  height: 360px;
+
+  border-radius: 10px;
+  box-shadow: 0px  0px 15px darkgray;
+  white-space: nowrap;
+  margin-top: 10px;
+}
+.cover {
+
+  margin: 10px;
+
+  max-width: 190px;
+  min-width: 150px;
+
+}

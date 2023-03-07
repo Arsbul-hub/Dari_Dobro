@@ -62,10 +62,7 @@
     --DE-menu__mobile-menu-color: rgba(0, 0, 0, 1);
     --DE-menu__mobile-menu-color-active: rgba(204, 204, 204, 1)
 }
-.social-icons {
-    width:30;
-    height:30;
-}
+
 .de--site-bg-color {
     background-color: var(--DE-common__site-bg-color-editor)
 }
@@ -107,9 +104,7 @@ section.privatepage form .button, .md-top-slider_slide-content {
     font-family: var(--DE-common__site-font-name)
 }
 
-body, .searchform, .blog-layout-1 .feedWrap .blog-item__arrow {
-    background-color: var(--DE-common__site-bg-color-editor)
-}
+
 
 #fsbox.fsbox-blog, .gallery_swiper-modal {
     background: var(--DE-common__site-bg-color-editor)
@@ -193,9 +188,7 @@ footer .copyright__gophotoweb--box {
     text-align: var(--DE-common__copyright-text-align)
 }
 
-body, .l-content.l-content--main, .l-content.l-content--footer, .l-footer .copyright, .de--main__bg-color {
-    background-color: var(--DE-common__site-bg-color-editor)
-}
+
 
 #fsbox.fsbox-blog, .gallery_swiper-modal, .md-preloader__block.mod--inversion {
     background: var(--DE-common__site-bg-color-editor)

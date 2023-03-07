@@ -3,34 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Вход</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/form.css">
+
 
 </head>
 <body>
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Войти</h1>
 
-<form action="" method="post" novalidate>
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.username.label }}<br>
-        {{ form.username(size=32) }}<br>
+<div class="form-block">
+    <h1>Войти</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+
+        {{ form.username.label }}
+        {{ form.username(size=32) }}
         {% for error in form.username.errors %}
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
-    </p>
-    <p>
-        {{ form.password.label }}<br>
-        {{ form.password(size=32) }}<br>
-        {% for error in form.password.errors %}
-        <span style="color: red;">[{{ error }}]</span>
-        {% endfor %}
-    </p>
-    <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-    <p>{{ form.submit() }}</p>
 
-</form>
+        {{ form.password.label }}
+        {{ form.password(size=32) }}
+        {% for error in form.password.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+        <p>
+            {{ form.remember_me() }}
+            {{ form.remember_me.label }}
+        </p>
+        {{ form.submit() }}
+
+    </form>
+</div>
 {% endblock %}
 </body>
 </html>

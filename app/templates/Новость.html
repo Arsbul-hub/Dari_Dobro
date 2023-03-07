@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новость</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/view_news.css">
+</head>
+
+<body data-template="bruno2"
+      class="f__preset-box f__site f__2 loading locale_ru bruno2 mod--search-disable mod--img-logo mod--header-static mod--menu-action-on-scroll mod--menu-static-on-scroll desktop adaptive-desktop mod--horizontal-menu mod--infoline-disable js--loading-cascade mod--font-none-preset layout-logo-left--by-logo "
+      data-preview="">
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="news-content">
+
+
+    <img class="cover" src="{{ news.cover }}">
+
+    <div class="news">
+        <h1 class="title-block">{{ news.title }}</h1>
+        <div class="news-body">{{ news.body|safe }}</div>
+
+    </div>
+
+
+</div>
+{% endblock %}
+</body>
+</html>

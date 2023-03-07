@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+  <input id="clickMe" type="button" value="clickme" onclick="gg();" />
+  <script  type="text/javascript">
+    function gg() {
+    document.getElementById('ww').style.visibility = "visible"
+
+    }
+        function cl() {
+    document.getElementById('ww').style.visibility = "hidden"
+
+    }
+  </script>
+  <dialog open id="ww" style="visibility: hidden;">
+    <p>Greetings, one and all!</p>
+      <input id="clickMe1" type="button" value="clickme" onclick="cl();" />
+  </dialog>
+</body>
+</html>

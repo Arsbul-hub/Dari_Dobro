@@ -3,46 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Регистрация</title>
+    <script>
+        function show_password() {
+            if (document.getElementById("password").type == "password") {
+                document.getElementById("password").type = "text"
+                document.getElementById("eye").className = "far fa-eye-slash"
+            }
+            else if (document.getElementById("password").type == "text") {
+                document.getElementById("password").type = "password"
+                document.getElementById("eye").className = "fas fa-eye"
+            }
+            
+        }
+
+
+
+    </script>
+    <link rel="stylesheet" type="text/css" href="/static/css/form.css">
 </head>
 <body>
 {% extends "base.html" %}
 
 {% block content %}
+<div class="form-block">
+    <h1>Регистрация</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
 
-<h1>Регистрация</h1>
-<form action="" method="post">
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.username.label }}<br>
-        {{ form.username(size=32) }}<br>
+        {{ form.username.label }}
+        {{ form.username(size=32) }}
         {% for error in form.username.errors %}
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
-    </p>
-    <p>
-        {{ form.email.label }}<br>
-        {{ form.email(size=64) }}<br>
-        {% for error in form.email.errors %}
-        <span style="color: red;">[{{ error }}]</span>
-        {% endfor %}
-    </p>
-    <p>
-        {{ form.password.label }}<br>
-        {{ form.password(size=32) }}<br>
+
+
+        {{ form.password.label }}
+
+        {{ form.password(size=32) }}
+        <a style='font-size:15px;display: inline-flex; color: black;' type="button" onclick="show_password();"><i
+                id="eye" class='fas fa-eye'></i></a>
         {% for error in form.password.errors %}
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
-    </p>
-    <p>
-        {{ form.password2.label }}<br>
-        {{ form.password2(size=32) }}<br>
+
+
+        {{ form.password2.label }}
+        {{ form.password2(size=32) }}
         {% for error in form.password2.errors %}
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
-    </p>
-    <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-    <p>{{ form.submit() }}</p>
-</form>
+
+        {{ form.remember_me() }} {{ form.remember_me.label }}
+        {{ form.submit() }}
+    </form>
+</div>
 {% endblock %}
 </body>
 </html>

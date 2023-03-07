@@ -1,0 +1,49 @@
+.news-content {
+  display: block;
+  justify-content: center;
+
+  width: 80%;
+  background-color: white;
+  white-space: nowrap;
+  box-shadow: 0px  0px 25px gray;
+  margin: 60px auto;
+  border-radius: 10px;
+  
+}
+/* .title-block {
+  font-size: medium;
+  margin-left: 30px;
+
+  vertical-align: top;
+  display: inline;
+} */
+.news {
+    white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  min-width: 70%;
+  max-width: 80%;
+  word-wrap: break-word;
+    margin-top: 25px;
+  vertical-align: top;
+  margin-left: 5px;
+
+}
+.news-body{
+    margin-left: 10px;
+}
+
+.view-all {
+  display: flex;
+    justify-content: center;
+}
+
+
+
+.cover {
+  margin: 10px;
+  max-width: 190px;
+  min-width: 150px;
+
+}

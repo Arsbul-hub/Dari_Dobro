@@ -1,15 +1,17 @@
+import datetime
+
 from flask import render_template, send_from_directory, url_for, render_template_string, flash, redirect, request
-from app import app, db
+from app import app, db, morph
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, Post
-from app.forms import LoginForm, RegistrationForm, PostForm
+from app.models import User, News, Animals, Documents
+from app.forms import LoginForm, RegistrationForm, CreateNewsForm, AddAnimalForm, AddDocumentForm
 from werkzeug.urls import url_parse
 import git
 
 
 @app.route('/')
 def index():
-    print(Post.query.all())
+    print(News.query.all())
     return render_template("index.html")
 
 
@@ -54,54 +56,60 @@ def login():
 @app.route('/register', methods=['GET', 'POST'])
 @login_required
 def register():
-    if not current_user.admin:
+    if not current_user.is_authenticated:
         return redirect(url_for("index"))
 
     form = RegistrationForm()
-    if form.validate_on_submit():
-        user = User(username=form.username.data, email=form.email.data, admin=True)
+    if form.validate_on_submit() and not User.query.filter_by(username=form.username.data):
+        user = User(username=form.username.data, admin=True)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
         login_user(user, remember=form.remember_me.data)
         flash('Congratulations, you are now a registered admin!')
-        return redirect(url_for('login'))
+        return redirect(url_for('index'))
     return render_template('register.html', title='Register', form=form)
 
 
 @app.route("/Профиль")
 @login_required
 def profile():
+    if not current_user.is_authenticated:
+        return redirect(url_for("index"))
     return render_template("Профиль.html", user=current_user)
 
 
-@app.route("/Добавить пост", methods=['GET', 'POST'])
-@login_required
-def add_post():
-    if not current_user.admin:
-        return redirect(url_for("profile"))
-    form = PostForm()
-    if form.validate_on_submit():
-        new_post = Post(title=form.title.data, body=form.body.data)
-        db.session.add(new_post)
-        db.session.commit()
-        flash('Вы опубликовали новый пост!')
-        return redirect(url_for("index"))
-    return render_template("Добавить пост.html", form=form)
-
-
-@app.route("/Добавить новость")
+@app.route("/Добавить новость", methods=['GET', 'POST'])
 @login_required
 def add_news():
-    return render_template("Добавить новость.html")
+    if not current_user.is_authenticated:
+        return redirect(url_for("index"))
+    form = CreateNewsForm()
+    if form.validate_on_submit():
+        news_post = News(title=form.title.data, body=form.body.data, cover=form.cover.data)
+        db.session.add(news_post)
+        db.session.commit()
+        flash('Вы опубликовали новый пост!')
+        return redirect(url_for("news"))
+    return render_template("Добавить новость.html", form=form)
 
 
 @app.route("/Новости")
 def news():
-    news = Post.query.all()
-    news.reverse()
-    print(news)
-    return render_template("Новости.html", news=news)
+    action = request.args.get('action')
+    if action == "show":
+        news_list = News.query.filter_by(id=request.args.get('id')).first()
+        return render_template("Новость.html", news=news_list)
+    elif current_user.is_authenticated:
+        if action == "remove":
+            News.query.filter_by(id=request.args.get('id')).delete()
+            db.session.commit()
+            return redirect(url_for("news"))
+
+    news_list = News.query.all()
+
+    return render_template("Новости.html", news=news_list, morph=morph, today=datetime.date.today(), case={"gent"},
+                           user=current_user)
 
 
 @app.route('/Отчётность')
@@ -109,9 +117,34 @@ def reporting():
     return render_template("Отчетность.html")
 
 
+@app.route("/Добавить документ", methods=['GET', 'POST'])
+@login_required
+def add_document():
+    if not current_user.is_authenticated:
+        return redirect(url_for("index"))
+    form = AddDocumentForm()
+    if form.validate_on_submit():
+        new_document = Documents(title=form.title.data, ref=form.ref.data)
+        db.session.add(new_document)
+        db.session.commit()
+        flash('Вы добавили новый документ!')
+        return redirect(url_for("documents"))
+    return render_template("Добавить документ.html", form=form)
+
+
 @app.route('/Документы')
 def documents():
-    return render_template("Уставные документы.html")
+    documents_list = Documents.query.all()
+    action = request.args.get('action')
+    if action == "show":
+        document = Documents.query.filter_by(id=request.args.get('id')).first()
+        return redirect(document.ref)
+    elif current_user.is_authenticated:
+        if action == "remove":
+            Documents.query.filter_by(id=request.args.get('id')).delete()
+            db.session.commit()
+            return redirect(url_for("documents"))
+    return render_template("Уставные документы.html", documents=documents_list, user=current_user)
 
 
 @app.route('/Сми')
@@ -130,9 +163,35 @@ def partners():
     return render_template("Партнеры.html")
 
 
+@app.route("/Добавить животное", methods=['GET', 'POST'])
+@login_required
+def add_animal():
+    if not current_user.is_authenticated:
+        return redirect(url_for("index"))
+    form = AddAnimalForm()
+    if form.validate_on_submit():
+        new_animal = Animals(name=form.title.data, body=form.body.data, cover=form.cover.data)
+        db.session.add(new_animal)
+        db.session.commit()
+        flash('Вы добавили новое животное!')
+        return redirect(url_for("our_animals"))
+    return render_template("Добавить животное.html", form=form)
+
+
 @app.route('/Наши животные')
 def our_animals():
-    return render_template("Наши животные.html")
+    action = request.args.get('action')
+    if action == "show":
+        animals_list = Animals.query.filter_by(id=request.args.get('id')).first()
+        return render_template("Новость.html", news=animals_list)
+    elif current_user.is_authenticated:
+        if action == "remove":
+            Animals.query.filter_by(id=request.args.get('id')).delete()
+            db.session.commit()
+            return redirect(url_for("our_animals"))
+    animals = Animals.query.all()
+    animals.reverse()
+    return render_template("Наши животные.html", animals=animals, user=current_user)
 
 
 @app.route('/Дом для животных')

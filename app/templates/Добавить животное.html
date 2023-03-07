@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить животное</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/form.css">
+
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+{{ ckeditor.load() }}
+
+<div class="form-block">
+
+
+    <h1>Добавить животное</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+
+        {{ form.title.label }}
+        {{ form.title(size=35) }}
+        {% for error in form.title.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+  
+
+        {{ form.cover.label }}
+        {{ form.cover(size=32) }}
+        {% for error in form.cover.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+        >
+
+        {{ form.body() }}
+
+        {% for error in form.body.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+
+        {{ form.submit() }}
+    </form>
+    {{ ckeditor.load() }}
+    {{ ckeditor.config(name='body') }}
+</div>
+{% endblock %}
+</body>
+</html>

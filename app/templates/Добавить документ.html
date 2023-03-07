@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить документ</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/form.css">
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="form-block">
+
+    <h1>Добавить документ</h1>
+    <form action="" method="post">
+
+        {{ form.hidden_tag() }}
+        {{ form.title.label }}
+        {{ form.title(size=32, placeholder="") }}
+        {% for error in form.title.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        {{ form.ref.label }}
+
+        {{ form.ref(size=32) }}
+        {% for error in form.ref.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        {{ form.submit() }}
+    </form>
+</div>
+{% endblock %}
+</body>
+</html>
