@@ -3,30 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Профиль</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/profile.css">
 </head>
 <body>
 {% extends "base.html" %}
 {% block content %}
 
 <h1 style="text-align: center; marin-top: 5px;">{{user}}</h1>
-<div style="margin: auto;">
-
-
-    <form action="{{ url_for('add_news') }}" target="_blank">
-        <button>Создать новость</button>
-    </form>
-
-
+<div class="buttons-list">
+    <a href="{{ url_for('register') }}">
+        <div><span>Регистрация нового администратора</span></div>
+    </a>
+    <a href="{{ url_for('site_settings') }}">
+        <div><span>Настройки сайта</span></div>
+    </a>
+    <a href="{{ url_for('logout') }}">
+        <div><span>Выйти</span></div>
+    </a>
 </div>
-<div style="margin: auto;">
 
-    <form action="{{ url_for('register') }}" target="_blank">
-        <button>Регистрация нового администратора</button>
-    </form>
-    <form action="{{ url_for('logout') }}">
-        <button>Выйти</button>
-    </form>
-</div>
 
 {% endblock %}
 </body>

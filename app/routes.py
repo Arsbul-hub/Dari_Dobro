@@ -1,31 +1,64 @@
-import datetime
+from datetime import datetime
+import os
 
 from flask import render_template, send_from_directory, url_for, render_template_string, flash, redirect, request
+from flask_ckeditor import upload_fail, upload_success
+
 from app import app, db, morph
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, News, Animals, Documents
-from app.forms import LoginForm, RegistrationForm, CreateNewsForm, AddAnimalForm, AddDocumentForm
+from app.models import User, News, Animals, Documents, Config
+from app.forms import LoginForm, RegistrationForm, CreateNewsForm, AddAnimalForm, AddDocumentForm, ConfigForm
 from werkzeug.urls import url_parse
+from app import login
 import git
+from urllib.parse import unquote
+
+
+@login.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+
+@app.route('/files/<path:filename>')
+def uploaded_files(filename):
+    return send_from_directory("static/loaded_media", filename)
+
+
+@app.route('/upload', methods=['POST', "GET"])
+def upload():
+    f = request.files.get('upload')
+    # Add more validations here
+    save_file(f)
+
+    url = url_for('uploaded_files', filename=f.filename)
+
+    return upload_success(url, filename=f.filename)
+
+
+def save_file(file, path="/loaded_media", name=None, formates=[]):
+    if not file:
+        return None
+    if name:
+        file.filename = name
+    extension = file.filename.split('.')[-1].lower()
+    if formates and extension not in formates:
+        return upload_fail(message='Image only!')
+
+    file.save(f"app/static/{path}/{file.filename}")
+    return f"static/{path}/{file.filename}"
 
 
 @app.route('/')
 def index():
-    print(News.query.all())
-    return render_template("index.html")
+    site_description = Config.query.filter_by(name="description").first()
 
+    if site_description:
+        description = site_description.value
 
-@app.route('/update_server', methods=['POST'])
-def webhook():
-    if request.method == 'POST':
-        repo = git.Repo('https://github.com/Arsbul-hub/Dari_Dobro.git')
-        origin = repo.remotes.origin
-
-        origin.pull()
-
-        return 'Updated PythonAnywhere successfully', 200
     else:
-        return 'Wrong event type', 400
+        description = "Описание не задано"
+
+    return render_template("index.html", description=description, allow_background_image=Config.query.filter_by(name="allow_background_image").first().value)
 
 
 @app.route('/logout')
@@ -79,6 +112,27 @@ def profile():
     return render_template("Профиль.html", user=current_user)
 
 
+@app.route("/Настройки сайта", methods=["GET", "POST"])
+@login_required
+def site_settings():
+    form = ConfigForm()
+
+    if form.validate_on_submit():
+        save_file(file=form.site_logo.data, path="images", name="logo.png", formates=["png", "jpg", "jpeg", "webp"])
+        save_file(file=form.background_image.data, path="images", name="background_image.png",
+                  formates=["png", "jpg", "jpeg", "webp"])
+
+        Config.query.filter_by(name=form.description.name).first().value = form.description.data
+        Config.query.filter_by(name=form.allow_background_image.name).first().value = form.allow_background_image.data
+        db.session.commit()
+        return redirect(url_for("profile"))
+    else:
+        form.description.data = Config.query.filter_by(name="description").first().value
+
+        form.allow_background_image.data = int(Config.query.filter_by(name="allow_background_image").first().value)
+    return render_template("Настройки сайта.html", config=Config, form=form)
+
+
 @app.route("/Добавить новость", methods=['GET', 'POST'])
 @login_required
 def add_news():
@@ -86,7 +140,8 @@ def add_news():
         return redirect(url_for("index"))
     form = CreateNewsForm()
     if form.validate_on_submit():
-        news_post = News(title=form.title.data, body=form.body.data, cover=form.cover.data)
+        saved_cover = save_file(file=form.cover.data, formates=["png", "jpg", "jpeg", "webp"])
+        news_post = News(title=form.title.data, body=form.body.data, cover=saved_cover)
         db.session.add(news_post)
         db.session.commit()
         flash('Вы опубликовали новый пост!')
@@ -102,13 +157,14 @@ def news():
         return render_template("Новость.html", news=news_list)
     elif current_user.is_authenticated:
         if action == "remove":
-            News.query.filter_by(id=request.args.get('id')).delete()
+            News.query.filter_by(id=request.args.get('id'))
+
             db.session.commit()
             return redirect(url_for("news"))
 
     news_list = News.query.all()
 
-    return render_template("Новости.html", news=news_list, morph=morph, today=datetime.date.today(), case={"gent"},
+    return render_template("Новости.html", news=news_list, morph=morph, today=datetime.today(), case={"gent"},
                            user=current_user)
 
 
@@ -124,7 +180,9 @@ def add_document():
         return redirect(url_for("index"))
     form = AddDocumentForm()
     if form.validate_on_submit():
-        new_document = Documents(title=form.title.data, ref=form.ref.data)
+        print(form.document.data)
+        file = save_file(file=form.document.data, formates=["pdf", "pptx"])
+        new_document = Documents(title=form.title.data, ref=file)
         db.session.add(new_document)
         db.session.commit()
         flash('Вы добавили новый документ!')
@@ -170,7 +228,9 @@ def add_animal():
         return redirect(url_for("index"))
     form = AddAnimalForm()
     if form.validate_on_submit():
-        new_animal = Animals(name=form.title.data, body=form.body.data, cover=form.cover.data)
+        out_path = save_file(file=form.cover.data, formates=["png", "jpg", "jpeg", "webp"])
+
+        new_animal = Animals(name=form.title.data, body=form.body.data, cover=out_path)
         db.session.add(new_animal)
         db.session.commit()
         flash('Вы добавили новое животное!')
@@ -182,16 +242,23 @@ def add_animal():
 def our_animals():
     action = request.args.get('action')
     if action == "show":
-        animals_list = Animals.query.filter_by(id=request.args.get('id')).first()
-        return render_template("Новость.html", news=animals_list)
+        animal = Animals.query.filter_by(id=request.args.get('id')).first()
+        return render_template("Животное.html", animal=animal)
     elif current_user.is_authenticated:
-        if action == "remove":
-            Animals.query.filter_by(id=request.args.get('id')).delete()
+        if action == "move_to_house":
+            animal = Animals.query.filter_by(id=request.args.get('id')).first()
+            animal.move_to_house()
             db.session.commit()
             return redirect(url_for("our_animals"))
-    animals = Animals.query.all()
+        if action == "move_to_vet":
+            animal = Animals.query.filter_by(id=request.args.get('id')).first()
+            animal.move_to_vet()
+            db.session.commit()
+            return redirect(url_for("our_animals"))
+    animals = Animals.query.filter_by(have_house=None).all()
+    no_animals = Animals.query.filter_by(have_house=True).all()
     animals.reverse()
-    return render_template("Наши животные.html", animals=animals, user=current_user)
+    return render_template("Наши животные.html", animals=animals, no_animals=no_animals, user=current_user)
 
 
 @app.route('/Дом для животных')

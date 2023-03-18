@@ -1,4 +1,4 @@
-.news-content {
+.animal-content {
   display: flex;
 
 
@@ -8,23 +8,22 @@
   box-shadow: 0px  0px 25px gray;
   margin: 60px auto;
   border-radius: 10px;
-  
+
 }
 .title-block {
   font-size: xx-large;
   font-weight: normal;
 }
-.news {
-  white-space: normal;
+.animal {
+    white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 10px 36px;
   vertical-align: top;
-
 }
-.news-body{
-  margin-top: 36px;
-  margin-left: 25px;
+.animal-body{
+margin-top: 36px;
+    margin-left: 25px;
 }
 
 .view-all {

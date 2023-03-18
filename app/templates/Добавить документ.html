@@ -13,22 +13,23 @@
 <div class="form-block">
 
     <h1>Добавить документ</h1>
-    <form action="" method="post">
+    <form action="" enctype="multipart/form-data" method="post">
 
         {{ form.hidden_tag() }}
         {{ form.title.label }}
-        {{ form.title(size=32, placeholder="") }}
-        {% for error in form.title.errors %}
-        <span style="color: red;">{{ error }}</span>
-        {% endfor %}
-
-        {{ form.ref.label }}
-
-        {{ form.ref(size=32) }}
-        {% for error in form.ref.errors %}
-        <span style="color: red;">{{ error }}</span>
-        {% endfor %}
-
+        <p>
+            {{ form.title(size=32, placeholder="") }}
+            {% for error in form.title.errors %}<br>
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        {{ form.document.label }}
+        <p>
+            {{ form.document(size=32) }}
+            {% for error in form.document.errors %}<br>
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
         {{ form.submit() }}
     </form>
 </div>

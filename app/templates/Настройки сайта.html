@@ -2,8 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Добавить новость</title>
-
+    <title>Title</title>
     <link rel="stylesheet" type="text/css" href="/static/css/form.css">
 
 </head>
@@ -13,42 +12,43 @@
 {% block content %}
 
 <div class="form-block">
-    <h1>Добавить новость</h1>
+    <h1>Регистрация</h1>
     <form action="" enctype="multipart/form-data" method="post">
         {{ form.hidden_tag() }}
-        {{ form.title.label }}
+        {{ form.site_logo.label }}
         <p>
 
-            {{ form.title(size=35) }}
-            {% for error in form.title.errors %}<br>
+            {{ form.site_logo() }}
+            {% for error in form.site_logo.errors %}<br>
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </p>
 
-
-        {{ form.cover.label }}
-        <p>
-            {{ form.cover() }}
-            {% for error in form.cover.errors %}<br>
-            <span style="color: red;">{{ error }}</span>
-            {% endfor %}
-        </p>
-
-
-        {{ form.body.label }}
+        {{ form.description.label }}
         <p class="editor">
 
-            {{ form.body() }}
-            {% for error in form.body.errors %}<br>
+            {{ form.description() }}
+            {% for error in form.description.errors %}<br>
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </p>
-
-        {{ form.submit() }}
+        {{form.background_image.label}}
+        <p>
+            {{ form.background_image() }}
+            {% for error in form.background_image.errors %}<br>
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{form.allow_background_image()}}
+            {{form.allow_background_image.label}}
+        </p>
+        {{ form.save() }}
     </form>
     {{ ckeditor.load() }}
-    {{ ckeditor.config(name='body') }}
+    {{ ckeditor.config(name='description') }}
 </div>
+
 {% endblock %}
 </body>
 </html>

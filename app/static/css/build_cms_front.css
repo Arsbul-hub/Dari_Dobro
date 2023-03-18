@@ -2694,10 +2694,7 @@ body.mobile .blog-content .bgi_imageWrap > a {
     height: 0
 }
 
-.adaptive-mobile hr:not(.custom-border-bottom), .adaptive-tablet hr:not(.custom-border-bottom) {
-    border: none;
-    border-bottom: 1px solid #cdcdcd
-}
+
 
 .adaptive-mobile .icon-heart, .adaptive-tablet .icon-heart {
     font-size: 12px

@@ -1,0 +1,32 @@
+.description {
+
+    width: 80%;
+    margin: 40px auto;
+}
+.description p {
+    margin-top: 40px;
+    font-size: large;
+    line-height: 2;
+}
+.description hr {
+    margin: 20px 0;
+	padding: 0;
+	height: 0;
+	border: none;
+
+	border: 1px solid #3caea7;
+}
+.title {
+    font-size: 45px;
+}
+.bg-image img {
+    height: 100%;
+    width: 100%;
+}
+.bg-image {
+    position: absolute;
+    top: 0;
+    opacity: 50%;
+
+    width: 100%;
+}

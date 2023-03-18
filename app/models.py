@@ -6,7 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(64), index=True, unique=True)
+    username = db.Column(db.String(), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     admin = db.Column(db.Boolean)
 
@@ -22,32 +22,33 @@ class User(UserMixin, db.Model):
 
 class News(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    body = db.Column(db.String(140))
-    title = db.Column(db.String(140))
-    cover = db.Column(db.String(140))
-
+    body = db.Column(db.String())
+    title = db.Column(db.String())
+    cover = db.Column(db.String())
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-
-    def __repr__(self):
-        return f'<Новость ({self.title}):{self.body}>'
+    deleted = db.Column(db.Boolean, default=False)
 
 
 class Animals(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    body = db.Column(db.String(140))
-    name = db.Column(db.String(140))
-    cover = db.Column(db.String(140))
+    body = db.Column(db.String())
+    name = db.Column(db.String())
+    cover = db.Column(db.String())
+    have_house = db.Column(db.Boolean, default=False)
 
-    def __repr__(self):
-        return f'<Новость ({self.title}):{self.body}>'
+    def move_to_house(self):
+        self.have_house = True
+
+    def move_to_vet(self):
+        self.have_house = False
 
 
 class Documents(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(140))
-    ref = db.Column(db.String(140))
+    title = db.Column(db.String())
+    ref = db.Column(db.String())
 
 
-@login.user_loader
-def load_user(id):
-    return User.query.get(int(id))
+class Config(db.Model):
+    name = db.Column(db.String(), primary_key=True)
+    value = db.Column(db.String())

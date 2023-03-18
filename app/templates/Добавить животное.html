@@ -16,29 +16,35 @@
 
 
     <h1>Добавить животное</h1>
-    <form action="" method="post">
+    <form action="" enctype="multipart/form-data" method="post">
         {{ form.hidden_tag() }}
 
         {{ form.title.label }}
-        {{ form.title(size=35) }}
-        {% for error in form.title.errors %}
-        <span style="color: red;">[{{ error }}]</span>
-        {% endfor %}
-  
+        <p>
+            {{ form.title(size=35) }}
+            {% for error in form.title.errors %}<br>
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
 
         {{ form.cover.label }}
-        {{ form.cover(size=32) }}
-        {% for error in form.cover.errors %}
-        <span style="color: red;">[{{ error }}]</span>
-        {% endfor %}
-        >
+        <p>
+            {{ form.cover(size=32) }}
+            {% for error in form.cover.errors %}<br>
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
 
-        {{ form.body() }}
+        {{ form.body.label }}
+        <p>
+            {{ form.body() }}
 
-        {% for error in form.body.errors %}
-        <span style="color: red;">[{{ error }}]</span>
-        {% endfor %}
+            {% for error in form.body.errors %}<br>
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
 
+        </p>
         {{ form.submit() }}
     </form>
     {{ ckeditor.load() }}

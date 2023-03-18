@@ -1,9 +1,10 @@
 from flask_ckeditor import CKEditorField
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, FileField
 from wtforms.widgets import TextArea
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
-from app.models import User
+from app.models import User, Config
+from app.validators import image_validation, pdf_validation
 
 
 class LoginForm(FlaskForm):
@@ -36,14 +37,14 @@ class RegistrationForm(FlaskForm):
 
 class CreateNewsForm(FlaskForm):
     title = StringField("Название поста:", validators=[DataRequired()])
-    cover = StringField("Обложка для новости (ссылка):", validators=[DataRequired()])
+    cover = FileField("Фотография:", validators=[DataRequired(), image_validation])
     body = CKEditorField("Текст поста:", validators=[DataRequired()])
     submit = SubmitField("Опубликовать")
 
 
 class AddAnimalForm(FlaskForm):
     title = StringField("Кличка нового животного:", validators=[DataRequired()])
-    cover = StringField("Фотография (ссылка):", validators=[DataRequired()])
+    cover = FileField("Фотография:", validators=[DataRequired(), image_validation])
     body = CKEditorField("Информация о животном:", validators=[DataRequired()])
     submit = SubmitField("Добавить")
 
@@ -51,5 +52,15 @@ class AddAnimalForm(FlaskForm):
 class AddDocumentForm(FlaskForm):
     title = StringField("Название документа", validators=[DataRequired()])
 
-    ref = StringField("Ссылка на документ (Яндекс диск или Google Диск)", validators=[DataRequired()])
+    document = FileField("Документ", validators=[DataRequired(), pdf_validation])
     submit = SubmitField("Добавить")
+
+
+class ConfigForm(FlaskForm):
+    description = CKEditorField("Описание сайта", validators=[DataRequired()])
+    site_logo = FileField("Логотип сайта", validators=[image_validation])
+    background_image = FileField("Фоновое изображение главной страницы", validators=[image_validation])
+    allow_background_image = BooleanField("Отображать фоновое изображение")
+    save = SubmitField("Сохранить")
+
+

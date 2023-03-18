@@ -1,0 +1,26 @@
+.buttons-list div {
+    display: flex;
+    background-color: green;
+    height: 90px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px darkgrey;
+    margin-top: 60px;
+    align-items: center;
+
+    
+}
+.buttons-list span {
+    font-size: x-large;
+    color: white;
+    word-break: break-word;
+    word-wrap: break-word;
+    text-align: center;
+    margin: 0px auto;
+}
+.buttons-list {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 0px auto;
+    justify-content: center;
+}

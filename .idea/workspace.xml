@@ -1,49 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc725d2b-eaa7-415e-8546-381a5a2dd07a" name="Changes" comment="news test">
+    <list default="true" id="bc725d2b-eaa7-415e-8546-381a5a2dd07a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/animals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/animals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/build_cms_front.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/build_cms_front.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/js/site.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/site.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/news.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/news.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/view_news.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/view_news.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Ветврач.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/openapi.js.загружено" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Ветврач_files/openapi.js.загружено" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/site.js.загружено" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Ветврач_files/site.js.загружено" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Добавить документ.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить документ.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Добавить животное.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить животное.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/Добавить новость.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить новость.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Добавить пост.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Дом для животных.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/openapi.js.загружено" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Дом для животных_files/openapi.js.загружено" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/site.js.загружено" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Дом для животных_files/site.js.загружено" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Контакты.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/openapi.js.загружено" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Контакты_files/openapi.js.загружено" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/site.js.загружено" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Контакты_files/site.js.загружено" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/Наши животные.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Наши животные.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/openapi.js.загружено" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Наши животные_files/openapi.js.загружено" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/site.js.загружено" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Наши животные_files/site.js.загружено" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши сборы.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Наши сборы.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/Новости.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Новости.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Оставайтесь cытыми.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Оставайтесь cытыми.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Отчетность.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Отчетность.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Партнеры.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Партнеры.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Партнёрам.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Партнёрам.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Полезные материалы.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Полезные материалы.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Помогите финансово.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Помогите финансово.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Просвещение и мероприятия.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Просвещение и мероприятия.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/Профиль.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Профиль.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Скорая помощь.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/openapi.js.загружено" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Скорая помощь_files/openapi.js.загружено" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/site.js.загружено" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Скорая помощь_files/site.js.загружено" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Стать волонтером.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Стать волонтером.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Уставные документы.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Уставные документы.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
@@ -56,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -77,15 +56,19 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Arsbul Programming/Desktop/дари добро/app/templates&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Arsbul Programming/Desktop/дари добро/app&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\templates" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app" />
+      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\css" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\images" />
     </key>
@@ -162,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675438856600</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Красивое оформление страниц с формами.&#10;Добавление и отображение документов">
+      <created>1678197263141</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678197263141</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -174,17 +164,28 @@
     <MESSAGE value="requirements.txt added" />
     <MESSAGE value="requirements.txt updated&#10;added registration admin&#10;added logout button in profile page" />
     <MESSAGE value="news test" />
-    <option name="LAST_COMMIT_MESSAGE" value="news test" />
+    <MESSAGE value="Красивое оформление страниц с формами.&#10;Добавление и отображение документов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Красивое оформление страниц с формами.&#10;Добавление и отображение документов" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>58</line>
+          <line>91</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routes.py</url>
+          <line>248</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="url" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

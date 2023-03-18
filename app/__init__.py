@@ -9,8 +9,9 @@ from flask_login import LoginManager
 import pymorphy2
 
 app = Flask(__name__)
-ckeditor = CKEditor(app)
 app.config.from_object(Config)
+
+ckeditor = CKEditor(app)
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db, render_as_batch=True)
@@ -24,5 +25,3 @@ locale.setlocale(
 )
 
 from app import routes, models
-
-

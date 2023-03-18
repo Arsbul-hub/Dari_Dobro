@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/static/css/animals.css">
-
+    <link rel="stylesheet" type="text/css" href="/static/css/navigation.css">
     <script type="text/javascript" src="/static/js/dialog.js"></script>
+    <script>
+
+        function show_new() {
+
+            document.getElementById("not-deleted").style.display = "flex";
+            document.getElementById("deleted").style.display = "none";
+        }
+        function show_old() {
+
+            document.getElementById("not-deleted").style.display = "none";
+            document.getElementById("deleted").style.display = "flex";
+
+        }
+
+
+    </script>
     <title>Новости</title>
 </head>
 
@@ -18,18 +34,23 @@
 {% block content %}
 
 <h1 class="title">Наши животные</h1>
+<nav class="navigation">
+    <ul>
+        <li><a onclick="show_new()">Сейчас у нас</a></li>
+        <li><a onclick="show_old()">Вернулись домой</a></li>
+    </ul>
+</nav>
 {% if animals %}
-<div class="animals-list">
+<div class="animals-list" id="not-deleted">
     {% for animal in animals %}
+    {% if not animal.have_house %}
     <dialog open id="confirm-remove-dialog-{{animal.id}}" class="confirm-remove-dialog">
         <h2 class="dialog-title">Внимание</h2>
-        <p>Вы действительно хотите удалить это животное?</p>
+        <p>Вы действительно хотите отправить это животное домой?</p>
         <div class="buttons">
             <a onclick="close_confirm_remove({{animal.id}});">Отмена</a>
-            <a href="{{url_for('our_animals', action='remove',  id=animal.id)}}">Да</a>
+            <a href="{{url_for('our_animals', action='move_to_house',  id=animal.id)}}">Да</a>
         </div>
-
-
     </dialog>
     <div class="item-block">
 
@@ -42,7 +63,7 @@
             <a href="{{url_for('add_animal')}}">Добавить животное</a>
             {% endif %}
             <a onclick="open_confirm_remove({{animal.id}});">
-                <i class="fa fa-trash-o" style="font-size:24px"></i>
+                <i class="fa-solid fa-house" style="font-size:24px"></i>
             </a>
         </div>
         {% endif %}
@@ -55,13 +76,64 @@
                 <div class="animals-body">
                     {{ animal.body|safe }}
                 </div>
-                <a class="view-all" href="{{url_for('our_animals', action='show', id=animal.id)}}"><h3>Читать дальше</h3></a>
+                <a class="view-all" href="{{url_for('our_animals', action='show', id=animal.id)}}"><h4>Читать
+                    дальше</h4></a>
             </div>
 
 
         </div>
     </div>
+    {% endif %}
+    {% endfor %}
 
+</div>
+
+<div class="animals-list" id="deleted" style="display: none;">
+    {% for animal in no_animals %}
+    {% if animal.have_house %}
+    <dialog open id="confirm-remove-dialog-{{animal.id}}" class="confirm-remove-dialog">
+        <h2 class="dialog-title">Внимание</h2>
+        <p>Вы действительно хотите вернуть это животное на кураторство?</p>
+        <div class="buttons">
+            <a onclick="close_confirm_remove({{animal.id}});">Отмена</a>
+            <a href="{{url_for('our_animals', action='move_to_vet',  id=animal.id)}}">Да</a>
+        </div>
+
+
+    </dialog>
+    <div class="item-block">
+
+
+        {% if user.is_authenticated %}
+
+
+        <div class="tools">
+            {% if no_animals.index(animal) == 0 %}
+            <a href="{{url_for('add_animal')}}">Добавить животное</a>
+            {% endif %}
+            <a onclick="open_confirm_remove({{animal.id}});">
+
+                <i class="fa-solid fa-shield-dog" style="font-size:24px"></i>
+            </a>
+        </div>
+        {% endif %}
+        <div class="content">
+
+            <img class=" cover" src="{{ animal.cover }}">
+
+            <div class="animals">
+                <h2 class="title-block">{{ animal.name }}</h2>
+                <div class="animals-body">
+                    {{ animal.body|safe }}
+                </div>
+                <a class="view-all" href="{{url_for('our_animals', action='show', id=animal.id)}}"><h4>Читать
+                    дальше</h4></a>
+            </div>
+
+
+        </div>
+    </div>
+    {% endif %}
     {% endfor %}
 
 </div>
@@ -71,9 +143,7 @@
     {% if user.is_authenticated %}
 
 
-
     <a href="{{url_for('add_animal')}}">Добавить животное</a>
-
 
 
     {% endif %}

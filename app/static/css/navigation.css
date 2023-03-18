@@ -1,0 +1,28 @@
+.navigation li {
+    display: inline-block;
+    margin: 3px;
+    padding: 10px;
+    text-align: center;
+    min-width: 100px;
+    white-space: nowrap;
+    border-radius: 5px;
+    transition: .5s ease-in-out;
+    background-color: green;
+}
+.navigation li a {
+    color: white;
+
+}
+.navigation {
+    display: flex;
+    padding-top: 20px;
+    justify-content: center
+}
+.navigation li a:hover {
+    text-decoration: underline;
+
+}
+.navigation li:hover {
+    background: red;
+
+}

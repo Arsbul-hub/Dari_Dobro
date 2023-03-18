@@ -45,10 +45,11 @@
 .animals-body {
   overflow: hidden;
 
-  display: grid;
+
 
   margin-left: 5px;
-  max-height: 180px;
+  height: 60px;
+
 }
 .animals-body p {
   overflow: hidden;
@@ -122,29 +123,25 @@
   align-items: center;
 }
 .view-all {
-
+  margin-left: 5px;;
   margin-top: 10px;
   color: black;
 }
 
 .content {
-
-  display: block;
-
+  display: flex;
   background-color: white;
-
-  height: 360px;
-
+  /* height: 360px; */
   border-radius: 10px;
-  box-shadow: 0px  0px 15px darkgray;
+  box-shadow: 0px 0px 15px darkgrey;
   white-space: nowrap;
   margin-top: 10px;
+  flex-direction: column;
 }
 .cover {
 
-  margin: 10px;
-
-  max-width: 190px;
-  min-width: 150px;
-
+  display: block;
+  border-top: 10px;
+  margin: 10px auto;
+  height: 306px;
 }
