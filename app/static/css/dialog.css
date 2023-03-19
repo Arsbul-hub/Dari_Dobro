@@ -1,0 +1,29 @@
+.confirm-dialog {
+    visibility: hidden;
+    position: fixed;
+    top: 30%;
+    height: 200px;
+  
+  }
+  .confirm-dialog .buttons {
+    display: flex;
+  
+    margin-top: 10px;
+  
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+  
+  
+  }
+  .confirm-dialog .dialog-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+  .confirm-dialog .buttons a {
+    margin-left: 25px;
+    color: black;
+  
+  }
