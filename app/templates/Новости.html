@@ -7,17 +7,22 @@
     <script type="text/javascript" src="/static/js/dialog.js"></script>
     <script>
 
-        function show_new() {
 
-            document.getElementById("new_news").style.display = "flex";
-            document.getElementById("old_news").style.display = "none";
+            function show_new() {
+
+            document.getElementById("new_news").style.opacity = 1;
+            document.getElementById("old_news").style.opacity = 0;
+            document.getElementById("old_news").style.visibility = "hidden";
+            document.getElementById("new_news").style.visibility = "visible";
         }
         function show_old() {
 
-            document.getElementById("new_news").style.display = "none";
-            document.getElementById("old_news").style.display = "flex";
-        
+            document.getElementById("new_news").style.opacity = 0;
+            document.getElementById("old_news").style.opacity = 1;
+            document.getElementById("old_news").style.visibility = "visible";
+            document.getElementById("new_news").style.visibility = "hidden";
         }
+
     </script>
     <title>Новости</title>
 </head>
@@ -38,136 +43,138 @@
         <li><a onclick="show_old()">Более старые</a></li>
     </ul>
 </nav>
-{% if news %}
+<div id="news-blocks">
+    {% if news %}
 
-<div class="news-list" id="new_news">
-    {% for n in news %}
+    <div class="news-list" id="new_news">
+        {% for n in news %}
 
-    {% if (today - n.timestamp).total_seconds() < 3600 * 24 * 10 %}
-    <dialog open id="confirm-remove-dialog-{{n.id}}" class="confirm-remove-dialog">
-        <h2 class="dialog-title">Внимание</h2>
-        <p>Вы действительно хотите удалить эту новость?</p>
-        <div class="buttons">
-            <a onclick="close_confirm_remove({{n.id}});">Отмена</a>
-            <a href="{{url_for('news', action='remove',  id=n.id)}}">Да</a>
-        </div>
-
-
-    </dialog>
-
-    <div class="item-block">
-
-        {% if (n.timestamp.year, n.timestamp.month, n.timestamp.day) == (today.year, today.month, today.day) %}
-        <span style="color: red;">Сегодня</span>
-        {% elif (n.timestamp.year, n.timestamp.month, n.timestamp.day) == (today.year, today.month, today.day - 1)
-        %}
-        <span>Вчера</span>
-        {% else %}
-        <span>{{morph.parse(n.timestamp.strftime("%d %B"))[0].inflect(case).word + " " + n.timestamp.strftime("%Y года")}} </span>
-        {% endif %}
-        {% if user.is_authenticated %}
-
-
-        <div class="tools">
-            {% if n == news[-1] %}
-            <a href="{{url_for('add_news')}}">Создать новость</a>
-            {% endif %}
-            <a onclick="open_confirm_remove({{n.id}});">
-                <i class="fa fa-trash-o" style="font-size:24px"></i>
-            </a>
-        </div>
-        {% endif %}
-
-        <div class="content">
-
-            <img class=" cover" src="{{ n.cover }}">
-
-            <div class="news">
-                <h2 class="title-block">{{ n.title }}</h2>
-                <div class="news-body">
-                    {{ n.body|safe }}
-                </div>
-                <a class="view-all" href="{{url_for('news', action='show', id=n.id)}}"><h3>Читать дальше</h3></a>
+        {% if (today - n.timestamp).total_seconds() < 3600 * 24 * 10 %}
+        <dialog open id="confirm-remove-dialog-{{n.id}}" class="confirm-remove-dialog">
+            <h2 class="dialog-title">Внимание</h2>
+            <p>Вы действительно хотите удалить эту новость?</p>
+            <div class="buttons">
+                <a onclick="close_confirm_remove({{n.id}});">Отмена</a>
+                <a href="{{url_for('news', action='remove',  id=n.id)}}">Да</a>
             </div>
 
 
+        </dialog>
+
+        <div class="item-block">
+
+            {% if (n.timestamp.year, n.timestamp.month, n.timestamp.day) == (today.year, today.month, today.day) %}
+            <span style="color: red;">Сегодня</span>
+            {% elif (n.timestamp.year, n.timestamp.month, n.timestamp.day) == (today.year, today.month, today.day - 1)
+            %}
+            <span>Вчера</span>
+            {% else %}
+            <span>{{morph.parse(n.timestamp.strftime("%d %B"))[0].inflect(case).word + " " + n.timestamp.strftime("%Y года")}} </span>
+            {% endif %}
+            {% if user.is_authenticated %}
+
+
+            <div class="tools">
+                {% if n == news[-1] %}
+                <a href="{{url_for('add_news')}}">Создать новость</a>
+                {% endif %}
+                <a onclick="open_confirm_remove({{n.id}});">
+                    <i class="fa fa-trash-o" style="font-size:24px"></i>
+                </a>
+            </div>
+            {% endif %}
+
+            <div class="content">
+
+                <img class=" cover" src="{{ n.cover }}">
+
+                <div class="news">
+                    <h2 class="title-block">{{ n.title }}</h2>
+                    <div class="news-body">
+                        {{ n.body|safe }}
+                    </div>
+                    <a class="view-all" href="{{url_for('news', action='show', id=n.id)}}"><h3>Читать дальше</h3></a>
+                </div>
+
+
+            </div>
+
         </div>
+        {% endif %}
+        {% endfor %}
 
     </div>
-    {% endif %}
-    {% endfor %}
+    <div class="news-list" id="old_news" style="visibility: hidden; opacity: 0;">
 
-</div>
-<div class="news-list" id="old_news" style="display: none;">
-
-    {% for n in news %}
-    {% if (today - n.timestamp).total_seconds() > 3600 * 24 * 10 %}
-    <dialog open id="confirm-remove-dialog-{{n.id}}" class="confirm-remove-dialog">
-        <h2 class="dialog-title">Внимание</h2>
-        <p>Вы действительно хотите удалить эту новость?</p>
-        <div class="buttons">
-            <a onclick="close_confirm_remove({{n.id}});">Отмена</a>
-            <a href="{{url_for('news', action='remove',  id=n.id)}}">Да</a>
-        </div>
-
-
-    </dialog>
-
-    <div class="item-block">
-
-        {% if (n.timestamp.year, n.timestamp.month, n.timestamp.day) == (today.year, today.month, today.day) %}
-        <span style="color: red;">Сегодня</span>
-        {% elif (n.timestamp.year, n.timestamp.month, n.timestamp.day) == (today.year, today.month, today.day - 1)
-        %}
-        <span>Вчера</span>
-        {% else %}
-        <span>{{morph.parse(n.timestamp.strftime("%d %B"))[0].inflect(case).word + " " + n.timestamp.strftime("%Y года")}} </span>
-        {% endif %}
-        {% if user.is_authenticated %}
-
-
-        <div class="tools">
-            {% if n == news[-1] %}
-            <a href="{{url_for('add_news')}}">Создать новость</a>
-            {% endif %}
-            <a onclick="open_confirm_remove({{n.id}});">
-                <i class="fa fa-trash-o" style="font-size:24px"></i>
-            </a>
-        </div>
-        {% endif %}
-
-        <div class="content">
-
-            <img class=" cover" src="{{ n.cover }}">
-
-            <div class="news">
-                <h2 class="title-block">{{ n.title }}</h2>
-                <div class="news-body">
-                    {{ n.body|safe }}
-                </div>
-                <a class="view-all" href="{{url_for('news', action='show', id=n.id)}}"><h3>Читать дальше</h3></a>
+        {% for n in news %}
+        {% if (today - n.timestamp).total_seconds() > 3600 * 24 * 10 %}
+        <dialog open id="confirm-remove-dialog-{{n.id}}" class="confirm-remove-dialog">
+            <h2 class="dialog-title">Внимание</h2>
+            <p>Вы действительно хотите удалить эту новость?</p>
+            <div class="buttons">
+                <a onclick="close_confirm_remove({{n.id}});">Отмена</a>
+                <a href="{{url_for('news', action='remove',  id=n.id)}}">Да</a>
             </div>
 
 
+        </dialog>
+
+        <div class="item-block">
+
+            {% if (n.timestamp.year, n.timestamp.month, n.timestamp.day) == (today.year, today.month, today.day) %}
+            <span style="color: red;">Сегодня</span>
+            {% elif (n.timestamp.year, n.timestamp.month, n.timestamp.day) == (today.year, today.month, today.day - 1)
+            %}
+            <span>Вчера</span>
+            {% else %}
+            <span>{{morph.parse(n.timestamp.strftime("%d %B"))[0].inflect(case).word + " " + n.timestamp.strftime("%Y года")}} </span>
+            {% endif %}
+            {% if user.is_authenticated %}
+
+
+            <div class="tools">
+                {% if n == news[-1] %}
+                <a href="{{url_for('add_news')}}">Создать новость</a>
+                {% endif %}
+                <a onclick="open_confirm_remove({{n.id}});">
+                    <i class="fa fa-trash-o" style="font-size:24px"></i>
+                </a>
+            </div>
+            {% endif %}
+
+            <div class="content">
+
+                <img class=" cover" src="{{ n.cover }}">
+
+                <div class="news">
+                    <h2 class="title-block">{{ n.title }}</h2>
+                    <div class="news-body">
+                        {{ n.body|safe }}
+                    </div>
+                    <a class="view-all" href="{{url_for('news', action='show', id=n.id)}}"><h3>Читать дальше</h3></a>
+                </div>
+
+
+            </div>
+
         </div>
+        {% endif %}
+        {% endfor %}
 
     </div>
-    {% endif %}
-    {% endfor %}
-
-</div>
-{% else %}
-<div class="is-empty">
-    <p>Пока новостей нет</p>
-    {% if user.is_authenticated %}
+    {% else %}
+    <div class="is-empty">
+        <p>Пока новостей нет</p>
+        {% if user.is_authenticated %}
 
 
-    {% if news.index(n) == 0 %}
-    <a href="{{url_for('add_news')}}">Создать новость</a>
-    {% endif %}
+        {% if news.index(n) == 0 %}
+        <a href="{{url_for('add_news')}}">Создать новость</a>
+        {% endif %}
 
 
-    {% endif %}
+        {% endif %}
+    </div>
 </div>
 {% endif %}
 {% endblock %}

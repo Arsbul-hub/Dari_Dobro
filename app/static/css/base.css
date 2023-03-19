@@ -48,8 +48,26 @@ nav ul {
   float: left;
   position: relative;
   font-family: 'Open Sans', sans-serif;
+  
+}
+.topmenu > li::after {
+  content: '';
+  margin-top: 1px;
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff0000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
 
+.topmenu > li:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+} 
 .topmenu > li > a {
   text-transform: uppercase;
   font-size: 15px;

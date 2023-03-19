@@ -4,28 +4,16 @@
     <list default="true" id="bc725d2b-eaa7-415e-8546-381a5a2dd07a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/animals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/animals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/build_cms_front.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/build_cms_front.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/navigation.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/news.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/news.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/view_news.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/view_news.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/dialog.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Добавить документ.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить документ.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Добавить животное.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить животное.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Добавить новость.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить новость.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/Наши животные.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Наши животные.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/Новости.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Новости.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Профиль.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Профиль.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,11 +140,29 @@
       <option name="project" value="LOCAL" />
       <updated>1678197263141</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Основная версия&#10;Увеличено количество настроек сайта: логотип, описание(вкладка о нас), фоновое изображение главной страницы и отображение этого изображения.&#10;Добавлена возможность загружать файлы н сервер.&#10;Улучшено отображение новостей, животных, документов.">
+      <created>1679168715600</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679168715600</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавлена система добавления постов" />
@@ -165,7 +171,8 @@
     <MESSAGE value="requirements.txt updated&#10;added registration admin&#10;added logout button in profile page" />
     <MESSAGE value="news test" />
     <MESSAGE value="Красивое оформление страниц с формами.&#10;Добавление и отображение документов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Красивое оформление страниц с формами.&#10;Добавление и отображение документов" />
+    <MESSAGE value="Основная версия&#10;Увеличено количество настроек сайта: логотип, описание(вкладка о нас), фоновое изображение главной страницы и отображение этого изображения.&#10;Добавлена возможность загружать файлы н сервер.&#10;Улучшено отображение новостей, животных, документов." />
+    <option name="LAST_COMMIT_MESSAGE" value="Основная версия&#10;Увеличено количество настроек сайта: логотип, описание(вкладка о нас), фоновое изображение главной страницы и отображение этого изображения.&#10;Добавлена возможность загружать файлы н сервер.&#10;Улучшено отображение новостей, животных, документов." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -177,8 +184,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>248</line>
-          <option name="timeStamp" value="2" />
+          <line>247</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

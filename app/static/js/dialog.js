@@ -20,3 +20,17 @@
 
         document.body.style.overflow = "visible"
     }
+    function open_confirm_move(id) {
+        document.getElementById(String.format('confirm-move-dialog-{0}', id)).style.visibility = "visible"
+
+        document.body.style.overflow = "hidden"
+        document.getElementsByClassName("item-block").style.pointerEvents = "none"
+ 
+
+    }
+
+    function close_confirm_move(id) {
+        document.getElementById(String.format('confirm-move-dialog-{0}', id)).style.visibility = "hidden"
+
+        document.body.style.overflow = "visible"
+    }

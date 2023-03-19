@@ -15,9 +15,18 @@
 }
 .news-list {
   display: flex;
-  
-  flex-direction: column-reverse;
+  position: absolute;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 40px;
+  transition: .5s ease-in-out;
+}
+#animals-blocks {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  height: 100%;
+  align-items: center;
 }
 .news-date-info {
   text-align: center;
@@ -125,6 +134,9 @@
     align-content: center;
     flex-direction: column;
     align-items: center;
+}
+.is-empty a, p {
+  font-size: larger;
 }
 .content {
 

@@ -93,12 +93,12 @@ def register():
         return redirect(url_for("index"))
 
     form = RegistrationForm()
-    if form.validate_on_submit() and not User.query.filter_by(username=form.username.data):
+    if form.validate_on_submit():
         user = User(username=form.username.data, admin=True)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        login_user(user, remember=form.remember_me.data)
+        # login_user(user, remember=form.remember_me.data)
         flash('Congratulations, you are now a registered admin!')
         return redirect(url_for('index'))
     return render_template('register.html', title='Register', form=form)
@@ -244,7 +244,10 @@ def our_animals():
     if action == "show":
         animal = Animals.query.filter_by(id=request.args.get('id')).first()
         return render_template("Животное.html", animal=animal)
-    elif current_user.is_authenticated:
+    elif current_user.is_authenticated and action:
+        if action == "remove":
+            Animals.query.filter_by(id=request.args.get('id')).delete()
+            db.session.commit()
         if action == "move_to_house":
             animal = Animals.query.filter_by(id=request.args.get('id')).first()
             animal.move_to_house()
@@ -253,9 +256,10 @@ def our_animals():
         if action == "move_to_vet":
             animal = Animals.query.filter_by(id=request.args.get('id')).first()
             animal.move_to_vet()
+
             db.session.commit()
             return redirect(url_for("our_animals"))
-    animals = Animals.query.filter_by(have_house=None).all()
+    animals = Animals.query.filter_by(have_house=False).all()
     no_animals = Animals.query.filter_by(have_house=True).all()
     animals.reverse()
     return render_template("Наши животные.html", animals=animals, no_animals=no_animals, user=current_user)
