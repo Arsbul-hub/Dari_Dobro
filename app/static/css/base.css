@@ -50,7 +50,7 @@ nav ul {
   font-family: 'Open Sans', sans-serif;
   
 }
-.topmenu > li::after {
+/* .topmenu > li::after {
   content: '';
   margin-top: 1px;
   position: absolute;
@@ -67,7 +67,7 @@ nav ul {
 .topmenu > li:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
-} 
+}  */
 .topmenu > li > a {
   text-transform: uppercase;
   font-size: 15px;

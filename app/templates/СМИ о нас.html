@@ -1,21 +1,37 @@
 <!-- Vigbo-cms //static-cdn4.vigbo.tech/u19745/26206/ bruno2 -->
 <!DOCTYPE html>
 <html lang="ru">
+{% extends "base.html" %}
+
 <head>
+
+{% block head %}
+
     <script>
-        var _createCookie=function(e,o,t){var i,n="";t&&((i=new Date).setTime(i.getTime()+864e5*t),n="; expires="+i.toGMTString()),document.cookie=e+"="+o+n+"; path=/"};function getCookie(e){e=document.cookie.match(new RegExp("(?:^|; )"+e.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g,"\\$1")+"=([^;]*)"));return e?decodeURIComponent(e[1]):void 0}"bot"==getCookie("_gphw_mode")&&_createCookie("_gphw_mode","humen",0);
+        var _createCookie = function (e, o, t) {
+            var i, n = "";
+            t && ((i = new Date).setTime(i.getTime() + 864e5 * t), n = "; expires=" + i.toGMTString()), document.cookie = e + "=" + o + n + "; path=/"
+        };
+
+        function getCookie(e) {
+            e = document.cookie.match(new RegExp("(?:^|; )" + e.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") + "=([^;]*)"));
+            return e ? decodeURIComponent(e[1]) : void 0
+        }
+
+        "bot" == getCookie("_gphw_mode") && _createCookie("_gphw_mode", "humen", 0);
 
 
     </script>
     <meta charset="utf-8">
     <title>СМИ о нас</title>
 
+{% endblock %}
 </head>
 <body data-template="bruno2"
       class="f__preset-box f__site f__2 loading locale_ru bruno2 mod--search-disable mod--img-logo mod--header-static mod--menu-action-on-scroll mod--menu-static-on-scroll desktop adaptive-desktop mod--horizontal-menu mod--infoline-disable js--loading-cascade mod--font-none-preset layout-logo-left--by-logo "
       data-preview="">
 <div class="l-wrap js-wrap">
-    {% extends "base.html" %}
+
     {% block content %}
     <div data-menu-type="mobile" data-custom-scroll data-set-top="stay-in-window"
          class="custom__header-decorate-line mod--custom-scroll-hidden mod--custom-scroll-resize md-menu--mobile js--menu--mobile mod--set-top--stop-mobile">
@@ -123,7 +139,14 @@
                  data-blog-preview-layout="">
             <div class="">
                 <style>
-                     #post-content .element-box > .element { padding-bottom: 10px; } .composite-content .composite-content-box { max-width: 1200px; margin: 0 auto; }
+                    #post-content .element-box > .element {
+                        padding-bottom: 10px;
+                    }
+
+                    .composite-content .composite-content-box {
+                        max-width: 1200px;
+                        margin: 0 auto;
+                    }
 
 
                 </style>
@@ -131,14 +154,17 @@
         {"sid":"2196743","url":"smi-o-nas","design":null}
 
 
+
                 </script>
                 <script type="text/json" id="post-form-error-messages">
         {"required":"\u041e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e \u043a \u0437\u0430\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044e","mailerror":"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b\u0439 e-mail","msgInvalidFileExtension":"\u041d\u0435\u0434\u043e\u043f\u0443\u0441\u0442\u0438\u043c\u044b\u0439 \u0444\u043e\u0440\u043c\u0430\u0442 \u0444\u0430\u0439\u043b\u0430 \"{name}\", \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u0435 \u0444\u0430\u0439\u043b \u0432 \u0444\u043e\u0440\u043c\u0430\u0442\u0435 \"{extensions}\"","msgSizeTooLarge":"\u0424\u0430\u0439\u043b \"{name}\" ({size} KB) \u0441\u043b\u0438\u0448\u043a\u043e\u043c \u0431\u043e\u043b\u044c\u0448\u043e\u0439, \u043c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u044c\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440 \u0444\u0430\u0439\u043b\u0430 {maxSize} KB.","msgSumSizeTooLarge":"\u041e\u0431\u0449\u0438\u0439 \u0440\u0430\u0437\u043c\u0435\u0440 \u0444\u0430\u0439\u043b\u043e\u0432 \u043d\u0435 \u0434\u043e\u043b\u0436\u0435\u043d \u043f\u0440\u0435\u0432\u044b\u0448\u0430\u0442\u044c 25 \u041cB","msgDuplicateFile":"\u0424\u0430\u0439\u043b \"{name}\" \u0443\u0436\u0435 \u043f\u0440\u0438\u043a\u0440\u0435\u043f\u043b\u0435\u043d. \u0412\u044b \u043d\u0435 \u043c\u043e\u0436\u0435\u0442\u0435 \u043f\u0440\u0438\u043a\u0440\u0435\u043f\u0438\u0442\u044c 2 \u043e\u0434\u0438\u043d\u0430\u043a\u043e\u0432\u044b\u0445 \u0444\u0430\u0439\u043b\u0430."}
 
 
+
                 </script>
                 <script type="text/json" id="blog-protect-images-options">
         {"message":"","protectImage":"n"}
+
 
 
                 </script>
@@ -150,7 +176,9 @@
                             <article class="post composite-frontend-post" id="post_571583">
                                 <div id="post-content" style="max-width: 100%;">
                                     <div class="post-body">
-                                        <style>.adaptive-desktop #section571583_0 .section__content{min-height:10px;}
+                                        <style>.adaptive-desktop #section571583_0 .section__content {
+                                            min-height: 10px;
+                                        }
 
 
                                         </style>
@@ -166,7 +194,25 @@
                                                                 <div class="element post-title" id="w_12651158">
                                                                     <div class="widget-content">
                                                                         <style>
-                                                                             #w_12651158 .title-shell { color: #000000; font-family: PT Sans Caption; font-size: 27px; justify-content: center; } #w_12651158 .title { letter-spacing: 0.1em; margin-right: -0.1em; line-height: 1.3em; text-transform: uppercase; } #w_12651158 .title-shell:before, #w_12651158 .title-shell:after { background: url(data:image/svg+xml;base64,CjxzdmcgaGVpZ2h0PSI5IiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRhNGE0YSIgZD0iTTAsNC41TDEsNC41IiBzdHJva2Utd2lkdGg9IjFweCI+PC9wYXRoPjwvc3ZnPgo=); background-position: 50% 50%; background-repeat: repeat-x; }
+                                                                            #w_12651158 .title-shell {
+                                                                                color: #000000;
+                                                                                font-family: PT Sans Caption;
+                                                                                font-size: 27px;
+                                                                                justify-content: center;
+                                                                            }
+
+                                                                            #w_12651158 .title {
+                                                                                letter-spacing: 0.1em;
+                                                                                margin-right: -0.1em;
+                                                                                line-height: 1.3em;
+                                                                                text-transform: uppercase;
+                                                                            }
+
+                                                                            #w_12651158 .title-shell:before, #w_12651158 .title-shell:after {
+                                                                                background: url(data:image/svg+xml;base64,CjxzdmcgaGVpZ2h0PSI5IiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRhNGE0YSIgZD0iTTAsNC41TDEsNC41IiBzdHJva2Utd2lkdGg9IjFweCI+PC9wYXRoPjwvc3ZnPgo=);
+                                                                                background-position: 50% 50%;
+                                                                                background-repeat: repeat-x;
+                                                                            }
 
 
                                                                         </style>
@@ -244,6 +290,7 @@
 {"photoData":{"id":"75437538","name":"ba459c78e59e3f01b893d4ff61021cc2.jpg","crop":[],"size":{"height":"2000","width":"3000"},"width":"3000","height":"2000","bg":"rgba(151,153,156,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/74905193\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://novayagazeta.ru/articles/2022/03/21/v-otvete-za-khvostikov "
@@ -309,6 +356,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"75437572","name":"b079e93dc83ce0f92d45646c67e2c527.jpg","crop":[],"size":{"height":"2000","width":"3000"},"width":"3000","height":"2000","bg":"rgba(225,209,199,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/74905198\/"}
+
 
 
                                                                 </script>
@@ -389,6 +437,7 @@
 {"photoData":{"id":"75437557","name":"1fc3b153ad1c18049f17258a5b336781.jpg","crop":{"w":"2000","h":"2000","r":"rectangle","x":"0","y":"131","x2":"558","y2":"503","pw":"558","ph":"558"},"size":{"height":"2000","width":"2000"},"width":"2000","height":"2000","bg":"rgba(202,201,208,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/74905156\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.buro247.ru/news/lifestyle/18-mar-2022-nika-foundation-medicines-for-animals.html?utm_source=yxnews&utm_medium=mobile&utm_referrer=https%3A%2F%2Fyandex.ru%2Fnews%2Fsearch%3Ftext%3D "
@@ -454,6 +503,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"75437568","name":"db39a8d61994cf074d962ce3fe66f01b.jpg","crop":[],"size":{"height":"2000","width":"3000"},"width":"3000","height":"2000","bg":"rgba(218,200,190,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/74905161\/"}
+
 
 
                                                                 </script>
@@ -547,6 +597,7 @@
 {"photoData":{"id":"75437389","name":"9abe41e3583347ac63bce9a0c7f5bf9e.jpg","crop":[],"size":{"height":"2000","width":"3000"},"width":"3000","height":"2000","bg":"rgba(220,202,186,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/74904924\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://style.rbc.ru/repost/6229e52c9a794760cd700986 "
@@ -611,6 +662,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"75437324","name":"3f5a1c8232fe87d49df47f770f381797.jpg","crop":[],"size":{"height":"1707","width":"2560"},"width":"2560","height":"1707","bg":"rgba(126,118,111,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/74904929\/"}
+
 
 
                                                                 </script>
@@ -691,6 +743,7 @@
 {"photoData":{"id":"75436801","name":"a16b615792aed7ddad3e726cb5935846.jpg","crop":[],"size":{"height":"2000","width":"3000"},"width":"3000","height":"2000","bg":"rgba(230,230,230,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/74904571\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://takiedela.ru/news/2022/03/03/nika-ostavaytes-sytymi/ "
@@ -756,6 +809,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"75436851","name":"f43f359c1f44bc505811cb7d5a65a2ed.jpg","crop":{"w":"2000","h":"1333","r":"rectangle","x":"0","y":"0","x2":"835.5","y2":"557","pw":"836","ph":"557"},"size":{"height":"2000","width":"3000"},"width":"3000","height":"2000","bg":"rgba(198,181,167,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/74904576\/"}
+
 
 
                                                                 </script>
@@ -835,6 +889,7 @@
 {"photoData":{"id":"75436643","name":"662a2569fbe3ebe0c0d45c9dc82c391c.png","crop":{"w":"1592","h":"836","r":"rectangle","x":"80","y":"0","x2":"788","y2":"472","pw":"898","ph":"472"},"size":{"height":"836","width":"1592"},"width":"1592","height":"836","bg":"rgba(233,236,241,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/74904225\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.asi.org.ru/event/2022/02/11/17-fevralya-onlajn-konferencziya-fandrajzing-novogo-vremeni-traektoriya/ "
@@ -897,6 +952,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"75436679","name":"9034c7c663ec0871c9c0e4afe937b5e5.jpg","crop":[],"size":{"height":"2000","width":"3000"},"width":"3000","height":"2000","bg":"rgba(163,160,157,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/74904230\/"}
+
 
 
                                                                 </script>
@@ -989,6 +1045,7 @@
 {"photoData":{"id":"72707217","name":"02504ba21dd7c2ccc90fa061db201101.jpg","crop":[],"size":{"height":"2000","width":"3000"},"width":"3000","height":"2000","bg":"rgba(230,230,230,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/72808675\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://meduza.io/news/2021/12/14/fond-nika-nachal-sbor-korma-chtoby-pomoch-bezdomnym-zhivotnym-moskvy-i-podmoskovya-perezhit-zimu "
@@ -1054,6 +1111,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"72707219","name":"b6308f527ca866943a236adc74db3696.jpg","crop":{"w":"2000","h":"1500","r":"rectangle","x":"0","y":"0","x2":"764","y2":"509.3333333333333","pw":"764","ph":"572"},"size":{"height":"2000","width":"2667"},"width":"2667","height":"2000","bg":"rgba(213,210,211,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/72808680\/"}
+
 
 
                                                                 </script>
@@ -1145,6 +1203,7 @@
 {"photoData":{"id":"72707102","name":"d115708bf420f063c39079ac64fad1cb.jpg","crop":[],"size":{"height":"2000","width":"3000"},"width":"3000","height":"2000","bg":"rgba(206,191,187,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/72808477\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.kp.ru/daily/28370/4519528/ "
@@ -1209,6 +1268,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"72707096","name":"eb304e5551ad1f8ebdacb0b5275ada08.jpg","crop":[],"size":{"height":"2000","width":"3000"},"width":"3000","height":"2000","bg":"rgba(227,214,213,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/72808482\/"}
+
 
 
                                                                 </script>
@@ -1300,6 +1360,7 @@
 {"photoData":{"id":"72706997","name":"729ccf6d4e8380b04e0c367e0bff831d.jpg","crop":[],"size":{"height":"2000","width":"3000"},"width":"3000","height":"2000","bg":"rgba(230,230,230,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/72808449\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://news.rambler.ru/internet/46812992-k-10-letnemu-yubileyu-zelenogradskiy-fond-nika-otkryl-sbor-na-rekonstruktsiyu-volerov-v-priyute/ "
@@ -1365,6 +1426,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"72706983","name":"75ba5cd907e190a96e014ee46de88548.JPG","crop":[],"size":{"height":"2000","width":"3000"},"width":"3000","height":"2000","bg":"rgba(221,213,211,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/72808454\/"}
+
 
 
                                                                 </script>
@@ -1455,6 +1517,7 @@
 {"photoData":{"id":"72706994","name":"316ab23cf77d5480da709849e7ee4195.jpg","crop":[],"size":{"height":"1335","width":"2000"},"width":"2000","height":"1335","bg":"rgba(230,230,230,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/72806183\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://snob.ru/news/fondu-pomoshi-zhivotnym-nika-ispolnyaetsya-10-let/ "
@@ -1518,6 +1581,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"72706210","name":"02d43fbe2667fe327634aaabcdd30843.jpg","crop":{"w":"1920","h":"1920","r":"rectangle","x":"0","y":"102","x2":"569","y2":"481.3333333333333","pw":"574","ph":"574"},"size":{"height":"1920","width":"1920"},"width":"1920","height":"1920","bg":"rgba(184,182,182,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/72806188\/"}
+
 
 
                                                                 </script>
@@ -1611,6 +1675,7 @@
 {"photoData":{"id":"72703987","name":"3b5cad9369781b0f041ed4776f878ea9.jpg","crop":{"w":"2000","h":"1334","r":"rectangle","x":"0","y":"0","x2":"860","y2":"573.3333333333334","pw":"860","ph":"574"},"size":{"height":"1707","width":"2560"},"width":"2560","height":"1707","bg":"rgba(230,230,230,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/72806151\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.forbes.ru/forbeslife/416119-pes-na-schaste-dobryy-futbol-iskusstvo-v-telefone-i-skazki-ot-zvezd-horoshie "
@@ -1676,6 +1741,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"72703990","name":"754184c272a260960a49e2425523aa85.jpg","crop":{"w":"2000","h":"1321","r":"rectangle","x":"0","y":"0","x2":"858","y2":"572","pw":"868","ph":"572"},"size":{"height":"1321","width":"2000"},"width":"2000","height":"1321","bg":"rgba(194,188,194,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/72806156\/"}
+
 
 
                                                                 </script>
@@ -1767,6 +1833,7 @@
 {"photoData":{"id":"72703917","name":"849a3a6f555a02b0c58d998591c9c129.jpg","crop":{"w":"2000","h":"1500","r":"rectangle","x":"0","y":"0","x2":"764","y2":"509.3333333333333","pw":"764","ph":"572"},"size":{"height":"1920","width":"2560"},"width":"2560","height":"1920","bg":"rgba(200,180,170,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/72806098\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://philanthropy.ru/novosti-organizatsij/2020/12/11/96424/ "
@@ -1830,6 +1897,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"72703751","name":"8b6582e8186c62dd71a3c35c3c8d5eeb.JPG","crop":{"w":"1080","h":"1920","r":"rectangle","x":"0","y":"325","x2":"318","y2":"537","pw":"318","ph":"565"},"size":{"height":"1920","width":"1080"},"width":"1080","height":"1920","bg":"rgba(109,120,133,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/72806103\/"}
+
 
 
                                                                 </script>
@@ -1923,6 +1991,7 @@
 {"photoData":{"id":"64880555","name":"422cb83f7202fb2ccae552947d4e7df5.jpg","crop":{"w":"1792","h":"1792","r":"rectangle","x":"0","y":"184","x2":"574","y2":"566.6666666666667","pw":"574","ph":"574"},"size":{"height":"1792","width":"1792"},"width":"1792","height":"1792","bg":"rgba(203,183,181,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/65963475\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.mos.ru/news/item/81311073/ "
@@ -1987,6 +2056,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"64880404","name":"82209b36c44e94d55b0980b130c87f61.jpg","crop":{"w":"1280","h":"1280","r":"rectangle","x":"0","y":"14","x2":"574","y2":"396.6666666666667","pw":"574","ph":"574"},"size":{"height":"1280","width":"1280"},"width":"1280","height":"1280","bg":"rgba(202,181,165,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/65963480\/"}
+
 
 
                                                                 </script>
@@ -2079,6 +2149,7 @@
 {"photoData":{"id":"64879925","name":"3769e9e100b109620b698d9cd9015932.jpeg","crop":[],"size":{"height":"667","width":"1000"},"width":"1000","height":"667","bg":"rgba(82,73,38,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/65963263\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.forbes.ru/forbeslife/405673-poltonny-abrikosov-i-200-000-eskimo-dlya-medikov-horoshie-novosti-nedeli "
@@ -2142,6 +2213,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"64879809","name":"ae77c1190681b032eb0ebcc0da7c9aad.jpg","crop":[],"size":{"height":"829","width":"1242"},"width":"1242","height":"829","bg":"rgba(56,50,48,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/65963268\/"}
+
 
 
                                                                 </script>
@@ -2234,6 +2306,7 @@
 {"photoData":{"id":"64879594","name":"8946a55936cb2932cec1fffef64ded9a.png","crop":{"w":"2000","h":"1094","r":"rectangle","x":"50","y":"4","x2":"780.5","y2":"491","pw":"898","ph":"491"},"size":{"height":"1322","width":"2416"},"width":"2416","height":"1322","bg":"rgba(238,239,238,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/65962894\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://takiedela.ru/news/2020/05/16/fond-nika-50-tonn/ "
@@ -2298,6 +2371,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"64879577","name":"38f652a74e53a99588aca2ddb95efb93.jpg","crop":{"w":"2000","h":"1065","r":"rectangle","x":"53","y":"0","x2":"770","y2":"478","pw":"898","ph":"478"},"size":{"height":"2070","width":"3888"},"width":"3888","height":"2070","bg":"rgba(236,238,231,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/65962899\/"}
+
 
 
                                                                 </script>
@@ -2396,6 +2470,7 @@
 {"photoData":{"id":"60796853","name":"d456ed6da816d4dab1a46b7f4aaa0eeb.jpg","crop":[],"size":{"height":"800","width":"1200"},"width":"1200","height":"800","bg":"rgba(110,103,95,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/61760757\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.asi.org.ru/report/2019/12/16/moskva-danilovskij-rynok-seno-priyut-dlya-bezdomnyh-zhivotnyh/ "
@@ -2459,6 +2534,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60796700","name":"aea863a5ad25194cfdb54ef7de9b4d2a.jpg","crop":[],"size":{"height":"855","width":"1280"},"width":"1280","height":"855","bg":"rgba(132,123,124,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/61760762\/"}
+
 
 
                                                                 </script>
@@ -2552,6 +2628,7 @@
 {"photoData":{"id":"60793250","name":"411aa4830cefb249239b5cba4e9ee3ff.jpg","crop":[],"size":{"height":"854","width":"1280"},"width":"1280","height":"854","bg":"rgba(155,111,99,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/61754872\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.wmj.ru/stil-zhizni/domashnie-zhivotnye/festival-woof-snova-otkryvaet-dveri-pomoshi-zhivotnym-15-11-2019.htm "
@@ -2617,6 +2694,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60793496","name":"844f7e9077743798ffabef2f78dadafd.jpg","crop":[],"size":{"height":"1135","width":"1700"},"width":"1700","height":"1135","bg":"rgba(139,98,72,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/61754877\/"}
+
 
 
                                                                 </script>
@@ -2709,6 +2787,7 @@
 {"photoData":{"id":"60790906","name":"f17db3d829430428a24c013dc12e2401.jpg","crop":[],"size":{"height":"841","width":"1259"},"width":"1259","height":"841","bg":"rgba(187,119,110,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/61751023\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://cityreporter.ru/v-rostove-projdet-festival-po-pristrojstvu-koshek-i-sobak-iz-priyutov/ "
@@ -2773,6 +2852,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60790884","name":"da24149e482bfd5e86506773cabfc64a.jpg","crop":[],"size":{"height":"1202","width":"1800"},"width":"1800","height":"1202","bg":"rgba(138,128,128,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/61751028\/"}
+
 
 
                                                                 </script>
@@ -2866,6 +2946,7 @@
 {"photoData":{"id":"60790792","name":"65268f511777a591320b8f1a32bc8757.jpg","crop":[],"size":{"height":"1707","width":"2560"},"width":"2560","height":"1707","bg":"rgba(130,119,105,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/61750363\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.forbes.ru/forbes-woman-photogallery/376495-10-zhenshchin-v-kraudfandinge-reyting-forbeswoman?photo=1 "
@@ -2930,6 +3011,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60790617","name":"55a5084fe23c59721ecb11793303500a.png","crop":{"w":"1256","h":"900","r":"rectangle","x":"0","y":"40","x2":"798","y2":"572","pw":"798","ph":"572"},"size":{"height":"900","width":"1256"},"width":"1256","height":"900","bg":"rgba(197,196,195,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/61750368\/"}
+
 
 
                                                                 </script>
@@ -3027,6 +3109,7 @@
 {"photoData":{"id":"60790521","name":"33d4d9c2d9a3e9988b1684f403fc5931.jpg","crop":{"w":"1701","h":"850","r":"rectangle","x":"154","y":"0","x2":"826","y2":"448","pw":"896","ph":"448"},"size":{"height":"850","width":"1701"},"width":"1701","height":"850","bg":"rgba(211,209,208,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/61749232\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.vesti.ru/doc.html?id=3099708 "
@@ -3092,6 +3175,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60790311","name":"b83067363116e8ed8bc660c269a04a40.jpg","crop":[],"size":{"height":"1135","width":"1700"},"width":"1700","height":"1135","bg":"rgba(98,83,78,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/61749237\/"}
+
 
 
                                                                 </script>
@@ -3184,6 +3268,7 @@
 {"photoData":{"id":"60790138","name":"ac30b9cae1eae6b98333673176e8ed8a.jpg","crop":[],"size":{"height":"1281","width":"1920"},"width":"1920","height":"1281","bg":"rgba(195,174,174,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/61748926\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://otr-online.ru/news/brodyachim-sobakam-iz-tuly-pomozhet-moskovskiy-blagotvoritelnyy-fond-nika-111194.html "
@@ -3248,6 +3333,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60790531","name":"1247426d87c2b87b583b3bb132875a17.jpg","crop":{"w":"1701","h":"850","r":"rectangle","x":"164","y":"0","x2":"836","y2":"448","pw":"896","ph":"448"},"size":{"height":"850","width":"1701"},"width":"1701","height":"850","bg":"rgba(212,209,207,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/61748940\/"}
+
 
 
                                                                 </script>
@@ -3329,6 +3415,7 @@
 {"photoData":{"id":"60788754","name":"a3c5e16c1e5e3796ee2393e3038108bb.png","crop":{"w":"2000","h":"1342","r":"rectangle","x":"0","y":"0","x2":"855","y2":"570","pw":"855","ph":"574"},"size":{"height":"1578","width":"2352"},"width":"2352","height":"1578","bg":"rgba(36,26,26,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/61746621\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://bazaar.ru/heroes/mnenie/aleksandr-pal-v-roli-bezdomnogo-psa-v-video-blagotvoritelnogo-fonda-nika/ "
@@ -3393,6 +3480,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60788662","name":"3b4deaa91cc0c98d5af61246e2a2eb61.jpg","crop":{"w":"1323","h":"2015","r":"rectangle","x":"0","y":"116","x2":"374","y2":"365.33333333333337","pw":"374","ph":"569"},"size":{"height":"2015","width":"1323"},"width":"1323","height":"2015","bg":"rgba(159,146,142,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/61746626\/"}
+
 
 
                                                                 </script>
@@ -3474,6 +3562,7 @@
 {"photoData":{"id":"29223848","name":"c57dfc88ec82eaea9b5ba52a75e7c2da.jpg","crop":[],"size":{"height":"410","width":"615"},"width":"615","height":"410","bg":"rgba(156,141,132,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/30926474\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://vesti-matushkino.ru/news/society/zelenogradskiy-priyut-bezdomnykh-zhivotnykh-nika-priobrel-novykh-druzey "
@@ -3537,6 +3626,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"29224052","name":"16aa0d1020e17730dea7a29714ffb96d.jpg","crop":[],"size":{"height":"2832","width":"4256"},"width":"4256","height":"2832","bg":"rgba(164,153,147,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/30926489\/"}
+
 
 
                                                                 </script>
@@ -3624,6 +3714,7 @@
 {"photoData":{"id":"24056627","name":"b352f83828e00441b09025961a7219da.jpg","crop":{"w":"800","h":"679","r":"rectangle","x":"0","y":"58","x2":"676","y2":"508.6666666666667"},"size":{"height":"679","width":"800"},"width":"800","height":"679","bg":"rgba(83,94,78,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/25618286\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.zelenograd.ru/news/43872/ "
@@ -3686,6 +3777,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"24056459","name":"95c739757a36754c4bc91ac50544d779.jpg","crop":[],"size":{"height":"710","width":"1063"},"width":"1063","height":"710","bg":"rgba(53,43,42,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/25618301\/"}
+
 
 
                                                                 </script>
@@ -3767,6 +3859,7 @@
 {"photoData":{"id":"24056114","name":"d55aed59fe4bc21d74f0c46f468dec03.jpg","crop":[],"size":{"height":"710","width":"1063"},"width":"1063","height":"710","bg":"rgba(117,95,88,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/25618316\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://takiedela.ru/news/2017/10/29/woof/ "
@@ -3835,6 +3928,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"24056630","name":"057025eda87db497967d6b4df7436fd1.jpg","crop":{"w":"2000","h":"1125","r":"rectangle","x":"80","y":"10","x2":"779","y2":"476"},"size":{"height":"1152","width":"2048"},"width":"2048","height":"1152","bg":"rgba(153,148,140,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/25618328\/"}
+
 
 
                                                                 </script>
@@ -3925,6 +4019,7 @@
 {"photoData":{"id":"11142530","name":"81193e6f64b22208fc31c4fd6d688623.jpg","crop":[],"size":{"height":"1135","width":"1700"},"width":"1700","height":"1135","bg":"rgba(55,59,59,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12649241\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://life.ru/streams/1675 " target="_blank">
@@ -3987,6 +4082,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"11142455","name":"bdc99ccf08410fa28b397d267e562942.jpg","crop":[],"size":{"height":"640","width":"960"},"width":"960","height":"640","bg":"rgba(160,152,147,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12649256\/"}
+
 
 
                                                                 </script>
@@ -4083,6 +4179,7 @@
 {"photoData":{"id":"11138216","name":"cccf95c110663c8ebc600df84c8b092a.png","crop":{"w":"1424","h":"1026","r":"rectangle","x":"0","y":"0","x2":"796","y2":"530.6666666666666"},"size":{"height":"1026","width":"1424"},"width":"1424","height":"1026","bg":"rgba(201,146,137,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12642557\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="http://www.crowdwillfund.ru/pochiemu-kraudfandingh-unikalnyi-tsientr-dlia-zhivotnykh-mokryi-nos/ "
@@ -4147,6 +4244,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"11138222","name":"0de09efd883bddeffbf7d3523ea69d6a.jpg","crop":{"w":"570","h":"380","r":"rectangle","x":"0","y":"0","x2":"570","y2":"380"},"size":{"height":"380","width":"570"},"width":"570","height":"380","bg":"rgba(89,89,90,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12642572\/"}
+
 
 
                                                                 </script>
@@ -4227,6 +4325,7 @@
 {"photoData":{"id":"11138300","name":"75e01cd52a7fcc3ff017d060629076f7.jpg","crop":{"w":"1140","h":"632","r":"rectangle","x":"42","y":"0","x2":"786","y2":"496"},"size":{"height":"632","width":"1140"},"width":"1140","height":"632","bg":"rgba(141,145,150,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12642587\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="http://www.zelao.ru/10/49/22028/24024-vtoroy-etap-stroitelstva-nachalsya-v-tsentre-priyute-mokryiy-nos-/?QqPpfqb83HWJet3 "
@@ -4292,6 +4391,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"11138363","name":"1cdf53032d899a89ef9a41fb7e9406d3.jpg","crop":{"w":"2000","h":"1331","r":"rectangle","x":"0","y":"0","x2":"859.5","y2":"573"},"size":{"height":"1704","width":"2560"},"width":"2560","height":"1704","bg":"rgba(171,166,169,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12642599\/"}
+
 
 
                                                                 </script>
@@ -4372,6 +4472,7 @@
 {"photoData":{"id":"11138642","name":"bfcdd9614d8e43f0a0126000b0e3b179.JPG","crop":{"w":"604","h":"489","r":"rectangle","x":"0","y":"22","x2":"604","y2":"424.6666666666667"},"size":{"height":"489","width":"604"},"width":"604","height":"489","bg":"rgba(149,138,130,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12646061\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://dobro.mail.ru/stories/chelovek-dobra-vera-mitina/ "
@@ -4435,6 +4536,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"11143025","name":"62e9e50138c384e814d036d8cb73b4ec.jpg","crop":{"w":"2000","h":"1335","r":"rectangle","x":"0","y":"0","x2":"859","y2":"572.6666666666666"},"size":{"height":"1645","width":"2464"},"width":"2464","height":"1645","bg":"rgba(140,175,196,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12646076\/"}
+
 
 
                                                                 </script>
@@ -4512,6 +4614,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"11142554","name":"a771f97eaf038b39770a2d73a0d67ac3.jpg","crop":[],"size":{"height":"1135","width":"1700"},"width":"1700","height":"1135","bg":"rgba(80,62,46,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12646091\/"}
+
 
 
                                                                 </script>
@@ -4618,6 +4721,7 @@
 {"photoData":{"id":"11136077","name":"239b43a1105cbbe3c111815bfe450694.jpg","crop":[],"size":{"height":"683","width":"1024"},"width":"1024","height":"683","bg":"rgba(124,112,108,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12634271\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.youtube.com/watch?v=WXL2dNz4yOs "
@@ -4682,6 +4786,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"11136167","name":"9a2774bcbc90e28f4d9846ca0ce84e26.jpg","crop":[],"size":{"height":"640","width":"960"},"width":"960","height":"640","bg":"rgba(201,195,190,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12634286\/"}
+
 
 
                                                                 </script>
@@ -4760,6 +4865,7 @@
 {"photoData":{"id":"11136221","name":"d2699f8d9c6d2be1c5fba0d2dde90b73.jpg","crop":[],"size":{"height":"749","width":"1122"},"width":"1122","height":"749","bg":"rgba(121,112,86,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12634301\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://mosregtoday.ru/geroyi-podmoskovya/spasenie-zhivotnykh-pod-silu-kazhdomu-priyut-nika/ "
@@ -4824,6 +4930,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"11136257","name":"2edc8091f494604e2aaf2b9c83ca9a1f.jpg","crop":[],"size":{"height":"750","width":"1124"},"width":"1124","height":"750","bg":"rgba(77,55,50,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12634313\/"}
+
 
 
                                                                 </script>
@@ -4910,6 +5017,7 @@
 {"photoData":{"id":"11136812","name":"f896662a2cca603c157cbb37ac562658.jpg","crop":{"w":"1241","h":"643","r":"rectangle","x":"200","y":"0","x2":"896","y2":"464"},"size":{"height":"643","width":"1241"},"width":"1241","height":"643","bg":"rgba(111,125,129,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12633137\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.miloserdie.ru/article/park-bezdomnyh-sobak-i-koshek-ili-kak-postroit-sovremennyj-priyut/ "
@@ -4973,6 +5081,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"11133602","name":"b697058a3d0a55df8c430ede503b00cd.jpg","crop":[],"size":{"height":"803","width":"1200"},"width":"1200","height":"803","bg":"rgba(141,134,129,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12633152\/"}
+
 
 
                                                                 </script>
@@ -5054,6 +5163,7 @@
 {"photoData":{"id":"11133863","name":"9ca2033b3b79172e9216f3b512b30cb8.png","crop":[],"size":{"height":"994","width":"1500"},"width":"1500","height":"994","bg":"rgba(121,86,79,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12633167\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="http://geometria.ru/events/night-life/2014/3/28/769042 "
@@ -5122,6 +5232,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"11133908","name":"6cfa7f730d08a5ccbc42a3642abf6ac6.png","crop":[],"size":{"height":"1086","width":"1628"},"width":"1628","height":"1086","bg":"rgba(164,148,135,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12633179\/"}
+
 
 
                                                                 </script>
@@ -5201,6 +5312,7 @@
 {"photoData":{"id":"11134598","name":"f7140a4657836823130f7cfe1a897159.jpg","crop":[],"size":{"height":"852","width":"1280"},"width":"1280","height":"852","bg":"rgba(105,109,102,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12634730\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="http://zooafisha.msk.ru/ZooM36.pdf "
@@ -5265,6 +5377,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"11134646","name":"6dbf31a8ef999cf489a15702424cc9db.jpg","crop":[],"size":{"height":"852","width":"1280"},"width":"1280","height":"852","bg":"rgba(120,120,121,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12634745\/"}
+
 
 
                                                                 </script>
@@ -5362,6 +5475,7 @@
 {"photoData":{"id":"11134247","name":"bcc5287554b8aeec873ab820ae30ed58.jpg","crop":[],"size":{"height":"640","width":"960"},"width":"960","height":"640","bg":"rgba(96,95,98,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12634439\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="http://www.vesti.ru/doc.html?id=1154090 "
@@ -5425,6 +5539,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"11134970","name":"a695fdf9ebe87462a276a1d03cee9b99.jpg","crop":[],"size":{"height":"853","width":"1280"},"width":"1280","height":"853","bg":"rgba(120,112,112,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12634457\/"}
+
 
 
                                                                 </script>
@@ -5522,6 +5637,7 @@
 {"photoData":{"id":"11133926","name":"683c049a6364e3c784c08e1eeacb0833.png","crop":[],"size":{"height":"1090","width":"1638"},"width":"1638","height":"1090","bg":"rgba(181,175,169,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12633272\/"}
 
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="http://www.netall.ru/gnn/130/573/607946.html# "
@@ -5585,6 +5701,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"11198654","name":"e716cf4280df45c049063971bb833820.JPG","crop":[],"size":{"height":"3487","width":"5230"},"width":"5230","height":"3487","bg":"rgba(97,80,64,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/2196743\/571583\/12700337\/"}
+
 
 
                                                                 </script>
@@ -5670,7 +5787,29 @@
                                     <div class="post-body" data-structure="footer">
                                         <div class="post-body">
                                             <style>
-                                                .adaptive-desktop #section2998469_0 .section__content{min-height:10px;}footer .md-section, footer .copyright #gpwCC, footer .copyright a#gpwCC{color:#0b2903;}footer.l-footer .section__bg{background-color:#0b2903;}footer.l-footer .copyright{background-color:#0b2903;}.adaptive-mobile .l-footer, .adaptive-mobile .l-footer p, .adaptive-mobile .copyright__gophotoweb--box{text-align:center !important;}footer.l-footer .copyright__gophotoweb--box{text-align:center;}
+                                                .adaptive-desktop #section2998469_0 .section__content {
+                                                    min-height: 10px;
+                                                }
+
+                                                footer .md-section, footer .copyright #gpwCC, footer .copyright a#gpwCC {
+                                                    color: #0b2903;
+                                                }
+
+                                                footer.l-footer .section__bg {
+                                                    background-color: #0b2903;
+                                                }
+
+                                                footer.l-footer .copyright {
+                                                    background-color: #0b2903;
+                                                }
+
+                                                .adaptive-mobile .l-footer, .adaptive-mobile .l-footer p, .adaptive-mobile .copyright__gophotoweb--box {
+                                                    text-align: center !important;
+                                                }
+
+                                                footer.l-footer .copyright__gophotoweb--box {
+                                                    text-align: center;
+                                                }
 
 
                                             </style>
@@ -5734,7 +5873,26 @@
                                                                     <div class="element widget-social-icons"
                                                                          id="w_37846913">
                                                                         <style>
-                                                                             #w_37846913 .asi-icon-box { margin: 34px 17px 0 17px; } #w_37846913 .social-icons-content {margin: -34px -17px 0;} #w_37846913 .asi-icon-box i { color: #ffffff; } #w_37846913 .asi-icon-box a:hover i { color: #8f8f8f; } #w_37846913 .asi-icon-box a, #w_37846913 .asi-icon-box i { font-size: 32px; line-height: 32px; }
+                                                                            #w_37846913 .asi-icon-box {
+                                                                                margin: 34px 17px 0 17px;
+                                                                            }
+
+                                                                            #w_37846913 .social-icons-content {
+                                                                                margin: -34px -17px 0;
+                                                                            }
+
+                                                                            #w_37846913 .asi-icon-box i {
+                                                                                color: #ffffff;
+                                                                            }
+
+                                                                            #w_37846913 .asi-icon-box a:hover i {
+                                                                                color: #8f8f8f;
+                                                                            }
+
+                                                                            #w_37846913 .asi-icon-box a, #w_37846913 .asi-icon-box i {
+                                                                                font-size: 32px;
+                                                                                line-height: 32px;
+                                                                            }
 
 
                                                                         </style>
@@ -5813,48 +5971,47 @@
                                 </noscript>
                                 <script>
 
-function mobileCheck() {
-  var check = false;
-  (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
-  return check;
-};
-if (!mobileCheck()) {
-var menu = document.getElementsByClassName("menu")[0];
-var list = menu.getElementsByTagName("ul")[0];
-list.style.textAlign = "center";
+                                    function mobileCheck() {
+                                        var check = false;
+                                        (function (a) {
+                                            if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
+                                        })(navigator.userAgent || navigator.vendor || window.opera);
+                                        return check;
+                                    };
+                                    if (!mobileCheck()) {
+                                        var menu = document.getElementsByClassName("menu")[0];
+                                        var list = menu.getElementsByTagName("ul")[0];
+                                        list.style.textAlign = "center";
 //list.style.backgroundColor = "green";
 
-var elements = menu.getElementsByClassName("menu-item");
-var donationButton = elements[elements.length - 1];
-donationButton.className += " pulse-grow";
-donationButton.style.textAlign = "center";
-var textDonation = donationButton.getElementsByTagName("a")[0];
+                                        var elements = menu.getElementsByClassName("menu-item");
+                                        var donationButton = elements[elements.length - 1];
+                                        donationButton.className += " pulse-grow";
+                                        donationButton.style.textAlign = "center";
+                                        var textDonation = donationButton.getElementsByTagName("a")[0];
 
-textDonation.style.paddingLeft = "10px";
-textDonation.style.paddingRight = "10px";
-textDonation.style.color = "#fff";
+                                        textDonation.style.paddingLeft = "10px";
+                                        textDonation.style.paddingRight = "10px";
+                                        textDonation.style.color = "#fff";
 
-textDonation.parentNode.removeChild(textDonation);
-var div = document.createElement("div");
+                                        textDonation.parentNode.removeChild(textDonation);
+                                        var div = document.createElement("div");
 
-div.appendChild(textDonation);
-div.style.backgroundColor = "#fa7612";
-div.style.borderRadius = "10px";
-div.style.display = "inline";
+                                        div.appendChild(textDonation);
+                                        div.style.backgroundColor = "#fa7612";
+                                        div.style.borderRadius = "10px";
+                                        div.style.display = "inline";
 //div.style.height = "20px";
-donationButton.appendChild(div);
+                                        donationButton.appendChild(div);
 
-var oImg = document.createElement("img");
-oImg.setAttribute('src', 'https://api.fond-nika.ru/paw_nika.png');
-oImg.style.display = "inline";
-oImg.style.height = "20px";
-oImg.style.width = "20px";
-oImg.style.margin = "0 0 0 3px";
-donationButton.appendChild(oImg);
-}
-
-
-
+                                        var oImg = document.createElement("img");
+                                        oImg.setAttribute('src', 'https://api.fond-nika.ru/paw_nika.png');
+                                        oImg.style.display = "inline";
+                                        oImg.style.height = "20px";
+                                        oImg.style.width = "20px";
+                                        oImg.style.margin = "0 0 0 3px";
+                                        donationButton.appendChild(oImg);
+                                    }
 
 
                                 </script>
@@ -5929,35 +6086,40 @@ donationButton.appendChild(oImg);
     []
 
 
+
     </script>
 </div>
 <script src="//cdn06.vigbo.tech/cms/kevin2/site/prod/js/site.js?ver=x2iAQq"></script>
 <script>
     (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
+        (w[c] = w[c] || []).push(function () {
             try {
                 w.yaCounter47650093 = new Ya.Metrika({
-                    id:47650093,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:true
+                    id: 47650093,
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true,
+                    webvisor: true
                 });
-            } catch(e) { }
+            } catch (e) {
+            }
         });
 
         var n = d.getElementsByTagName("script")[0],
             s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
+            f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
         s.type = "text/javascript";
         s.async = true;
         s.src = "https://mc.yandex.ru/metrika/watch.js";
 
         if (w.opera == "[object Opera]") {
             d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
+        } else {
+            f();
+        }
     })(document, window, "yandex_metrika_callbacks");
-
 
 
 </script>

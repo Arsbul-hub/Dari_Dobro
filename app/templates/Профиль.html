@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+{% extends "base.html" %}
+
 <head>
+
+{% block head %}
+
     <meta charset="UTF-8">
     <title>Профиль</title>
     <link rel="stylesheet" type="text/css" href="/static/css/profile.css">
+
+{% endblock %}
 </head>
 <body>
-{% extends "base.html" %}
+
 {% block content %}
 
 <h1 style="text-align: center; marin-top: 5px;">{{user}}</h1>

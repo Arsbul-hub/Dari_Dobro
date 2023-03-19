@@ -1,19 +1,37 @@
 <!-- Vigbo-cms //static-cdn4.vigbo.tech/u19745/26206/ bruno2 -->
 <!DOCTYPE html>
 <html lang="ru">
-
+{% extends "base.html" %}
 <head>
-
+    {% block head %}
     <meta charset="utf-8">
     <title>О нас</title>
     <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+
+    <style>
+        {% if allow_background_image == '1' %}
+        body:before{
+            z-index:-1;
+            position:absolute;
+            left:0;
+            top:0;
+            content: url(/static/images/background_image.png);
+            opacity:0.4;
+        }
+        {% endif %}
+
+
+    </style>
+
+    {% endblock %}
 </head>
 <body data-template="bruno2"
       class="f__preset-box f__site f__2 loading locale_ru bruno2 mod--search-disable mod--img-logo mod--header-static mod--menu-action-on-scroll mod--menu-static-on-scroll desktop adaptive-desktop mod--horizontal-menu mod--infoline-disable js--loading-cascade mod--font-none-preset layout-logo-left--by-logo "
-      data-preview="">
+      data-preview=""
+>
 <div class="l-wrap js-wrap">
 
-    {% extends "base.html" %}
+
     {% block content %}
     <div class="description">
         <h1 class="title">О нас</h1>
@@ -22,15 +40,14 @@
     </div>
 
 
-
 </div>
-{% if allow_background_image == "1" %}
-    <div class="bg-image">
-        <img src="/static/images/background_image.png">
-    </div>
-{% endif %}
+
+<!--    <div class="bg-image">-->
+<!--        <img src="/static/images/background_image.png">-->
+<!--    </div>-->
+
 <script src="/static/js/site.js"></script>
 
-    {% endblock %}
+{% endblock %}
 </body>
 </html><!-- cached 2022-11-24 10:12:41 e24cc38881bdebf1e12f84cc0a6bf3ce -->

@@ -1,9 +1,24 @@
 <!-- Vigbo-cms //static-cdn4.vigbo.tech/u19745/26206/ bruno2 -->
 <!DOCTYPE html>
 <html lang="ru">
+{% extends "base.html" %}
+
 <head>
+
+{% block head %}
+
     <script>
-        var _createCookie=function(e,o,t){var i,n="";t&&((i=new Date).setTime(i.getTime()+864e5*t),n="; expires="+i.toGMTString()),document.cookie=e+"="+o+n+"; path=/"};function getCookie(e){e=document.cookie.match(new RegExp("(?:^|; )"+e.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g,"\\$1")+"=([^;]*)"));return e?decodeURIComponent(e[1]):void 0}"bot"==getCookie("_gphw_mode")&&_createCookie("_gphw_mode","humen",0);
+        var _createCookie = function (e, o, t) {
+            var i, n = "";
+            t && ((i = new Date).setTime(i.getTime() + 864e5 * t), n = "; expires=" + i.toGMTString()), document.cookie = e + "=" + o + n + "; path=/"
+        };
+
+        function getCookie(e) {
+            e = document.cookie.match(new RegExp("(?:^|; )" + e.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") + "=([^;]*)"));
+            return e ? decodeURIComponent(e[1]) : void 0
+        }
+
+        "bot" == getCookie("_gphw_mode") && _createCookie("_gphw_mode", "humen", 0);
 
     </script>
     <meta charset="utf-8">
@@ -11,6 +26,8 @@
 
 
     <script src="/static/js/jquery.js"></script>
+
+{% endblock %}
 </head>
 <body data-template="bruno2"
       class="f__preset-box f__site f__2 loading locale_ru bruno2 mod--search-disable mod--img-logo mod--header-static mod--menu-action-on-scroll mod--menu-static-on-scroll desktop adaptive-desktop mod--horizontal-menu mod--infoline-disable js--loading-cascade mod--font-none-preset layout-logo-left--by-logo "
@@ -23,19 +40,29 @@
                  data-blog-preview-layout="">
             <div class="">
                 <style>
-                     #post-content .element-box > .element { padding-bottom: 10px; } .composite-content .composite-content-box { max-width: 1200px; margin: 0 auto; }
+                    #post-content .element-box > .element {
+                        padding-bottom: 10px;
+                    }
+
+                    .composite-content .composite-content-box {
+                        max-width: 1200px;
+                        margin: 0 auto;
+                    }
 
                 </style>
                 <script type="text/json" id="blog-options">
         {"sid":"5382911","url":"OS","design":null}
 
+
                 </script>
                 <script type="text/json" id="post-form-error-messages">
         {"required":"\u041e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e \u043a \u0437\u0430\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044e","mailerror":"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b\u0439 e-mail","msgInvalidFileExtension":"\u041d\u0435\u0434\u043e\u043f\u0443\u0441\u0442\u0438\u043c\u044b\u0439 \u0444\u043e\u0440\u043c\u0430\u0442 \u0444\u0430\u0439\u043b\u0430 \"{name}\", \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u0435 \u0444\u0430\u0439\u043b \u0432 \u0444\u043e\u0440\u043c\u0430\u0442\u0435 \"{extensions}\"","msgSizeTooLarge":"\u0424\u0430\u0439\u043b \"{name}\" ({size} KB) \u0441\u043b\u0438\u0448\u043a\u043e\u043c \u0431\u043e\u043b\u044c\u0448\u043e\u0439, \u043c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u044c\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440 \u0444\u0430\u0439\u043b\u0430 {maxSize} KB.","msgSumSizeTooLarge":"\u041e\u0431\u0449\u0438\u0439 \u0440\u0430\u0437\u043c\u0435\u0440 \u0444\u0430\u0439\u043b\u043e\u0432 \u043d\u0435 \u0434\u043e\u043b\u0436\u0435\u043d \u043f\u0440\u0435\u0432\u044b\u0448\u0430\u0442\u044c 25 \u041cB","msgDuplicateFile":"\u0424\u0430\u0439\u043b \"{name}\" \u0443\u0436\u0435 \u043f\u0440\u0438\u043a\u0440\u0435\u043f\u043b\u0435\u043d. \u0412\u044b \u043d\u0435 \u043c\u043e\u0436\u0435\u0442\u0435 \u043f\u0440\u0438\u043a\u0440\u0435\u043f\u0438\u0442\u044c 2 \u043e\u0434\u0438\u043d\u0430\u043a\u043e\u0432\u044b\u0445 \u0444\u0430\u0439\u043b\u0430."}
 
+
                 </script>
                 <script type="text/json" id="blog-protect-images-options">
         {"message":"","protectImage":"n"}
+
 
                 </script>
                 <script>window.widgetPostMapScroll = true;</script>
@@ -47,7 +74,19 @@
                                 <div id="post-content" style="max-width: 100%;">
                                     <div class="post-body">
                                         <style>
-                                            .adaptive-desktop #section4756359_0 .section__content{min-height:10px;}#section4756359_0 .section__bg{background-color:rgba(255,255,255,0);background-size:cover;}#section4756359_0 .section__bg{background-position-x:48.387096774194%;background-position-y:32.679738562092%;}
+                                            .adaptive-desktop #section4756359_0 .section__content {
+                                                min-height: 10px;
+                                            }
+
+                                            #section4756359_0 .section__bg {
+                                                background-color: rgba(255, 255, 255, 0);
+                                                background-size: cover;
+                                            }
+
+                                            #section4756359_0 .section__bg {
+                                                background-position-x: 48.387096774194%;
+                                                background-position-y: 32.679738562092%;
+                                            }
 
                                         </style>
                                         <a id="base-1" class="js--anchor" name="base-1"></a>
@@ -83,7 +122,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <style>.adaptive-desktop #section4756359_1 .section__content{min-height:10px;}
+                                        <style>.adaptive-desktop #section4756359_1 .section__content {
+                                            min-height: 10px;
+                                        }
 
                                         </style>
                                         <a id="photogallery" class="js--anchor" name="photogallery"></a>
@@ -99,13 +140,30 @@
                                                                 <script type="text/json" class="widget-options">
 {"photos":[[{"id":"60926202","width":"2560","height":"1707","file":"363263eccba206633db558e4a5a16853.jpg"}],[{"id":"60792496","width":"1280","height":"853","file":"221daf57763b662c7c4d46752162b83b.jpg"}],[{"id":"60792498","width":"1280","height":"853","file":"751d60c03dcd3fb968529e71184e8a62.jpg"}],[{"id":"60812479","width":"1280","height":"853","file":"09dc5448ef49ddb13ef8470e73fd2485.jpeg"}]],"photoGap":0,"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61753313\/","fullscreen":"n"}
 
+
                                                                 </script>
                                                                 <style>
-                                                                     .adaptive-desktop #widget_61753313 { width: 80%; } #w_61753313 .preview__title { color: #000000; font-family: "Arial"; font-size: 12px; letter-spacing: 0em; line-height: 1.3; }
+                                                                    .adaptive-desktop #widget_61753313 {
+                                                                        width: 80%;
+                                                                    }
+
+                                                                    #w_61753313 .preview__title {
+                                                                        color: #000000;
+                                                                        font-family: "Arial";
+                                                                        font-size: 12px;
+                                                                        letter-spacing: 0em;
+                                                                        line-height: 1.3;
+                                                                    }
 
                                                                 </style>
                                                                 <style>
-                                                                     #w_61753313 .mod--gallery-one-photo .skidder-slide { background-color: ; } #w_61753313 .mod--gallery-one-photo .skidder-clickelement path { stroke: #ffffff; }
+                                                                    #w_61753313 .mod--gallery-one-photo .skidder-slide {
+                                                                        background-color: ;
+                                                                    }
+
+                                                                    #w_61753313 .mod--gallery-one-photo .skidder-clickelement path {
+                                                                        stroke: #ffffff;
+                                                                    }
 
                                                                 </style>
                                                                 <div class="wg-post-gallery mod--gallery-easy">
@@ -275,7 +333,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <style>.adaptive-desktop #section4756359_2 .section__content{min-height:10px;}
+                                        <style>.adaptive-desktop #section4756359_2 .section__content {
+                                            min-height: 10px;
+                                        }
 
                                         </style>
                                         <a id="custom-4" class="js--anchor" name="custom-4"></a>
@@ -289,6 +349,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60989718","name":"e714ab11cfac03a010c90bda7f27a3d4.jpg","crop":[],"size":{"height":"417","width":"4167"},"width":"4167","height":"417","bg":"rgba(239,242,236,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61971963\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image origin mod--gallery-easy "
@@ -316,7 +377,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <style>.adaptive-desktop #section4756359_3 .section__content{min-height:10px;}
+                                        <style>.adaptive-desktop #section4756359_3 .section__content {
+                                            min-height: 10px;
+                                        }
 
                                         </style>
                                         <a id="custom-5" class="js--anchor" name="custom-5"></a>
@@ -334,12 +397,12 @@
                                                                     <meta id="myViewport" name="viewport"
                                                                           content="width=device-width">
                                                                     <script>
-          window.onload = function () {
-              if(window.innerWidth <= 400) {
-                  var mvp = document.getElementById('myViewport');
-                  mvp.setAttribute('content','width=400');
-              }
-          }
+                                                                        window.onload = function () {
+                                                                            if (window.innerWidth <= 400) {
+                                                                                var mvp = document.getElementById('myViewport');
+                                                                                mvp.setAttribute('content', 'width=400');
+                                                                            }
+                                                                        }
 
                                                                     </script>
                                                                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -351,203 +414,498 @@
                                                                     <script>
 
 
-    $(document).ready(function(){
-      var $oferta = $('#oferta-block-text');
-      $('#oferta-block').click(function(event){
-        event.preventDefault();
-        $.fancybox.open($oferta, {type : 'inline', buttons:['close'], smallBtn: true});
-      });
+                                                                        $(document).ready(function () {
+                                                                            var $oferta = $('#oferta-block-text');
+                                                                            $('#oferta-block').click(function (event) {
+                                                                                event.preventDefault();
+                                                                                $.fancybox.open($oferta, {
+                                                                                    type: 'inline',
+                                                                                    buttons: ['close'],
+                                                                                    smallBtn: true
+                                                                                });
+                                                                            });
 
-      var $payment = $('#payment-rule-text');
-      $('#payment-rule').click(function(event){
-        event.preventDefault();
-        $.fancybox.open($payment, {type : 'inline', buttons:['close'], smallBtn: true});
-      });
-
-
-      $('#donateAmount input[type="radio"]').click(function () {
-          var $input = $("#customPayInput");
-          var $text = $("#customPayText");
-          var value = $(this).attr("value");
-          if (value == "0") {
-              $input.show();
-              $text.hide();
-              $input.focus();
-              console.log("click");
-              setCaretPosition($input[0], 0, 0);
-              var customPay = document.getElementById("customPayInput");
-              var digitText = customPay.value.replace(/\D/g,'');
-              document.getElementById("feedFullPrice").textContent = numberWithCommas(digitText * pricePerOne);
-              document.getElementById("feedFullCount").textContent = numberWithCommas(digitText);
-          } else {
-              $input.hide();
-              $text.show();
-              document.getElementById("feedFullPrice").textContent = numberWithCommas(value * pricePerOne);
-              document.getElementById("feedFullCount").textContent = numberWithCommas(value);
-          }
-      });
-    });
+                                                                            var $payment = $('#payment-rule-text');
+                                                                            $('#payment-rule').click(function (event) {
+                                                                                event.preventDefault();
+                                                                                $.fancybox.open($payment, {
+                                                                                    type: 'inline',
+                                                                                    buttons: ['close'],
+                                                                                    smallBtn: true
+                                                                                });
+                                                                            });
 
 
-      function getPaymentAmount() {
-        var radios = document.getElementsByName('amount');
-        for (var i = 0, length = radios.length; i <length; i++) {
-            if (radios[i].checked) {
-                if (radios[i].value != 0) {
-                  return parseInt(radios[i].value);
-                } else {
-                  var customPay = document.getElementById("customPayInput");
-                  var amount = customPay.value.replace(/\D/g,'');
-                  if (amount == "" || amount == "0") {
-                    amount = "5";
-                  }
-                  return parseInt(amount);
-                }
-            }
-      }
-    }
+                                                                            $('#donateAmount input[type="radio"]').click(function () {
+                                                                                var $input = $("#customPayInput");
+                                                                                var $text = $("#customPayText");
+                                                                                var value = $(this).attr("value");
+                                                                                if (value == "0") {
+                                                                                    $input.show();
+                                                                                    $text.hide();
+                                                                                    $input.focus();
+                                                                                    console.log("click");
+                                                                                    setCaretPosition($input[0], 0, 0);
+                                                                                    var customPay = document.getElementById("customPayInput");
+                                                                                    var digitText = customPay.value.replace(/\D/g, '');
+                                                                                    document.getElementById("feedFullPrice").textContent = numberWithCommas(digitText * pricePerOne);
+                                                                                    document.getElementById("feedFullCount").textContent = numberWithCommas(digitText);
+                                                                                } else {
+                                                                                    $input.hide();
+                                                                                    $text.show();
+                                                                                    document.getElementById("feedFullPrice").textContent = numberWithCommas(value * pricePerOne);
+                                                                                    document.getElementById("feedFullCount").textContent = numberWithCommas(value);
+                                                                                }
+                                                                            });
+                                                                        });
 
 
-    function getMail() {
-      var mail = document.getElementById("input_user_mail");
+                                                                        function getPaymentAmount() {
+                                                                            var radios = document.getElementsByName('amount');
+                                                                            for (var i = 0, length = radios.length; i < length; i++) {
+                                                                                if (radios[i].checked) {
+                                                                                    if (radios[i].value != 0) {
+                                                                                        return parseInt(radios[i].value);
+                                                                                    } else {
+                                                                                        var customPay = document.getElementById("customPayInput");
+                                                                                        var amount = customPay.value.replace(/\D/g, '');
+                                                                                        if (amount == "" || amount == "0") {
+                                                                                            amount = "5";
+                                                                                        }
+                                                                                        return parseInt(amount);
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
 
-      if (validateEmail(mail.value)) {
-        return mail.value
-      }
-      mail.style.border = "medium solid #ff0000";
-      return ""
-    }
 
-    function getName() {
-      var name = document.getElementById("input_user_name");
-      return name.value
-    }
+                                                                        function getMail() {
+                                                                            var mail = document.getElementById("input_user_mail");
 
-    function getAgrrement() {
-      var agree = document.getElementById("broadcast");
-      return agree.checked
-    }
+                                                                            if (validateEmail(mail.value)) {
+                                                                                return mail.value
+                                                                            }
+                                                                            mail.style.border = "medium solid #ff0000";
+                                                                            return ""
+                                                                        }
 
-     function pay() {
-      var amount = getPaymentAmount() * pricePerOne;
-      var mail = getMail();
-      var name = getName();
-      var broadcastAgree = getAgrrement();
-      if (mail == "incorrect") { return }
-      if (mail == "") { return }
+                                                                        function getName() {
+                                                                            var name = document.getElementById("input_user_name");
+                                                                            return name.value
+                                                                        }
 
-      var description = paymentСategoryDescription;
-      var categoryTitle = paymentСategoryTitle;
-      var categoryId = paymentСategoryId;
+                                                                        function getAgrrement() {
+                                                                            var agree = document.getElementById("broadcast");
+                                                                            return agree.checked
+                                                                        }
 
-      oncePay(amount, mail, name, broadcastAgree, categoryId, categoryTitle, description);
-    }
+                                                                        function pay() {
+                                                                            var amount = getPaymentAmount() * pricePerOne;
+                                                                            var mail = getMail();
+                                                                            var name = getName();
+                                                                            var broadcastAgree = getAgrrement();
+                                                                            if (mail == "incorrect") {
+                                                                                return
+                                                                            }
+                                                                            if (mail == "") {
+                                                                                return
+                                                                            }
 
-    function oncePay(amount, mail, name, broadcastAgree, categoryId, categoryTitle, description) {
-        var widget = new cp.CloudPayments();
-        data = {
-                  name: name,
-                  comment: 'Пустое описание',
-                  middleName: broadcastAgree,
-                  categoryId: categoryId,
-                  categoryTitle: categoryTitle
-               }
-        widget.charge({
-                publicId: 'pk_55f62d38370b1176fc5dc029b8676',
-                description: description,
-                amount: amount,
-                currency: 'RUB',
-                invoiceId: '1',
-                accountId: mail,
-               data: data
-            },
-            function (options) {
-            },
-            function (reason, options) {
-            }
-        );
-    };
+                                                                            var description = paymentСategoryDescription;
+                                                                            var categoryTitle = paymentСategoryTitle;
+                                                                            var categoryId = paymentСategoryId;
 
-      function isNumberKey(evt){
-        var charCode = (evt.which) ? evt.which : evt.keyCode;
-        if (charCode> 31 && (charCode <48 || charCode> 57))
-            return false;
-        return true;
-      }
+                                                                            oncePay(amount, mail, name, broadcastAgree, categoryId, categoryTitle, description);
+                                                                        }
 
-    function validateEmail(email) {
-      var re = /^(([^<json.length; i++) {
+                                                                        function oncePay(amount, mail, name, broadcastAgree, categoryId, categoryTitle, description) {
+                                                                            var widget = new cp.CloudPayments();
+                                                                            data = {
+                                                                                name: name,
+                                                                                comment: 'Пустое описание',
+                                                                                middleName: broadcastAgree,
+                                                                                categoryId: categoryId,
+                                                                                categoryTitle: categoryTitle
+                                                                            }
+                                                                            widget.charge({
+                                                                                    publicId: 'pk_55f62d38370b1176fc5dc029b8676',
+                                                                                    description: description,
+                                                                                    amount: amount,
+                                                                                    currency: 'RUB',
+                                                                                    invoiceId: '1',
+                                                                                    accountId: mail,
+                                                                                    data: data
+                                                                                },
+                                                                                function (options) {
+                                                                                },
+                                                                                function (reason, options) {
+                                                                                }
+                                                                            );
+                                                                        };
+
+                                                                        function isNumberKey(evt) {
+                                                                            var charCode = (evt.which) ? evt.which : evt.keyCode;
+                                                                            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                                                                                return false;
+                                                                            return true;
+                                                                        }
+
+                                                                        function validateEmail(email) {
+                                                                            var re = /^(([^<json.length; i++) {
         var categorySelectId = json[i]["id"];
-        if (categorySelectId == 47) {
-          sumNewYear = sumNewYear + json[i]["sum"];
-        }
-      }
+                                                                            if (categorySelectId == 47) {
+                                                                                sumNewYear = sumNewYear + json[i]["sum"];
+                                                                            }
+                                                                        }
 
-      var percent = (sumNewYear/5000000) + additionalPercent;
-      document.getElementById("unique_newyear_round").setAttribute("data-value", percent.toString());
-      Circlle('.newyear_round');
-
-
-     document.getElementById("itemsDogCount").textContent = numberWithCommas(Math.floor(sumNewYear/100 + additionalWeight));
-     document.getElementById("feedFullPrice").textContent = Number(document.getElementById("feedFullCount").textContent) * pricePerOne;
+                                                                        var percent = (sumNewYear / 5000000) + additionalPercent;
+                                                                        document.getElementById("unique_newyear_round").setAttribute("data-value", percent.toString());
+                                                                        Circlle('.newyear_round');
 
 
-      callAsyncRequest("https://api.fond-nika.ru/transactions", function(json) { });
-    });
+                                                                        document.getElementById("itemsDogCount").textContent = numberWithCommas(Math.floor(sumNewYear / 100 + additionalWeight));
+                                                                        document.getElementById("feedFullPrice").textContent = Number(document.getElementById("feedFullCount").textContent) * pricePerOne;
 
-  }, false);
 
-  function postfixItems(items, type) {
-    if (items>= 10 && items <= 20) {
-      return "";
-    }
+                                                                        callAsyncRequest("https://api.fond-nika.ru/transactions", function (json) {
+                                                                        });
+                                                                        })
+                                                                        ;
 
-    if (items % 10 == 1) {
-      if (type == 0) {
-        return "a";
-      } else {
-        return "у";
-      }
-    }
+                                                                        },
+                                                                        false
+                                                                        )
+                                                                        ;
 
-    if (((items % 10) == 2) || ((items % 10) == 3) || ((items % 10) == 4)) {
-      return "ы"
-    }
+                                                                        function postfixItems(items, type) {
+                                                                            if (items >= 10 && items <= 20) {
+                                                                                return "";
+                                                                            }
 
-    return ""
-  }
+                                                                            if (items % 10 == 1) {
+                                                                                if (type == 0) {
+                                                                                    return "a";
+                                                                                } else {
+                                                                                    return "у";
+                                                                                }
+                                                                            }
 
-  function numberWithCommas(x) {
-      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  }
+                                                                            if (((items % 10) == 2) || ((items % 10) == 3) || ((items % 10) == 4)) {
+                                                                                return "ы"
+                                                                            }
 
-  function getElementInsideContainer(containerID, childID) {
-        var elm = {};
+                                                                            return ""
+                                                                        }
 
-        var elms = document.getElementById(containerID).getElementsByTagName("*");
-        for (var i = 0; i<elms.length; i++) {
-            if (elms[i].id === childID) {
-                elm = elms[i];
-                break;
-            }
-        }
-        return elm;
-    }
+                                                                        function numberWithCommas(x) {
+                                                                            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                                                                        }
 
-    function callAsyncRequest(url, callback) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', url, true);
-      xhr.send();
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          callback(JSON.parse(xhr.responseText));
-        }
-      }
-    }
+                                                                        function getElementInsideContainer(containerID, childID) {
+                                                                            var elm = {};
+
+                                                                            var elms = document.getElementById(containerID).getElementsByTagName("*");
+                                                                            for (var i = 0; i < elms.length; i++) {
+                                                                                if (elms[i].id === childID) {
+                                                                                    elm = elms[i];
+                                                                                    break;
+                                                                                }
+                                                                            }
+                                                                            return elm;
+                                                                        }
+
+                                                                        function callAsyncRequest(url, callback) {
+                                                                            var xhr = new XMLHttpRequest();
+                                                                            xhr.open('GET', url, true);
+                                                                            xhr.send();
+                                                                            xhr.onreadystatechange = function () {
+                                                                                if (xhr.readyState == 4 && xhr.status == 200) {
+                                                                                    callback(JSON.parse(xhr.responseText));
+                                                                                }
+                                                                            }
+                                                                        }
 
                                                                     </script>
                                                                     <style>
-                                                                         .main_container_left { width: 290px; height: 380px; font-size: 13pt; } .main_container_right { width: 410px; height: 380px; } @media screen and (max-width: 770px) { .main_container_left{ display:block; margin:0 auto; } .main_container_right { display:block; margin:0 auto; } } @media screen and (min-width: 770px) { .main_container_left{ float:left; } .main_container_right { float:left; } } .container_left_0 { width: 100%; display: flex; align-items: center; justify-content: center; } .container2 { width: 410px; height: 60px; margin-top:20px; } .container3 { width: 410px; height: 120px; margin-top:12px; } .container30 { width: 265px; height: 110px; float: left; } .container31 { width: 130px; height: 100px; margin-left: 6px; font-size: 7pt; color: #999; padding-top: 10px; padding-left: 4px; float: left; } .container3 input[type="checkbox"] { margin-left: 10px; margin-top: 3px; } #broadcast-text { font-size: 10pt; color: #999; margin-left: 5px; } .container40 { width: 100%; height: 40px; display: flex; align-items: center; justify-content: center; } .container4 { width: 410px; height: 50px; display: flex; align-items: center; justify-content: center; } .pay-button { width: 140px; height: 50px; margin-left: 5px; background: #234821; display:inline-block; border-radius:5px; color:#fff; font-size:16pt; box-shadow:none; border: 0; } .pay-button:hover { background:#234821; } .input_name { width: 250px; height: 40px; margin-left: 5px; margin-bottom: 10px; display:block; border-radius:5px; box-shadow:none; border: 2px solid #b3b3b3; padding-left: 7px; font-size: 12pt; } .input_name:focus { outline:0; } .input_mail:focus { outline:0; } .input_mail { width: 250px; height: 40px; margin-left: 5px; display:block; border-radius:5px; box-shadow:none; border: 2px solid #b3b3b3; padding-left: 7px; font-size: 12pt; } body { min-width: 500px; } /*--------Pay amount---------*/ #donateAmount { width: 450px; } #donateAmount input[type="radio"] { display: none; } #donateAmount input[type="radio"]:checked + .box { background-color:#234821; color:white; } #donateAmount .box { width: 60px; height: 50px; background-color: #92A500; display: inline-block; text-align: center; cursor: pointer; border-radius:5px; color:white; margin-left: 2px; } #donateAmount .box span { font-size: 16pt; user-select: none; margin-top: 10px; display: block; } #donateAmount .long { width: 130px; } #donateAmount #customPayInput { display: none; width: 70px; height: 25px; border-radius: 3px; border: none; font-size: 12pt; margin-top: 14px; border: none; color: black; } /*---------------------*/ .section1{ height:80px; width:200px; background:black; } #oferta-block-text{ display:none; color:black; width:70%; height:75%; border-radius: 5px; } #payment-rule-text{ display:none; color:black; width:70%; height:75%; border-radius: 5px; } /*-------------TEST-----------*/ .documentation-block{ padding:0 0 20px; } .documentation-title{ display:block; margin:0 0 11px; font-weight:bold; font-size:16px; line-height:20px; color:#000; } .documentation-title-tip { float: right;font-size: small; } .documentation-text{ font-size:14px; line-height:20px; color:#363636; padding:0 0 20px; } .documentation-text p{ margin:0; } .documentation-text tr td{ padding: 5px; } .documentation-text thead tr td{ font-weight: bold } .documentation-text span.brown{ color: #A31515; } ::-webkit-input-placeholder { /* Chrome/Opera/Safari */ color: #bbb; } ::-moz-placeholder { /* Firefox 19+ */ color: #bbb; } :-ms-input-placeholder { /* IE 10+ */ color: #bbb; } :-moz-placeholder { /* Firefox 18- */ color: #bbb; }
+                                                                        .main_container_left {
+                                                                            width: 290px;
+                                                                            height: 380px;
+                                                                            font-size: 13pt;
+                                                                        }
+
+                                                                        .main_container_right {
+                                                                            width: 410px;
+                                                                            height: 380px;
+                                                                        }
+
+                                                                        @media screen and (max-width: 770px) {
+                                                                            .main_container_left {
+                                                                                display: block;
+                                                                                margin: 0 auto;
+                                                                            }
+
+                                                                            .main_container_right {
+                                                                                display: block;
+                                                                                margin: 0 auto;
+                                                                            }
+                                                                        }
+
+                                                                        @media screen and (min-width: 770px) {
+                                                                            .main_container_left {
+                                                                                float: left;
+                                                                            }
+
+                                                                            .main_container_right {
+                                                                                float: left;
+                                                                            }
+                                                                        }
+
+                                                                        .container_left_0 {
+                                                                            width: 100%;
+                                                                            display: flex;
+                                                                            align-items: center;
+                                                                            justify-content: center;
+                                                                        }
+
+                                                                        .container2 {
+                                                                            width: 410px;
+                                                                            height: 60px;
+                                                                            margin-top: 20px;
+                                                                        }
+
+                                                                        .container3 {
+                                                                            width: 410px;
+                                                                            height: 120px;
+                                                                            margin-top: 12px;
+                                                                        }
+
+                                                                        .container30 {
+                                                                            width: 265px;
+                                                                            height: 110px;
+                                                                            float: left;
+                                                                        }
+
+                                                                        .container31 {
+                                                                            width: 130px;
+                                                                            height: 100px;
+                                                                            margin-left: 6px;
+                                                                            font-size: 7pt;
+                                                                            color: #999;
+                                                                            padding-top: 10px;
+                                                                            padding-left: 4px;
+                                                                            float: left;
+                                                                        }
+
+                                                                        .container3 input[type="checkbox"] {
+                                                                            margin-left: 10px;
+                                                                            margin-top: 3px;
+                                                                        }
+
+                                                                        #broadcast-text {
+                                                                            font-size: 10pt;
+                                                                            color: #999;
+                                                                            margin-left: 5px;
+                                                                        }
+
+                                                                        .container40 {
+                                                                            width: 100%;
+                                                                            height: 40px;
+                                                                            display: flex;
+                                                                            align-items: center;
+                                                                            justify-content: center;
+                                                                        }
+
+                                                                        .container4 {
+                                                                            width: 410px;
+                                                                            height: 50px;
+                                                                            display: flex;
+                                                                            align-items: center;
+                                                                            justify-content: center;
+                                                                        }
+
+                                                                        .pay-button {
+                                                                            width: 140px;
+                                                                            height: 50px;
+                                                                            margin-left: 5px;
+                                                                            background: #234821;
+                                                                            display: inline-block;
+                                                                            border-radius: 5px;
+                                                                            color: #fff;
+                                                                            font-size: 16pt;
+                                                                            box-shadow: none;
+                                                                            border: 0;
+                                                                        }
+
+                                                                        .pay-button:hover {
+                                                                            background: #234821;
+                                                                        }
+
+                                                                        .input_name {
+                                                                            width: 250px;
+                                                                            height: 40px;
+                                                                            margin-left: 5px;
+                                                                            margin-bottom: 10px;
+                                                                            display: block;
+                                                                            border-radius: 5px;
+                                                                            box-shadow: none;
+                                                                            border: 2px solid #b3b3b3;
+                                                                            padding-left: 7px;
+                                                                            font-size: 12pt;
+                                                                        }
+
+                                                                        .input_name:focus {
+                                                                            outline: 0;
+                                                                        }
+
+                                                                        .input_mail:focus {
+                                                                            outline: 0;
+                                                                        }
+
+                                                                        .input_mail {
+                                                                            width: 250px;
+                                                                            height: 40px;
+                                                                            margin-left: 5px;
+                                                                            display: block;
+                                                                            border-radius: 5px;
+                                                                            box-shadow: none;
+                                                                            border: 2px solid #b3b3b3;
+                                                                            padding-left: 7px;
+                                                                            font-size: 12pt;
+                                                                        }
+
+                                                                        body {
+                                                                            min-width: 500px;
+                                                                        }
+
+                                                                        /*--------Pay amount---------*/
+                                                                        #donateAmount {
+                                                                            width: 450px;
+                                                                        }
+
+                                                                        #donateAmount input[type="radio"] {
+                                                                            display: none;
+                                                                        }
+
+                                                                        #donateAmount input[type="radio"]:checked + .box {
+                                                                            background-color: #234821;
+                                                                            color: white;
+                                                                        }
+
+                                                                        #donateAmount .box {
+                                                                            width: 60px;
+                                                                            height: 50px;
+                                                                            background-color: #92A500;
+                                                                            display: inline-block;
+                                                                            text-align: center;
+                                                                            cursor: pointer;
+                                                                            border-radius: 5px;
+                                                                            color: white;
+                                                                            margin-left: 2px;
+                                                                        }
+
+                                                                        #donateAmount .box span {
+                                                                            font-size: 16pt;
+                                                                            user-select: none;
+                                                                            margin-top: 10px;
+                                                                            display: block;
+                                                                        }
+
+                                                                        #donateAmount .long {
+                                                                            width: 130px;
+                                                                        }
+
+                                                                        #donateAmount #customPayInput {
+                                                                            display: none;
+                                                                            width: 70px;
+                                                                            height: 25px;
+                                                                            border-radius: 3px;
+                                                                            border: none;
+                                                                            font-size: 12pt;
+                                                                            margin-top: 14px;
+                                                                            border: none;
+                                                                            color: black;
+                                                                        }
+
+                                                                        /*---------------------*/
+                                                                        .section1 {
+                                                                            height: 80px;
+                                                                            width: 200px;
+                                                                            background: black;
+                                                                        }
+
+                                                                        #oferta-block-text {
+                                                                            display: none;
+                                                                            color: black;
+                                                                            width: 70%;
+                                                                            height: 75%;
+                                                                            border-radius: 5px;
+                                                                        }
+
+                                                                        #payment-rule-text {
+                                                                            display: none;
+                                                                            color: black;
+                                                                            width: 70%;
+                                                                            height: 75%;
+                                                                            border-radius: 5px;
+                                                                        }
+
+                                                                        /*-------------TEST-----------*/
+                                                                        .documentation-block {
+                                                                            padding: 0 0 20px;
+                                                                        }
+
+                                                                        .documentation-title {
+                                                                            display: block;
+                                                                            margin: 0 0 11px;
+                                                                            font-weight: bold;
+                                                                            font-size: 16px;
+                                                                            line-height: 20px;
+                                                                            color: #000;
+                                                                        }
+
+                                                                        .documentation-title-tip {
+                                                                            float: right;
+                                                                            font-size: small;
+                                                                        }
+
+                                                                        .documentation-text {
+                                                                            font-size: 14px;
+                                                                            line-height: 20px;
+                                                                            color: #363636;
+                                                                            padding: 0 0 20px;
+                                                                        }
+
+                                                                        .documentation-text p {
+                                                                            margin: 0;
+                                                                        }
+
+                                                                        .documentation-text tr td {
+                                                                            padding: 5px;
+                                                                        }
+
+                                                                        .documentation-text thead tr td {
+                                                                            font-weight: bold
+                                                                        }
+
+                                                                        .documentation-text span.brown {
+                                                                            color: #A31515;
+                                                                        }
+
+                                                                        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                                                                            color: #bbb;
+                                                                        }
+
+                                                                        ::-moz-placeholder { /* Firefox 19+ */
+                                                                            color: #bbb;
+                                                                        }
+
+                                                                        :-ms-input-placeholder { /* IE 10+ */
+                                                                            color: #bbb;
+                                                                        }
+
+                                                                        :-moz-placeholder { /* Firefox 18- */
+                                                                            color: #bbb;
+                                                                        }
 
                                                                     </style>
                                                                     <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap"
@@ -558,18 +916,51 @@
                                                                           href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
                                                                     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js'></script>
                                                                     <style>
-                                                                         /* cyrillic-ext */ @font-face { font-family: 'Pribambas'; src: url(https://constzinovyev.ru/Pribambas-Regular.woff2) format('woff2'); } #newyear_circleBar { margin-top: 20px; text-align: center; font-family: 'Staatliches', cursive; } #newyear_circleBar .newyear_round { min-height: 220px; margin-top: 30px; position: relative; margin-bottom: 20px; } #newyear_circleBar .newyear_round strong { position: absolute; top: 50%; left: 50%; margin-top: -40px; transform: translate(-50%); font-size: 40px; color: #212121; font-weight: 100; }
+                                                                        /* cyrillic-ext */
+                                                                        @font-face {
+                                                                            font-family: 'Pribambas';
+                                                                            src: url(https://constzinovyev.ru/Pribambas-Regular.woff2) format('woff2');
+                                                                        }
+
+                                                                        #newyear_circleBar {
+                                                                            margin-top: 20px;
+                                                                            text-align: center;
+                                                                            font-family: 'Staatliches', cursive;
+                                                                        }
+
+                                                                        #newyear_circleBar .newyear_round {
+                                                                            min-height: 220px;
+                                                                            margin-top: 30px;
+                                                                            position: relative;
+                                                                            margin-bottom: 20px;
+                                                                        }
+
+                                                                        #newyear_circleBar .newyear_round strong {
+                                                                            position: absolute;
+                                                                            top: 50%;
+                                                                            left: 50%;
+                                                                            margin-top: -40px;
+                                                                            transform: translate(-50%);
+                                                                            font-size: 40px;
+                                                                            color: #212121;
+                                                                            font-weight: 100;
+                                                                        }
 
                                                                     </style>
                                                                     <script>
-  function Circlle(el){
-    $(el).circleProgress({fill: {gradient: ['#92A500', '#006A0C', '#234821']},animation:{duration:2500, easing: "circleProgressEasing" }})
-      .on('circle-animation-progress', function(event, progress, stepValue){
+                                                                        function Circlle(el) {
+                                                                            $(el).circleProgress({
+                                                                                fill: {gradient: ['#92A500', '#006A0C', '#234821']},
+                                                                                animation: {
+                                                                                    duration: 2500,
+                                                                                    easing: "circleProgressEasing"
+                                                                                }
+                                                                            })
+                                                                                .on('circle-animation-progress', function (event, progress, stepValue) {
 
-      $(this).find('strong').text(String((stepValue*100).toFixed(3))+'%');
-      });
-  };
-
+                                                                                    $(this).find('strong').text(String((stepValue * 100).toFixed(3)) + '%');
+                                                                                });
+                                                                        };
 
 
                                                                     </script>
@@ -816,55 +1207,54 @@
                                                                 <div class="element post-insert-code mod--left"
                                                                      id="w_61895837">
                                                                     <script>
-  document.addEventListener('DOMContentLoaded', function() {
+                                                                        document.addEventListener('DOMContentLoaded', function () {
 
- callAsyncRequest("https://api.fond-nika.ru/transactions?id=47", function(json) {
-               var countRows = 5;
-    var payments = document.getElementById('FN_payments');
-    var payment_block = document.getElementById('FN_payment_block_0');
-    for (var i = 1; i <countRows; i++) {
-      var newId = "FN_payment_block_".concat(i.toString());
-      var clone = payment_block.cloneNode(true);
-      clone.style.backgroundColor = (i%2 == 0) ? "#fff" : "#fff";
-      clone.id = newId;
-      payments.appendChild(clone);
-      getElementInsideContainer(newId, "payment_amount_0").id = "payment_amount_".concat(i.toString());
-      getElementInsideContainer(newId, "payment_amount_value_0").id = "payment_amount_value_".concat(i.toString());
-      getElementInsideContainer(newId, "payment_program_0").id = "payment_program_".concat(i.toString());
-      getElementInsideContainer(newId, "payment_name_date_0").id = "payment_name_date_".concat(i.toString());
-    };
+                                                                            callAsyncRequest("https://api.fond-nika.ru/transactions?id=47", function (json) {
+                                                                                var countRows = 5;
+                                                                                var payments = document.getElementById('FN_payments');
+                                                                                var payment_block = document.getElementById('FN_payment_block_0');
+                                                                                for (var i = 1; i < countRows; i++) {
+                                                                                    var newId = "FN_payment_block_".concat(i.toString());
+                                                                                    var clone = payment_block.cloneNode(true);
+                                                                                    clone.style.backgroundColor = (i % 2 == 0) ? "#fff" : "#fff";
+                                                                                    clone.id = newId;
+                                                                                    payments.appendChild(clone);
+                                                                                    getElementInsideContainer(newId, "payment_amount_0").id = "payment_amount_".concat(i.toString());
+                                                                                    getElementInsideContainer(newId, "payment_amount_value_0").id = "payment_amount_value_".concat(i.toString());
+                                                                                    getElementInsideContainer(newId, "payment_program_0").id = "payment_program_".concat(i.toString());
+                                                                                    getElementInsideContainer(newId, "payment_name_date_0").id = "payment_name_date_".concat(i.toString());
+                                                                                }
+                                                                                ;
 
-      var count = json.length> countRows ? countRows : json.length;
-      for (var i = 0; i <count; i++) {
-        var payment = json[i];
-        var amount = document.getElementById("payment_amount_".concat(i.toString()));
-        var amountValueView = document.getElementById("payment_amount_value_".concat(i.toString()));
-        var program = document.getElementById("payment_program_".concat(i.toString()));
-        var nameAndDate = document.getElementById("payment_name_date_".concat(i.toString()));
-        var date = new Date(payment["ConfirmDateIso"]);
+                                                                                var count = json.length > countRows ? countRows : json.length;
+                                                                                for (var i = 0; i < count; i++) {
+                                                                                    var payment = json[i];
+                                                                                    var amount = document.getElementById("payment_amount_".concat(i.toString()));
+                                                                                    var amountValueView = document.getElementById("payment_amount_value_".concat(i.toString()));
+                                                                                    var program = document.getElementById("payment_program_".concat(i.toString()));
+                                                                                    var nameAndDate = document.getElementById("payment_name_date_".concat(i.toString()));
+                                                                                    var date = new Date(payment["ConfirmDateIso"]);
 
-        var day = date.getDate();
-        var month = date.getMonth() + 1;
-        var year = date.getFullYear();
-        month = month<10 ? "0".concat(month.toString()) : month.toString();
-        day = day<10 ? "0".concat(day.toString()) : day.toString();
-        date = day + '.' + month + '.' + year;
-        if ("Name" in payment) {
-            var name = payment["Name"];
-            name = name.length> 21 ? name.substring(0, 21) : name;
-            date = date.concat(" / ").concat(name);
-        }
-        var amountValue = (payment["Amount"]).toString().concat(" р.)");
-        var amountWeight = (Math.floor(payment["Amount"]/100)).toString().concat(" кг");
-        amount.innerHTML = amountWeight;
-        amountValueView.innerHTML = "(".concat(amountValue);
-        program.innerHTML = "Акция #ОставайтесьСытыми";
-        nameAndDate.innerHTML = date;
-      }
-    });
-  }, false);
-
-
+                                                                                    var day = date.getDate();
+                                                                                    var month = date.getMonth() + 1;
+                                                                                    var year = date.getFullYear();
+                                                                                    month = month < 10 ? "0".concat(month.toString()) : month.toString();
+                                                                                    day = day < 10 ? "0".concat(day.toString()) : day.toString();
+                                                                                    date = day + '.' + month + '.' + year;
+                                                                                    if ("Name" in payment) {
+                                                                                        var name = payment["Name"];
+                                                                                        name = name.length > 21 ? name.substring(0, 21) : name;
+                                                                                        date = date.concat(" / ").concat(name);
+                                                                                    }
+                                                                                    var amountValue = (payment["Amount"]).toString().concat(" р.)");
+                                                                                    var amountWeight = (Math.floor(payment["Amount"] / 100)).toString().concat(" кг");
+                                                                                    amount.innerHTML = amountWeight;
+                                                                                    amountValueView.innerHTML = "(".concat(amountValue);
+                                                                                    program.innerHTML = "Акция #ОставайтесьСытыми";
+                                                                                    nameAndDate.innerHTML = date;
+                                                                                }
+                                                                            });
+                                                                        }, false);
 
 
                                                                     </script>
@@ -895,7 +1285,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <style>.adaptive-desktop #section4756359_4 .section__content{min-height:10px;}
+                                        <style>.adaptive-desktop #section4756359_4 .section__content {
+                                            min-height: 10px;
+                                        }
 
                                         </style>
                                         <a id="custom-10" class="js--anchor" name="custom-10"></a>
@@ -909,6 +1301,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61398467","name":"8d089d833d3017d13ff8a409dacfe6f9.jpg","crop":[],"size":{"height":"1280","width":"1179"},"width":"1179","height":"1280","bg":"rgba(222,218,203,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62456008\/"}
+
 
                                                                 </script>
                                                                 <a class="copy-protect"
@@ -959,7 +1352,43 @@
                                                             <div class="widget" id="widget_62456022" data-id="62456022"
                                                                  data-type="post-button">
                                                                 <style>
-                                                                     #w_62456022 .post-button-content:hover { color: #ffffff !important; } #w_62456022 .post-button-content:hover:after { border: 0px solid #ffffff; background-color: #234821; } #w_62456022 .post-button-content { color: #ffffff !important; font-family: Ubuntu; font-size: 18px; letter-spacing: 0em; padding-top: 14px; padding-bottom: 14px; } #w_62456022 .post-button-content:after { border: 0px solid #000000; background-color: #92a500; } #w_62456022 .post-button__helper { padding-left: 0em; margin-left: -0em; margin-right: -0em; display: flex; } #w_62456022 .post-button__helper:before, #w_62456022 .post-button__helper:after { width: 30px; } #w_62456022 { text-align: center; }
+                                                                    #w_62456022 .post-button-content:hover {
+                                                                        color: #ffffff !important;
+                                                                    }
+
+                                                                    #w_62456022 .post-button-content:hover:after {
+                                                                        border: 0px solid #ffffff;
+                                                                        background-color: #234821;
+                                                                    }
+
+                                                                    #w_62456022 .post-button-content {
+                                                                        color: #ffffff !important;
+                                                                        font-family: Ubuntu;
+                                                                        font-size: 18px;
+                                                                        letter-spacing: 0em;
+                                                                        padding-top: 14px;
+                                                                        padding-bottom: 14px;
+                                                                    }
+
+                                                                    #w_62456022 .post-button-content:after {
+                                                                        border: 0px solid #000000;
+                                                                        background-color: #92a500;
+                                                                    }
+
+                                                                    #w_62456022 .post-button__helper {
+                                                                        padding-left: 0em;
+                                                                        margin-left: -0em;
+                                                                        margin-right: -0em;
+                                                                        display: flex;
+                                                                    }
+
+                                                                    #w_62456022 .post-button__helper:before, #w_62456022 .post-button__helper:after {
+                                                                        width: 30px;
+                                                                    }
+
+                                                                    #w_62456022 {
+                                                                        text-align: center;
+                                                                    }
 
                                                                 </style>
                                                                 <div class="element post-button " id="w_62456022"><a
@@ -974,7 +1403,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <style>.adaptive-desktop #section4756359_5 .section__content{min-height:10px;}
+                                        <style>.adaptive-desktop #section4756359_5 .section__content {
+                                            min-height: 10px;
+                                        }
 
                                         </style>
                                         <a id="about" class="js--anchor" name="about"></a>
@@ -988,6 +1419,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60989814","name":"dcbb04cce9626aa78bc3feb5278850eb.jpg","crop":[],"size":{"height":"417","width":"4167"},"width":"4167","height":"417","bg":"rgba(246,247,245,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61977336\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image origin mod--gallery-easy "
@@ -1015,7 +1447,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <style>.adaptive-desktop #section4756359_6 .section__content{min-height:10px;}
+                                        <style>.adaptive-desktop #section4756359_6 .section__content {
+                                            min-height: 10px;
+                                        }
 
                                         </style>
                                         <a id="base-2" class="js--anchor" name="base-2"></a>
@@ -1039,6 +1473,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60895927","name":"f7cc5e073c56d9e5d9bed37a3a91a411.png","crop":[],"size":{"height":"2501","width":"2501"},"width":"2501","height":"2501","bg":"rgba(233,239,213,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61877476\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image origin mod--gallery-easy "
@@ -1093,6 +1528,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60895977","name":"c9a5403de96e2444b00c3c84935de9bc.png","crop":[],"size":{"height":"2501","width":"2501"},"width":"2501","height":"2501","bg":"rgba(185,213,184,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61877481\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image origin mod--gallery-easy "
                                                                      id="w_61877481">
@@ -1145,6 +1581,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60895979","name":"70605e1b278c725e7a7e0410bfb031f8.png","crop":[],"size":{"height":"2501","width":"2501"},"width":"2501","height":"2501","bg":"rgba(192,206,192,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61877486\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image origin mod--gallery-easy "
@@ -1199,7 +1636,43 @@
                                                             <div class="widget" id="widget_61916377" data-id="61916377"
                                                                  data-type="post-button">
                                                                 <style>
-                                                                     #w_61916377 .post-button-content:hover { color: #ffffff !important; } #w_61916377 .post-button-content:hover:after { border: 0px solid #ffffff; background-color: #234821; } #w_61916377 .post-button-content { color: #ffffff !important; font-family: Ubuntu; font-size: 18px; letter-spacing: 0em; padding-top: 14px; padding-bottom: 14px; } #w_61916377 .post-button-content:after { border: 0px solid #000000; background-color: #92a500; } #w_61916377 .post-button__helper { padding-left: 0em; margin-left: -0em; margin-right: -0em; display: flex; } #w_61916377 .post-button__helper:before, #w_61916377 .post-button__helper:after { width: 30px; } #w_61916377 { text-align: center; }
+                                                                    #w_61916377 .post-button-content:hover {
+                                                                        color: #ffffff !important;
+                                                                    }
+
+                                                                    #w_61916377 .post-button-content:hover:after {
+                                                                        border: 0px solid #ffffff;
+                                                                        background-color: #234821;
+                                                                    }
+
+                                                                    #w_61916377 .post-button-content {
+                                                                        color: #ffffff !important;
+                                                                        font-family: Ubuntu;
+                                                                        font-size: 18px;
+                                                                        letter-spacing: 0em;
+                                                                        padding-top: 14px;
+                                                                        padding-bottom: 14px;
+                                                                    }
+
+                                                                    #w_61916377 .post-button-content:after {
+                                                                        border: 0px solid #000000;
+                                                                        background-color: #92a500;
+                                                                    }
+
+                                                                    #w_61916377 .post-button__helper {
+                                                                        padding-left: 0em;
+                                                                        margin-left: -0em;
+                                                                        margin-right: -0em;
+                                                                        display: flex;
+                                                                    }
+
+                                                                    #w_61916377 .post-button__helper:before, #w_61916377 .post-button__helper:after {
+                                                                        width: 30px;
+                                                                    }
+
+                                                                    #w_61916377 {
+                                                                        text-align: center;
+                                                                    }
 
                                                                 </style>
                                                                 <div class="element post-button " id="w_61916377"><a
@@ -1225,7 +1698,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <style>.adaptive-desktop #section4756359_7 .section__content{min-height:10px;}
+                                        <style>.adaptive-desktop #section4756359_7 .section__content {
+                                            min-height: 10px;
+                                        }
 
                                         </style>
                                         <a id="custom-7" class="js--anchor" name="custom-7"></a>
@@ -1239,6 +1714,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60989829","name":"f1dd934655c06c1f5d55771eef0acd45.jpg","crop":[],"size":{"height":"417","width":"4167"},"width":"4167","height":"417","bg":"rgba(243,245,242,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61977358\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image origin mod--gallery-easy "
@@ -1266,7 +1742,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <style>.adaptive-desktop #section4756359_8 .section__content{min-height:10px;}
+                                        <style>.adaptive-desktop #section4756359_8 .section__content {
+                                            min-height: 10px;
+                                        }
 
                                         </style>
                                         <a id="order-1" class="js--anchor" name="order-1"></a>
@@ -1326,6 +1804,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60981719","name":"f63aba1a7f750e1e29a599dd7f9f6531.jpg","crop":{"w":"1280","h":"952","r":"custom","x":"279","y":"0","x2":"734","y2":"574","pw":"772","ph":"574"},"size":{"height":"952","width":"1280"},"width":"1280","height":"952","bg":"rgba(223,212,207,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61915878\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image custom imageNoStretch mod--gallery-easy "
@@ -1503,7 +1982,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <style>.adaptive-desktop #section4756359_9 .section__content{min-height:10px;}
+                                        <style>.adaptive-desktop #section4756359_9 .section__content {
+                                            min-height: 10px;
+                                        }
 
                                         </style>
                                         <a id="custom-1" class="js--anchor" name="custom-1"></a>
@@ -1517,6 +1998,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60989834","name":"1aa3c2f7f542ea11ead1b6865435d339.jpg","crop":[],"size":{"height":"417","width":"4167"},"width":"4167","height":"417","bg":"rgba(242,245,242,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61977374\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image origin mod--gallery-easy "
@@ -1545,7 +2027,9 @@
                                             </div>
                                         </div>
                                         <style>
-                                            .adaptive-desktop #section4756359_10 .section__content{min-height:10px;}
+                                            .adaptive-desktop #section4756359_10 .section__content {
+                                                min-height: 10px;
+                                            }
 
                                         </style>
                                         <a id="team" class="js--anchor" name="team"></a>
@@ -1567,6 +2051,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60791085","name":"d3252132b46880bdcfd287662f5c8663.jpg","crop":[],"size":{"height":"280","width":"1704"},"width":"1704","height":"280","bg":"rgba(0,23,23,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61729761\/"}
+
 
                                                                 </script>
                                                                 <a class="copy-protect" href="https://www.purina.ru/ "
@@ -1603,6 +2088,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61294991","name":"88ca1d8a29d4b181d3b6ae17b1640642.png","crop":[],"size":{"height":"699","width":"1920"},"width":"1920","height":"699","bg":"rgba(96,124,162,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62335583\/"}
+
 
                                                                 </script>
                                                                 <a class="copy-protect" href="https://www.vetmag.ru/ "
@@ -1642,6 +2128,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60790791","name":"61f02c19f4cf2ded76cb9e0d6cd65a64.jpg","crop":[],"size":{"height":"1418","width":"2835"},"width":"2835","height":"1418","bg":"rgba(0,41,38,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61729755\/"}
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.royalcanin.com/ru "
@@ -1678,6 +2165,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60904695","name":"569904d5d835c1374bc93cdf57cb7517.png","crop":[],"size":{"height":"629","width":"550"},"width":"550","height":"629","bg":"rgba(244,223,218,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61888455\/"}
+
 
                                                                 </script>
                                                                 <a class="copy-protect" href="https://blagozoo.ru/ "
@@ -1716,6 +2204,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60790795","name":"48a27f59e3287323d4d415685f90e0c7.png","crop":[],"size":{"height":"798","width":"1405"},"width":"1405","height":"798","bg":"rgba(239,111,118,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61729758\/"}
 
+
                                                                 </script>
                                                                 <a class="copy-protect" href="http://4gurman.ru/ "
                                                                    target="_blank">
@@ -1751,6 +2240,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61287728","name":"d79454692d8661b630677b2dfeaf2996.png","crop":[],"size":{"height":"328","width":"416"},"width":"416","height":"328","bg":"rgba(197,169,176,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62326824\/"}
+
 
                                                                 </script>
                                                                 <a class="copy-protect"
@@ -1789,6 +2279,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60990879","name":"66c78b80bac2336012e2348ff7353c38.png","crop":[],"size":{"height":"594","width":"1262"},"width":"1262","height":"594","bg":"rgba(146,201,194,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61978620\/"}
 
+
                                                                 </script>
                                                                 <a class="copy-protect" href="http://provi.pet "
                                                                    target="_blank">
@@ -1824,6 +2315,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60905832","name":"cc3b4768ae836f965dd088d8a056949a.png","crop":[],"size":{"height":"580","width":"892"},"width":"892","height":"580","bg":"rgba(234,229,223,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61888456\/"}
+
 
                                                                 </script>
                                                                 <a class="copy-protect" href="https://foodbankrus.ru/ "
@@ -1862,6 +2354,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"62686833","name":"7a4e0a0ca24b66af04a11f2b952ff087.png","crop":[],"size":{"height":"41","width":"160"},"width":"160","height":"41","bg":"rgba(164,65,128,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62006805\/"}
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://aller-petfood.com/ru/ "
@@ -1897,6 +2390,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61289147","name":"ae9c4ff420cc7132e1c4c8cf93a88951.png","crop":[],"size":{"height":"1724","width":"4096"},"width":"4096","height":"1724","bg":"rgba(0,0,160,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62326908\/"}
+
 
                                                                 </script>
                                                                 <a class="copy-protect" href="https://rus.mars.com/ "
@@ -1936,6 +2430,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"62062061","name":"e89d3b60b78858b7ac89c68dc0de7404.jpg","crop":[],"size":{"height":"630","width":"1200"},"width":"1200","height":"630","bg":"rgba(169,142,115,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63188211\/"}
 
+
                                                                 </script>
                                                                 <a class="copy-protect" href="https://derlak.ru/ "
                                                                    target="_blank">
@@ -1971,6 +2466,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"62062064","name":"3ceb0819f6b282f26d39a8b7c85539c9.png","crop":[],"size":{"height":"618","width":"1451"},"width":"1451","height":"618","bg":"rgba(87,63,122,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63188309\/"}
+
 
                                                                 </script>
                                                                 <a class="copy-protect" href="http://dostavka.guru/ "
@@ -2013,7 +2509,23 @@
                                             </div>
                                         </div>
                                         <style>
-                                            .adaptive-desktop #section4756359_11 .section__content{min-height:10px;}#section4756359_11 .section__bg{background-color:rgba(255,255,255,0);background-size:cover;}#section4756359_11 .section__bg::after{background-color:rgba(0, 0, 0, 0.19);}#section4756359_11 .section__bg{background-position-x:50.806451612903%;background-position-y:50.200803212851%;}
+                                            .adaptive-desktop #section4756359_11 .section__content {
+                                                min-height: 10px;
+                                            }
+
+                                            #section4756359_11 .section__bg {
+                                                background-color: rgba(255, 255, 255, 0);
+                                                background-size: cover;
+                                            }
+
+                                            #section4756359_11 .section__bg::after {
+                                                background-color: rgba(0, 0, 0, 0.19);
+                                            }
+
+                                            #section4756359_11 .section__bg {
+                                                background-position-x: 50.806451612903%;
+                                                background-position-y: 50.200803212851%;
+                                            }
 
                                         </style>
                                         <a id="base-4" class="js--anchor" name="base-4"></a>
@@ -2078,7 +2590,43 @@
                                                             <div class="widget" id="widget_61918865" data-id="61918865"
                                                                  data-type="post-button">
                                                                 <style>
-                                                                     #w_61918865 .post-button-content:hover { color: #ffffff !important; } #w_61918865 .post-button-content:hover:after { border: 0px solid #ffffff; background-color: #234821; } #w_61918865 .post-button-content { color: #ffffff !important; font-family: Ubuntu; font-size: 20px; letter-spacing: 0em; padding-top: 14px; padding-bottom: 14px; } #w_61918865 .post-button-content:after { border: 0px solid #000000; background-color: #92a500; } #w_61918865 .post-button__helper { padding-left: 0em; margin-left: -0em; margin-right: -0em; display: flex; } #w_61918865 .post-button__helper:before, #w_61918865 .post-button__helper:after { width: 30px; } #w_61918865 { text-align: center; }
+                                                                    #w_61918865 .post-button-content:hover {
+                                                                        color: #ffffff !important;
+                                                                    }
+
+                                                                    #w_61918865 .post-button-content:hover:after {
+                                                                        border: 0px solid #ffffff;
+                                                                        background-color: #234821;
+                                                                    }
+
+                                                                    #w_61918865 .post-button-content {
+                                                                        color: #ffffff !important;
+                                                                        font-family: Ubuntu;
+                                                                        font-size: 20px;
+                                                                        letter-spacing: 0em;
+                                                                        padding-top: 14px;
+                                                                        padding-bottom: 14px;
+                                                                    }
+
+                                                                    #w_61918865 .post-button-content:after {
+                                                                        border: 0px solid #000000;
+                                                                        background-color: #92a500;
+                                                                    }
+
+                                                                    #w_61918865 .post-button__helper {
+                                                                        padding-left: 0em;
+                                                                        margin-left: -0em;
+                                                                        margin-right: -0em;
+                                                                        display: flex;
+                                                                    }
+
+                                                                    #w_61918865 .post-button__helper:before, #w_61918865 .post-button__helper:after {
+                                                                        width: 30px;
+                                                                    }
+
+                                                                    #w_61918865 {
+                                                                        text-align: center;
+                                                                    }
 
                                                                 </style>
                                                                 <div class="element post-button action-go-to-link "
@@ -2106,7 +2654,9 @@
                                             </div>
                                         </div>
                                         <style>
-                                            .adaptive-desktop #section4756359_12 .section__content{min-height:10px;}
+                                            .adaptive-desktop #section4756359_12 .section__content {
+                                                min-height: 10px;
+                                            }
 
                                         </style>
                                         <a id="custom-6" class="js--anchor" name="custom-6"></a>
@@ -2120,6 +2670,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"60990285","name":"d0db047a273e82e5785a511cdd52c321.jpg","crop":[],"size":{"height":"417","width":"4167"},"width":"4167","height":"417","bg":"rgba(246,248,245,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61977828\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image origin mod--gallery-easy "
@@ -2148,7 +2699,9 @@
                                             </div>
                                         </div>
                                         <style>
-                                            .adaptive-desktop #section4756359_13 .section__content{min-height:10px;}
+                                            .adaptive-desktop #section4756359_13 .section__content {
+                                                min-height: 10px;
+                                            }
 
                                         </style>
                                         <a id="base-3" class="js--anchor" name="base-3"></a>
@@ -2185,6 +2738,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"66963610","name":"ec198ff79888d369b5b918fd0ec3dc71.jpg","crop":{"w":"1242","h":"1463","r":"square","x":"0","y":"53","x2":"485","y2":"538","pw":"485","ph":"571"},"size":{"height":"1463","width":"1242"},"width":"1242","height":"1463","bg":"rgba(141,136,121,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/67708792\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
@@ -2247,6 +2801,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"66963605","name":"1a0363b4bdefdc9db43c9ea1dbbcdf97.jpg","crop":{"w":"923","h":"699","r":"square","x":"1","y":"0","x2":"573","y2":"572","pw":"756","ph":"572"},"size":{"height":"699","width":"923"},"width":"923","height":"699","bg":"rgba(159,151,151,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/67708801\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_67708801">
@@ -2307,6 +2862,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"66963483","name":"9dad950c41eeab47509fc3b53695ef77.jpg","crop":{"w":"1242","h":"1914","r":"square","x":"43","y":"84","x2":"328","y2":"369","pw":"368","ph":"567"},"size":{"height":"1914","width":"1242"},"width":"1242","height":"1914","bg":"rgba(71,56,51,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/67708797\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
@@ -2381,6 +2937,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"62483981","name":"d9ddd9e1f1cffaec44740eaef4e1f9df.jpg","crop":{"w":"780","h":"1040","r":"square","x":"0","y":"69","x2":"354","y2":"423","pw":"354","ph":"472"},"size":{"height":"1040","width":"780"},"width":"780","height":"1040","bg":"rgba(134,130,136,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63691539\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_63691539">
@@ -2442,6 +2999,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"62514155","name":"411b88bbde08f751c88e088208cecd23.jpg","crop":{"w":"780","h":"1040","r":"square","x":"0","y":"0","x2":"354","y2":"354","pw":"354","ph":"472"},"size":{"height":"1040","width":"780"},"width":"780","height":"1040","bg":"rgba(93,103,102,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63691547\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_63691547">
@@ -2502,6 +3060,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"62483888","name":"77c8e9b570024b40bed856962091bcdd.jpg","crop":{"w":"811","h":"1080","r":"square","x":"0","y":"55","x2":"354","y2":"409","pw":"354","ph":"471"},"size":{"height":"1080","width":"811"},"width":"811","height":"1080","bg":"rgba(125,112,94,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63691544\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
@@ -2576,6 +3135,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"62483668","name":"1bba10de73bc1a76d931c11f4b886fbe.jpg","crop":{"w":"1280","h":"960","r":"square","x":"20","y":"0","x2":"495","y2":"475","pw":"633","ph":"475"},"size":{"height":"960","width":"1280"},"width":"1280","height":"960","bg":"rgba(116,118,92,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63689817\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_63689817">
@@ -2637,6 +3197,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"62483637","name":"0e40075f5ee3393b090a0f2759d10664.jpg","crop":{"w":"1234","h":"536","r":"square","x":"190","y":"0","x2":"580","y2":"390","pw":"898","ph":"390"},"size":{"height":"536","width":"1234"},"width":"1234","height":"536","bg":"rgba(125,105,84,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63689825\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_63689825">
@@ -2697,6 +3258,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"62483606","name":"966c280004f3f0a5ffd297f1260eac89.jpg","crop":{"w":"780","h":"1040","r":"square","x":"0","y":"0","x2":"354","y2":"354","pw":"354","ph":"472"},"size":{"height":"1040","width":"780"},"width":"780","height":"1040","bg":"rgba(141,116,86,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63689822\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
@@ -2771,6 +3333,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"62483972","name":"1a7ed722a4b95b9b101fbbc4da3dc63c.jpg","crop":{"w":"810","h":"1080","r":"square","x":"38","y":"38","x2":"349","y2":"349","pw":"354","ph":"472"},"size":{"height":"1080","width":"810"},"width":"810","height":"1080","bg":"rgba(118,90,64,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63689875\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_63689875">
@@ -2832,6 +3395,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"62483960","name":"d7cc1a7c814ac824bc1464c9aa5f8bcc.jpg","crop":{"w":"1152","h":"864","r":"square","x":"94","y":"0","x2":"569","y2":"475","pw":"633","ph":"475"},"size":{"height":"864","width":"1152"},"width":"1152","height":"864","bg":"rgba(113,112,98,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63689883\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_63689883">
@@ -2892,6 +3456,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"62483938","name":"e5bf115903fc0ebc33e65a641a79abbf.jpg","crop":{"w":"810","h":"1080","r":"square","x":"0","y":"62","x2":"354","y2":"416","pw":"354","ph":"472"},"size":{"height":"1080","width":"810"},"width":"810","height":"1080","bg":"rgba(91,97,101,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63689880\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
@@ -2966,6 +3531,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61940841","name":"8b740d5e1385e86f0d215f153c11805b.jpeg","crop":{"w":"864","h":"1152","r":"square","x":"0","y":"103","x2":"354","y2":"457","pw":"354","ph":"472"},"size":{"height":"1152","width":"864"},"width":"864","height":"1152","bg":"rgba(122,126,102,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63041687\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_63041687">
@@ -3030,6 +3596,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61940796","name":"50890f2178727a6a387d240e262e0cc3.jpg","crop":{"w":"810","h":"1080","r":"square","x":"0","y":"69","x2":"354","y2":"423","pw":"354","ph":"472"},"size":{"height":"1080","width":"810"},"width":"810","height":"1080","bg":"rgba(124,120,113,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63041695\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_63041695">
@@ -3091,6 +3658,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61940740","name":"72f46bc7ca8f0eb9f8fd4ea93da886e4.jpg","crop":{"w":"1032","h":"581","r":"square","x":"107","y":"0","x2":"582","y2":"475","pw":"844","ph":"475"},"size":{"height":"581","width":"1032"},"width":"1032","height":"581","bg":"rgba(134,118,99,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63041692\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
@@ -3165,6 +3733,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61940575","name":"86bef936881c43f3734ce6f5aae16261.jpeg","crop":{"w":"1280","h":"960","r":"square","x":"91","y":"0","x2":"566","y2":"475","pw":"633","ph":"475"},"size":{"height":"960","width":"1280"},"width":"1280","height":"960","bg":"rgba(102,86,105,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63041063\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_63041063">
@@ -3226,6 +3795,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61940559","name":"b0f3ce66ce1282625bfb9d87f2dd7eb7.jpeg","crop":{"w":"960","h":"1280","r":"square","x":"0","y":"44","x2":"354","y2":"398","pw":"354","ph":"472"},"size":{"height":"1280","width":"960"},"width":"960","height":"1280","bg":"rgba(121,106,107,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63041071\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_63041071">
@@ -3286,6 +3856,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61940491","name":"94e42abd81b1d7d43f4956458e1c6dac.jpg","crop":{"w":"1280","h":"960","r":"square","x":"60","y":"0","x2":"535","y2":"475","pw":"633","ph":"475"},"size":{"height":"960","width":"1280"},"width":"1280","height":"960","bg":"rgba(125,100,67,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/63041068\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
@@ -3360,6 +3931,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61940497","name":"794a4ef901b584467279ee581b1c0e36.jpeg","crop":{"w":"960","h":"1280","r":"square","x":"0","y":"101","x2":"354","y2":"455","pw":"354","ph":"472"},"size":{"height":"1280","width":"960"},"width":"960","height":"1280","bg":"rgba(147,120,98,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62759712\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_62759712">
@@ -3420,6 +3992,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61940482","name":"2bbb1ce855d9429a3368fcce9e6fa351.jpeg","crop":{"w":"1280","h":"853","r":"square","x":"164","y":"0","x2":"639","y2":"475","pw":"713","ph":"475"},"size":{"height":"853","width":"1280"},"width":"1280","height":"853","bg":"rgba(132,129,126,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62759720\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
@@ -3482,6 +4055,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61688067","name":"a2805a275df6bddf599d082deeab5b12.jpg","crop":{"w":"1280","h":"960","r":"square","x":"44","y":"0","x2":"525","y2":"481","pw":"641","ph":"481"},"size":{"height":"960","width":"1280"},"width":"1280","height":"960","bg":"rgba(142,131,122,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62759717\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
@@ -3556,6 +4130,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61294930","name":"0784cc618b496c30d8cd5019a6d84e14.jpg","crop":[],"size":{"height":"1080","width":"1089"},"width":"1089","height":"1080","bg":"rgba(120,88,87,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62325942\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image origin mod--gallery-easy "
                                                                      id="w_62325942">
@@ -3617,6 +4192,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61294929","name":"1b48d0ecc9b94471e11499469e715b73.jpeg","crop":{"w":"1280","h":"960","r":"square","x":"148","y":"0","x2":"652","y2":"504","pw":"735","ph":"551"},"size":{"height":"960","width":"1280"},"width":"1280","height":"960","bg":"rgba(139,141,109,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62325949\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_62325949">
@@ -3677,6 +4253,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61294925","name":"5883751955a9ff8c3edd4eab8ce267e9.jpeg","crop":{"w":"1280","h":"960","r":"square","x":"87","y":"0","x2":"638","y2":"551","pw":"735","ph":"551"},"size":{"height":"960","width":"1280"},"width":"1280","height":"960","bg":"rgba(100,86,82,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62325952\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
@@ -3751,6 +4328,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61185008","name":"0f381f21de43491108fdbbf92ce6b76d.jpeg","crop":{"w":"960","h":"1280","r":"square","x":"20","y":"144","x2":"373","y2":"497","pw":"412","ph":"549"},"size":{"height":"1280","width":"960"},"width":"960","height":"1280","bg":"rgba(88,85,81,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62205567\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_62205567">
@@ -3811,6 +4389,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61187012","name":"b15588a70da69081d9cc47c08be7878d.jpeg","crop":{"w":"1280","h":"960","r":"square","x":"28","y":"0","x2":"579","y2":"551","pw":"735","ph":"551"},"size":{"height":"960","width":"1280"},"width":"1280","height":"960","bg":"rgba(127,118,87,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62205572\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
@@ -3873,6 +4452,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61184928","name":"4f7b30c652cf733ebee029b5a4eb4138.jpeg","crop":{"w":"1280","h":"960","r":"square","x":"136","y":"0","x2":"687","y2":"551","pw":"735","ph":"551"},"size":{"height":"960","width":"1280"},"width":"1280","height":"960","bg":"rgba(117,111,103,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62205575\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
@@ -3947,6 +4527,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61184884","name":"b48d507d0649ce4df99a0876f4970363.jpeg","crop":{"w":"1280","h":"960","r":"square","x":"0","y":"0","x2":"551","y2":"551","pw":"735","ph":"551"},"size":{"height":"960","width":"1280"},"width":"1280","height":"960","bg":"rgba(126,109,103,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62204600\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_62204600">
@@ -4008,6 +4589,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61184822","name":"1eb7042921e2a9ef2a19252deb78fdb7.jpg","crop":{"w":"1234","h":"672","r":"square","x":"94","y":"0","x2":"583","y2":"489","pw":"898","ph":"489"},"size":{"height":"672","width":"1234"},"width":"1234","height":"672","bg":"rgba(134,110,118,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62204605\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_62204605">
@@ -4068,6 +4650,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61184691","name":"2058b02f5ed77edbe92eb1544be01901.jpg","crop":{"w":"607","h":"1080","r":"square","x":"0","y":"143","x2":"306","y2":"449","pw":"306","ph":"544"},"size":{"height":"1080","width":"607"},"width":"607","height":"1080","bg":"rgba(148,127,76,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62204608\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
@@ -4142,6 +4725,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61033760","name":"f270bbb651be132504217392654a00d6.jpeg","crop":{"w":"1152","h":"864","r":"square","x":"51","y":"0","x2":"602","y2":"551","pw":"735","ph":"551"},"size":{"height":"864","width":"1152"},"width":"1152","height":"864","bg":"rgba(143,140,136,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62026691\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_62026691">
@@ -4202,6 +4786,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61033752","name":"f125a6cea294e0efc43e372c3ad3df94.jpeg","crop":{"w":"960","h":"1280","r":"square","x":"0","y":"70","x2":"412","y2":"482","pw":"412","ph":"549"},"size":{"height":"1280","width":"960"},"width":"960","height":"1280","bg":"rgba(117,103,100,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62026696\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
@@ -4264,6 +4849,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61033747","name":"28910f20e1bc57ff7afcfade04b58cf9.jpg","crop":{"w":"960","h":"1280","r":"square","x":"0","y":"64","x2":"412","y2":"476","pw":"412","ph":"549"},"size":{"height":"1280","width":"960"},"width":"960","height":"1280","bg":"rgba(118,104,91,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62026701\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
@@ -4338,6 +4924,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61033686","name":"7b281a9383e429ba5553231295a6e90a.jpg","crop":{"w":"960","h":"1280","r":"square","x":"0","y":"40","x2":"412","y2":"452","pw":"412","ph":"549"},"size":{"height":"1280","width":"960"},"width":"960","height":"1280","bg":"rgba(128,109,114,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61916176\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_61916176">
@@ -4405,6 +4992,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61033416","name":"9346a7a5cb76320ba3c65bacdc893e4c.jpeg","crop":{"w":"960","h":"1280","r":"square","x":"0","y":"75","x2":"412","y2":"487","pw":"412","ph":"549"},"size":{"height":"1280","width":"960"},"width":"960","height":"1280","bg":"rgba(126,115,108,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61916181\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
@@ -4475,6 +5063,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61033652","name":"4bc88a9cd3804783724e7912c5410660.jpg","crop":{"w":"960","h":"1280","r":"square","x":"0","y":"137","x2":"412","y2":"549","pw":"412","ph":"549"},"size":{"height":"1280","width":"960"},"width":"960","height":"1280","bg":"rgba(118,114,122,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/61916187\/"}
 
+
                                                                 </script>
                                                                 <div class="element simple-image square mod--gallery-easy "
                                                                      id="w_61916187">
@@ -4530,7 +5119,9 @@
                                             </div>
                                         </div>
                                         <style>
-                                            .adaptive-desktop #section4756359_14 .section__content{min-height:10px;}
+                                            .adaptive-desktop #section4756359_14 .section__content {
+                                                min-height: 10px;
+                                            }
 
                                         </style>
                                         <a id="custom-9" class="js--anchor" name="custom-9"></a>
@@ -4545,6 +5136,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61078613","name":"5f99ce949cb1b9fa77bb2911b0cdb48e.jpg","crop":[],"size":{"height":"417","width":"4167"},"width":"4167","height":"417","bg":"rgba(247,248,246,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62085355\/"}
+
 
                                                                 </script>
                                                                 <div class="element simple-image origin mod--gallery-easy "
@@ -4573,7 +5165,9 @@
                                             </div>
                                         </div>
                                         <style>
-                                            .adaptive-desktop #section4756359_15 .section__content{min-height:10px;}
+                                            .adaptive-desktop #section4756359_15 .section__content {
+                                                min-height: 10px;
+                                            }
 
                                         </style>
                                         <a id="custom-11" class="js--anchor" name="custom-11"></a>
@@ -4595,6 +5189,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61446477","name":"0c4877c2f53ea4080650f05f21f9255a.jpg","crop":{"w":"2000","h":"1000","r":"custom","x":"0","y":"59","x2":"898","y2":"358","pw":"898","ph":"449"},"size":{"height":"2000","width":"4000"},"width":"4000","height":"2000","bg":"rgba(223,226,235,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62087251\/"}
+
 
                                                                 </script>
                                                                 <a class="copy-protect"
@@ -4635,6 +5230,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61080922","name":"a6859ffbc336916af0c7e0c01492b94b.jpg","crop":{"w":"720","h":"925","r":"rectangle","x":"0","y":"118","x2":"427","y2":"402.6666666666667","pw":"427","ph":"548"},"size":{"height":"925","width":"720"},"width":"720","height":"925","bg":"rgba(250,246,246,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62087253\/"}
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.google.ru/amp/s/daily.afisha.ru/news/amp/36704/ "
@@ -4672,6 +5268,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61446458","name":"b15dd991d491d869b1c9d2f79ccdef0d.jpg","crop":{"w":"1800","h":"1800","r":"custom","x":"72","y":"156","x2":"396","y2":"326","pw":"481","ph":"481"},"size":{"height":"1800","width":"1800"},"width":"1800","height":"1800","bg":"rgba(240,244,244,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62087317\/"}
+
 
                                                                 </script>
                                                                 <a class="copy-protect"
@@ -4719,6 +5316,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61446533","name":"38f1dcb4f18e15e143a8e3b47d528c3a.png","crop":{"w":"2000","h":"520","r":"origin","x":"0","y":"0","x2":"896.5259515570934","y2":"233","pw":"898","ph":"233"},"size":{"height":"867","width":"3336"},"width":"3336","height":"867","bg":"rgba(35,31,32,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62087318\/"}
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.buro247.ru/news/lifestyle/28-apr-2020-pet-shelters-help.html "
@@ -4757,6 +5355,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61081008","name":"0defbdf0643eb9edf285a7b792f8a16b.jpg","crop":{"w":"1000","h":"567","r":"origin","x":"0","y":"0","x2":"897.7072310405644","y2":"509","pw":"898","ph":"509"},"size":{"height":"567","width":"1000"},"width":"1000","height":"567","bg":"rgba(242,242,244,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62087319\/"}
+
 
                                                                 </script>
                                                                 <a class="copy-protect"
@@ -4797,6 +5396,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61151990","name":"6c9da20be7eb5d6e6b71dae113a57304.png","crop":[],"size":{"height":"506","width":"822"},"width":"822","height":"506","bg":"rgba(216,210,209,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62157632\/"}
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://zooinform.ru/business/fond-pomoshhi-zhivotny-m-nika-zapuskaet-aktsiyu-po-sboru-korma-dlya-priyutov/ "
@@ -4835,6 +5435,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61295087","name":"439e3cdeadcd5f2981ff132bf7b78eb3.jpg","crop":[],"size":{"height":"810","width":"810"},"width":"810","height":"810","bg":"rgba(128,164,193,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62325974\/"}
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://petstory.ru/knowledge/allnews/new/v-moskve-obyavili-sbor-50-tonn-korma-dlya-golodayushhix-zhivotnyx/ "
@@ -4872,6 +5473,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61446707","name":"f4d7801895ae5cec52a41e063b1d8d23.jpg","crop":[],"size":{"height":"1000","width":"1000"},"width":"1000","height":"1000","bg":"rgba(242,234,235,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62522602\/"}
+
 
                                                                 </script>
                                                                 <a class="copy-protect"
@@ -4914,6 +5516,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61396119","name":"5474e7709b943301aac709bc54250fc9.png","crop":[],"size":{"height":"675","width":"2400"},"width":"2400","height":"675","bg":"rgba(35,32,33,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62456934\/"}
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.forbes.ru/forbeslife/399529-otkrytie-parkov-v-italii-koncerty-dlya-vrachey-video-s-meril-strip-novosti-nedeli "
@@ -4952,6 +5555,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61295070","name":"b21865db80c6caca1b5d2719755337c0.png","crop":[],"size":{"height":"605","width":"3241"},"width":"3241","height":"605","bg":"rgba(236,0,140,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62325963\/"}
+
 
                                                                 </script>
                                                                 <a class="copy-protect"
@@ -4992,6 +5596,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61295426","name":"12ce068ca1ad79ad14633ea9f5f4f9f4.jpg","crop":{"w":"1200","h":"627","r":"custom","x":"160","y":"177","x2":"728","y2":"289","pw":"898","ph":"469"},"size":{"height":"627","width":"1200"},"width":"1200","height":"627","bg":"rgba(239,238,242,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62325964\/"}
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://newizv.ru/news/society/07-05-2020/ostavaytes-sytymi-rabotniki-fonda-bezdomnyh-zhivotnyh-vzyvayut-o-pomoschi?id=ostavaytes-sytymi-rabotniki-fonda-bezdomnyh-zhivotnyh-vzyvayut-o-pomoschi&published_date=07-05-2020&rubric=society&type=NewsItem "
@@ -5029,6 +5634,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61295438","name":"ac9c8df71d81629bb1cf6082ebd8063c.jpg","crop":[],"size":{"height":"449","width":"1346"},"width":"1346","height":"449","bg":"rgba(223,223,223,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62325965\/"}
+
 
                                                                 </script>
                                                                 <a class="copy-protect"
@@ -5076,6 +5682,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61295310","name":"93541d7e02fb5bde3031a4b9b8b52e71.png","crop":[],"size":{"height":"57","width":"267"},"width":"267","height":"57","bg":"rgba(64,175,111,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62325966\/"}
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://www.zelao.ru/13/39315-v-zelenograde-prohodit-aktsiya-po-sboru-korma-dlya-priyutov/ "
@@ -5113,6 +5720,7 @@
                                                                  data-type="simple-image">
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61295095","name":"61429a0c43ed416a08eed43dd3f48ebf.gif","crop":[],"size":{"height":"60","width":"416"},"width":"416","height":"60","bg":"rgba(225,73,64,0)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62325967\/"}
+
 
                                                                 </script>
                                                                 <a class="copy-protect"
@@ -5152,6 +5760,7 @@
                                                                 <script type="text/json" class='widget-options'>
 {"photoData":{"id":"61446396","name":"83c44a6efd837f56245c6d9aaf39c966.jpg","crop":{"w":"1753","h":"1240","r":"custom","x":"165","y":"191","x2":"506","y2":"275","pw":"680","ph":"481"},"size":{"height":"1240","width":"1753"},"width":"1753","height":"1240","bg":"rgba(251,251,251,.7)"},"storage":"\/\/static-cdn4.vigbo.tech\/u19745\/26206\/blog\/5382911\/4756359\/62521676\/"}
 
+
                                                                 </script>
                                                                 <a class="copy-protect"
                                                                    href="https://takiedela.ru/news/2020/05/16/fond-nika-50-tonn/ "
@@ -5183,7 +5792,43 @@
                                                             <div class="widget" id="widget_62159612" data-id="62159612"
                                                                  data-type="post-button">
                                                                 <style>
-                                                                     #w_62159612 .post-button-content:hover { color: #ffffff !important; } #w_62159612 .post-button-content:hover:after { border: 0px solid #ffffff; background-color: #234821; } #w_62159612 .post-button-content { color: #ffffff !important; font-family: Ubuntu; font-size: 18px; letter-spacing: 0em; padding-top: 14px; padding-bottom: 14px; } #w_62159612 .post-button-content:after { border: 0px solid #000000; background-color: #92a500; } #w_62159612 .post-button__helper { padding-left: 0em; margin-left: -0em; margin-right: -0em; display: flex; } #w_62159612 .post-button__helper:before, #w_62159612 .post-button__helper:after { width: 30px; } #w_62159612 { text-align: center; }
+                                                                    #w_62159612 .post-button-content:hover {
+                                                                        color: #ffffff !important;
+                                                                    }
+
+                                                                    #w_62159612 .post-button-content:hover:after {
+                                                                        border: 0px solid #ffffff;
+                                                                        background-color: #234821;
+                                                                    }
+
+                                                                    #w_62159612 .post-button-content {
+                                                                        color: #ffffff !important;
+                                                                        font-family: Ubuntu;
+                                                                        font-size: 18px;
+                                                                        letter-spacing: 0em;
+                                                                        padding-top: 14px;
+                                                                        padding-bottom: 14px;
+                                                                    }
+
+                                                                    #w_62159612 .post-button-content:after {
+                                                                        border: 0px solid #000000;
+                                                                        background-color: #92a500;
+                                                                    }
+
+                                                                    #w_62159612 .post-button__helper {
+                                                                        padding-left: 0em;
+                                                                        margin-left: -0em;
+                                                                        margin-right: -0em;
+                                                                        display: flex;
+                                                                    }
+
+                                                                    #w_62159612 .post-button__helper:before, #w_62159612 .post-button__helper:after {
+                                                                        width: 30px;
+                                                                    }
+
+                                                                    #w_62159612 {
+                                                                        text-align: center;
+                                                                    }
 
                                                                 </style>
                                                                 <div class="element post-button " id="w_62159612"><a
@@ -5199,7 +5844,13 @@
                                             </div>
                                         </div>
                                         <style>
-                                            .adaptive-desktop #section4756359_16 .section__content{min-height:10px;}#section4756359_16 .section__bg{background-color:#f7f7f7;}
+                                            .adaptive-desktop #section4756359_16 .section__content {
+                                                min-height: 10px;
+                                            }
+
+                                            #section4756359_16 .section__bg {
+                                                background-color: #f7f7f7;
+                                            }
 
                                         </style>
                                         <a id="subscription" class="js--anchor" name="subscription"></a>
@@ -5273,7 +5924,55 @@
                                                             <div class="widget" id="widget_61996346" data-id="61996346"
                                                                  data-type="post-subscribe">
                                                                 <style>
-                                                                     #w_61996346 .form__checkbox_text span { font-family: Ubuntu Regular; } #w_61996346 .subscribe-form input[type="text"] { background: #ffffff !important; color: #000000; font-size: 16px; font-family: Ubuntu Regular; } #w_61996346 .subscribe-checkbox .form__checkbox_checkbox { background: #ffffff !important; border-color: #ffffff; } #w_61996346 .subscribe-checkbox .form__checkbox_checkbox:after { border-color: #000000; } } #w_61996346.post-subscribe .form__checkbox_checkbox { background: #ffffff !important; } #w_61996346.post-subscribe .subscribe-form input:-moz-placeholder { color: #000000; } #w_61996346.post-subscribe .subscribe-form input::-webkit-input-placeholder { color: #000000; } .progress-button .content::after, .progress-button .content::before { content: ' '; } #w_61996346 .progress-button .progress-inner { background: #FFFFFF; } #w_61996346 .element.post-subscribe .subscribe-form #progressButton .content { color: #FFFFFF } #w_61996346 .element.post-subscribe input:-webkit-autofill { -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important; -webkit-text-fill-color: #000000 !important; }
+                                                                    #w_61996346 .form__checkbox_text span {
+                                                                        font-family: Ubuntu Regular;
+                                                                    }
+
+                                                                    #w_61996346 .subscribe-form input[type="text"] {
+                                                                        background: #ffffff !important;
+                                                                        color: #000000;
+                                                                        font-size: 16px;
+                                                                        font-family: Ubuntu Regular;
+                                                                    }
+
+                                                                    #w_61996346 .subscribe-checkbox .form__checkbox_checkbox {
+                                                                        background: #ffffff !important;
+                                                                        border-color: #ffffff;
+                                                                    }
+
+                                                                    #w_61996346 .subscribe-checkbox .form__checkbox_checkbox:after {
+                                                                        border-color: #000000;
+                                                                    }
+
+                                                                    }
+                                                                    #w_61996346.post-subscribe .form__checkbox_checkbox {
+                                                                        background: #ffffff !important;
+                                                                    }
+
+                                                                    #w_61996346.post-subscribe .subscribe-form input:-moz-placeholder {
+                                                                        color: #000000;
+                                                                    }
+
+                                                                    #w_61996346.post-subscribe .subscribe-form input::-webkit-input-placeholder {
+                                                                        color: #000000;
+                                                                    }
+
+                                                                    .progress-button .content::after, .progress-button .content::before {
+                                                                        content: ' ';
+                                                                    }
+
+                                                                    #w_61996346 .progress-button .progress-inner {
+                                                                        background: #FFFFFF;
+                                                                    }
+
+                                                                    #w_61996346 .element.post-subscribe .subscribe-form #progressButton .content {
+                                                                        color: #FFFFFF
+                                                                    }
+
+                                                                    #w_61996346 .element.post-subscribe input:-webkit-autofill {
+                                                                        -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+                                                                        -webkit-text-fill-color: #000000 !important;
+                                                                    }
 
                                                                 </style>
                                                                 <div class="element post-subscribe clearfix js--subscribe moreElements"
@@ -5395,7 +6094,29 @@
                                     <div class="post-body" data-structure="footer">
                                         <div class="post-body">
                                             <style>
-                                                .adaptive-desktop #section2998469_0 .section__content{min-height:10px;}footer .md-section, footer .copyright #gpwCC, footer .copyright a#gpwCC{color:#0b2903;}footer.l-footer .section__bg{background-color:#0b2903;}footer.l-footer .copyright{background-color:#0b2903;}.adaptive-mobile .l-footer, .adaptive-mobile .l-footer p, .adaptive-mobile .copyright__gophotoweb--box{text-align:center !important;}footer.l-footer .copyright__gophotoweb--box{text-align:center;}
+                                                .adaptive-desktop #section2998469_0 .section__content {
+                                                    min-height: 10px;
+                                                }
+
+                                                footer .md-section, footer .copyright #gpwCC, footer .copyright a#gpwCC {
+                                                    color: #0b2903;
+                                                }
+
+                                                footer.l-footer .section__bg {
+                                                    background-color: #0b2903;
+                                                }
+
+                                                footer.l-footer .copyright {
+                                                    background-color: #0b2903;
+                                                }
+
+                                                .adaptive-mobile .l-footer, .adaptive-mobile .l-footer p, .adaptive-mobile .copyright__gophotoweb--box {
+                                                    text-align: center !important;
+                                                }
+
+                                                footer.l-footer .copyright__gophotoweb--box {
+                                                    text-align: center;
+                                                }
 
                                             </style>
                                             <a id="custom" class="js--anchor" name="custom"></a>
@@ -5458,7 +6179,26 @@
                                                                     <div class="element widget-social-icons"
                                                                          id="w_37846913">
                                                                         <style>
-                                                                             #w_37846913 .asi-icon-box { margin: 34px 17px 0 17px; } #w_37846913 .social-icons-content {margin: -34px -17px 0;} #w_37846913 .asi-icon-box i { color: #ffffff; } #w_37846913 .asi-icon-box a:hover i { color: #8f8f8f; } #w_37846913 .asi-icon-box a, #w_37846913 .asi-icon-box i { font-size: 32px; line-height: 32px; }
+                                                                            #w_37846913 .asi-icon-box {
+                                                                                margin: 34px 17px 0 17px;
+                                                                            }
+
+                                                                            #w_37846913 .social-icons-content {
+                                                                                margin: -34px -17px 0;
+                                                                            }
+
+                                                                            #w_37846913 .asi-icon-box i {
+                                                                                color: #ffffff;
+                                                                            }
+
+                                                                            #w_37846913 .asi-icon-box a:hover i {
+                                                                                color: #8f8f8f;
+                                                                            }
+
+                                                                            #w_37846913 .asi-icon-box a, #w_37846913 .asi-icon-box i {
+                                                                                font-size: 32px;
+                                                                                line-height: 32px;
+                                                                            }
 
                                                                         </style>
                                                                         <div class="widget-content social-icons-content center">
@@ -5524,7 +6264,7 @@
                 </div>
             </section>
             {% endblock %}
-            </div>
+        </div>
         <div class="copyright ">
             <div class="copyright__gophotoweb--box">
                 <div class="md-section js--section">
@@ -5537,47 +6277,47 @@
                                 </noscript>
                                 <script>
 
-function mobileCheck() {
-  var check = false;
-  (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
-  return check;
-};
-if (!mobileCheck()) {
-var menu = document.getElementsByClassName("menu")[0];
-var list = menu.getElementsByTagName("ul")[0];
-list.style.textAlign = "center";
+                                    function mobileCheck() {
+                                        var check = false;
+                                        (function (a) {
+                                            if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
+                                        })(navigator.userAgent || navigator.vendor || window.opera);
+                                        return check;
+                                    };
+                                    if (!mobileCheck()) {
+                                        var menu = document.getElementsByClassName("menu")[0];
+                                        var list = menu.getElementsByTagName("ul")[0];
+                                        list.style.textAlign = "center";
 //list.style.backgroundColor = "green";
 
-var elements = menu.getElementsByClassName("menu-item");
-var donationButton = elements[elements.length - 1];
-donationButton.className += " pulse-grow";
-donationButton.style.textAlign = "center";
-var textDonation = donationButton.getElementsByTagName("a")[0];
+                                        var elements = menu.getElementsByClassName("menu-item");
+                                        var donationButton = elements[elements.length - 1];
+                                        donationButton.className += " pulse-grow";
+                                        donationButton.style.textAlign = "center";
+                                        var textDonation = donationButton.getElementsByTagName("a")[0];
 
-textDonation.style.paddingLeft = "10px";
-textDonation.style.paddingRight = "10px";
-textDonation.style.color = "#fff";
+                                        textDonation.style.paddingLeft = "10px";
+                                        textDonation.style.paddingRight = "10px";
+                                        textDonation.style.color = "#fff";
 
-textDonation.parentNode.removeChild(textDonation);
-var div = document.createElement("div");
+                                        textDonation.parentNode.removeChild(textDonation);
+                                        var div = document.createElement("div");
 
-div.appendChild(textDonation);
-div.style.backgroundColor = "#fa7612";
-div.style.borderRadius = "10px";
-div.style.display = "inline";
+                                        div.appendChild(textDonation);
+                                        div.style.backgroundColor = "#fa7612";
+                                        div.style.borderRadius = "10px";
+                                        div.style.display = "inline";
 //div.style.height = "20px";
-donationButton.appendChild(div);
+                                        donationButton.appendChild(div);
 
-var oImg = document.createElement("img");
-oImg.setAttribute('src', 'https://api.fond-nika.ru/paw_nika.png');
-oImg.style.display = "inline";
-oImg.style.height = "20px";
-oImg.style.width = "20px";
-oImg.style.margin = "0 0 0 3px";
-donationButton.appendChild(oImg);
-}
-
-
+                                        var oImg = document.createElement("img");
+                                        oImg.setAttribute('src', 'https://api.fond-nika.ru/paw_nika.png');
+                                        oImg.style.display = "inline";
+                                        oImg.style.height = "20px";
+                                        oImg.style.width = "20px";
+                                        oImg.style.margin = "0 0 0 3px";
+                                        donationButton.appendChild(oImg);
+                                    }
 
 
                                 </script>
@@ -5651,33 +6391,39 @@ donationButton.appendChild(oImg);
     <script type="text/json" id="post-tokens">
     {"61804318":"9cb450c592c79761c75886dcefb37558"}
 
+
     </script>
 </div>
 <script src="//cdn06.vigbo.tech/cms/kevin2/site/prod/js/site.js?ver=x2iAQq"></script>
 <script>
     (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
+        (w[c] = w[c] || []).push(function () {
             try {
                 w.yaCounter47650093 = new Ya.Metrika({
-                    id:47650093,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:true
+                    id: 47650093,
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true,
+                    webvisor: true
                 });
-            } catch(e) { }
+            } catch (e) {
+            }
         });
 
         var n = d.getElementsByTagName("script")[0],
             s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
+            f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
         s.type = "text/javascript";
         s.async = true;
         s.src = "https://mc.yandex.ru/metrika/watch.js";
 
         if (w.opera == "[object Opera]") {
             d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
+        } else {
+            f();
+        }
     })(document, window, "yandex_metrika_callbacks");
 
 

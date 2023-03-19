@@ -1,19 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bc725d2b-eaa7-415e-8546-381a5a2dd07a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/animals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/animals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/navigation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/news.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/news.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/js/dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/dialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Добавить документ.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить документ.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Добавить животное.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить животное.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Добавить новость.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить новость.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Дом для животных.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Животное.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Животное.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Контакты.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Контакты.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Настройки сайта.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Настройки сайта.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/Наши животные.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Наши животные.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Наши сборы.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Наши сборы.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/Новости.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Новости.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Новость.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Новость.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Оставайтесь cытыми.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Оставайтесь cытыми.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Отчетность.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Отчетность.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Партнеры.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Партнеры.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Партнёрам.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Партнёрам.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Полезные материалы.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Полезные материалы.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Помогите финансово.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Помогите финансово.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Просвещение и мероприятия.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Просвещение и мероприятия.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Профиль.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Профиль.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/СМИ о нас.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/СМИ о нас.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Скорая помощь.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Стать волонтером.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Стать волонтером.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Стать опекуном.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Стать опекуном.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Уставные документы.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Уставные документы.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +48,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -44,8 +69,14 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Arsbul Programming/Desktop/дари добро/app&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -97,6 +128,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1674987538316</updated>
+      <workItem from="1679227106740" duration="680000" />
     </task>
     <task id="LOCAL-00001" summary="Добавлена система добавления постов">
       <created>1675104812207</created>
@@ -147,8 +179,25 @@
       <option name="project" value="LOCAL" />
       <updated>1679168715600</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Небольшие исправления багов">
+      <created>1679215805601</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679215805602</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Небольшие исправления багов">
+      <created>1679215813206</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679215813206</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
@@ -172,26 +221,13 @@
     <MESSAGE value="news test" />
     <MESSAGE value="Красивое оформление страниц с формами.&#10;Добавление и отображение документов" />
     <MESSAGE value="Основная версия&#10;Увеличено количество настроек сайта: логотип, описание(вкладка о нас), фоновое изображение главной страницы и отображение этого изображения.&#10;Добавлена возможность загружать файлы н сервер.&#10;Улучшено отображение новостей, животных, документов." />
-    <option name="LAST_COMMIT_MESSAGE" value="Основная версия&#10;Увеличено количество настроек сайта: логотип, описание(вкладка о нас), фоновое изображение главной страницы и отображение этого изображения.&#10;Добавлена возможность загружать файлы н сервер.&#10;Улучшено отображение новостей, животных, документов." />
+    <MESSAGE value="Небольшие исправления багов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Небольшие исправления багов" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>91</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>247</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="url" language="Python" />
+        <watch expression="url" />
       </configuration>
     </watches-manager>
   </component>

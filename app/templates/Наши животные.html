@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+{% extends "base.html" %}
+
 <head>
+
+{% block head %}
+
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/static/css/animals.css">
     <link rel="stylesheet" type="text/css" href="/static/css/navigation.css">
@@ -28,6 +33,8 @@
 
     </script>
     <title>Наши животные</title>
+
+{% endblock %}
 </head>
 
 <body data-template="bruno2"
@@ -35,7 +42,7 @@
       data-preview="">
 
 
-{% extends "base.html" %}
+
 
 {% block content %}
 
@@ -88,7 +95,7 @@
             {% endif %}
             <div class="content">
 
-                <img class=" cover" src="{{ animal.cover }}">
+                <img class="cover" src="{{ animal.cover }}">
 
                 <div class="animals">
                     <h2 class="title-block">{{ animal.name }}</h2>

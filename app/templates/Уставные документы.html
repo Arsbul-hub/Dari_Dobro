@@ -1,17 +1,23 @@
 <!-- Vigbo-cms //static-cdn4.vigbo.tech/u19745/26206/ bruno2 -->
 <!DOCTYPE html>
 <html lang="ru">
+{% extends "base.html" %}
+
 <head>
+
+    {% block head %}
+
     <link rel="stylesheet" type="text/css" href="/static/css/Уставные документы.css">
     <meta charset="utf-8">
     <title>Уставные документы</title>
     <script type="text/javascript" src="/static/js/dialog.js"></script>
+
+    {% endblock %}
 </head>
 <body data-template="bruno2"
       class="f__preset-box f__site f__2 loading locale_ru bruno2 mod--search-disable mod--img-logo mod--header-static mod--menu-action-on-scroll mod--menu-static-on-scroll desktop adaptive-desktop mod--horizontal-menu mod--infoline-disable js--loading-cascade mod--font-none-preset layout-logo-left--by-logo "
       data-preview="">
 
-{% extends "base.html" %}
 {% block content %}
 <h1 class="title">Уставные документы</h1>
 {% if documents %}
