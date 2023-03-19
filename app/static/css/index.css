@@ -4,8 +4,8 @@
     margin: 40px auto;
 }
 .description p {
-    margin-top: 40px;
-    font-size: large;
+    margin-top: 50px;
+    font-size: 4.5vh;
     line-height: 2;
 }
 .description hr {
@@ -17,7 +17,7 @@
 	border: 1px solid #3caea7;
 }
 .title {
-    font-size: 45px;
+    font-size: 9vh;
 }
 .bg-image img {
     height: 100%;

@@ -6,39 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bc725d2b-eaa7-415e-8546-381a5a2dd07a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/animals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/animals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/news.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/news.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Добавить документ.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить документ.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Добавить животное.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить животное.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Добавить новость.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить новость.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Дом для животных.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Животное.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Животное.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Контакты.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Настройки сайта.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Настройки сайта.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Наши животные.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши сборы.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Наши сборы.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Новости.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Новости.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Новость.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Новость.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Оставайтесь cытыми.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Оставайтесь cытыми.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Отчетность.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Отчетность.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Партнеры.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Партнеры.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Партнёрам.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Партнёрам.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Полезные материалы.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Полезные материалы.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Помогите финансово.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Помогите финансово.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Просвещение и мероприятия.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Просвещение и мероприятия.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Профиль.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Профиль.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/СМИ о нас.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/СМИ о нас.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Скорая помощь.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Стать волонтером.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Стать волонтером.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Стать опекуном.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Стать опекуном.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Уставные документы.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Уставные документы.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +162,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679215813206</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Иконки у вкладок на всех страницах">
+      <created>1679229357732</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1679229357732</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Иконки у вкладок на всех страницах">
+      <created>1679229367999</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1679229367999</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +205,8 @@
     <MESSAGE value="Красивое оформление страниц с формами.&#10;Добавление и отображение документов" />
     <MESSAGE value="Основная версия&#10;Увеличено количество настроек сайта: логотип, описание(вкладка о нас), фоновое изображение главной страницы и отображение этого изображения.&#10;Добавлена возможность загружать файлы н сервер.&#10;Улучшено отображение новостей, животных, документов." />
     <MESSAGE value="Небольшие исправления багов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Небольшие исправления багов" />
+    <MESSAGE value="Иконки у вкладок на всех страницах" />
+    <option name="LAST_COMMIT_MESSAGE" value="Иконки у вкладок на всех страницах" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
