@@ -15,7 +15,7 @@
 }
 .navigation {
     display: flex;
-    padding-top: 20px;
+    
     justify-content: center
 }
 .navigation li a:hover {

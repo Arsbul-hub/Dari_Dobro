@@ -4,7 +4,7 @@
 
 <head>
 
-{% block head %}
+    {% block head %}
 
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/static/css/animals.css">
@@ -21,6 +21,7 @@
             document.getElementById("not-deleted").style.visibility = "visible";
 
         }
+
         function show_old() {
 
             document.getElementById("not-deleted").style.opacity = 0;
@@ -34,7 +35,7 @@
     </script>
     <title>Наши животные</title>
 
-{% endblock %}
+    {% endblock %}
 </head>
 
 <body data-template="bruno2"
@@ -42,11 +43,9 @@
       data-preview="">
 
 
-
-
 {% block content %}
 
-<h1 class="title">Наши животные</h1>
+<span class="title">Наши животные</span>
 <nav class="navigation">
     <ul>
         <li><a onclick="show_new()">Сейчас у нас</a></li>
@@ -86,10 +85,10 @@
                 <a href="{{url_for('add_animal')}}">Добавить животное</a>
                 {% endif %}
                 <a onclick="open_confirm_move({{animal.id}});">
-                    <i class="fa-solid fa-house" style="font-size:24px"></i>
+                    <i class="fa-solid fa-house"></i>
                 </a>
                 <a onclick="open_confirm_remove({{animal.id}});">
-                    <i class="fa fa-trash-o" style="font-size:24px"></i>
+                    <i class="fa fa-trash-o"></i>
                 </a>
             </div>
             {% endif %}
@@ -98,7 +97,7 @@
                 <img class="cover" src="{{ animal.cover }}">
 
                 <div class="animals">
-                    <h2 class="title-block">{{ animal.name }}</h2>
+                    <span class="title-block">{{ animal.name }}</span>
                     <div class="animals-body">
                         {{ animal.body|safe }}
                     </div>
@@ -157,10 +156,10 @@
                 <a href="{{url_for('add_animal')}}">Добавить животное</a>
                 {% endif %}
                 <a onclick="open_confirm_move({{animal.id}});">
-                    <i class="fa-solid fa-shield-dog" style="font-size:24px"></i>
+                    <i class="fa-solid fa-shield-dog"></i>
                 </a>
                 <a onclick="open_confirm_remove({{animal.id}});">
-                    <i class="fa fa-trash-o" style="font-size:24px"></i>
+                    <i class="fa fa-trash-o"></i>
                 </a>
             </div>
             {% endif %}
@@ -169,7 +168,7 @@
                 <img class=" cover" src="{{ animal.cover }}">
 
                 <div class="animals">
-                    <h2 class="title-block">{{ animal.name }}</h2>
+                    <span class="title-block">{{ animal.name }}</span>
                     <div class="animals-body">
                         {{ animal.body|safe }}
                     </div>
