@@ -4,9 +4,13 @@
     margin: 40px auto;
 }
 .description p {
-    margin-top: 50px;
-    font-size: 4.5vh;
+
+
     line-height: 2;
+
+}
+.title {
+    font-size: 30px;
 }
 .description hr {
     margin: 20px 0;
@@ -16,9 +20,7 @@
 
 	border: 1px solid #3caea7;
 }
-.title {
-    font-size: 9vh;
-}
+
 .bg-image img {
     height: 100%;
     width: 100%;

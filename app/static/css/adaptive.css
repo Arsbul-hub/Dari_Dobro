@@ -1,0 +1,74 @@
+@media only screen and (max-width: 1200px) and (min-width: 992px) {
+    .description p {
+        max-width: 80%;
+        
+        margin-top: 10%;
+    }
+    .title {
+        font-size: 30px;
+    }
+    span {
+        font-size: 30px;
+    }
+    .tools i {
+        font-size: 24px;
+    }
+    .tools a {
+        margin: 0 8px;
+    }
+}   
+
+@media only screen and (max-width: 992px) {
+    /* Общие стили */
+    p {
+        font-size: 3vh;
+    }
+    span {
+        font-size: 4vh;
+    }
+    .title {
+        font-size: 5vh;
+    }
+    .tools i{
+        font-size: 3vh;
+    }
+    .tools a {
+        font-size: 3vh;
+        margin: 0 8px;
+    }
+    /* Документы */
+    .documents-list .item-block {
+        width: 70%;
+    }
+    .documents-list .content {
+        height: 160px;
+        border-radius: 15px;
+    }
+    .documents-list .document-title {
+        font-size: 3vh;
+    }
+    
+    
+}
+@media only screen and (max-width: 768px) {
+    .description p {
+        font-size: 2vh;
+
+    }
+    
+}
+@media only screen and (max-width: 480px) {
+    .description p {
+        font-size: 2vh;
+
+    }
+    
+}
+@media only screen and (max-width: 320px) {
+    .description p {
+        font-size: 2vh;
+        
+    }
+
+    
+}

@@ -19,7 +19,7 @@
       data-preview="">
 
 {% block content %}
-<h1 class="title">Уставные документы</h1>
+<span class="title">Уставные документы</span>
 {% if documents %}
 <div class="documents-list">
     {% for document in documents %}
@@ -42,11 +42,11 @@
             <a href="{{url_for('add_document')}}">Добавить документ</a>
             {% endif %}
             <a onclick="open_confirm_remove({{document.id}});">
-                <i class="fa fa-trash-o" style="font-size:24px"></i>
+                <i class="fa fa-trash-o"></i>
             </a>
         </div>
         {% endif %}
-        <a href="{{document.ref}}" target="_blank">
+        <a class="document" href="{{document.ref}}" target="_blank">
             <div class="content">
 
                 <span class="document-title">{{document.title}}</span>
