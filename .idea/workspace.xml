@@ -7,25 +7,11 @@
     <list default="true" id="bc725d2b-eaa7-415e-8546-381a5a2dd07a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/дари добро.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/дари добро.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/animals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/animals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/navigation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/news.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/news.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/js/dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/dialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Наши животные.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/Новости.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Новости.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/Партнеры.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Партнеры.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Профиль.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Профиль.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +48,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -87,9 +73,10 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\VRUser\PycharmProjects\pythonProject\venv\Scripts\python.exe" />
+      <option name="SDK_NAME" value="Python 3.10 (pythonProject)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />

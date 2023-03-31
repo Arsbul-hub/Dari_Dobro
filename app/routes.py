@@ -166,7 +166,7 @@ def news():
     news = News.query.all()
     news_list = list(filter(lambda n: (datetime.today() - n.timestamp).total_seconds() < 3600 * 24 * 10, news))
     old_news_list = list(filter(lambda n: (datetime.today() - n.timestamp).total_seconds() > 3600 * 24 * 10, news))
-    print(old_news_list)
+
     return render_template("Новости.html", news=news_list, old_news=old_news_list, morph=morph, today=datetime.today(),
                            case={"gent"},
                            user=current_user)
@@ -223,6 +223,7 @@ def materials():
 @app.route('/Партнёры')
 def partners():
     partners = Partners.query.all()
+
     return render_template("Партнеры.html", len=len, partners=partners, user=current_user)
 
 
