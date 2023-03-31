@@ -9,15 +9,18 @@
     <link rel="stylesheet" type="text/css" href="/static/css/index.css">
 
     <style>
-        {% if allow_background_image == '1' %}
-        body:before{
+            /* body:before{
             z-index:-1;
             position:absolute;
             left:0;
             top:0;
             content: url(/static/images/background_image.png);
             opacity:0.4;
-        }
+        } */
+        {% if allow_background_image == '1' %}
+            body {
+                background-image: url(/static/images/background_image.png);
+            }
         {% endif %}
 
 

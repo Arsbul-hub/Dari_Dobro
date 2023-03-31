@@ -15,7 +15,7 @@
 }
 .news-list {
   display: flex;
-  position: absolute;
+
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 40px;
@@ -155,4 +155,36 @@
   height: 280px;
   margin: auto 25px;
   max-width: 90%;
+}
+@media only screen and (min-width: 1200px) {
+
+  .title {
+      font-size: 30px;
+  }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .title {
+      font-size: 30px;
+  }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+
+
+
+  .title {
+      font-size: 50px;
+  }
+
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 320px) and (max-width: 480px) {
 }

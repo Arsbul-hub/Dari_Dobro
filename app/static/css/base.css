@@ -92,12 +92,6 @@ color: #D5B45B; }
   transform-origin: 0 0;
   transition: .5s ease-in-out;
 }
-p {
-    text-decoration: none;
-}
-a {
-  cursor: pointer;
-}
 .submenu a {
   color: black;
   text-align: left;
@@ -110,11 +104,19 @@ a {
 .submenu li {
     padding: 20px 10px;
 }
+.submenu li:last-child a { border-bottom: none; }
+p {
+    text-decoration: none;
+}
+a {
+  cursor: pointer;
+}
+
 .me-admin {
   margin: auto 5px;
   white-space: nowrap;
 }
-.submenu li:last-child a { border-bottom: none; }
+
 .topmenu > li:hover .submenu {
   opacity: 1;
   visibility: visible;

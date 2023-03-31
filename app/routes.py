@@ -6,11 +6,12 @@ from flask_ckeditor import upload_fail, upload_success
 
 from app import app, db, morph
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, News, Animals, Documents, Config
-from app.forms import LoginForm, RegistrationForm, CreateNewsForm, AddAnimalForm, AddDocumentForm, ConfigForm
+from app.models import User, News, Animals, Documents, Config, Partners
+from app.forms import LoginForm, RegistrationForm, CreateNewsForm, AddAnimalForm, AddDocumentForm, ConfigForm, \
+    AddPartnerForm
 from werkzeug.urls import url_parse
 from app import login
-import git
+
 from urllib.parse import unquote
 
 
@@ -58,7 +59,8 @@ def index():
     else:
         description = "Описание не задано"
 
-    return render_template("index.html", description=description, allow_background_image=Config.query.filter_by(name="allow_background_image").first().value)
+    return render_template("index.html", description=description,
+                           allow_background_image=Config.query.filter_by(name="allow_background_image").first().value)
 
 
 @app.route('/logout')
@@ -155,16 +157,18 @@ def news():
     if action == "show":
         news_list = News.query.filter_by(id=request.args.get('id')).first()
         return render_template("Новость.html", news=news_list)
-    elif current_user.is_authenticated:
+    elif current_user.is_authenticated and action:
         if action == "remove":
-            News.query.filter_by(id=request.args.get('id'))
+            News.query.filter_by(id=request.args.get('id')).delete()
 
             db.session.commit()
-            return redirect(url_for("news"))
-
-    news_list = News.query.all()
-
-    return render_template("Новости.html", news=news_list, morph=morph, today=datetime.today(), case={"gent"},
+        return redirect(url_for("news"))
+    news = News.query.all()
+    news_list = list(filter(lambda n: (datetime.today() - n.timestamp).total_seconds() < 3600 * 24 * 10, news))
+    old_news_list = list(filter(lambda n: (datetime.today() - n.timestamp).total_seconds() > 3600 * 24 * 10, news))
+    print(old_news_list)
+    return render_template("Новости.html", news=news_list, old_news=old_news_list, morph=morph, today=datetime.today(),
+                           case={"gent"},
                            user=current_user)
 
 
@@ -218,7 +222,25 @@ def materials():
 
 @app.route('/Партнёры')
 def partners():
-    return render_template("Партнеры.html")
+    partners = Partners.query.all()
+    return render_template("Партнеры.html", len=len, partners=partners, user=current_user)
+
+
+@app.route("/Добавить партнёра", methods=['GET', 'POST'])
+@login_required
+def add_partner():
+    if not current_user.is_authenticated:
+        return redirect(url_for("index"))
+    form = AddPartnerForm()
+    if form.validate_on_submit():
+        out_path = save_file(file=form.logo.data, formates=["png", "jpg", "jpeg", "webp"])
+
+        new_animal = Partners(name=form.name.data, logo=out_path)
+        db.session.add(new_animal)
+        db.session.commit()
+        flash('Вы добавили нового партнёра!')
+        return redirect(url_for("partners"))
+    return render_template("Добавить партнёра.html", form=form)
 
 
 @app.route("/Добавить животное", methods=['GET', 'POST'])
@@ -252,13 +274,13 @@ def our_animals():
             animal = Animals.query.filter_by(id=request.args.get('id')).first()
             animal.move_to_house()
             db.session.commit()
-            return redirect(url_for("our_animals"))
+
         if action == "move_to_vet":
             animal = Animals.query.filter_by(id=request.args.get('id')).first()
             animal.move_to_vet()
 
             db.session.commit()
-            return redirect(url_for("our_animals"))
+        return redirect(url_for("our_animals"))
     animals = Animals.query.filter_by(have_house=False).all()
     no_animals = Animals.query.filter_by(have_house=True).all()
     animals.reverse()

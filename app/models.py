@@ -29,6 +29,12 @@ class News(db.Model):
     deleted = db.Column(db.Boolean, default=False)
 
 
+class Partners(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String())
+    logo = db.Column(db.String())
+
+
 class Animals(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String())

@@ -56,36 +56,21 @@
 
 .animals-body {
     overflow: hidden;
-
+    display: grid;
 
     margin-left: 5px;
-    height: 60px;
+    max-height: 80px
+
 
 }
 
-.animals-body p {
+.animals-body p, h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     text-overflow: ellipsis;
-
     color: grey;
+    font-weight: normal;
 }
 
-.animals-body h1 {
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    color: grey;
-
-}
-
-.animals-body h2 {
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    color: grey;
-    max-width: max-content;
-
-}
 
 .is-empty {
     margin-top: 70px;
@@ -115,9 +100,12 @@
 }
 
 .view-all {
-    margin-left: 5px;;
-    margin-top: 10px;
+    margin: 0 10px 10px;
+    height: 100%;
+    display: flex;
     color: black;
+    font-weight: bold;
+    align-items: flex-end;
 }
 
 .content {
@@ -162,6 +150,14 @@
         width: 500px;
     }
 
+    .view-all {
+        font-size: 18px;
+    }
+    .animals-body p, h1, h2, h3, h4, h5, h6 {
+        font-size: 17px;
+        font-weight: normal;
+    }
+
 
 }
 
@@ -187,11 +183,16 @@
         width: 500px;
     }
 
-    .animals-body p {
+    .animals-body p, h1, h2, h3, h4, h5, h6 {
         font-size: 20px;
+        font-weight: normal;
     }
 
 
+
+    .view-all {
+        font-size: 24px;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -203,9 +204,7 @@
         font-size: 70px;
     }
 
-    li {
-        font-size: 30px;
-    }
+
 
     .tools i {
         font-size: 40px;
@@ -224,18 +223,15 @@
         width: 70%;
     }
 
-    .navigation {
-        padding-top: 40px;
+    .animals-body p, h1, h2, h3, h4, h5, h6 {
+        font-size: 28px;
+        font-weight: normal;
     }
 
-    .navigation a {
-        padding: 0 10px;
-    }
 
-    .animals-body p {
-        font-size: 20px;
+    .view-all {
+        font-size: 24px;
     }
-
 
 }
 

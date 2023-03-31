@@ -1,3 +1,5 @@
+import re
+
 from flask_ckeditor import CKEditorField
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, FileField
@@ -49,6 +51,13 @@ class AddAnimalForm(FlaskForm):
     submit = SubmitField("Добавить")
 
 
+class AddPartnerForm(FlaskForm):
+    name = StringField("Имя партнёра:", validators=[DataRequired()])
+    logo = FileField("Логотип партнёра:", validators=[DataRequired(), image_validation])
+
+    submit = SubmitField("Добавить")
+
+
 class AddDocumentForm(FlaskForm):
     title = StringField("Название документа", validators=[DataRequired()])
 
@@ -62,5 +71,3 @@ class ConfigForm(FlaskForm):
     background_image = FileField("Фоновое изображение главной страницы", validators=[image_validation])
     allow_background_image = BooleanField("Отображать фоновое изображение")
     save = SubmitField("Сохранить")
-
-
