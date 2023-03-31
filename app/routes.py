@@ -222,8 +222,22 @@ def materials():
 
 @app.route('/Партнёры')
 def partners():
-    partners = Partners.query.all()
+    partners = [0,1,2,3,4,5,6,7,8,9]
+    p = []
+    for i in range(len(partners)):
 
+        p1 = partners[i]
+        p2 = None
+        if i < len(partners) - 1:
+            p2 = partners[i + 1]
+        if p and p1 in p[i - 1] or p2 in p[i - 1]:
+            break
+        if p2:
+            p.append([p1, p2])
+        else:
+
+            p.append([p1])
+    print(p)
     return render_template("Партнеры.html", len=len, partners=partners, user=current_user)
 
 

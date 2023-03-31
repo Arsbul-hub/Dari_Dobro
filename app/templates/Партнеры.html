@@ -21,24 +21,31 @@
     {% block content %}
     <span class="title">Наши партнёры</span>
     {% if partners %}
-    <table>
-        {% for partner in range(len(partners)) %}
-        <tr>
-            <th>{{partners[partner].name}}</th>
-            {% if partner != len(partners) - 1 %}
-            <th>{{partners[partner + 1].name}}</th>
-            {% endif %}
-        </tr>
-        <tr>
-            <th><img src="{{partners[partner].logo}}"></th>
-            {% if partner != len(partners) - 1 %}
-            <th><img src="{{partners[partner + 1].logo}}"></th>
-            {% endif %}
-        </tr>
+    <div class="is-empty" style="margin-top: 30px;">
+        {% if user.is_authenticated %}
+        <a href="{{url_for('add_partner')}}">Добавить партнёра</a>
+        {% endif %}
+    </div>
+    {% endif %}
+    {% if partners %}
+
+
+    <div class="partners-list">
+
+        {% for partner in partners %}
+        <div class="partners">
+        <hr>
+
+            <p>{{partner.name}}</p>
+            <img src="{{partner.logo}}">
+
+        </div>
         {% endfor %}
-    </table>
+
+    </div>
+
     {% else %}
-    <div class="is-empty">
+    <div class="is-empty" style="margin-top: 100px;">
         <p>Пока здесь пусто</p>
         {% if user.is_authenticated %}
         <a href="{{url_for('add_partner')}}">Добавить партнёра</a>

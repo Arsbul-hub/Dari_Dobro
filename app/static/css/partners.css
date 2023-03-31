@@ -2,11 +2,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    
 }
 .title {
 	margin-top: 50px;
 	display: block;
 	width:100%;
 	text-align: center;
+}
+.partners {
+	margin: 0 20px;
+}
+.partners p {
+	font-size: 20px;
+	text-align: center;
+}
+.partners img {
+	width: 300px;
+}
+.partners-list {
+	display: flex;
+	justify-content: center;
+}
+ hr {
+    margin: 20px 0;
+	padding: 0;
+	height: 0;
 }
