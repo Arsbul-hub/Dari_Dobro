@@ -66,9 +66,7 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-	body {
-		background-color: red;
-	}
+
     p {
         font-size: 40px;
     }

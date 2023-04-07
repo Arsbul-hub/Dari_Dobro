@@ -122,16 +122,3 @@ a {
   visibility: visible;
   transform: scaleY(1);
 }
-
-
-
-
-
-
-nav ul {
-  display: block;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-

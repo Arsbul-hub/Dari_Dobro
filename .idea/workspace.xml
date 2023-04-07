@@ -4,41 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Адаптация,&#10;Вкладка контакты">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/дари добро.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/дари добро.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.idea/app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/animals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/animals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/build_cms_front.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/build_cms_front.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/dialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/dialog.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/base_adaptive.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/base_adaptive.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/news.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/news.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/partners.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/partners.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/view_news.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/view_news.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Добавить партнёра.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить партнёра.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Контакты.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Наши животные.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Новости.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Новости.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Партнеры.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Партнеры.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +90,14 @@
       <updated>1680376174457</updated>
       <workItem from="1680438160543" duration="237000" />
     </task>
+    <task id="LOCAL-00001" summary="Адаптация,&#10;Вкладка контакты">
+      <created>1680878193592</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680878193592</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +113,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Адаптация,&#10;Вкладка контакты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Адаптация,&#10;Вкладка контакты" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,7 +1,10 @@
+.title {
+    font-size: 33px;
+}
 @media only screen and (min-width: 1200px) {
 
     .title {
-        font-size: 30px;
+        font-size: 33px;
     }
 
 
@@ -20,7 +23,7 @@
 @media only screen and (min-width: 768px) and (max-width: 992px) {
     
     .title {
-        font-size: 70px;
+        font-size: 60px;
     }
 
 }
