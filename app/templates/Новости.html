@@ -9,28 +9,26 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/static/css/news.css">
     <link rel="stylesheet" type="text/css" href="/static/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/dialog.css">
     <script type="text/javascript" src="/static/js/dialog.js"></script>
     <script>
 
 
             function show_new() {
 
-            // document.getElementById("new_news").style.opacity = 1;
-            // document.getElementById("old_news").style.opacity = 0;
-            // document.getElementById("old_news").style.visibility = "hidden";
-            // document.getElementById("new_news").style.visibility = "visible";
-            document.getElementById("new_news").style.display = "flex"
-            document.getElementById("old_news").style.display = "none"
+            document.getElementById("new_news").style.opacity = 1;
+            document.getElementById("old_news").style.opacity = 0;
+            document.getElementById("old_news").style.visibility = "hidden";
+            document.getElementById("new_news").style.visibility = "visible";
         }
         function show_old() {
 
-            // document.getElementById("new_news").style.opacity = 0;
-            // document.getElementById("old_news").style.opacity = 1;
-            // document.getElementById("old_news").style.visibility = "visible";
-            // document.getElementById("new_news").style.visibility = "hidden";
-            document.getElementById("new_news").style.display = "none"
-            document.getElementById("old_news").style.display = "flex"
+            document.getElementById("new_news").style.opacity = 0;
+            document.getElementById("old_news").style.opacity = 1;
+            document.getElementById("old_news").style.visibility = "visible";
+            document.getElementById("new_news").style.visibility = "hidden";
         }
+
 
 
 
@@ -49,7 +47,7 @@
 
 {% block content %}
 
-<span class="title">Новости</span>
+<h1 class="title">Новости</h1>
 <nav class="navigation">
     <ul>
         <li><a onclick="show_new()">Новые</a></li>
@@ -58,10 +56,12 @@
 </nav>
 <div id="news-blocks">
 
+
     <div class="news-list" id="new_news">
         {% if news %}
         {% for n in news %}
-        <dialog open id="confirm-remove-dialog-{{n.id}}" class="confirm-remove-dialog">
+
+        <dialog open id="confirm-remove-dialog-{{n.id}}" class="confirm-dialog">
             <h2 class="dialog-title">Внимание</h2>
             <p>Вы действительно хотите удалить эту новость?</p>
             <div class="buttons">
@@ -90,7 +90,7 @@
                 <a href="{{url_for('add_news')}}">Создать новость</a>
                 {% endif %}
                 <a onclick="open_confirm_remove({{n.id}});">
-                    <i class="fa fa-trash-o" style="font-size:24px"></i>
+                    <i class="fa fa-trash-o"></i>
                 </a>
             </div>
             {% endif %}
@@ -102,9 +102,12 @@
                 <div class="news">
                     <h2 class="title-block">{{ n.title }}</h2>
                     <div class="news-body">
-                        {{ n.body|safe }}
+<!--                        Текст новости чисто без разметки -->
+                        <p>
+                            {{beautiful_soup(n.body, 'html.parser').get_text('<br>') | safe}}
+                        </p>
                     </div>
-                    <a class="view-all" href="{{url_for('news', action='show', id=n.id)}}"><h3>Читать дальше</h3></a>
+                    <a class="view-all" href="{{url_for('news', action='show', id=n.id)}}">Читать дальше</a>
                 </div>
 
 
@@ -117,20 +120,22 @@
         <div class="is-empty">
             <p>Пока новостей нет</p>
             {% if user.is_authenticated %}
+
+
+
             <a href="{{url_for('add_news')}}">Создать новость</a>
+
+
+
             {% endif %}
         </div>
         {% endif %}
     </div>
-
-
-
-    <div class="news-list" id="old_news" style="display: none">
+    <div class="news-list" id="old_news" style="visibility: hidden; opacity: 0;">
         {% if old_news %}
-
         {% for n in old_news %}
 
-        <dialog open id="confirm-remove-dialog-{{n.id}}" class="confirm-remove-dialog">
+        <dialog open id="confirm-remove-dialog-{{n.id}}" class="confirm-dialog">
             <h2 class="dialog-title">Внимание</h2>
             <p>Вы действительно хотите удалить эту новость?</p>
             <div class="buttons">
@@ -159,7 +164,7 @@
                 <a href="{{url_for('add_news')}}">Создать новость</a>
                 {% endif %}
                 <a onclick="open_confirm_remove({{n.id}});">
-                    <i class="fa fa-trash-o" style="font-size:24px"></i>
+                    <i class="fa fa-trash-o"></i>
                 </a>
             </div>
             {% endif %}
@@ -171,7 +176,8 @@
                 <div class="news">
                     <h2 class="title-block">{{ n.title }}</h2>
                     <div class="news-body">
-                        {{ n.body|safe }}
+<!--                        Текст новости чисто без разметки -->
+                        {{beautiful_soup(n.body).get_text("\n")}}
                     </div>
                     <a class="view-all" href="{{url_for('news', action='show', id=n.id)}}"><h3>Читать дальше</h3></a>
                 </div>
@@ -188,13 +194,17 @@
             {% if user.is_authenticated %}
 
 
+
             <a href="{{url_for('add_news')}}">Создать новость</a>
+
 
 
             {% endif %}
         </div>
         {% endif %}
     </div>
+</div>
+
 
 </div>
 

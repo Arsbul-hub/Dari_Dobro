@@ -103,8 +103,6 @@
                     </div>
 
                 </div>
-                <a class="view-all" href="{{url_for('our_animals', action='show', id=animal.id)}}">Читать дальше</a>
-
 
             </div>
         </div>
@@ -137,7 +135,7 @@
         </dialog>
         <dialog open id="confirm-move-dialog-{{animal.id}}" class="confirm-dialog">
             <h2 class="dialog-title">Внимание</h2>
-            <p>Вы действительно хотите отправить это животное домой?</p>
+            <p>Вы действительно хотите вернуть это животное на кураторство?</p>
             <div class="buttons">
                 <a onclick="close_confirm_move({{animal.id}});">Отмена</a>
                 <a href="{{url_for('our_animals', action='move_to_house',  id=animal.id)}}">Да</a>
@@ -170,8 +168,7 @@
                     <div class="animals-body">
                         {{ animal.body|safe }}
                     </div>
-                    <a class="view-all" href="{{url_for('our_animals', action='show', id=animal.id)}}"><h4>Читать
-                        дальше</h4></a>
+
                 </div>
 
 

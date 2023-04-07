@@ -14,6 +14,8 @@ from app import login
 
 from urllib.parse import unquote
 
+from bs4 import BeautifulSoup
+
 
 @login.user_loader
 def load_user(user_id):
@@ -164,10 +166,15 @@ def news():
             db.session.commit()
         return redirect(url_for("news"))
     news = News.query.all()
+
     news_list = list(filter(lambda n: (datetime.today() - n.timestamp).total_seconds() < 3600 * 24 * 10, news))
     old_news_list = list(filter(lambda n: (datetime.today() - n.timestamp).total_seconds() > 3600 * 24 * 10, news))
+    for i in news_list:
+        print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
 
-    return render_template("Новости.html", news=news_list, old_news=old_news_list, morph=morph, today=datetime.today(),
+        print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
+    return render_template("Новости.html", beautiful_soup=BeautifulSoup, news=news_list, old_news=old_news_list,
+                           morph=morph, today=datetime.today(),
                            case={"gent"},
                            user=current_user)
 
@@ -222,23 +229,19 @@ def materials():
 
 @app.route('/Партнёры')
 def partners():
-    partners = [0,1,2,3,4,5,6,7,8,9]
-    p = []
-    for i in range(len(partners)):
+    action = request.args.get('action')
+    partners = Partners.query.all()
+    partners_desktop = []
+    for i in range(0, len(partners), 2):
+        partners_desktop.append(partners[i:i + 2])
 
-        p1 = partners[i]
-        p2 = None
-        if i < len(partners) - 1:
-            p2 = partners[i + 1]
-        if p and p1 in p[i - 1] or p2 in p[i - 1]:
-            break
-        if p2:
-            p.append([p1, p2])
-        else:
-
-            p.append([p1])
-    print(p)
-    return render_template("Партнеры.html", len=len, partners=partners, user=current_user)
+    if current_user.is_authenticated and action:
+        if action == "remove":
+            Partners.query.filter_by(id=request.args.get('id')).delete()
+            db.session.commit()
+        return redirect(url_for("partners"))
+    return render_template("Партнеры.html", len=len, partners_desktop=partners_desktop, partners_mobile=partners,
+                           user=current_user)
 
 
 @app.route("/Добавить партнёра", methods=['GET', 'POST'])
@@ -247,10 +250,11 @@ def add_partner():
     if not current_user.is_authenticated:
         return redirect(url_for("index"))
     form = AddPartnerForm()
+
     if form.validate_on_submit():
         out_path = save_file(file=form.logo.data, formates=["png", "jpg", "jpeg", "webp"])
 
-        new_animal = Partners(name=form.name.data, logo=out_path)
+        new_animal = Partners(name=form.name.data, logo=out_path, link=form.link.data)
         db.session.add(new_animal)
         db.session.commit()
         flash('Вы добавили нового партнёра!')
@@ -300,6 +304,13 @@ def our_animals():
     no_animals = Animals.query.filter_by(have_house=True).all()
     animals.reverse()
     return render_template("Наши животные.html", animals=animals, no_animals=no_animals, user=current_user)
+
+
+@app.route("/Контакты")
+def contacts():
+    # mail = Config.query.filter_by(name="contact_mail").first()
+    # grope_vk = Config.query.filter_by(name="contact_vk_link").first()
+    return render_template("Контакты.html")
 
 
 @app.route('/Дом для животных')

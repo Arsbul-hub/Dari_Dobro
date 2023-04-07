@@ -3,23 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        h2 {
+    font-size: 1.3em;
+}
 
+.box {
+    margin: 1em;
+    border: 1px solid #ccc;
+    width: 150px;
+    height: 55px;
+    overflow: hidden;
+}
+
+.wrapper {
+    -webkit-column-width: 150px;
+    column-width: 150px;
+    height: 100%;
+}
+
+
+    </style>
 </head>
 <body>
-  <input id="clickMe" type="button" value="clickme" onclick="gg();" />
-  <script  type="text/javascript">
-    function gg() {
-    document.getElementById('ww').style.visibility = "visible"
 
-    }
-        function cl() {
-    document.getElementById('ww').style.visibility = "hidden"
+<div class="box">
+        <h2>A Long Message</h2>
+        <p>This is a very long message and will be cut off. This is a very long message and will be cut off. </p>
+        <p>This is a very long message and will be cut off. This is a very long message and will be cut off. </p>
+</div>
 
-    }
-  </script>
-  <dialog open id="ww" style="visibility: hidden;">
-    <p>Greetings, one and all!</p>
-      <input id="clickMe1" type="button" value="clickme" onclick="cl();" />
-  </dialog>
+<div class="box">
+    <div class="wrapper">
+        <h2>A Long Message</h2>
+        <p>This is a very long message and will be cut off. This is a very long message and will be cut off. </p>
+        <p>This is a very long message and will be cut off. This is a very long message and will be cut off. </p>
+    </div>
+</div>
 </body>
 </html>

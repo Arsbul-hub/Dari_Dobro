@@ -9,7 +9,7 @@
     display: flex;
     position: absolute;
 
-
+    padding-bottom: 20px;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 40px;
@@ -54,7 +54,7 @@
 
 }
 
-.animals-body {
+/*.animals-body {
     overflow: hidden;
     display: grid;
 
@@ -62,7 +62,7 @@
     max-height: 80px
 
 
-}
+}*/
 
 .animals-body p, h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
@@ -111,7 +111,7 @@
 .content {
     display: flex;
     background-color: white;
-    height: 100%;
+
     border-radius: 10px;
     box-shadow: 0px 0px 15px darkgrey;
     white-space: nowrap;
@@ -204,7 +204,12 @@
         font-size: 70px;
     }
 
-
+    .is-empty p {
+        font-size: 45px;
+    }
+    .is-empty a {
+        font-size: 30px;
+    }
 
     .tools i {
         font-size: 40px;

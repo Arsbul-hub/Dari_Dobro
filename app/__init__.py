@@ -1,6 +1,8 @@
 import locale
 from flask import Flask
 from flask_ckeditor import CKEditor
+from flask_restful import Api
+
 
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
@@ -25,3 +27,7 @@ locale.setlocale(
 )
 
 from app import routes, models
+from app.resources import NewsResource
+api = Api(app)
+
+api.add_resource(NewsResource, '/api/v2/news/<int:id>')

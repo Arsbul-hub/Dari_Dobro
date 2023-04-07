@@ -11,6 +11,8 @@
     <meta charset="utf-8">
     <title>Партнеры</title>
     <link rel="stylesheet" type="text/css" href="static/css/partners.css">
+    <link rel="stylesheet" type="text/css" href="static/css/dialog.css">
+    <script type="text/javascript" src="/static/js/dialog.js"></script>
     {% endblock %}
 </head>
 <body data-template="bruno2"
@@ -20,31 +22,106 @@
 
     {% block content %}
     <span class="title">Наши партнёры</span>
-    {% if partners %}
+
+    {% if partners_mobile and partners_desktop %}
     <div class="is-empty" style="margin-top: 30px;">
         {% if user.is_authenticated %}
         <a href="{{url_for('add_partner')}}">Добавить партнёра</a>
         {% endif %}
     </div>
     {% endif %}
-    {% if partners %}
+    {% if partners_mobile and partners_desktop %}
 
+    <div class="partners-list" id="desktop">
 
-    <div class="partners-list">
+        {% for p in partners_desktop %}
 
-        {% for partner in partners %}
-        <div class="partners">
         <hr>
+        <div class="line">
+            {% for partner in p %}
+            <div class="partner" style="{% if len(p) == 1 %} margin: 0 0; {% endif %}">
+                {% if user.is_authenticated %}
+
+                <dialog open id="confirm-remove-dialog-{{partner.id}}" class="confirm-remove-dialog">
+                    <h2 class="dialog-title">Внимание</h2>
+                    <p>Вы действительно хотите удалить этого партнёра?</p>
+                    <div class="buttons">
+                        <a onclick="close_confirm_remove({{partner.id}});">Отмена</a>
+                        <a href="{{url_for('partners', action='remove',  id=partner.id)}}">Да</a>
+                    </div>
+                </dialog>
+                {% endif %}
+                {% if user.is_authenticated %}
+
+                <div class="tools">
+                    <p>{{partner.name}}</p>
+                    <a onclick="open_confirm_remove({{partner.id}});">
+                        <i class="fa fa-trash-o" style="font-size:24px"></i>
+                    </a>
+                </div>
+                {% else %}
+                <p>{{partner.name}}</p>
+                {% endif %}
+
+                {% if partner.link %}
+
+                <a href="{{partner.link}}">
+                    <img src="{{partner.logo}}">
+                </a>
+                {% else %}
+                <img src="{{partner.logo}}">
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+
+
+        {% endfor %}
+
+    </div>
+    <div class="partners-list" id="mobile">
+
+        {% for partner in partners_mobile %}
+
+        <hr>
+        <div class="partner">
+            {% if user.is_authenticated %}
+
+            <dialog open id="confirm-remove-dialog-{{partner.id}}" class="confirm-remove-dialog">
+                <h2 class="dialog-title">Внимание</h2>
+                <p>Вы действительно хотите удалить этого партнёра?</p>
+                <div class="buttons">
+                    <a onclick="close_confirm_remove({{partner.id}});">Отмена</a>
+                    <a href="{{url_for('partners', action='remove',  id=partner.id)}}">Да</a>
+                </div>
+            </dialog>
+            {% endif %}
 
             <p>{{partner.name}}</p>
-            <img src="{{partner.logo}}">
+            {% if user.is_authenticated %}
+            <div class="tools">
+                <a onclick="open_confirm_remove({{partner.id}});">
+                    <i class="fa fa-trash-o" style="font-size:24px"></i>
+                </a>
+            </div>
+            {% endif %}
 
+            {% if partner.link %}
+
+            <a href="{{partner.link}}">
+                <img src="{{partner.logo}}">
+            </a>
+            {% else %}
+            <img src="{{partner.logo}}">
+            {% endif %}
         </div>
+
+
         {% endfor %}
 
     </div>
 
-    {% else %}
+    {% elif not (partners_mobile and partners_desktop) %}
     <div class="is-empty" style="margin-top: 100px;">
         <p>Пока здесь пусто</p>
         {% if user.is_authenticated %}

@@ -4,19 +4,21 @@
 <head>
 
     <meta charset="utf-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--"/static/css/build_cms_front.css"-->
     <link rel="stylesheet" type="text/css"
           href="static/css/build_cms_front.css">
 
 
     <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/base.css">
+
     <link rel="stylesheet" type="text/css" href="/static/css/page.css">
     <script src="/static/js/jquery.js"></script>
-<!--    <link rel="stylesheet" type="text/css" href="/static/css/adaptive.css">-->
+    <!--    <link rel="stylesheet" type="text/css" href="/static/css/adaptive.css">-->
     <link rel="icon" href="/static/images/icon.ico">
     <script src="https://kit.fontawesome.com/6957c188ce.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/base_adaptive.css">
     {% block head %}{% endblock %}
 </head>
 <body data-template="bruno2"
@@ -24,19 +26,8 @@
       data-preview="">
 <div class="l-wrap js-wrap">
 
-    <hr>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <ul>
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    {% endwith %}
 
-
-    <div class="nav-menu">
+    <div id="desktop" class="nav-menu">
         <div class="logo">
             <a href="/">
                 <img src="/static/images/logo.png">
@@ -60,7 +51,7 @@
                     </li>
                     <li><a>ПРОГРАММЫ</a>
                         <ul class="submenu">
-                            <li><a href="{{url_for('house_for_animals')}}">Дом дляживотных</a></li>
+                            <li><a href="{{url_for('house_for_animals')}}">Дом для животных</a></li>
                             <li><a href="{{ url_for('ambulance') }}">Скорая помощь</a></li>
                             <li><a href="{{ url_for('activities') }}">Просвещение и мероприятия</a></li>
 
@@ -70,20 +61,19 @@
 
                     <li><a href="{{url_for('partners')}}">ПАРТНЕРЫ</a></li>
                     <li><a href="{{url_for('news')}}">НОВОСТИ</a></li>
-                    
+
                     <li><a>ПОМОЧЬ</a>
                         <ul class="submenu">
                             <li><a href="{{url_for('help_money')}}">Помогите финансово</a></li>
-                            <li><a href="{{ url_for('opeka') }}">Стать опекуном</a></li>
                             <li><a href="{{ url_for('volunteer') }}">Стать волонтером</a></li>
-                            <li><a href="{{ url_for('full') }}">Оставайтесь Сытыми</a></li>
+
                             <li><a href="{{ url_for('fees') }}">Наши сборы</a></li>
                         </ul>
                     </li>
-                    <li><a>КОНТАКТЫ</a></li>
+                    <li><a href="{{url_for('contacts')}}">КОНТАКТЫ</a></li>
 
-                   <li class="bold-tab"><a href="{{ url_for('index') }}">ГОРЯЧАЯ ЛИНИЯ</a></li>
-                   <i class='fas fa-paw'></i>
+                    <li class="bold-tab"><a href="{{ url_for('index') }}">ГОРЯЧАЯ ЛИНИЯ</a></li>
+                    <i class='fas fa-paw'></i>
 
                 </ul>
             </nav>
@@ -92,7 +82,6 @@
         </div>
         <a class="me-admin" href="{{ url_for('profile') }}">Я администратор</a>
     </div>
-
     {% block content %}{% endblock %}
 </div>
 <script src="/static/js/site.js"></script>

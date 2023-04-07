@@ -54,7 +54,7 @@ class AddAnimalForm(FlaskForm):
 class AddPartnerForm(FlaskForm):
     name = StringField("Имя партнёра:", validators=[DataRequired()])
     logo = FileField("Логотип партнёра:", validators=[DataRequired(), image_validation])
-
+    link = StringField("Ссылка на сайт партнёра")
     submit = SubmitField("Добавить")
 
 

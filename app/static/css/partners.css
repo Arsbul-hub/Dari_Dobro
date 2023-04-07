@@ -4,28 +4,142 @@
     align-items: center;
     
 }
+.is-empty a {
+	font-size: 17px;
+}
 .title {
 	margin-top: 50px;
 	display: block;
-	width:100%;
+	width: 100%;
 	text-align: center;
 }
-.partners {
-	margin: 0 20px;
+.partner {
+    margin: 0 40px;
+    padding-bottom: 20px;
 }
-.partners p {
-	font-size: 20px;
+.partner p {
+    margin: 18px 0;
+	font-size: 23px;
 	text-align: center;
 }
-.partners img {
-	width: 300px;
+.partner img {
+    display: block;
+    margin: 0 auto;
+	width: 450px;
 }
 .partners-list {
-	display: flex;
-	justify-content: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
 }
- hr {
-    margin: 20px 0;
-	padding: 0;
-	height: 0;
+
+#mobile {
+    display: none;
+}
+.partners-list .line {
+	display: flex;
+}
+
+.tools a {
+  display: inline-flex;
+  justify-content: flex-end;
+  margin-left: 10px;
+}
+.tools {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.partners-list hr {
+    width: 60%;
+    border: 0.1px solid gray;
+}
+@media only screen and (min-width: 1200px){
+    .description p {
+        max-width: 80%;
+
+        margin-top: 10px;
+    }
+    .title {
+        font-size: 30px;
+    }
+    .item-block {
+        width: 500px;
+    }
+    .navigation {
+        padding-top: 20px;
+    }
+
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    /* Общие стили */
+
+    .title {
+        font-size: 5vh;
+    }
+
+    .partners-list hr {
+        width: 90%;
+
+    }
+    .partner {
+        margin: 0 45px;
+    }
+
+
+
+}
+@media only screen and (min-width: 768px) and (max-width: 992px){
+    p {
+        font-size: 40px;
+    }
+
+    li {
+        font-size: 30px;
+    }
+
+
+	.is-empty a {
+		font-size: 36px ;
+	}
+
+	.partner p {
+        margin: 34px 0;
+    	font-size: 60px;
+    }
+    .partner img {
+    	width: 100%;
+    }
+    .partners-list hr {
+    	width: 90%;
+        border-width: 2px;
+    }
+    #mobile {
+        display: flex;
+    }
+    #desktop {
+        display: none;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .description p {
+        font-size: 2vh;
+
+    }
+
+}
+@media only screen and (max-width: 320px) and (max-width: 480px) {
+    .description p {
+        font-size: 2vh;
+
+    }
+    p {
+        background-color: red;
+    }
+
+
 }

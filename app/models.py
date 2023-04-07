@@ -1,3 +1,5 @@
+from sqlalchemy_serializer import SerializerMixin
+
 from app import db, login
 from datetime import datetime
 from flask_login import UserMixin, AnonymousUserMixin
@@ -20,7 +22,7 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
 
-class News(db.Model):
+class News(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String())
     title = db.Column(db.String())
@@ -33,6 +35,7 @@ class Partners(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
     logo = db.Column(db.String())
+    link = db.Column(db.String())
 
 
 class Animals(db.Model):
