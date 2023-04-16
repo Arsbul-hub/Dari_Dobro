@@ -14,7 +14,7 @@
 <body>
 
 
-{% block content %}
+{% block after %}
 
 <div class="form-block">
 
@@ -26,14 +26,14 @@
         <p>
             {{ form.title(size=32, placeholder="") }}
             {% for error in form.title.errors %}<br>
-            <span style="color: red;">{{ error }}</span>
+            <span class="error">{{ error }}</span>
             {% endfor %}
         </p>
         {{ form.document.label }}
         <p>
             {{ form.document(size=32) }}
             {% for error in form.document.errors %}<br>
-            <span style="color: red;">{{ error }}</span>
+            <span class="error">{{ error }}</span>
             {% endfor %}
         </p>
         {{ form.submit() }}

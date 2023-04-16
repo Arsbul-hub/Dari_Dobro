@@ -7,7 +7,7 @@
     {% block head %}
 
     <meta charset="UTF-8">
-    <title>Добавить новость</title>
+    <title>Добавить пост сми</title>
 
     <link rel="stylesheet" type="text/css" href="/static/css/form.css">
 
@@ -32,28 +32,28 @@
         </p>
 
 
-        {{ form.cover.label }}
+        {{ form.cover_url.label }}
         <p>
-            {{ form.cover() }}
-            {% for error in form.cover.errors %}<br>
-            <span class="error">{{ error }}</span>
+
+            {{ form.cover_url(size=35) }}
+            {% for error in form.cover_url.errors %}<br>
+            <span class="error" >{{ error }}</span>
             {% endfor %}
+
+
         </p>
 
-
-        {{ form.body.label }}
-        <p class="editor">
-
-            {{ form.body() }}
-            {% for error in form.body.errors %}<br>
+        {{ form.url.label }}
+        <p>
+            {{ form.url(size=35) }}
+            {% for error in form.url.errors %}<br>
             <span class="error">{{ error }}</span>
             {% endfor %}
-        </p>
 
+        </p>
         {{ form.submit() }}
     </form>
-    {{ ckeditor.load() }}
-    {{ ckeditor.config(name='body') }}
+
 </div>
 {% endblock %}
 </body>

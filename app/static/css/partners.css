@@ -14,25 +14,29 @@
 	text-align: center;
 }
 .partner {
-    margin: 0 40px;
+    padding: 20px 0;
+    width: 300px;
     padding-bottom: 20px;
 }
 .partner p {
     margin: 18px 0;
-	font-size: 23px;
+	font-size: 20px;
 	text-align: center;
 }
 .partner img {
     display: block;
     margin: 0 auto;
-	width: 450px;
+	width: 100%;
 }
 .partners-list {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
     margin-top: 50px;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row-reverse;
 }
 
 #mobile {
@@ -40,6 +44,7 @@
 }
 .partners-list .line {
 	display: flex;
+    flex-wrap: wrap;
 }
 
 .tools a {
@@ -52,94 +57,25 @@
     align-items: center;
     justify-content: center;
 }
-.partners-list hr {
-    width: 60%;
+ hr {
+    width: 90%!important;
+    margin-top: 40px;
     border: 0.1px solid gray;
 }
-@media only screen and (min-width: 1200px){
-    .description p {
-        max-width: 80%;
-
-        margin-top: 10px;
-    }
-    .title {
-        font-size: 30px;
-    }
-    .item-block {
-        width: 500px;
-    }
-    .navigation {
-        padding-top: 20px;
-    }
-
-
+.title-block {
+    display: flex;
+    justify-content: space-between;
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-    /* Общие стили */
 
-    .title {
-        font-size: 5vh;
-    }
+
+@media only screen and (max-width: 992px) {
 
     .partners-list hr {
-        width: 90%;
-
+        width: 100%!important;
+        border: 0.1px solid gray;
+    }      
+    .partners-list {
+        width: 100%!important;
     }
-    .partner {
-        margin: 0 45px;
-    }
-
-
-
-}
-@media only screen and (min-width: 768px) and (max-width: 992px){
-    p {
-        font-size: 40px;
-    }
-
-    li {
-        font-size: 30px;
-    }
-
-
-	.is-empty a {
-		font-size: 36px ;
-	}
-
-	.partner p {
-        margin: 34px 0;
-    	font-size: 60px;
-    }
-    .partner img {
-    	width: 100%;
-    }
-    .partners-list hr {
-    	width: 90%;
-        border-width: 2px;
-    }
-    #mobile {
-        display: flex;
-    }
-    #desktop {
-        display: none;
-    }
-}
-@media only screen and (min-width: 480px) and (max-width: 768px) {
-    .description p {
-        font-size: 2vh;
-
-    }
-
-}
-@media only screen and (max-width: 320px) and (max-width: 480px) {
-    .description p {
-        font-size: 2vh;
-
-    }
-    p {
-        background-color: red;
-    }
-
-
 }

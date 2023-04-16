@@ -3,12 +3,13 @@ import os
 
 from flask import render_template, send_from_directory, url_for, render_template_string, flash, redirect, request
 from flask_ckeditor import upload_fail, upload_success
-
-from app import app, db, morph
+from werkzeug.datastructures import FileStorage
+from app import app, morph, db
+from PIL import Image
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, News, Animals, Documents, Config, Partners
+from app.models import User, News, Animals, Documents, Config, Partners, SmiPosts
 from app.forms import LoginForm, RegistrationForm, CreateNewsForm, AddAnimalForm, AddDocumentForm, ConfigForm, \
-    AddPartnerForm
+    AddPartnerForm, AddSmiPostForm
 from werkzeug.urls import url_parse
 from app import login
 
@@ -19,12 +20,26 @@ from bs4 import BeautifulSoup
 
 @login.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    return db.session.get(User, int(user_id))
 
 
 @app.route('/files/<path:filename>')
 def uploaded_files(filename):
     return send_from_directory("static/loaded_media", filename)
+
+
+@app.route('/reload_auth')
+def reload_auth_system():
+    messages = ["Конфигурационный файл аутентификации пользователей был перезагружен!"]
+    if not db.session.query(User).filter_by(username="Admin").first():
+        admin = User(username="Admin")
+        admin.set_password("admin!6745")
+        db.session.add(admin)
+
+        db.session.commit()
+        logout_user()
+
+    return render_template("service/Уведомление.html", title="Внимание", messages=messages)
 
 
 @app.route('/upload', methods=['POST', "GET"])
@@ -45,7 +60,7 @@ def save_file(file, path="/loaded_media", name=None, formates=[]):
         file.filename = name
     extension = file.filename.split('.')[-1].lower()
     if formates and extension not in formates:
-        return upload_fail(message='Image only!')
+        return upload_fail(message='Файл не соответствует формату')
 
     file.save(f"app/static/{path}/{file.filename}")
     return f"static/{path}/{file.filename}"
@@ -53,7 +68,7 @@ def save_file(file, path="/loaded_media", name=None, formates=[]):
 
 @app.route('/')
 def index():
-    site_description = Config.query.filter_by(name="description").first()
+    site_description = db.session.get(Config, "description")
 
     if site_description:
         description = site_description.value
@@ -62,7 +77,12 @@ def index():
         description = "Описание не задано"
 
     return render_template("index.html", description=description,
-                           allow_background_image=Config.query.filter_by(name="allow_background_image").first().value)
+                           allow_background_image=db.session.get(Config, "allow_background_image"))
+@app.route('/test')
+def test():
+
+    return render_template("test.html")
+
 
 
 @app.route('/logout')
@@ -98,7 +118,7 @@ def register():
 
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data, admin=True)
+        user = User(username=form.username.data)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
@@ -122,18 +142,21 @@ def site_settings():
     form = ConfigForm()
 
     if form.validate_on_submit():
+
         save_file(file=form.site_logo.data, path="images", name="logo.png", formates=["png", "jpg", "jpeg", "webp"])
         save_file(file=form.background_image.data, path="images", name="background_image.png",
                   formates=["png", "jpg", "jpeg", "webp"])
 
-        Config.query.filter_by(name=form.description.name).first().value = form.description.data
-        Config.query.filter_by(name=form.allow_background_image.name).first().value = form.allow_background_image.data
+        db.session.get(Config, "description").value = form.description.data
+        db.session.get(Config, "allow_background_image").value = form.allow_background_image.data
         db.session.commit()
         return redirect(url_for("profile"))
     else:
-        form.description.data = Config.query.filter_by(name="description").first().value
 
-        form.allow_background_image.data = int(Config.query.filter_by(name="allow_background_image").first().value)
+        form.description.data = db.session.get(Config, "description").value
+
+        form.allow_background_image.data = int(db.session.get(Config, "allow_background_image").value)
+
     return render_template("Настройки сайта.html", config=Config, form=form)
 
 
@@ -156,23 +179,23 @@ def add_news():
 @app.route("/Новости")
 def news():
     action = request.args.get('action')
-    if action == "show":
-        news_list = News.query.filter_by(id=request.args.get('id')).first()
-        return render_template("Новость.html", news=news_list)
-    elif current_user.is_authenticated and action:
-        if action == "remove":
-            News.query.filter_by(id=request.args.get('id')).delete()
 
-            db.session.commit()
+    print(action)
+    if action == "show":
+        news_list = db.session.get(News, request.args.get('id'))
+        return render_template("Новость.html", news=news_list)
+    elif current_user.is_authenticated and action == "remove":
+
+        db.session.query(News).filter_by(id=request.args.get('id')).delete()
+
+        db.session.commit()
         return redirect(url_for("news"))
-    news = News.query.all()
+
+    news = db.session.query(News).all()
 
     news_list = list(filter(lambda n: (datetime.today() - n.timestamp).total_seconds() < 3600 * 24 * 10, news))
     old_news_list = list(filter(lambda n: (datetime.today() - n.timestamp).total_seconds() > 3600 * 24 * 10, news))
-    for i in news_list:
-        print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
 
-        print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
     return render_template("Новости.html", beautiful_soup=BeautifulSoup, news=news_list, old_news=old_news_list,
                            morph=morph, today=datetime.today(),
                            case={"gent"},
@@ -210,16 +233,47 @@ def documents():
         return redirect(document.ref)
     elif current_user.is_authenticated:
         if action == "remove":
-            Documents.query.filter_by(id=request.args.get('id')).delete()
+            db.session.query(Documents).filter_by(id=request.args.get('id')).delete()
+
             db.session.commit()
             return redirect(url_for("documents"))
     return render_template("Уставные документы.html", documents=documents_list, user=current_user)
 
 
-@app.route('/Сми')
-@login_required
+@app.route('/Сми о нас')
 def smi():
-    return render_template("СМИ о нас.html")
+    action = request.args.get("action")
+
+    print(action)
+
+    if current_user.is_authenticated and action == "remove":
+
+        db.session.query(SmiPosts).filter_by(id=request.args.get('id')).delete()
+
+        db.session.commit()
+        return redirect(url_for("smi"))
+
+    posts = db.session.query(SmiPosts).all()
+    print(posts)
+    return render_template("СМИ о нас.html", user=current_user, posts=posts, today=datetime.today())
+
+
+@app.route("/Добавить пост сми", methods=['GET', 'POST'])
+@login_required
+def add_smi_post():
+    if not current_user.is_authenticated:
+        return redirect(url_for("index"))
+    form = AddSmiPostForm()
+    if form.validate_on_submit():
+
+        saved_cover = form.cover_url.data
+
+        smi_post = SmiPosts(title=form.title.data, cover=saved_cover, url=form.url.data)
+        db.session.add(smi_post)
+        db.session.commit()
+        flash('Вы опубликовали новый пост!')
+        return redirect(url_for("smi"))
+    return render_template("Добавить пост сми.html", form=form)
 
 
 @app.route('/Материалы')
@@ -231,16 +285,17 @@ def materials():
 def partners():
     action = request.args.get('action')
     partners = Partners.query.all()
-    partners_desktop = []
-    for i in range(0, len(partners), 2):
-        partners_desktop.append(partners[i:i + 2])
+    # partners_desktop = []
+    # for i in range(0, len(partners), 2):
+    #     partners_desktop.append(partners[i:i + 2])
 
     if current_user.is_authenticated and action:
         if action == "remove":
-            Partners.query.filter_by(id=request.args.get('id')).delete()
+            db.session.query(Partners).filter_by(id=request.args.get('id')).delete()
+
             db.session.commit()
         return redirect(url_for("partners"))
-    return render_template("Партнеры.html", len=len, partners_desktop=partners_desktop, partners_mobile=partners,
+    return render_template("Партнеры.html", len=len, partners=partners, partners_mobile=partners,
                            user=current_user)
 
 
@@ -287,15 +342,16 @@ def our_animals():
         return render_template("Животное.html", animal=animal)
     elif current_user.is_authenticated and action:
         if action == "remove":
-            Animals.query.filter_by(id=request.args.get('id')).delete()
+            db.session.query(Animals).filter_by(id=request.args.get('id')).delete()
+
             db.session.commit()
         if action == "move_to_house":
-            animal = Animals.query.filter_by(id=request.args.get('id')).first()
+            animal = db.session.get(Animals, request.args.get('id'))
             animal.move_to_house()
             db.session.commit()
 
         if action == "move_to_vet":
-            animal = Animals.query.filter_by(id=request.args.get('id')).first()
+            animal = db.session.get(Animals, request.args.get('id'))
             animal.move_to_vet()
 
             db.session.commit()

@@ -1,16 +1,19 @@
 from sqlalchemy_serializer import SerializerMixin
 
-from app import db, login
+from app import db
 from datetime import datetime
 from flask_login import UserMixin, AnonymousUserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
+import sqlalchemy as sa
+
+__basemodel = db.Model
 
 
-class User(UserMixin, db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(), index=True, unique=True)
-    password_hash = db.Column(db.String(128))
-    admin = db.Column(db.Boolean)
+class User(UserMixin, __basemodel):
+    __tablename__ = 'users'
+    id = sa.Column(sa.Integer, primary_key=True)
+    username = sa.Column(sa.String(), index=True, unique=True)
+    password_hash = sa.Column(sa.String(128))
 
     def __repr__(self):
         return 'Пользователь {}'.format(self.username)
@@ -22,28 +25,41 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
 
-class News(db.Model, SerializerMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    body = db.Column(db.String())
-    title = db.Column(db.String())
-    cover = db.Column(db.String())
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    deleted = db.Column(db.Boolean, default=False)
+class News(__basemodel, SerializerMixin):
+    __tablename__ = 'news'
+    id = sa.Column(sa.Integer, primary_key=True)
+    body = sa.Column(sa.String())
+    title = sa.Column(sa.String())
+    cover = sa.Column(sa.String())
+    timestamp = sa.Column(sa.DateTime, index=True, default=datetime.utcnow)
+    deleted = sa.Column(sa.Boolean, default=False)
 
 
-class Partners(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String())
-    logo = db.Column(db.String())
-    link = db.Column(db.String())
+class SmiPosts(__basemodel, SerializerMixin):
+    __tablename__ = 'smi'
+    id = sa.Column(sa.Integer, primary_key=True)
+    title = sa.Column(sa.String())
+    cover = sa.Column(sa.String())
+    url = sa.Column(sa.String())
+    timestamp = sa.Column(sa.DateTime, index=True, default=datetime.utcnow)
 
 
-class Animals(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    body = db.Column(db.String())
-    name = db.Column(db.String())
-    cover = db.Column(db.String())
-    have_house = db.Column(db.Boolean, default=False)
+
+class Partners(__basemodel):
+    __tablename__ = 'partners'
+    id = sa.Column(sa.Integer, primary_key=True)
+    name = sa.Column(sa.String())
+    logo = sa.Column(sa.String())
+    link = sa.Column(sa.String())
+
+
+class Animals(__basemodel):
+    __tablename__ = 'animals'
+    id = sa.Column(sa.Integer, primary_key=True)
+    body = sa.Column(sa.String())
+    name = sa.Column(sa.String())
+    cover = sa.Column(sa.String())
+    have_house = sa.Column(sa.Boolean, default=False)
 
     def move_to_house(self):
         self.have_house = True
@@ -52,12 +68,14 @@ class Animals(db.Model):
         self.have_house = False
 
 
-class Documents(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String())
-    ref = db.Column(db.String())
+class Documents(__basemodel):
+    __tablename__ = 'documents'
+    id = sa.Column(sa.Integer, primary_key=True)
+    title = sa.Column(sa.String())
+    ref = sa.Column(sa.String())
 
 
-class Config(db.Model):
-    name = db.Column(db.String(), primary_key=True)
-    value = db.Column(db.String())
+class Config(__basemodel):
+    __tablename__ = 'config'
+    name = sa.Column(sa.String(), primary_key=True)
+    value = sa.Column(sa.String())

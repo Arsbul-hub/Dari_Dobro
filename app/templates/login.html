@@ -5,6 +5,7 @@
     {% block head %}
     <meta charset="UTF-8">
     <title>Вход</title>
+    <script src="/static/js/form.js"></script>
     <link rel="stylesheet" type="text/css" href="/static/css/form.css">
     {% endblock %}
 
@@ -12,7 +13,7 @@
 <body>
 
 
-{% block content %}
+{% block after %}
 
 <div class="form-block">
     <h1>Войти</h1>
@@ -30,7 +31,10 @@
         {{ form.password.label }}
         <p>
             {{ form.password(size=32) }}
-            {% for error in form.password.errors %}<br>
+            <a style='font-size:15px;display: inline-flex; color: black;' type="button" onclick="show_password();">
+                <i id="eye" class='fas fa-eye'></i>
+            </a><br>
+            {% for error in form.password.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </p>

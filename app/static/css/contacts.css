@@ -8,38 +8,41 @@ body {
 }
 .contacts-block {
     display: flex;
-    align-items: flex-start;
-    flex-direction: row;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 
 .contacts-block div {
-	width: 30%;
+
     margin-top: 40px;
+    padding: 0 10px;
     display: flex;
     align-items: center;
     flex-direction: column;
 
 }
 .contacts-block div p {
-    font-size: 19px;
+    font-size: 21px;
+    text-align: center;
     white-space: nowrap;
 }
 .contacts-block div img {
     display: block;
-    width: 70%;
+    width: 250px;
 
 }
 .contacts-block .phone-number {
-    font-size: 19px;
+
     margin: 0 10px;
     
 }
 
 .contacts-block a {
-    font-size: 19px;
-    white-space: nowrap;
+    font-size: 21px;
+    white-space: normal;
     transition: .5s ease-in-out;
     text-decoration: none;
     background-image: linear-gradient(currentColor, currentColor);
@@ -63,51 +66,3 @@ body {
 
 
 
-@media only screen and (min-width: 1200px) {
-
-
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-
-
-}
-/*mobile*/
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-
-    .contacts-block {
-        flex-direction: column;
-        align-items: center
-    }
-
-    .contacts-block div p {
-        font-size: 44px;
-
-    }
-    .contacts-block div {
-        width: 100%;
-        margin: 40px 0;
-    }
-    .contacts-block div a {
-        font-size: 54px!important;
-    }
-    .contacts-block div img {
-        display: block;
-        width: 90%;
-
-    }
-    .contacts-block .phone-number {
-        font-size: 44px!important;
-        margin: 0 10px;
-        
-    }
-
-
-}
-
-@media only screen and (min-width: 480px) and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 320px) and (max-width: 480px) {
-}

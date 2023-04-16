@@ -1,5 +1,5 @@
 import locale
-from flask import Flask
+from flask import Flask, Blueprint
 from flask_ckeditor import CKEditor
 from flask_restful import Api
 
@@ -14,6 +14,7 @@ app = Flask(__name__)
 app.config.from_object(Config)
 
 ckeditor = CKEditor(app)
+blueprint = Blueprint('app_api', __name__, template_folder='templates')
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db, render_as_batch=True)
@@ -27,7 +28,3 @@ locale.setlocale(
 )
 
 from app import routes, models
-from app.resources import NewsResource
-api = Api(app)
-
-api.add_resource(NewsResource, '/api/v2/news/<int:id>')

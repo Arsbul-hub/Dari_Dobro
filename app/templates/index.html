@@ -18,10 +18,14 @@
             opacity:0.4;
         } */
         {% if allow_background_image == '1' %}
-            body {
-                background-image: url(/static/images/background_image.png);
+<!--            body {-->
+<!--                background-image: url(/static/images/background_image.png);-->
+<!--            }-->
+            #bg-image {
+                visibility: visible;
             }
         {% endif %}
+
 
 
     </style>
@@ -30,27 +34,27 @@
 </head>
 <body data-template="bruno2"
       class="f__preset-box f__site f__2 loading locale_ru bruno2 mod--search-disable mod--img-logo mod--header-static mod--menu-action-on-scroll mod--menu-static-on-scroll desktop adaptive-desktop mod--horizontal-menu mod--infoline-disable js--loading-cascade mod--font-none-preset layout-logo-left--by-logo "
-      data-preview=""
->
+      data-preview="">
+
+
 <div class="l-wrap js-wrap">
-
-
-    {% block content %}
+{% block before %}
+<div id="bg-image"></div>
+{% endblock %}
+{% block after %}
     <div class="description">
         <span class="title">О нас</span>
         <hr>
         <p>{{ description | safe}}</p>
     </div>
 
-
+{% endblock %}
 </div>
 
 <!--    <div class="bg-image">-->
 <!--        <img src="/static/images/background_image.png">-->
 <!--    </div>-->
 
-<script src="/static/js/site.js"></script>
 
-{% endblock %}
 </body>
 </html><!-- cached 2022-11-24 10:12:41 e24cc38881bdebf1e12f84cc0a6bf3ce -->

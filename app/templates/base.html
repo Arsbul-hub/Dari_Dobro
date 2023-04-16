@@ -3,9 +3,9 @@
 <html lang="ru">
 <head>
 
-    <meta charset="utf-8">
 
-
+    {% block head %}{% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!--"/static/css/build_cms_front.css"-->
     <link rel="stylesheet" type="text/css"
           href="static/css/build_cms_front.css">
@@ -18,57 +18,53 @@
 <!--    <link rel="stylesheet" type="text/css" href="/static/css/adaptive.css">-->
     <link rel="icon" href="/static/images/icon.ico">
     <script src="https://kit.fontawesome.com/6957c188ce.js" crossorigin="anonymous"></script>
-    {% block head %}{% endblock %}
+    <script src="/static/js/site.js"></script>
+    <script src="/static/js/navigation.js"></script>
 </head>
 <body data-template="bruno2"
       class="f__preset-box f__site f__2 loading locale_ru bruno2 mod--search-disable mod--img-logo mod--header-static mod--menu-action-on-scroll mod--menu-static-on-scroll desktop adaptive-desktop mod--horizontal-menu mod--infoline-disable js--loading-cascade mod--font-none-preset layout-logo-left--by-logo "
       data-preview="">
+<div id="before">
+    {% block before %}{% endblock %}
+</div>
 <div class="l-wrap js-wrap">
 
-    <hr>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <ul>
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    {% endwith %}
 
 
-    <div class="nav-menu">
+
+    <div class="nav-menu" id="desktop">
         <div class="logo">
             <a href="/">
                 <img src="/static/images/logo.png">
             </a>
         </div>
-        <div class="nav-menu-item">
+        <div class="navigation">
+           <div id="close-navigation"><a onclick="close_navigation()"  ><i class="fa fa-close"></i></a></div>
             <nav>
                 <ul class="topmenu">
                     <li><a>Главная</a>
                         <ul class="submenu">
                             <li><a href="{{url_for('index')}}">О НАС</a></li>
                             <li><a href="{{ url_for('documents') }}">Уставные документы</a></li>
-                            <li><a href="{{ url_for('reporting') }}">Отчетность</a></li>
+<!--                            <li><a href="{{ url_for('reporting') }}">Отчетность</a></li>-->
                             <li><a href="{{ url_for('smi') }}">СМИ о нас</a></li>
-                            <li><a href="{{ url_for('partners') }}">Партнеры</a></li>
+<!--                            <li><a href="{{ url_for('partners') }}">Партнеры</a></li>-->
                             <li><a href="{{ url_for('materials') }}">Полезные материалы</a></li>
                         </ul>
                     </li>
                     <li><a href="{{url_for('our_animals')}}">НАШИ ЖИВОТНЫЕ</a>
 
                     </li>
-                    <li><a>ПРОГРАММЫ</a>
-                        <ul class="submenu">
-                            <li><a href="{{url_for('house_for_animals')}}">Дом дляживотных</a></li>
-                            <li><a href="{{ url_for('ambulance') }}">Скорая помощь</a></li>
-                            <li><a href="{{ url_for('activities') }}">Просвещение и мероприятия</a></li>
+<!--                    <li><a>ПРОГРАММЫ</a>-->
+<!--                        <ul class="submenu">-->
+<!--                            <li><a href="{{url_for('house_for_animals')}}">Дом дляживотных</a></li>-->
+<!--                            <li><a href="{{ url_for('ambulance') }}">Скорая помощь</a></li>-->
+<!--                            <li><a href="{{ url_for('activities') }}">Просвещение и мероприятия</a></li>-->
 
-                        </ul>
-                    </li>
+<!--                        </ul>-->
+<!--                    </li>-->
 
-
+                    <li><a href="{{url_for('partners')}}">МЕРОПРИЯТИЯ</a></li>
                     <li><a href="{{url_for('partners')}}">ПАРТНЕРЫ</a></li>
                     <li><a href="{{url_for('news')}}">НОВОСТИ</a></li>
 
@@ -77,14 +73,11 @@
                             <li><a href="{{url_for('help_money')}}">Помогите финансово</a></li>
                             <li><a href="{{ url_for('opeka') }}">Стать опекуном</a></li>
                             <li><a href="{{ url_for('volunteer') }}">Стать волонтером</a></li>
-                            <li><a href="{{ url_for('full') }}">Оставайтесь Сытыми</a></li>
-                            <li><a href="{{ url_for('fees') }}">Наши сборы</a></li>
                         </ul>
                     </li>
                     <li><a href="{{url_for('contacts')}}">КОНТАКТЫ</a></li>
 
-                   <li class="bold-tab"><a href="{{ url_for('index') }}">ГОРЯЧАЯ ЛИНИЯ</a></li>
-                   <i class='fas fa-paw'></i>
+
 
                 </ul>
             </nav>
@@ -92,11 +85,60 @@
 
         </div>
         <a class="me-admin" href="{{ url_for('profile') }}">Я администратор</a>
+        <a onclick="open_navigation()" style="display: none" id="open-navigation"><i class="fa-solid fa-bars "></i></a>
     </div>
 
-    {% block content %}{% endblock %}
+
+<!--    <div class="nav-menu" id="mobile">-->
+<!--        <div class="logo">-->
+<!--            <a href="/">-->
+<!--                <img src="/static/images/logo.png">-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="navigation" id="navigation-mobile" style="visibility: hidden">-->
+<!--            <nav>-->
+<!--                <ul class="topmenu">-->
+<!--                    <li><a>Главная</a>-->
+<!--                        <ul class="submenu">-->
+<!--                            <li><a href="{{url_for('index')}}">О НАС</a></li>-->
+<!--                            <li><a href="{{ url_for('documents') }}">Уставные документы</a></li>-->
+<!--&lt;!&ndash;                            <li><a href="{{ url_for('reporting') }}">Отчетность</a></li>&ndash;&gt;-->
+<!--                            <li><a href="{{ url_for('smi') }}">СМИ о нас</a></li>-->
+<!--&lt;!&ndash;                            <li><a href="{{ url_for('partners') }}">Партнеры</a></li>&ndash;&gt;-->
+<!--                            <li><a href="{{ url_for('materials') }}">Полезные материалы</a></li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                    <li><a href="{{url_for('our_animals')}}">НАШИ ЖИВОТНЫЕ</a>-->
+
+<!--                    </li>-->
+<!--                    <li><a href="{{url_for('partners')}}">МЕРОПРИЯТИЯ</a></li>-->
+<!--                    <li><a href="{{url_for('partners')}}">ПАРТНЕРЫ</a></li>-->
+<!--                    <li><a href="{{url_for('news')}}">НОВОСТИ</a></li>-->
+
+<!--                    <li><a>ПОМОЧЬ</a>-->
+<!--                        <ul class="submenu">-->
+<!--                            <li><a href="{{url_for('help_money')}}">Помогите финансово</a></li>-->
+<!--                            <li><a href="{{ url_for('opeka') }}">Стать опекуном</a></li>-->
+<!--                            <li><a href="{{ url_for('volunteer') }}">Стать волонтером</a></li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                    <li><a href="{{url_for('contacts')}}">КОНТАКТЫ</a></li>-->
+
+
+
+
+<!--                </ul>-->
+<!--            </nav>-->
+
+<!--        </div>-->
+<!--        <a onclick="open_navigation()" class="open-navigation"><i class="fa-solid fa-bars "></i></a>-->
+
+<!--    </div>-->
+    <div id="after">
+        {% block after %}{% endblock %}
+    </div>
 </div>
-<script src="/static/js/site.js"></script>
+
 
 
 </body>

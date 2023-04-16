@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+<!--    <meta http-equiv="refresh" content="5" >-->
+    <link type="text/css" rel="stylesheet" href="static/css/notification.css">
+    <script type="text/javascript">
+        String.format = function () {
+            var s = arguments[0];
+            for (var i = 0; i < arguments.length - 1; i++) {
+                var reg = new RegExp("\\{" + i + "\\}", "gm");
+                s = s.replace(reg, arguments[i + 1]);
+            }
+            return s;
+        }
+
+        sec = 4
+        function sayHi() {
+            document.getElementById("redirect-info").textContent = String.format('Перенаправление на главную через {0} секунд(ы)', sec);
+            sec -= 1;
+            
+            if (sec <= 0) {
+                window.location.replace("/");
+                return 0;
+            }
+            
+        }
+
+        setInterval(sayHi, 1000);
+        
+    </script>
+    
+</head>
+<body>
+<h1>{{title}}</h1>
+{% for message in messages %}
+    <p>{{message}}</p>
+{% endfor %}
+<p id='redirect-info'>Перенаправление на главную через 5 секунд</p>
+</body>
+</html>

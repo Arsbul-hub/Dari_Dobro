@@ -8,3 +8,7 @@ SQLAlchemy~=2.0.4
 flask-ckeditor
 WTForms~=3.0.1
 pymorphy2~=0.9.1
+
+Pillow~=9.4.0
+beautifulsoup4~=4.12.0
+pymorphy3~=1.2.0

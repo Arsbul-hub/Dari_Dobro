@@ -5,20 +5,25 @@
 }
 .description p {
 
+    width: 90%;
 
+    margin-top: 10px;
     line-height: 2;
 
 }
+
+
 .description hr {
     margin-top: 30px;
     margin-bottom: 20px;
-
+    border: 1px solid #3caea7;
 	padding: 0;
 	height: 0;
 }
 
 
-.bg-image img {
+
+/*.bg-image img {
     height: 100%;
     width: 100%;
 }
@@ -28,15 +33,19 @@
     opacity: 50%;
 
     width: 100%;
+}*/
+#bg-image {
+    background-image: url(/static/images/background_image.png);
+    height: 110%;
+    background-position: center;
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+    opacity: 0.3;
 }
 
 
 @media only screen and (min-width: 1200px){
-    .description p {
-        max-width: 80%;
-
-        margin-top: 10px;
-    }
 
 
 
@@ -52,50 +61,15 @@
 
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-    /* Общие стили */
-
-
-
+@media only screen and (max-width: 992px){
 
     .description hr {
-        border: 2px solid #3caea7;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border: 1px solid #3caea7;
+        padding: 0;
+        height: 0;
     }
-
-
-}
-@media only screen and (min-width: 768px) and (max-width: 992px){
-    p {
-        font-size: 40px;
-    }
-
-    li {
-        font-size: 30px;
-    }
-    
-
-    .description hr {
-        margin-top: 40px;
-        margin-bottom: 20px;
-        border: 2px solid #3caea7;
-    }
-
-}
-@media only screen and (min-width: 480px) and (max-width: 768px) {
-    .description p {
-        font-size: 2vh;
-
-    }
-
-}
-@media only screen and (max-width: 320px) and (max-width: 480px) {
-    .description p {
-        font-size: 2vh;
-
-    }
-    p {
-        background-color: red;
-    }
-
+        .
 
 }

@@ -14,7 +14,7 @@
 </head>
 <body>
 
-{% block content %}
+{% block after %}
 {{ ckeditor.load() }}
 
 <div class="form-block">
@@ -28,7 +28,7 @@
         <p>
             {{ form.title(size=35) }}
             {% for error in form.title.errors %}<br>
-            <span style="color: red;">[{{ error }}]</span>
+            <span class="error">[{{ error }}]</span>
             {% endfor %}
         </p>
 
@@ -37,7 +37,7 @@
         <p>
             {{ form.cover(size=32) }}
             {% for error in form.cover.errors %}<br>
-            <span style="color: red;">{{ error }}</span>
+            <span class="error">{{ error }}</span>
             {% endfor %}
         </p>
 
@@ -46,7 +46,7 @@
             {{ form.body() }}
 
             {% for error in form.body.errors %}<br>
-            <span style="color: red;">{{ error }}</span>
+            <span class="error">{{ error }}</span>
             {% endfor %}
 
         </p>

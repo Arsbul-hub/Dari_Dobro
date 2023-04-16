@@ -15,7 +15,7 @@
 <body>
 
 
-{% block content %}
+{% block after %}
 
 <div class="form-block">
     <h1>Регистрация</h1>
@@ -52,7 +52,7 @@
         {{ form.save() }}
     </form>
     {{ ckeditor.load() }}
-    {{ ckeditor.config(name='description') }}
+    {{ ckeditor.config(name='description', height=500) }}
 </div>
 
 {% endblock %}

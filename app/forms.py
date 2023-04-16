@@ -2,7 +2,7 @@ import re
 
 from flask_ckeditor import CKEditorField
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, FileField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, FileField, URLField
 from wtforms.widgets import TextArea
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from app.models import User, Config
@@ -44,6 +44,19 @@ class CreateNewsForm(FlaskForm):
     submit = SubmitField("Опубликовать")
 
 
+class AddSmiPostForm(FlaskForm):
+    title = StringField("Название поста", validators=[DataRequired()])
+    url = URLField("Ссылка на пост", validators=[DataRequired()])
+    # cover_file = FileField("Файл изображения")
+    cover_url = URLField("Ссылка изображения")
+    submit = SubmitField("Добавить")
+
+    # def validate_cover_url(self, cover_url):
+    #
+    #     if (self.cover_file.data and self.cover_url.data) or (not self.cover_file.data and not self.cover_url.data):
+    #         raise ValidationError("Выберите ОДИН из вариантов загрузки изображения")
+
+
 class AddAnimalForm(FlaskForm):
     title = StringField("Кличка нового животного:", validators=[DataRequired()])
     cover = FileField("Фотография:", validators=[DataRequired(), image_validation])
@@ -54,7 +67,7 @@ class AddAnimalForm(FlaskForm):
 class AddPartnerForm(FlaskForm):
     name = StringField("Имя партнёра:", validators=[DataRequired()])
     logo = FileField("Логотип партнёра:", validators=[DataRequired(), image_validation])
-    link = StringField("Ссылка на сайт партнёра")
+    link = URLField("Ссылка на партнёра")
     submit = SubmitField("Добавить")
 
 

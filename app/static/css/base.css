@@ -1,14 +1,14 @@
 * { box-sizing: border-box; }
-
+/*Desktop*/
 
 .nav-menu div {
-    display: inline-block;
+
 
     margin: auto 10px;
 
 }
 .nav-menu {
-    margin: 10px 0;
+    padding: 10px 0;
     display: flex;
     min-width: 10%;
     justify-content: center;
@@ -37,37 +37,22 @@
   font-size: 25px;
 }
 nav ul {
-  display: block;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
-.topmenu > li {
+.topmenu  li {
   margin: 15px 20px;
   float: left;
   position: relative;
   font-family: 'Open Sans', sans-serif;
   
 }
-/* .topmenu > li::after {
-  content: '';
-  margin-top: 1px;
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #ff0000;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
 
-.topmenu > li:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}  */
 .topmenu > li > a {
   text-transform: uppercase;
   font-size: 15px;
@@ -122,3 +107,80 @@ a {
   visibility: visible;
   transform: scaleY(1);
 }
+
+
+@media only screen and (max-width: 992px) {
+
+
+  #open-navigation {
+    display: block!important;
+    font-size: 30px;
+    margin: auto 0;
+  }
+  .me-admin {
+    display: none;
+  }
+  .nav-menu {
+    display: flex;
+    justify-content: space-between;
+    margin:0 20px;
+
+  }
+  .navigation {
+    visibility: hidden;
+    background: rgb(229 248 255);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    
+    position: fixed;
+    margin: 0!important;
+  }
+  .topmenu {
+
+    flex-direction: column;
+  }
+  #close-navigation {
+     display: flex; 
+    margin-top: 40px;
+    margin-right: 30px;
+    justify-content: flex-end;
+    font-size: 30px;
+
+  }
+  .submenu {
+    position: static;
+    height: 0;
+    max-height: 100%;
+    transition: height 0.15s ease-out;
+
+  }
+  .topmenu  li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+
+  }
+  .submenu li {
+    padding: 5px 0px;
+    margin: 10px 0;
+  }
+  .submenu a {
+    font-size: 15px;
+  }
+  .topmenu  li {
+
+    float: none;
+    position: static;
+
+  
+  }
+/*  #after {
+    visibility: hidden;
+
+  }*/
+/*  body {
+    overflow-y: hidden;
+  }*/
+} 
