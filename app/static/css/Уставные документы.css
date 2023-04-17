@@ -18,7 +18,7 @@
 }
 .documents-list {
   display: flex;
-  width: 90%;
+  width: 100%;
   margin: 40px auto;
   flex-direction: column-reverse;
   align-items: center;
@@ -35,7 +35,7 @@
   display: block;
 
   width: 30%;
-  margin: 50px 10px;
+  margin: 35px 0;
 }
 
 .confirm-remove-dialog .buttons {
@@ -83,8 +83,9 @@
 
 
     .content {
-      height: 130px;
+      height: 110px;
     }
+
     .item-block {
       width: 90%;
     }

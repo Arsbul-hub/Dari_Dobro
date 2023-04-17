@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/base.css">
     <link rel="stylesheet" type="text/css" href="/static/css/page.css">
     <script src="/static/js/jquery.js"></script>
-<!--    <link rel="stylesheet" type="text/css" href="/static/css/adaptive.css">-->
+    <!--    <link rel="stylesheet" type="text/css" href="/static/css/adaptive.css">-->
     <link rel="icon" href="/static/images/icon.ico">
     <script src="https://kit.fontawesome.com/6957c188ce.js" crossorigin="anonymous"></script>
     <script src="/static/js/site.js"></script>
@@ -30,8 +30,6 @@
 <div class="l-wrap js-wrap">
 
 
-
-
     <div class="nav-menu" id="desktop">
         <div class="logo">
             <a href="/">
@@ -39,30 +37,29 @@
             </a>
         </div>
         <div class="navigation">
-           <div id="close-navigation"><a onclick="close_navigation()"  ><i class="fa fa-close"></i></a></div>
             <nav>
                 <ul class="topmenu">
                     <li><a>Главная</a>
                         <ul class="submenu">
                             <li><a href="{{url_for('index')}}">О НАС</a></li>
                             <li><a href="{{ url_for('documents') }}">Уставные документы</a></li>
-<!--                            <li><a href="{{ url_for('reporting') }}">Отчетность</a></li>-->
+                            <!--                            <li><a href="{{ url_for('reporting') }}">Отчетность</a></li>-->
                             <li><a href="{{ url_for('smi') }}">СМИ о нас</a></li>
-<!--                            <li><a href="{{ url_for('partners') }}">Партнеры</a></li>-->
+                            <!--                            <li><a href="{{ url_for('partners') }}">Партнеры</a></li>-->
                             <li><a href="{{ url_for('materials') }}">Полезные материалы</a></li>
                         </ul>
                     </li>
                     <li><a href="{{url_for('our_animals')}}">НАШИ ЖИВОТНЫЕ</a>
 
                     </li>
-<!--                    <li><a>ПРОГРАММЫ</a>-->
-<!--                        <ul class="submenu">-->
-<!--                            <li><a href="{{url_for('house_for_animals')}}">Дом дляживотных</a></li>-->
-<!--                            <li><a href="{{ url_for('ambulance') }}">Скорая помощь</a></li>-->
-<!--                            <li><a href="{{ url_for('activities') }}">Просвещение и мероприятия</a></li>-->
+                    <!--                    <li><a>ПРОГРАММЫ</a>-->
+                    <!--                        <ul class="submenu">-->
+                    <!--                            <li><a href="{{url_for('house_for_animals')}}">Дом дляживотных</a></li>-->
+                    <!--                            <li><a href="{{ url_for('ambulance') }}">Скорая помощь</a></li>-->
+                    <!--                            <li><a href="{{ url_for('activities') }}">Просвещение и мероприятия</a></li>-->
 
-<!--                        </ul>-->
-<!--                    </li>-->
+                    <!--                        </ul>-->
+                    <!--                    </li>-->
 
                     <li><a href="{{url_for('partners')}}">МЕРОПРИЯТИЯ</a></li>
                     <li><a href="{{url_for('partners')}}">ПАРТНЕРЫ</a></li>
@@ -78,67 +75,121 @@
                     <li><a href="{{url_for('contacts')}}">КОНТАКТЫ</a></li>
 
 
-
                 </ul>
             </nav>
 
 
         </div>
         <a class="me-admin" href="{{ url_for('profile') }}">Я администратор</a>
-        <a onclick="open_navigation()" style="display: none" id="open-navigation"><i class="fa-solid fa-bars "></i></a>
+
+    </div>
+    <div class="nav-menu" id="mobile" style="display: none">
+        <div class="nav-controls">
+            <div class="logo">
+                <a href="/">
+                    <img src="/static/images/logo.png">
+                </a>
+            </div>
+
+<!--            <a class="me-admin" href="{{ url_for('profile') }}">Я администратор</a>-->
+            <a onclick="open_navigation()" id="open-navigation"><i class="fa-solid fa-bars "></i></a>
+            <a style="display: none" id="close-navigation" onclick="close_navigation()"><i class="fa fa-close"></i></a>
+        </div>
+        <div id="navigation">
+
+
+            <nav>
+                <ul class="topmenu">
+                    <li><a>Главная</a>
+                        <ul class="submenu">
+                            <li><a href="{{url_for('index')}}">О НАС</a></li>
+                            <li><a href="{{ url_for('documents') }}">Уставные документы</a></li>
+                            <!--                            <li><a href="{{ url_for('reporting') }}">Отчетность</a></li>-->
+                            <li><a href="{{ url_for('smi') }}">СМИ о нас</a></li>
+                            <!--                            <li><a href="{{ url_for('partners') }}">Партнеры</a></li>-->
+                            <li><a href="{{ url_for('materials') }}">Полезные материалы</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{url_for('our_animals')}}">НАШИ ЖИВОТНЫЕ</a>
+
+                    </li>
+                    <!--                    <li><a>ПРОГРАММЫ</a>-->
+                    <!--                        <ul class="submenu">-->
+                    <!--                            <li><a href="{{url_for('house_for_animals')}}">Дом дляживотных</a></li>-->
+                    <!--                            <li><a href="{{ url_for('ambulance') }}">Скорая помощь</a></li>-->
+                    <!--                            <li><a href="{{ url_for('activities') }}">Просвещение и мероприятия</a></li>-->
+
+                    <!--                        </ul>-->
+                    <!--                    </li>-->
+
+                    <li><a href="{{url_for('partners')}}">МЕРОПРИЯТИЯ</a></li>
+                    <li><a href="{{url_for('partners')}}">ПАРТНЕРЫ</a></li>
+                    <li><a href="{{url_for('news')}}">НОВОСТИ</a></li>
+
+                    <li><a>ПОМОЧЬ</a>
+                        <ul class="submenu">
+                            <li><a href="{{url_for('help_money')}}">Помогите финансово</a></li>
+                            <li><a href="{{ url_for('opeka') }}">Стать опекуном</a></li>
+                            <li><a href="{{ url_for('volunteer') }}">Стать волонтером</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{url_for('contacts')}}">КОНТАКТЫ</a></li>
+
+
+                </ul>
+            </nav>
+
+
+        </div>
     </div>
 
+    <!--    <div class="nav-menu" id="mobile">-->
+    <!--        <div class="logo">-->
+    <!--            <a href="/">-->
+    <!--                <img src="/static/images/logo.png">-->
+    <!--            </a>-->
+    <!--        </div>-->
+    <!--        <div class="navigation" id="navigation-mobile" style="visibility: hidden">-->
+    <!--            <nav>-->
+    <!--                <ul class="topmenu">-->
+    <!--                    <li><a>Главная</a>-->
+    <!--                        <ul class="submenu">-->
+    <!--                            <li><a href="{{url_for('index')}}">О НАС</a></li>-->
+    <!--                            <li><a href="{{ url_for('documents') }}">Уставные документы</a></li>-->
+    <!--&lt;!&ndash;                            <li><a href="{{ url_for('reporting') }}">Отчетность</a></li>&ndash;&gt;-->
+    <!--                            <li><a href="{{ url_for('smi') }}">СМИ о нас</a></li>-->
+    <!--&lt;!&ndash;                            <li><a href="{{ url_for('partners') }}">Партнеры</a></li>&ndash;&gt;-->
+    <!--                            <li><a href="{{ url_for('materials') }}">Полезные материалы</a></li>-->
+    <!--                        </ul>-->
+    <!--                    </li>-->
+    <!--                    <li><a href="{{url_for('our_animals')}}">НАШИ ЖИВОТНЫЕ</a>-->
 
-<!--    <div class="nav-menu" id="mobile">-->
-<!--        <div class="logo">-->
-<!--            <a href="/">-->
-<!--                <img src="/static/images/logo.png">-->
-<!--            </a>-->
-<!--        </div>-->
-<!--        <div class="navigation" id="navigation-mobile" style="visibility: hidden">-->
-<!--            <nav>-->
-<!--                <ul class="topmenu">-->
-<!--                    <li><a>Главная</a>-->
-<!--                        <ul class="submenu">-->
-<!--                            <li><a href="{{url_for('index')}}">О НАС</a></li>-->
-<!--                            <li><a href="{{ url_for('documents') }}">Уставные документы</a></li>-->
-<!--&lt;!&ndash;                            <li><a href="{{ url_for('reporting') }}">Отчетность</a></li>&ndash;&gt;-->
-<!--                            <li><a href="{{ url_for('smi') }}">СМИ о нас</a></li>-->
-<!--&lt;!&ndash;                            <li><a href="{{ url_for('partners') }}">Партнеры</a></li>&ndash;&gt;-->
-<!--                            <li><a href="{{ url_for('materials') }}">Полезные материалы</a></li>-->
-<!--                        </ul>-->
-<!--                    </li>-->
-<!--                    <li><a href="{{url_for('our_animals')}}">НАШИ ЖИВОТНЫЕ</a>-->
+    <!--                    </li>-->
+    <!--                    <li><a href="{{url_for('partners')}}">МЕРОПРИЯТИЯ</a></li>-->
+    <!--                    <li><a href="{{url_for('partners')}}">ПАРТНЕРЫ</a></li>-->
+    <!--                    <li><a href="{{url_for('news')}}">НОВОСТИ</a></li>-->
 
-<!--                    </li>-->
-<!--                    <li><a href="{{url_for('partners')}}">МЕРОПРИЯТИЯ</a></li>-->
-<!--                    <li><a href="{{url_for('partners')}}">ПАРТНЕРЫ</a></li>-->
-<!--                    <li><a href="{{url_for('news')}}">НОВОСТИ</a></li>-->
-
-<!--                    <li><a>ПОМОЧЬ</a>-->
-<!--                        <ul class="submenu">-->
-<!--                            <li><a href="{{url_for('help_money')}}">Помогите финансово</a></li>-->
-<!--                            <li><a href="{{ url_for('opeka') }}">Стать опекуном</a></li>-->
-<!--                            <li><a href="{{ url_for('volunteer') }}">Стать волонтером</a></li>-->
-<!--                        </ul>-->
-<!--                    </li>-->
-<!--                    <li><a href="{{url_for('contacts')}}">КОНТАКТЫ</a></li>-->
-
+    <!--                    <li><a>ПОМОЧЬ</a>-->
+    <!--                        <ul class="submenu">-->
+    <!--                            <li><a href="{{url_for('help_money')}}">Помогите финансово</a></li>-->
+    <!--                            <li><a href="{{ url_for('opeka') }}">Стать опекуном</a></li>-->
+    <!--                            <li><a href="{{ url_for('volunteer') }}">Стать волонтером</a></li>-->
+    <!--                        </ul>-->
+    <!--                    </li>-->
+    <!--                    <li><a href="{{url_for('contacts')}}">КОНТАКТЫ</a></li>-->
 
 
+    <!--                </ul>-->
+    <!--            </nav>-->
 
-<!--                </ul>-->
-<!--            </nav>-->
+    <!--        </div>-->
+    <!--        <a onclick="open_navigation()" class="open-navigation"><i class="fa-solid fa-bars "></i></a>-->
 
-<!--        </div>-->
-<!--        <a onclick="open_navigation()" class="open-navigation"><i class="fa-solid fa-bars "></i></a>-->
-
-<!--    </div>-->
+    <!--    </div>-->
     <div id="after">
         {% block after %}{% endblock %}
     </div>
 </div>
-
 
 
 </body>

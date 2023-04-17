@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     width: 40%;
-
+    padding: 30px 0;
     background-color: #f2f2f2;
     margin: 70px auto;
     border-radius: 10px;
@@ -18,7 +18,8 @@
     margin-top: 10px;
 }
 .form-block h1 {
-    margin-top: 50px;
+    font-weight: normal;
+    margin-top: 20px;
 }
 .form-block form {
     display: flex;
@@ -41,7 +42,7 @@ input[type=text] {
     cursor: pointer;
 }
 p {
-    margin-top: 15px;
+    margin-top: 30px;
 }
 
 input[type="url"] {
@@ -70,7 +71,7 @@ input[type=submit] {
     
 }
 label {
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: large;
 }
 
@@ -80,5 +81,7 @@ label {
     .form-block {
         width: 90%;
     }
-
+    .form-block h1 {
+        font-weight: normal;
+    }
 }

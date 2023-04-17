@@ -4,7 +4,7 @@ import os
 from flask import render_template, send_from_directory, url_for, render_template_string, flash, redirect, request
 from flask_ckeditor import upload_fail, upload_success
 from werkzeug.datastructures import FileStorage
-from app import app, morph, db
+from app import app, morph, db, db_session
 from PIL import Image
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, News, Animals, Documents, Config, Partners, SmiPosts
@@ -20,7 +20,8 @@ from bs4 import BeautifulSoup
 
 @login.user_loader
 def load_user(user_id):
-    return db.session.get(User, int(user_id))
+    session = db_session.create_session()
+    return session.get(User, int(user_id))
 
 
 @app.route('/files/<path:filename>')
@@ -68,7 +69,8 @@ def save_file(file, path="/loaded_media", name=None, formates=[]):
 
 @app.route('/')
 def index():
-    site_description = db.session.get(Config, "description")
+    session = db_session.create_session()
+    site_description = session.get(Config, "description")
 
     if site_description:
         description = site_description.value
@@ -93,12 +95,13 @@ def logout():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    session = db_session.create_session()
     if current_user.is_authenticated:
         return redirect("/")
     form = LoginForm()
     if form.validate_on_submit():
 
-        user = User.query.filter_by(username=form.username.data).first()
+        user = session.query(User).filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
             return redirect("/login")
@@ -139,6 +142,7 @@ def profile():
 @app.route("/Настройки сайта", methods=["GET", "POST"])
 @login_required
 def site_settings():
+    session = db_session.create_session()
     form = ConfigForm()
 
     if form.validate_on_submit():
@@ -147,15 +151,15 @@ def site_settings():
         save_file(file=form.background_image.data, path="images", name="background_image.png",
                   formates=["png", "jpg", "jpeg", "webp"])
 
-        db.session.get(Config, "description").value = form.description.data
-        db.session.get(Config, "allow_background_image").value = form.allow_background_image.data
-        db.session.commit()
+        session.get(Config, "description").value = form.description.data
+        session.get(Config, "allow_background_image").value = form.allow_background_image.data
+        session.commit()
         return redirect(url_for("profile"))
     else:
 
-        form.description.data = db.session.get(Config, "description").value
+        form.description.data = session.get(Config, "description").value
 
-        form.allow_background_image.data = int(db.session.get(Config, "allow_background_image").value)
+        form.allow_background_image.data = int(session.get(Config, "allow_background_image").value)
 
     return render_template("Настройки сайта.html", config=Config, form=form)
 
@@ -163,14 +167,15 @@ def site_settings():
 @app.route("/Добавить новость", methods=['GET', 'POST'])
 @login_required
 def add_news():
+    session = db_session.create_session()
     if not current_user.is_authenticated:
         return redirect(url_for("index"))
     form = CreateNewsForm()
     if form.validate_on_submit():
         saved_cover = save_file(file=form.cover.data, formates=["png", "jpg", "jpeg", "webp"])
         news_post = News(title=form.title.data, body=form.body.data, cover=saved_cover)
-        db.session.add(news_post)
-        db.session.commit()
+        session.add(news_post)
+        session.commit()
         flash('Вы опубликовали новый пост!')
         return redirect(url_for("news"))
     return render_template("Добавить новость.html", form=form)
@@ -178,20 +183,21 @@ def add_news():
 
 @app.route("/Новости")
 def news():
+    session = db_session.create_session()
     action = request.args.get('action')
 
     print(action)
     if action == "show":
-        news_list = db.session.get(News, request.args.get('id'))
+        news_list = session.get(News, request.args.get('id'))
         return render_template("Новость.html", news=news_list)
     elif current_user.is_authenticated and action == "remove":
 
-        db.session.query(News).filter_by(id=request.args.get('id')).delete()
+        session.query(News).filter_by(id=request.args.get('id')).delete()
 
-        db.session.commit()
+        session.commit()
         return redirect(url_for("news"))
 
-    news = db.session.query(News).all()
+    news = session.query(News).all()
 
     news_list = list(filter(lambda n: (datetime.today() - n.timestamp).total_seconds() < 3600 * 24 * 10, news))
     old_news_list = list(filter(lambda n: (datetime.today() - n.timestamp).total_seconds() > 3600 * 24 * 10, news))
@@ -210,6 +216,7 @@ def reporting():
 @app.route("/Добавить документ", methods=['GET', 'POST'])
 @login_required
 def add_document():
+    session = db_session.create_session()
     if not current_user.is_authenticated:
         return redirect(url_for("index"))
     form = AddDocumentForm()
@@ -217,8 +224,8 @@ def add_document():
         print(form.document.data)
         file = save_file(file=form.document.data, formates=["pdf", "pptx"])
         new_document = Documents(title=form.title.data, ref=file)
-        db.session.add(new_document)
-        db.session.commit()
+        session.add(new_document)
+        session.commit()
         flash('Вы добавили новый документ!')
         return redirect(url_for("documents"))
     return render_template("Добавить документ.html", form=form)
@@ -226,34 +233,36 @@ def add_document():
 
 @app.route('/Документы')
 def documents():
-    documents_list = Documents.query.all()
+    session = db_session.create_session()
+    documents_list = session.query(Documents).all()
     action = request.args.get('action')
     if action == "show":
-        document = Documents.query.filter_by(id=request.args.get('id')).first()
+        document = session.get(Documents, request.args.get('id'))
         return redirect(document.ref)
     elif current_user.is_authenticated:
         if action == "remove":
-            db.session.query(Documents).filter_by(id=request.args.get('id')).delete()
+            session.delete(session.get(Documents, request.args.get('id')))
 
-            db.session.commit()
+            session.commit()
             return redirect(url_for("documents"))
     return render_template("Уставные документы.html", documents=documents_list, user=current_user)
 
 
 @app.route('/Сми о нас')
 def smi():
+    session = db_session.create_session()
     action = request.args.get("action")
 
     print(action)
 
     if current_user.is_authenticated and action == "remove":
 
-        db.session.query(SmiPosts).filter_by(id=request.args.get('id')).delete()
+        session.delete(session.get(SmiPosts, request.args.get('id')))
 
-        db.session.commit()
+        session.commit()
         return redirect(url_for("smi"))
 
-    posts = db.session.query(SmiPosts).all()
+    posts = session.query(SmiPosts).all()
     print(posts)
     return render_template("СМИ о нас.html", user=current_user, posts=posts, today=datetime.today())
 
@@ -261,6 +270,7 @@ def smi():
 @app.route("/Добавить пост сми", methods=['GET', 'POST'])
 @login_required
 def add_smi_post():
+    session = db_session.create_session()
     if not current_user.is_authenticated:
         return redirect(url_for("index"))
     form = AddSmiPostForm()
@@ -269,8 +279,8 @@ def add_smi_post():
         saved_cover = form.cover_url.data
 
         smi_post = SmiPosts(title=form.title.data, cover=saved_cover, url=form.url.data)
-        db.session.add(smi_post)
-        db.session.commit()
+        session.add(smi_post)
+        session.commit()
         flash('Вы опубликовали новый пост!')
         return redirect(url_for("smi"))
     return render_template("Добавить пост сми.html", form=form)
@@ -283,17 +293,18 @@ def materials():
 
 @app.route('/Партнёры')
 def partners():
+    session = db_session.create_session()
     action = request.args.get('action')
-    partners = Partners.query.all()
+    partners = session.query(Partners).all()
     # partners_desktop = []
     # for i in range(0, len(partners), 2):
     #     partners_desktop.append(partners[i:i + 2])
 
     if current_user.is_authenticated and action:
         if action == "remove":
-            db.session.query(Partners).filter_by(id=request.args.get('id')).delete()
+            session.delete(session.get(Partners, request.args.get('id')))
 
-            db.session.commit()
+            session.commit()
         return redirect(url_for("partners"))
     return render_template("Партнеры.html", len=len, partners=partners, partners_mobile=partners,
                            user=current_user)
@@ -302,6 +313,7 @@ def partners():
 @app.route("/Добавить партнёра", methods=['GET', 'POST'])
 @login_required
 def add_partner():
+    session = db_session.create_session()
     if not current_user.is_authenticated:
         return redirect(url_for("index"))
     form = AddPartnerForm()
@@ -310,8 +322,8 @@ def add_partner():
         out_path = save_file(file=form.logo.data, formates=["png", "jpg", "jpeg", "webp"])
 
         new_animal = Partners(name=form.name.data, logo=out_path, link=form.link.data)
-        db.session.add(new_animal)
-        db.session.commit()
+        session.add(new_animal)
+        session.commit()
         flash('Вы добавили нового партнёра!')
         return redirect(url_for("partners"))
     return render_template("Добавить партнёра.html", form=form)
@@ -320,6 +332,7 @@ def add_partner():
 @app.route("/Добавить животное", methods=['GET', 'POST'])
 @login_required
 def add_animal():
+    session = db_session.create_session()
     if not current_user.is_authenticated:
         return redirect(url_for("index"))
     form = AddAnimalForm()
@@ -327,8 +340,8 @@ def add_animal():
         out_path = save_file(file=form.cover.data, formates=["png", "jpg", "jpeg", "webp"])
 
         new_animal = Animals(name=form.title.data, body=form.body.data, cover=out_path)
-        db.session.add(new_animal)
-        db.session.commit()
+        session.add(new_animal)
+        session.commit()
         flash('Вы добавили новое животное!')
         return redirect(url_for("our_animals"))
     return render_template("Добавить животное.html", form=form)
@@ -336,28 +349,29 @@ def add_animal():
 
 @app.route('/Наши животные')
 def our_animals():
+    session = db_session.create_session()
     action = request.args.get('action')
     if action == "show":
-        animal = Animals.query.filter_by(id=request.args.get('id')).first()
+        animal = session.get(Animals, request.args.get('id'))
         return render_template("Животное.html", animal=animal)
     elif current_user.is_authenticated and action:
         if action == "remove":
-            db.session.query(Animals).filter_by(id=request.args.get('id')).delete()
+            session.delete(session.get(Animals, request.args.get('id')))
 
-            db.session.commit()
+            session.commit()
         if action == "move_to_house":
-            animal = db.session.get(Animals, request.args.get('id'))
+            animal = session.get(Animals, request.args.get('id'))
             animal.move_to_house()
-            db.session.commit()
+            session.commit()
 
         if action == "move_to_vet":
-            animal = db.session.get(Animals, request.args.get('id'))
+            animal = session.get(Animals, request.args.get('id'))
             animal.move_to_vet()
 
-            db.session.commit()
+            session.commit()
         return redirect(url_for("our_animals"))
-    animals = Animals.query.filter_by(have_house=False).all()
-    no_animals = Animals.query.filter_by(have_house=True).all()
+    animals = session.query(Animals).filter_by(have_house=False).all()
+    no_animals = session.query(Animals).filter_by(have_house=True).all()
     animals.reverse()
     return render_template("Наши животные.html", animals=animals, no_animals=no_animals, user=current_user)
 

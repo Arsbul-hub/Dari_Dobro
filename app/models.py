@@ -1,12 +1,12 @@
 from sqlalchemy_serializer import SerializerMixin
 
-from app import db
+from app import db, db_session
 from datetime import datetime
 from flask_login import UserMixin, AnonymousUserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 import sqlalchemy as sa
 
-__basemodel = db.Model
+__basemodel = db_session.Model
 
 
 class User(UserMixin, __basemodel):

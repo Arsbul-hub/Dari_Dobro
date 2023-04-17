@@ -47,8 +47,13 @@
 
 {% block after %}
 
-<h1 class="title">Новости</h1>
-<nav class="navigation">
+<span class="title">Новости</span>
+<div class="is-empty" >
+    {% if user.is_authenticated %}
+    <a href="{{url_for('add_news')}}">Добавить новости</a>
+    {% endif %}
+</div>
+<nav class="category-navigation">
     <ul>
         <li><a onclick="show_new()">Новые</a></li>
         <li><a onclick="show_old()">Более старые</a></li>
@@ -88,7 +93,7 @@
 
             <div class="tools">
                 {% if n == news[-1] %}
-                <a href="{{url_for('add_news')}}">Создать новость</a>
+
                 {% endif %}
                 <a onclick="open_confirm_remove({{n.id}});">
                     <i class="fa fa-trash-o"></i>

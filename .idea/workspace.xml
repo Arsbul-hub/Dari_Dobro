@@ -4,229 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Немного красоты">
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Адаптация почти всех страниц&#10;Пременён meta-тэг маштабирования&#10;Адаптация навигационной панели под мобмльное устройства">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/site_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db_session.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/animals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/animals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/build_cms_front.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/build_cms_front.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/contacts.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/contacts.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/form.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/navigation.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/news.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/news.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/page.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/partners.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/partners.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/Уставные документы.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/Уставные документы.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/navigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index/404.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index/nicepage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index/nicepage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/1000-92c5c1d8c865934effd7004d21f837c8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/14d9c62.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/1b782f9.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/482e7ca.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/4dd3e90.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/500-3e1411f298ac697ff6b8db6241d2c69c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/500-706b9956cb73d99cec546b2e48093b97.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/500-db872359123a108e81ba45280ecccf7f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/500-e1b25ea64049ecfc4c018795ac6e7024.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/500-feaaa68324bd9baaa0c9e8cd3d9d6faf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/808d525.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/8c0dbdb.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/8d7b2b0.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/analytics.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/build_cms_front.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/build_shop_front.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/code.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/comagic.widgets.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/cs.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/css2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/css_user.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/custom-shop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/custom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/fbevents.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/fond-nika-programma-osvv.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/gtm.js(1).загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/gtm.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/inner.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/jquery-3.3.1.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/js(1)" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/m-outer-8cb24ab2d649fd36a488d04d8c457933.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/m-outer-93afeeb17bc37e711759584dbfc50d47.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/main.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/main.chunk.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/openapi.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/out-4.5.42.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/paw_nika.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/runtime-main.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/site.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/sitephone.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/tag.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/u-1655322811.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/v3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач_files/watch.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Добавить документ.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить документ.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Добавить животное.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить животное.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Добавить новость.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить новость.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Добавить партнёра.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Добавить партнёра.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Дом для животных.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/2000-ba895f8bda95097dcfba8765e9ef9e04.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/500-349a9389ffb09dee4762dbb0be92e1a1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/500-c0297ac6478dc1e71f1b55ed57c44ff6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/500-da9265b79a439adc5a3cbfac59c7172d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/500-dd235a9f2315ef7b941e8ebbf45ad19c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/build_cms_front.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/build_shop_front.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/code.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/comagic.widgets.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/cs.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/css_user.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/custom-shop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/custom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/fbevents.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/gtm.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/inner.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/jquery-3.3.1.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/js(1)" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/m-outer-8cb24ab2d649fd36a488d04d8c457933.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/m-outer-93afeeb17bc37e711759584dbfc50d47.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/main.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/main.chunk.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/openapi.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/out-4.5.42.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/paw_nika.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/runtime-main.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/site.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/sitephone.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/tag.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/u-1655322811.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/v3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных_files/watch.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Животное.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Животное.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Контакты.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/1000-d9bfb22935c949962d119d39139175e1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/500-4acaaee1ab64340691bcee75a0d1974a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/500-9866fa153023475058a9048994bc4e32.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/500-a76b0ac8c61c8650f3cf14373116439e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/build_cms_front.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/build_shop_front.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/code.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/comagic.widgets.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/cs.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/css_user.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/custom-shop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/custom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/fbevents.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/gtm.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/inner.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/jquery-3.3.1.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/js(1)" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/m-outer-8cb24ab2d649fd36a488d04d8c457933.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/m-outer-93afeeb17bc37e711759584dbfc50d47.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/main.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/main.chunk.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/openapi.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/out-4.5.42.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/paw_nika.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/runtime-main.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/site.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/sitephone.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/tag.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/u-1655322811.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/v3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Контакты_files/watch.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Настройки сайта.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Настройки сайта.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/Наши животные.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Наши животные.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/build_cms_front.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/build_shop_front.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/code.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/comagic.widgets.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/cs.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/css_user.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/custom-shop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/custom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/fbevents.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/gtm.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/inner.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/jquery-3.3.1.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/js(1)" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/m-outer-8cb24ab2d649fd36a488d04d8c457933.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/m-outer-93afeeb17bc37e711759584dbfc50d47.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/main.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/main.chunk.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/openapi.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/out-4.5.42.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/paw_nika.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/runtime-main.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/site.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/sitephone.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/tag.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/u-1655322811.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/v3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные_files/watch.js.загружено" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/Новости.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Новости.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Новость.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Новость.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Партнеры.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Партнеры.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Профиль.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Профиль.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/СМИ о нас.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/СМИ о нас.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/2000-2197562c9e08d591cebb75347b0622cd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/2000-b47238b45f05110b935d38b176065c55.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/500-5d88e991e135734ffc0af1106cf7ace3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/500-91830ddbe29b9e0dc96af4bf16c2f1e0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/build_cms_front.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/build_shop_front.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/code.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/comagic.widgets.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/cs.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/css_user.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/custom-shop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/custom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/fbevents.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/gtm.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/inner.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/jquery-3.3.1.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/js(1)" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/js(2)" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/m-outer-8cb24ab2d649fd36a488d04d8c457933.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/m-outer-93afeeb17bc37e711759584dbfc50d47.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/main.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/main.chunk.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/openapi.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/out-4.5.42.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/paw_nika.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/runtime-main.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/site.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/sitephone.min.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/tag.js.загружено" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/u-1655322811.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/v3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Скорая помощь_files/watch.js.загружено" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/Уставные документы.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Уставные документы.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/validators/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/validators/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -322,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680879817133</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Адаптация почти всех страниц&#10;Пременён meta-тэг маштабирования&#10;Адаптация навигационной панели под мобмльное устройства">
+      <created>1681652776020</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681652776021</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,19 +146,20 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Адаптация,&#10;Вкладка контакты" />
     <MESSAGE value="Немного красоты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Немного красоты" />
+    <MESSAGE value="Адаптация почти всех страниц&#10;Пременён meta-тэг маштабирования&#10;Адаптация навигационной панели под мобмльное устройства" />
+    <option name="LAST_COMMIT_MESSAGE" value="Адаптация почти всех страниц&#10;Пременён meta-тэг маштабирования&#10;Адаптация навигационной панели под мобмльное устройства" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>286</line>
+          <line>297</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>291</line>
+          <line>302</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -364,7 +169,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>180</line>
+          <line>186</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

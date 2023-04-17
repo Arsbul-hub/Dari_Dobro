@@ -14,7 +14,7 @@
 	text-align: center;
 }
 .partner {
-    padding: 20px 0;
+    padding: 20px;
     width: 300px;
     padding-bottom: 20px;
 }
@@ -31,7 +31,7 @@
 .partners-list {
     display: flex;
     margin-top: 50px;
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
     justify-content: center;
     flex-wrap: wrap;

@@ -44,23 +44,6 @@
     opacity: 0.3;
 }
 
-
-@media only screen and (min-width: 1200px){
-
-
-
-    .description hr {
-        border: 1px solid #3caea7;
-    }
-    .item-block {
-        width: 500px;
-    }
-    .navigation {
-        padding-top: 20px;
-    }
-
-}
-
 @media only screen and (max-width: 992px){
 
     .description hr {

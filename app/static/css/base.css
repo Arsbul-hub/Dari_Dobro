@@ -1,15 +1,11 @@
 * { box-sizing: border-box; }
 /*Desktop*/
 
-.nav-menu div {
 
-
-    margin: auto 10px;
-
-}
 .nav-menu {
     padding: 10px 0;
     display: flex;
+    align-items: center;
     min-width: 10%;
     justify-content: center;
 
@@ -88,6 +84,7 @@ color: #D5B45B; }
 }
 .submenu li {
     padding: 20px 10px;
+    margin: 5px 0;
 }
 .submenu li:last-child a { border-bottom: none; }
 p {
@@ -111,9 +108,18 @@ a {
 
 @media only screen and (max-width: 992px) {
 
-
-  #open-navigation {
+  #mobile {
     display: block!important;
+  }
+  #desktop {
+    display: none!important;
+  }
+  .topmenu > li:hover .submenu {
+    transform: none;
+    height: 100%;
+  }
+  #open-navigation {
+    display: block;
     font-size: 30px;
     margin: auto 0;
   }
@@ -121,21 +127,26 @@ a {
     display: none;
   }
   .nav-menu {
-    display: flex;
+    display: block;
     justify-content: space-between;
-    margin:0 20px;
+    padding: 10px 20px;
 
   }
-  .navigation {
-    visibility: hidden;
+  .nav-controls {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    transform-origin: 0 0;
+    transition: .5s ease-in-out;
+
+  }
+  #navigation {
+    height: 0;
+    margin-top: 20px;
     background: rgb(229 248 255);
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    
-    position: fixed;
-    margin: 0!important;
+    opacity: 0; 
+    visibility: hidden
   }
   .topmenu {
 
@@ -143,12 +154,11 @@ a {
   }
   #close-navigation {
      display: flex; 
-    margin-top: 40px;
-    margin-right: 30px;
     justify-content: flex-end;
     font-size: 30px;
 
   }
+
   .submenu {
     position: static;
     height: 0;
@@ -156,7 +166,7 @@ a {
     transition: height 0.15s ease-out;
 
   }
-  .topmenu  li:hover .submenu {
+  .topmenu  li:active .submenu {
     opacity: 1;
     visibility: visible;
     height: auto;

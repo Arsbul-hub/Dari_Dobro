@@ -16,7 +16,8 @@ app.config.from_object(Config)
 ckeditor = CKEditor(app)
 blueprint = Blueprint('app_api', __name__, template_folder='templates')
 
-db = SQLAlchemy(app)
+db = SQLAlchemy()
+db.init_app(app)
 migrate = Migrate(app, db, render_as_batch=True)
 login = LoginManager(app)
 login.login_view = 'login'
