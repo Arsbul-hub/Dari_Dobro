@@ -81,9 +81,6 @@
     align-items: center;
 }
 
-.is-empty a, p {
-    font-size: larger;
-}
 
 .tools a {
     display: inline-flex;
