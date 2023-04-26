@@ -79,7 +79,7 @@ def index():
         description = "Описание не задано"
 
     return render_template("index.html", description=description,
-                           allow_background_image=db.session.get(Config, "allow_background_image"))
+                           allow_background_image=Config.query.get("allow_background_image").value)
 @app.route('/test')
 def test():
 

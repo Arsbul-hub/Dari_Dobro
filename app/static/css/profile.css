@@ -1,11 +1,16 @@
 .buttons-list div {
-    display: flex;
-    background-color: green;
-    
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px darkgrey;
-    
-    align-items: center;
+  display: flex;
+  background-color: green;
+  height: 90px;
+
+  width: 30%;
+
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px darkgrey;
+  
+  margin-top: 10px;
+  align-items: center;
 }
 .title {
     margin-top: 50px;
@@ -31,42 +36,8 @@
     justify-content: center;
 }
 
-@media only screen and (min-width: 1200px) {
 
-    .title {
-        font-size: 30px;
-    }
-    .buttons-list div {
-        height: 90px;
-    }
-    .buttons-list {
-
-        width: 30%;
-
-    }
-    .buttons-list span {
-        font-size: 25px;
-    }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-    .title {
-        font-size: 30px;
-    }
-    .buttons-list div {
-        height: 90px;
-    }
-    .buttons-list {
-
-        width: 30%;
-
-    }
-    .buttons-list span {
-        font-size: 25px;
-    }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 992px) {
+@media only screen and  (max-width: 992px) {
 
 
 
@@ -81,15 +52,7 @@
         width: 60%;
 
     }
-    .buttons-list span {
-        font-size: 45px;
-    }
+
 
 }
 
-@media only screen and (min-width: 480px) and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 320px) and (max-width: 480px) {
-}
