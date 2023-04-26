@@ -287,7 +287,7 @@ def add_smi_post():
 
 @app.route('/Материалы')
 def materials():
-    return render_template("Полезные материалы.html")
+    return redirect("/")
 
 
 @app.route('/Партнёры')
@@ -382,19 +382,11 @@ def contacts():
     return render_template("contacts.html")
 
 
-@app.route('/Дом для животных')
-def house_for_animals():
-    return render_template("Дом для животных.html")
 
 
-@app.route('/Скорая помощь')
-def ambulance():
-    return render_template("Скорая помощь.html")
-
-
-@app.route('/Просвещение и мероприятия')
+@app.route('/Мероприятия')
 def activities():
-    return render_template("Просвещение и мероприятия.html")
+    return redirect("/")
 
 
 @app.route('/Помогите финансово')
@@ -412,21 +404,9 @@ def volunteer():
     return render_template("Стать волонтером.html")
 
 
-@app.route('/Оставайтесь сытыми')
-def full():
-    return render_template("Оставайтесь cытыми.html")
-
-
-@app.route('/Наши сборы')
-def fees():
-    return render_template("Наши сборы.html")
-
 
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('errors/404.html'), 404
 
 
-@app.route('/app-ads.txt')
-def download_file():
-    return render_template_string('''google.com, pub-9371118693960899, DIRECT, f08c47fec0942fa00''')

@@ -43,9 +43,6 @@
 
 
         <div class="tools">
-            {% if document == documents[-1] %}
-
-            {% endif %}
             <a onclick="open_confirm_remove({{document.id}});">
                 <i class="fa fa-trash-o"></i>
             </a>
@@ -64,13 +61,7 @@
 {% else %}
 <div class="is-empty">
     <p>Пока здесь пусто</p>
-    {% if user.is_authenticated %}
 
-
-    <a href="{{url_for('add_document')}}">Добавить документ</a>
-
-
-    {% endif %}
 </div>
 {% endif %}
 {% endblock %}
