@@ -4,13 +4,13 @@
 
 <head>
 
-{% block head %}
+    {% block head %}
 
     <meta charset="UTF-8">
     <title>Профиль</title>
     <link rel="stylesheet" type="text/css" href="/static/css/profile.css">
 
-{% endblock %}
+    {% endblock %}
 </head>
 <body>
 
@@ -19,14 +19,24 @@
 <span class="title">{{user}}</span>
 <div class="buttons-list">
     <a href="{{ url_for('register') }}">
-        <div><span>Регистрация нового администратора</span></div>
+        <div class="content">
+
+            <p>Регистрация нового администратора</p>
+        </div>
     </a>
     <a href="{{ url_for('site_settings') }}">
-        <div><span>Настройки сайта</span></div>
+        <div class="content">
+
+            <p>Настройки сайта</p>
+        </div>
     </a>
     <a href="{{ url_for('logout') }}">
-        <div><span>Выйти</span></div>
+        <div class="content">
+
+            <p>Выйти</p>
+        </div>
     </a>
+
 </div>
 
 

@@ -134,9 +134,8 @@ def register():
 @app.route("/Профиль")
 @login_required
 def profile():
-    if not current_user.is_authenticated:
-        return redirect(url_for("index"))
-    return render_template("Профиль.html", user=current_user)
+
+    return render_template("profile.html", user=current_user)
 
 
 @app.route("/Настройки сайта", methods=["GET", "POST"])
@@ -161,7 +160,7 @@ def site_settings():
 
         form.allow_background_image.data = int(Config.query.get(Config, "allow_background_image").value)
 
-    return render_template("Настройки сайта.html", config=Config, form=form)
+    return render_template("site_settings.html", config=Config, form=form)
 
 
 @app.route("/Добавить новость", methods=['GET', 'POST'])
@@ -178,7 +177,7 @@ def add_news():
         db.session.commit()
         flash('Вы опубликовали новый пост!')
         return redirect(url_for("news"))
-    return render_template("Добавить новость.html", form=form)
+    return render_template("add_news.html", form=form)
 
 
 @app.route("/Новости")
@@ -189,7 +188,7 @@ def news():
     print(action)
     if action == "show":
         news_list = News.query.get(News, request.args.get('id'))
-        return render_template("Новость.html", news=news_list)
+        return render_template("show_news.html", news=news_list)
     elif current_user.is_authenticated and action == "remove":
 
         db.session.query(News).filter_by(id=request.args.get('id')).delete()
@@ -202,7 +201,7 @@ def news():
     news_list = list(filter(lambda n: (datetime.today() - n.timestamp).total_seconds() < 3600 * 24 * 10, news))
     old_news_list = list(filter(lambda n: (datetime.today() - n.timestamp).total_seconds() > 3600 * 24 * 10, news))
 
-    return render_template("Новости.html", beautiful_soup=BeautifulSoup, news=news_list, old_news=old_news_list,
+    return render_template("news.html", beautiful_soup=BeautifulSoup, news=news_list, old_news=old_news_list,
                            morph=morph, today=datetime.today(),
                            case={"gent"},
                            user=current_user)
@@ -228,7 +227,7 @@ def add_document():
         db.session.commit()
         flash('Вы добавили новый документ!')
         return redirect(url_for("documents"))
-    return render_template("Добавить документ.html", form=form)
+    return render_template("add_document.html", form=form)
 
 
 @app.route('/Документы')
@@ -245,7 +244,7 @@ def documents():
             db.session.delete(Documents.query.get(request.args.get('id')))
             db.session.commit()
             return redirect(url_for("documents"))
-    return render_template("Уставные документы.html", documents=documents_list, user=current_user)
+    return render_template("documents.html", documents=documents_list, user=current_user)
 
 
 @app.route('/Сми о нас')
@@ -264,7 +263,7 @@ def smi():
 
     posts = SmiPosts.query.all()
     print(posts)
-    return render_template("СМИ о нас.html", user=current_user, posts=posts, today=datetime.today())
+    return render_template("smi_posts.html", user=current_user, posts=posts, today=datetime.today())
 
 
 @app.route("/Добавить пост сми", methods=['GET', 'POST'])
@@ -283,7 +282,7 @@ def add_smi_post():
         db.session.commit()
         flash('Вы опубликовали новый пост!')
         return redirect(url_for("smi"))
-    return render_template("Добавить пост сми.html", form=form)
+    return render_template("add_smi_post.html", form=form)
 
 
 @app.route('/Материалы')
@@ -306,7 +305,7 @@ def partners():
 
             db.session.commit()
         return redirect(url_for("partners"))
-    return render_template("Партнеры.html", len=len, partners=partners, partners_mobile=partners,
+    return render_template("partners.html", len=len, partners=partners, partners_mobile=partners,
                            user=current_user)
 
 
@@ -326,7 +325,7 @@ def add_partner():
         db.session.commit()
         flash('Вы добавили нового партнёра!')
         return redirect(url_for("partners"))
-    return render_template("Добавить партнёра.html", form=form)
+    return render_template("add_partner.html", form=form)
 
 
 @app.route("/Добавить животное", methods=['GET', 'POST'])
@@ -344,7 +343,7 @@ def add_animal():
         db.session.commit()
         flash('Вы добавили новое животное!')
         return redirect(url_for("our_animals"))
-    return render_template("Добавить животное.html", form=form)
+    return render_template("add_animal.html", form=form)
 
 
 @app.route('/Наши животные')
@@ -353,7 +352,7 @@ def our_animals():
     action = request.args.get('action')
     if action == "show":
         animal = Animals.query.get(request.args.get('id'))
-        return render_template("Животное.html", animal=animal)
+        return render_template("show_animal.html", animal=animal)
     elif current_user.is_authenticated and action:
         if action == "remove":
             db.session.delete(Animals.query.get(request.args.get('id')))
@@ -373,14 +372,14 @@ def our_animals():
     animals = Animals.query.filter_by(have_house=False).all()
     no_animals = Animals.query.filter_by(have_house=True).all()
     animals.reverse()
-    return render_template("Наши животные.html", animals=animals, no_animals=no_animals, user=current_user)
+    return render_template("our_animals.html", animals=animals, no_animals=no_animals, user=current_user)
 
 
 @app.route("/Контакты")
 def contacts():
     # mail = Config.query.filter_by(name="contact_mail").first()
     # grope_vk = Config.query.filter_by(name="contact_vk_link").first()
-    return render_template("Контакты.html")
+    return render_template("contacts.html")
 
 
 @app.route('/Дом для животных')

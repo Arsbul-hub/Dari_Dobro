@@ -7,9 +7,26 @@
     <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Исправление багов с бд">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/Уставные документы.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/documents.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Ветврач.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Добавить документ.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/add_document.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Добавить животное.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/add_animal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Добавить новость.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/add_news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Добавить партнёра.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/add_partner.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Добавить пост сми.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/add_smi_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Дом для животных.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Животное.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/show_animal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Контакты.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/contacts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Настройки сайта.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/site_settings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Наши животные.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/our_animals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Новости.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Новость.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/show_news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Партнеры.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/partners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Партнёрам.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Профиль.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/СМИ о нас.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/smi_posts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Уставные документы.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/documents.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682062321320</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Исправление багов с бд">
+      <created>1682485436152</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682485436152</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,12 +180,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>297</line>
+          <line>296</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>302</line>
+          <line>301</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -171,7 +195,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>186</line>
+          <line>185</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
