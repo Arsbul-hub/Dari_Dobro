@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Небольшой фикс  бага, связанного с отображением редактора текста">
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Доработка стилей форм">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/form.css" afterDir="false" />
     </list>
@@ -155,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682605881373</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Доработка стилей форм">
+      <created>1682617495863</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1682617495863</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +188,8 @@
     <MESSAGE value="Изменены названия шаблонов с русского на английский во избежание дальнейших багов.&#10;Исправлен баг с отображением страницы профиля, в том числе и на мобильных устройствах" />
     <MESSAGE value="Удалены некоторые страницы.&#10;Изменена страница &quot;404&quot;" />
     <MESSAGE value="Небольшой фикс  бага, связанного с отображением редактора текста" />
-    <option name="LAST_COMMIT_MESSAGE" value="Небольшой фикс  бага, связанного с отображением редактора текста" />
+    <MESSAGE value="Доработка стилей форм" />
+    <option name="LAST_COMMIT_MESSAGE" value="Доработка стилей форм" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
