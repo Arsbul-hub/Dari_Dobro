@@ -16,7 +16,7 @@
 
 
 {% block after %}
-
+{{ ckeditor.load() }}
 <div class="form-block">
     <h1>Регистрация</h1>
     <form action="" enctype="multipart/form-data" method="post">
@@ -49,9 +49,10 @@
             {{form.allow_background_image()}}
             {{form.allow_background_image.label}}
         </p>
+        <p>{{ ckeditor.create() }}</p>
         {{ form.save() }}
     </form>
-    {{ ckeditor.load() }}
+
     {{ ckeditor.config(name='description', height=500) }}
 </div>
 

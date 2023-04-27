@@ -151,14 +151,14 @@ def site_settings():
                   formates=["png", "jpg", "jpeg", "webp"])
 
         Config.query.get("description").value = form.description.data
-        Config.query("allow_background_image").value = form.allow_background_image.data
+        Config.query.get("allow_background_image").value = form.allow_background_image.data
         db.session.commit()
         return redirect(url_for("profile"))
     else:
 
-        form.description.data = Config.query.get(Config, "description").value
+        form.description.data = Config.query.get("description").value
 
-        form.allow_background_image.data = int(Config.query.get(Config, "allow_background_image").value)
+        form.allow_background_image.data = int(Config.query.get("allow_background_image").value)
 
     return render_template("site_settings.html", config=Config, form=form)
 
