@@ -18,29 +18,29 @@
 {% block after %}
 {{ ckeditor.load() }}
 <div class="form-block">
-    <h1>Регистрация</h1>
+    {% if page_name %}
+
+    <h1>{{page_name}}</h1>
+    {% else %}
+    <h1>Изменить страницу</h1>
+    {% endif %}
     <form action="" enctype="multipart/form-data" method="post">
         {{ form.hidden_tag() }}
-        {{ form.site_logo.label }}
+        {{ form.title.label }}
         <p>
 
-            {{ form.site_logo() }}
-            {% for error in form.site_logo.errors %}<br>
+            {{ form.title(size=32) }}
+            {% for error in form.title.errors %}<br>
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </p>
+        {{ form.description.label }}
+        <p class="editor">
 
-
-        {{form.background_image.label}}
-        <p>
-            {{ form.background_image() }}
-            {% for error in form.background_image.errors %}<br>
+            {{ form.description() }}
+            {% for error in form.description.errors %}<br>
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
-        </p>
-        <p>
-            {{form.allow_background_image()}}
-            {{form.allow_background_image.label}}
         </p>
 
         {{ form.save() }}

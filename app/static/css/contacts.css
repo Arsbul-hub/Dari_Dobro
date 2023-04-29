@@ -37,7 +37,7 @@ body {
 .contacts-block .phone-number {
 
     margin: 0 10px;
-    
+    background-image: none;
 }
 
 .contacts-block a {

@@ -79,8 +79,13 @@ class AddDocumentForm(FlaskForm):
 
 
 class ConfigForm(FlaskForm):
-    description = CKEditorField("Описание сайта", validators=[DataRequired()])
     site_logo = FileField("Логотип сайта", validators=[image_validation])
     background_image = FileField("Фоновое изображение главной страницы", validators=[image_validation])
     allow_background_image = BooleanField("Отображать фоновое изображение")
+    save = SubmitField("Сохранить")
+
+
+class PageDataForm(FlaskForm):
+    title = StringField("Заглавие страницы", validators=[DataRequired()])
+    description = CKEditorField("Описание страницы", validators=[DataRequired()])
     save = SubmitField("Сохранить")

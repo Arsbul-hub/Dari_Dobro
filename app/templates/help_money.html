@@ -12,15 +12,17 @@
     {% endif %}
     <link rel="stylesheet" type="text/css" href="/static/css/index.css">
 
-    {% if request.endpoint == "index" and allow_background_image == '1' %}
-    <style>
-            #bg-image {
-                visibility: visible;
-            }
 
+    <style>
+            {% if request.endpoint == "index" and allow_background_image == '1' %}
+                #bg-image {
+                    visibility: visible;
+                }
+
+            {% endif %}
 
     </style>
-    {% endif %}
+
     {% endblock %}
 </head>
 <body data-template="bruno2"

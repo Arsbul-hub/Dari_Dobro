@@ -7,9 +7,9 @@ from werkzeug.datastructures import FileStorage
 from app import app, morph, db, db_session
 from PIL import Image
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, News, Animals, Documents, Config, Partners, SmiPosts
+from app.models import User, News, Animals, Documents, Config, Partners, SmiPosts, PagesData
 from app.forms import LoginForm, RegistrationForm, CreateNewsForm, AddAnimalForm, AddDocumentForm, ConfigForm, \
-    AddPartnerForm, AddSmiPostForm
+    AddPartnerForm, AddSmiPostForm, PageDataForm
 from werkzeug.urls import url_parse
 from app import login
 
@@ -20,7 +20,6 @@ from bs4 import BeautifulSoup
 
 @login.user_loader
 def load_user(user_id):
-    
     return User.query.get(int(user_id))
 
 
@@ -69,22 +68,10 @@ def save_file(file, path="/loaded_media", name=None, formates=[]):
 
 @app.route('/')
 def index():
-    
-    site_description = Config.query.get("description")
+    data = PagesData.query.get("index")
 
-    if site_description:
-        description = site_description.value
-
-    else:
-        description = "Описание не задано"
-
-    return render_template("index.html", description=description,
+    return render_template("index.html", user=current_user, site_data=data,
                            allow_background_image=Config.query.get("allow_background_image").value)
-@app.route('/test')
-def test():
-
-    return render_template("test.html")
-
 
 
 @app.route('/logout')
@@ -95,7 +82,6 @@ def logout():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    
     if current_user.is_authenticated:
         return redirect("/")
     form = LoginForm()
@@ -134,14 +120,12 @@ def register():
 @app.route("/Профиль")
 @login_required
 def profile():
-
     return render_template("profile.html", user=current_user)
 
 
 @app.route("/Настройки сайта", methods=["GET", "POST"])
 @login_required
 def site_settings():
-    
     form = ConfigForm()
 
     if form.validate_on_submit():
@@ -150,23 +134,46 @@ def site_settings():
         save_file(file=form.background_image.data, path="images", name="background_image.png",
                   formates=["png", "jpg", "jpeg", "webp"])
 
-        Config.query.get("description").value = form.description.data
         Config.query.get("allow_background_image").value = form.allow_background_image.data
         db.session.commit()
         return redirect(url_for("profile"))
     else:
-
-        form.description.data = Config.query.get("description").value
 
         form.allow_background_image.data = int(Config.query.get("allow_background_image").value)
 
     return render_template("site_settings.html", config=Config, form=form)
 
 
+@login_required
+@app.route("/Изменить страницу", methods=["GET", "POST"])
+def edit_page_description():
+    form = PageDataForm()
+    page = request.args.get("page")
+    page_name = request.args.get("page_name")
+    if form.validate_on_submit():
+        if PagesData.query.get(page):
+            data = PagesData.query.get(page)
+            data.description = form.description.data
+            data.title = form.title.data
+        else:
+            data = PagesData()
+            data.page = page
+            data.description = form.description.data
+            data.title = form.title.data
+            db.session.add(data)
+            db.session.commit()
+        return redirect(url_for(page))
+    if PagesData.query.get(page):
+        form.description.data = PagesData.query.get(page).description
+        form.title.data = PagesData.query.get(page).title
+    print(page_name)
+
+    return render_template("edit_page_description.html", form=form, page_name=page_name)
+
+
 @app.route("/Добавить новость", methods=['GET', 'POST'])
 @login_required
 def add_news():
-    
     if not current_user.is_authenticated:
         return redirect(url_for("index"))
     form = CreateNewsForm()
@@ -182,7 +189,6 @@ def add_news():
 
 @app.route("/Новости")
 def news():
-    
     action = request.args.get('action')
 
     print(action)
@@ -215,7 +221,6 @@ def reporting():
 @app.route("/Добавить документ", methods=['GET', 'POST'])
 @login_required
 def add_document():
-    
     if not current_user.is_authenticated:
         return redirect(url_for("index"))
     form = AddDocumentForm()
@@ -232,7 +237,6 @@ def add_document():
 
 @app.route('/Документы')
 def documents():
-    
     documents_list = Documents.query.all()
     action = request.args.get('action')
     if action == "show":
@@ -240,7 +244,6 @@ def documents():
         return redirect(document.ref)
     elif current_user.is_authenticated:
         if action == "remove":
-
             db.session.delete(Documents.query.get(request.args.get('id')))
             db.session.commit()
             return redirect(url_for("documents"))
@@ -249,13 +252,11 @@ def documents():
 
 @app.route('/Сми о нас')
 def smi():
-    
     action = request.args.get("action")
 
     print(action)
 
     if current_user.is_authenticated and action == "remove":
-
         db.session.delete(SmiPosts.query.get(request.args.get('id')))
 
         db.session.commit()
@@ -269,12 +270,10 @@ def smi():
 @app.route("/Добавить пост сми", methods=['GET', 'POST'])
 @login_required
 def add_smi_post():
-    
     if not current_user.is_authenticated:
         return redirect(url_for("index"))
     form = AddSmiPostForm()
     if form.validate_on_submit():
-
         saved_cover = form.cover_url.data
 
         smi_post = SmiPosts(title=form.title.data, cover=saved_cover, url=form.url.data)
@@ -292,7 +291,6 @@ def materials():
 
 @app.route('/Партнёры')
 def partners():
-    
     action = request.args.get('action')
     partners = Partners.query.all()
     # partners_desktop = []
@@ -312,7 +310,6 @@ def partners():
 @app.route("/Добавить партнёра", methods=['GET', 'POST'])
 @login_required
 def add_partner():
-    
     if not current_user.is_authenticated:
         return redirect(url_for("index"))
     form = AddPartnerForm()
@@ -331,7 +328,6 @@ def add_partner():
 @app.route("/Добавить животное", methods=['GET', 'POST'])
 @login_required
 def add_animal():
-    
     if not current_user.is_authenticated:
         return redirect(url_for("index"))
     form = AddAnimalForm()
@@ -348,7 +344,6 @@ def add_animal():
 
 @app.route('/Наши животные')
 def our_animals():
-    
     action = request.args.get('action')
     if action == "show":
         animal = Animals.query.get(request.args.get('id'))
@@ -382,8 +377,6 @@ def contacts():
     return render_template("contacts.html")
 
 
-
-
 @app.route('/Мероприятия')
 def activities():
     return redirect("/")
@@ -391,22 +384,24 @@ def activities():
 
 @app.route('/Помогите финансово')
 def help_money():
-    return render_template("Помогите финансово.html")
+    data = PagesData.query.get("help_money")
+
+    return render_template("index.html", user=current_user, site_data=data)
 
 
 @app.route('/Стать опекуном')
 def opeka():
-    return render_template("Стать опекуном.html")
+    data = PagesData.query.get("opeka")
+
+    return render_template("index.html", user=current_user, site_data=data)
 
 
 @app.route('/Стать волонтером')
 def volunteer():
-    return render_template("Стать волонтером.html")
-
+    data = PagesData.query.get("volunteer")
+    return render_template("index.html", user=current_user, site_data=data)
 
 
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('errors/404.html'), 404
-
-

@@ -44,7 +44,6 @@ class SmiPosts(__basemodel, SerializerMixin):
     timestamp = sa.Column(sa.DateTime, index=True, default=datetime.utcnow)
 
 
-
 class Partners(__basemodel):
     __tablename__ = 'partners'
     id = sa.Column(sa.Integer, primary_key=True)
@@ -79,3 +78,11 @@ class Config(__basemodel):
     __tablename__ = 'config'
     name = sa.Column(sa.String(), primary_key=True)
     value = sa.Column(sa.String())
+
+
+class PagesData(__basemodel):
+    __tablename__ = 'pages_data'
+    page = sa.Column(sa.String, primary_key=True)
+    title = sa.Column(sa.String)
+    description = sa.Column(sa.String)
+

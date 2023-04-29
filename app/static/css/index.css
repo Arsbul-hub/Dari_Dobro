@@ -1,9 +1,10 @@
-.description {
+.content {
 
     width: 80%;
+    height: 100%;
     margin: 40px auto;
 }
-.description p {
+.content p {
 
     width: 90%;
 
@@ -13,7 +14,7 @@
 }
 
 
-.description hr {
+.content hr {
     margin-top: 30px;
     margin-bottom: 20px;
     border: 1px solid #3caea7;
@@ -21,7 +22,17 @@
 	height: 0;
 }
 
-
+#bg-image {
+    visibility: hidden;
+    position: absolute;
+    height: 110%;
+    width: 100%;
+    opacity: 0.4;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(/static/images/background_image.png);
+}
 
 /*.bg-image img {
     height: 100%;
@@ -34,14 +45,16 @@
 
     width: 100%;
 }*/
-#bg-image {
-    background-image: url(/static/images/background_image.png);
-    height: 110%;
-    background-position: center;
-    width: 100%;
-    background-size: cover;
-    position: absolute;
-    opacity: 0.3;
+
+
+.title {
+    margin-top: 0!important;
+}
+.title-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 @media only screen and (max-width: 992px){
