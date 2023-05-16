@@ -19,49 +19,48 @@
             }
 
 
+
     </style>
     {% endif %}
     {% endblock %}
 </head>
-<body data-template="bruno2"
-      class="f__preset-box f__site f__2 loading locale_ru bruno2 mod--search-disable mod--img-logo mod--header-static mod--menu-action-on-scroll mod--menu-static-on-scroll desktop adaptive-desktop mod--horizontal-menu mod--infoline-disable js--loading-cascade mod--font-none-preset layout-logo-left--by-logo "
-      data-preview="">
+<body>
 
 {% block before %}
 <div id="bg-image"></div>
 {% endblock %}
-<div class="l-wrap js-wrap">
-
-    {% block after %}
-    <div class="content">
-
-        <div class="title-block">
-            {% if site_data.title %}
-            <span class="title">{{site_data.title}}</span>
-            {% else %}
-            <span class="title">Заголовок не задан</span>
-            {% endif %}
-            {% if user.is_authenticated %}
-            <a href="{{url_for('edit_page_description', page=request.endpoint, page_name=site_data.title)}}">
-                <i class="fa-solid fa-pen" style="font-size:24px"></i>
-
-            </a>
-            {% endif %}
-        </div>
 
 
-        <hr>
+{% block after %}
+<div class="content">
 
-        {% if site_data.description %}
-        <p>{{ site_data.description | safe}}</p>
+    <div class="title-block">
+        {% if site_data.title %}
+        <span class="title">{{site_data.title}}</span>
         {% else %}
-        <p>Описание не задано</p>
+        <span class="title">Заголовок не задан</span>
         {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{{url_for('edit_page_description', page=request.endpoint, page_name=site_data.title)}}">
+            <i class="fa-solid fa-pen" style="font-size:24px"></i>
 
+        </a>
+        {% endif %}
     </div>
 
-    {% endblock %}
+
+    <hr>
+
+    {% if site_data.description %}
+    <p>{{ site_data.description | safe}}</p>
+    {% else %}
+    <p>Описание не задано</p>
+    {% endif %}
+
 </div>
+
+{% endblock %}
+
 
 <!--    <div class="bg-image">-->
 <!--        <img src="/static/images/background_image.png">-->

@@ -34,6 +34,7 @@
 
 
 
+
     </script>
     <title>Наши животные</title>
 
@@ -47,11 +48,13 @@
 
 
 <span class="title">Наши животные</span>
-<div class="is-empty" >
-    {% if user.is_authenticated %}
+{% if user.is_authenticated %}
+<div class="is-empty">
+
     <a href="{{url_for('add_animal')}}">Добавить животное</a>
-    {% endif %}
+
 </div>
+{% endif %}
 <nav class="category-navigation">
     <ul>
         <li><a onclick="show_new()">Сейчас у нас</a></li>
@@ -63,19 +66,19 @@
     <div class="animals-list" id="not-deleted">
         {% if animals %}
         {% for animal in animals %}
-        <dialog open id="confirm-remove-dialog-{{animal.id}}" class="confirm-dialog">
-            <h2 class="dialog-title">Внимание</h2>
+        <dialog id="confirm-dialog-{{animal.id}}-remove" class="confirm-dialog">
+            <p class="dialog-title">Внимание</p>
             <p>Вы действительно хотите удалить это животное?</p>
             <div class="buttons">
-                <a onclick="close_confirm_remove({{animal.id}});">Отмена</a>
+                <a onclick="close_confirm_dialog({{animal.id}}, 'remove');">Отмена</a>
                 <a href="{{url_for('our_animals', action='remove',  id=animal.id)}}">Да</a>
             </div>
         </dialog>
-        <dialog open id="confirm-move-dialog-{{animal.id}}" class="confirm-dialog">
-            <h2 class="dialog-title">Внимание</h2>
+        <dialog id="confirm-dialog-{{animal.id}}-move" class="confirm-dialog">
+            <p class="dialog-title">Внимание</p>
             <p>Вы действительно хотите отправить это животное домой?</p>
             <div class="buttons">
-                <a onclick="close_confirm_move({{animal.id}});">Отмена</a>
+                <a onclick="close_confirm_dialog({{animal.id}}, 'move');">Отмена</a>
                 <a href="{{url_for('our_animals', action='move_to_house',  id=animal.id)}}">Да</a>
             </div>
         </dialog>
@@ -89,10 +92,13 @@
                 {% if animals.index(animal) == 0 %}
 
                 {% endif %}
-                <a onclick="open_confirm_move({{animal.id}});">
+                <a onclick="open_confirm_dialog({{animal.id}}, 'move');">
                     <i class="fa-solid fa-house"></i>
                 </a>
-                <a onclick="open_confirm_remove({{animal.id}});">
+                <a href="{{url_for('add_animal', action='edit', id=animal.id)}}">
+                    <i class="fa-solid fa-pen"></i>
+                </a>
+                <a onclick="open_confirm_dialog({{animal.id}}, 'remove');">
                     <i class="fa fa-trash-o"></i>
                 </a>
             </div>
@@ -130,20 +136,20 @@
     <div class="animals-list" id="deleted" style="visibility: hidden; opacity: 0;">
         {% if no_animals %}
         {% for animal in no_animals %}
-        <dialog open id="confirm-remove-dialog-{{animal.id}}" class="confirm-dialog">
-            <h2 class="dialog-title">Внимание</h2>
+        <dialog id="confirm-dialog-{{animal.id}}-remove" class="confirm-dialog">
+            <p class="dialog-title">Внимание</p>
             <p>Вы действительно хотите удалить это животное?</p>
             <div class="buttons">
                 <a onclick="close_confirm_remove({{animal.id}});">Отмена</a>
                 <a href="{{url_for('our_animals', action='remove',  id=animal.id)}}">Да</a>
             </div>
         </dialog>
-        <dialog open id="confirm-move-dialog-{{animal.id}}" class="confirm-dialog">
-            <h2 class="dialog-title">Внимание</h2>
+        <dialog id="confirm-dialog-{{animal.id}}-move" class="confirm-dialog">
+            <p class="dialog-title">Внимание</p>
             <p>Вы действительно хотите вернуть это животное на кураторство?</p>
             <div class="buttons">
-                <a onclick="close_confirm_move({{animal.id}});">Отмена</a>
-                <a href="{{url_for('our_animals', action='move_to_house',  id=animal.id)}}">Да</a>
+                <a onclick="close_confirm_dialog({{animal.id}}, 'move');">Отмена</a>
+                <a href="{{url_for('our_animals', action='move_to_vet',  id=animal.id)}}">Да</a>
             </div>
         </dialog>
         <div class="item-block">
@@ -156,10 +162,13 @@
                 {% if no_animals.index(animal) == 0 %}
                 <a href="{{url_for('add_animal')}}">Добавить животное</a>
                 {% endif %}
-                <a onclick="open_confirm_move({{animal.id}});">
+                <a onclick="open_confirm_dialog({{animal.id}}, 'move');">
                     <i class="fa-solid fa-shield-dog"></i>
                 </a>
-                <a onclick="open_confirm_remove({{animal.id}});">
+                <a href="{{url_for('add_animal', action='edit', id=animal.id)}}">
+                    <i class="fa-solid fa-pen"></i>
+                </a>
+                <a onclick="open_confirm_dialog({{animal.id}}, 'remove');">
                     <i class="fa fa-trash-o"></i>
                 </a>
             </div>

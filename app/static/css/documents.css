@@ -24,13 +24,7 @@
   align-items: center;
  }
 
-.confirm-remove-dialog {
-  visibility: hidden;
-  position: fixed;
-  top: 30%;
-  height: 200px;
 
-}
 .item-block {
   display: block;
 
@@ -38,28 +32,8 @@
   margin: 35px 0;
 }
 
-.confirm-remove-dialog .buttons {
-  display: flex;
-
-  margin-top: 10px;
-
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
 
 
-}
-.confirm-remove-dialog .dialog-title {
-  display: flex;
-  justify-content: center;
-  margin-top: 0;
-  margin-bottom: 30px;
-}
-.confirm-remove-dialog .buttons a {
-  margin-left: 25px;
-  color: black;
-
-}
 
 .content {
   display: flex;

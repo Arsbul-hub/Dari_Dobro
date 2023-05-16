@@ -1,13 +1,13 @@
 
 .title {
-    
+
     display: flex;
     justify-content: center;
 }
 
-.news-list {
+.materials-list {
     display: flex;
-    position: absolute;
+
     padding-bottom: 20px;
     flex-wrap: wrap;
     justify-content: center;
@@ -15,20 +15,20 @@
     transition: .5s ease-in-out;
 }
 
-.news-date {
+.materials-date {
 
     font-size: 23px;
 
 }
 
 .title-block {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 30px;
+  margin-bottom: 20px;
 
   vertical-align: top;
   display: inline;
-} 
-#news-blocks {
+}
+#materials-blocks {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
@@ -38,29 +38,29 @@
 
 .item-block {
     display: block;
-    width: 800px ;
-    margin: 10px;
+
+    margin: 10px 30px;
 
 }
 
-.news {
+.materials {
     display: block;
+    text-align: center;
     margin-left: 10px;
     vertical-align: top;
 
 }
 
-.news-body {
-    overflow: hidden;
-    white-space: normal;
-    margin-top: 10px;
+.materials-body {
+
+    margin-top: 30px;
     margin-bottom: 40px;
-    max-height: 80px
+
 
 
 }
 
-.news-body p{
+.materials-body p{
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 16px;
@@ -69,19 +69,6 @@
 
 
 
-.tools a {
-    display: inline-flex;
-    white-space: nowrap;
-    justify-content: flex-end;
-    margin-left: 10px;
-}
-
-.tools {
-    display: inline-flex;
-    float: right;
-    justify-content: flex-end;
-    align-items: center;
-}
 
 .view-all {
     font-size: 16px;
@@ -94,11 +81,11 @@
 
 .content {
     display: flex;
-    background-color: white;
+
     border-radius: 10px;
     padding: 10px 0 ;
-    box-shadow: 0px 0px 15px darkgrey;
-    white-space: nowrap;
+
+
     margin-top: 10px;
     flex-direction: column;
 }
@@ -107,21 +94,27 @@
 
     display: block;
     border-top: 10px;
-    width: 100%;
     margin-bottom: 20px;
     padding: 0 10px;
 }
 .i {
    font-size:24px
 }
-
+.separator {
+    height:2px;
+    border-width:0;
+    color:gray;
+    background-color:gray
+}
 /* mobile */
-@media only screen and (max-width: 992px) { 
+@media only screen and (max-width: 992px) {
 
     .item-block {
         width: 90% ;
     }
-
+    .title-block {
+        font-size: 23px;
+    }
 
 
 

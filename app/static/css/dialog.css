@@ -1,10 +1,11 @@
 .confirm-dialog {
-    visibility: hidden;
-    position: fixed;
-    top: 30%;
+
+
+
     height: 200px;
   
   }
+  
   .confirm-dialog .buttons {
     display: flex;
   
@@ -29,33 +30,56 @@
   }
 
 
+.image-dialog {
+  height: 100%;
 
-.confirm-remove-dialog {
-    visibility: hidden;
-    position: fixed;
-    top: 30%;
-    height: 200px;
-  
+  padding: 0 20px;
+
+}
+
+.image-dialog .top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-dialog img {
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+
+  height: 90%;
+}
+.image-dialog span {
+  font-size: 24px;
+  margin: 10px 
+}
+.image-dialog .close-image-dialog-button {
+  position: absolute;
+  top: 0;
+  font-size: 30px;
+  color: black;
+  margin: 10px;
+  right: 0;
+}
+.image-dialog .download-image-button {
+  position: absolute;
+  top: 0;
+  font-size: 25px;
+  color: black;
+  margin: 10px;
+  left: 0;
+
+}
+
+@media only screen and (max-width: 992px) {
+  .image-dialog img {
+    height: auto;
+    width: 100%;
   }
-  .confirm-remove-dialog .buttons {
-    display: flex;
-  
-    margin-top: 10px;
-  
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-  
-  
+  .image-dialog {
+    height: 70%;
+    width: 100%;
+    padding: 0;
   }
-  .confirm-remove-dialog .dialog-title {
-    display: flex;
-    justify-content: center;
-    margin-top: 0;
-    margin-bottom: 30px;
-  }
-  .confirm-remove-dialog .buttons a {
-    margin-left: 25px;
-    color: black;
-  
-  }
+}

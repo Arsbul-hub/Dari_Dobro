@@ -9,7 +9,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 import pymorphy3
-
+import flaskfilemanager
 app = Flask(__name__)
 app.config.from_object(Config)
 
@@ -27,5 +27,6 @@ locale.setlocale(
     category=locale.LC_ALL,
     locale="Russian"
 )
+flaskfilemanager.init(app)
 
 from app import routes, models

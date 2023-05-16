@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+
+<head>
+
+    {% block head %}
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/css/materials.css">
+
+    <script type="text/javascript" src="/static/js/dialog.js"></script>
+
+    <title>Полезные материалы</title>
+
+    {% endblock %}
+</head>
+
+<body data-template="bruno2"
+      class="f__preset-box f__site f__2 loading locale_ru bruno2 mod--search-disable mod--img-logo mod--header-static mod--menu-action-on-scroll mod--menu-static-on-scroll desktop adaptive-desktop mod--horizontal-menu mod--infoline-disable js--loading-cascade mod--font-none-preset layout-logo-left--by-logo "
+      data-preview="">
+
+
+{% block after %}
+
+<span class="title">Полезные материалы</span>
+{% if user.is_authenticated %}
+<div class="is-empty" >
+
+    <a href="{{url_for('add_materials')}}">Добавить информацию</a>
+
+</div>
+    {% endif %}
+
+<div id="materials-blocks">
+
+
+    <div class="materials-list" id="new_materials">
+        {% if materials_list %}
+        {% for n in materials_list %}
+
+        <dialog id="confirm-dialog-{{n.id}}-remove" class="confirm-dialog">
+            <p class="dialog-title">Внимание</p>
+            <p>Вы действительно хотите удалить эту новость?</p>
+            <div class="buttons">
+                <a onclick="close_confirm_dialog({{n.id}}, 'remove');">Отмена</a>
+                <a href="{{url_for('materials', action='remove', id=n.id)}}">Да</a>
+            </div>
+
+
+        </dialog>
+
+        <div class="item-block">
+
+            {% if user.is_authenticated %}
+            <div class="tools">
+                <a href="{{url_for('add_materials', action='edit', id=n.id)}}">
+                    <i class="fa-solid fa-pen"></i>
+                </a>
+                <a onclick="open_confirm_dialog({{n.id}}, 'remove');">
+                    <i class="fa fa-trash-o"></i>
+                </a>
+            </div>
+            {% endif %}
+
+            <div class="content">
+
+                <img class=" cover" src="{{ n.cover }}">
+
+                <div class="materials">
+                    <span class="title-block">{{ n.title }}</span>
+                    <hr class="separator">
+                    <div class="materials-body">
+<!--                        Текст новости чисто без разметки -->
+                        <p>
+                            {{n.body | safe}}
+                        </p>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+        {% else %}
+        <div class="is-empty">
+            <p>Пока новостей нет</p>
+
+        </div>
+        {% endif %}
+    </div>
+
+</div>
+
+
+
+{% endblock %}
+
+</body>
+</html>

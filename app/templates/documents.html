@@ -20,19 +20,21 @@
 
 {% block after %}
 <span class="title">Уставные документы</span>
-<div class="is-empty" >
-    {% if user.is_authenticated %}
+{% if user.is_authenticated %}
+<div class="is-empty">
+
     <a href="{{url_for('add_document')}}">Добавить документ</a>
-    {% endif %}
+
 </div>
+{% endif %}
 {% if documents %}
 <div class="documents-list">
     {% for document in documents %}
-    <dialog open id="confirm-remove-dialog-{{document.id}}" class="confirm-remove-dialog">
-        <h2 class="dialog-title">Внимание</h2>
+    <dialog id="confirm-dialog-{{document.id}}-remove" class="confirm-dialog">
+        <p class="dialog-title">Внимание</p>
         <p>Вы действительно хотите удалить этот документ?</p>
         <div class="buttons">
-            <a onclick="close_confirm_remove({{document.id}});">Отмена</a>
+            <a onclick="close_confirm_dialog({{document.id}}, 'remove');">Отмена</a>
             <a href="{{url_for('documents', action='remove',  id=document.id)}}">Да</a>
         </div>
 
@@ -43,12 +45,15 @@
 
 
         <div class="tools">
-            <a onclick="open_confirm_remove({{document.id}});">
+            <a href="{{url_for('add_document', action='edit', id=document.id)}}">
+                <i class="fa-solid fa-pen"></i>
+            </a>
+            <a onclick="open_confirm_dialog({{document.id}}, 'remove');">
                 <i class="fa fa-trash-o"></i>
             </a>
         </div>
         {% endif %}
-        <a class="document" href="{{document.ref}}" target="_blank">
+        <a class="document" href="{{document.file}}" target="_blank">
             <div class="content">
 
                 <p class="document-title">{{document.title}}</p>

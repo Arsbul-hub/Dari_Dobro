@@ -34,6 +34,9 @@
 
 
 
+
+
+
     </script>
     <title>Новости</title>
 
@@ -48,13 +51,14 @@
 {% block after %}
 
 <span class="title">Новости</span>
-{% if news or old_news %}
-<div class="is-empty" >
-    {% if user.is_authenticated %}
+{% if  user.is_authenticated %}
+<div class="is-empty">
+
     <a href="{{url_for('add_news')}}">Создать новость</a>
-    {% endif %}
+
 </div>
-   {% endif %}
+
+{% endif %}
 <nav class="category-navigation">
     <ul>
         <li><a onclick="show_new()">Новые</a></li>
@@ -67,12 +71,11 @@
     <div class="news-list" id="new_news">
         {% if news %}
         {% for n in news %}
-
-        <dialog open id="confirm-remove-dialog-{{n.id}}" class="confirm-dialog">
-            <h2 class="dialog-title">Внимание</h2>
+        <dialog id="confirm-dialog-{{n.id}}-remove" class="confirm-dialog">
+            <p class="dialog-title">Внимание</p>
             <p>Вы действительно хотите удалить эту новость?</p>
             <div class="buttons">
-                <a onclick="close_confirm_remove({{n.id}});">Отмена</a>
+                <a onclick="close_confirm_dialog({{n.id}}, 'remove');">Отмена</a>
                 <a href="{{url_for('news', action='remove', id=n.id)}}">Да</a>
             </div>
 
@@ -92,12 +95,11 @@
             {% if user.is_authenticated %}
 
 
-
             <div class="tools">
-                {% if n == news[-1] %}
-
-                {% endif %}
-                <a onclick="open_confirm_remove({{n.id}});">
+                <a href="{{url_for('add_news', action='edit', id=n.id)}}">
+                    <i class="fa-solid fa-pen"></i>
+                </a>
+                <a onclick="open_confirm_dialog({{n.id}}, 'remove');">
                     <i class="fa fa-trash-o"></i>
                 </a>
             </div>
@@ -110,7 +112,7 @@
                 <div class="news">
                     <h2 class="title-block">{{ n.title }}</h2>
                     <div class="news-body">
-<!--                        Текст новости чисто без разметки -->
+                        <!--                        Текст новости чисто без разметки -->
                         <p>
                             {{beautiful_soup(n.body, 'html.parser').get_text('<br>') | safe}}
                         </p>
@@ -135,11 +137,11 @@
         {% if old_news %}
         {% for n in old_news %}
 
-        <dialog open id="confirm-remove-dialog-{{n.id}}" class="confirm-dialog">
-            <h2 class="dialog-title">Внимание</h2>
+        <dialog id="confirm-dialog-{{n.id}}-remove" class="confirm-dialog">
+            <p class="dialog-title">Внимание</p>
             <p>Вы действительно хотите удалить эту новость?</p>
             <div class="buttons">
-                <a onclick="close_confirm_remove({{n.id}});">Отмена</a>
+                <a onclick="close_confirm_dialog({{n.id}}, 'remove');">Отмена</a>
                 <a href="{{url_for('news', action='remove', id=n.id)}}">Да</a>
             </div>
 
@@ -160,10 +162,10 @@
 
 
             <div class="tools">
-                {% if n == news[-1] %}
-
-                {% endif %}
-                <a onclick="open_confirm_remove({{n.id}});">
+                <a href="{{url_for('add_news', action='edit', id=n.id)}}">
+                    <i class="fa-solid fa-pen"></i>
+                </a>
+                <a onclick="open_confirm_dialog({{n.id}}, 'remove');">
                     <i class="fa fa-trash-o"></i>
                 </a>
             </div>
@@ -176,7 +178,7 @@
                 <div class="news">
                     <h2 class="title-block">{{ n.title }}</h2>
                     <div class="news-body">
-<!--                        Текст новости чисто без разметки -->
+                        <!--                        Текст новости чисто без разметки -->
                         {{beautiful_soup(n.body).get_text()}}
                     </div>
                     <a class="view-all" href="{{url_for('news', action='show', id=n.id)}}"><h3>Читать дальше</h3></a>
@@ -198,9 +200,8 @@
 </div>
 
 
-</div>
-
 {% endblock %}
+
 
 </body>
 </html>

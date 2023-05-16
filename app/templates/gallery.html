@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+
+<head>
+
+    {% block head %}
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/css/gallery.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/dialog.css">
+    <script type="text/javascript" src="/static/js/dialog.js"></script>
+
+    <title>Галерея</title>
+
+    {% endblock %}
+</head>
+
+<body data-template="bruno2"
+      class="f__preset-box f__site f__2 loading locale_ru bruno2 mod--search-disable mod--img-logo mod--header-static mod--menu-action-on-scroll mod--menu-static-on-scroll desktop adaptive-desktop mod--horizontal-menu mod--infoline-disable js--loading-cascade mod--font-none-preset layout-logo-left--by-logo "
+      data-preview="">
+
+
+{% block after %}
+
+<span class="title">Галерея</span>
+{% if user.is_authenticated %}
+<div class="is-empty">
+
+    <a href="{{url_for('add_image_to_gallery')}}">Добавить изображение</a>
+
+</div>
+{% endif %}
+
+<div id="news-blocks">
+
+
+    <div class="news-list" id="new_news">
+        {% if gallery_list %}
+        {% for n in gallery_list %}
+        <dialog id="confirm-dialog-{{n.id}}-remove" class="confirm-dialog">
+            <p class="dialog-title">Внимание</p>
+            <p>Вы действительно хотите удалить это изображение?</p>
+            <div class="buttons">
+                <a onclick="close_confirm_dialog({{n.id}}, 'remove');">Отмена</a>
+                <a href="{{url_for('gallery', action='remove', id=n.id)}}">Да</a>
+            </div>
+
+
+        </dialog>
+        <dialog id="image-dialog-{{n.id}}" class="image-dialog">
+
+            <div class="top">
+                <span>{{n.title}}</span>
+                {% if user.is_authenticated %}
+                <div class="tools">
+
+                    <a onclick="open_confirm_dialog({{n.id}}, 'remove');">
+                        <i class="fa fa-trash-o"></i>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+            <a onclick="close_image_dialog({{n.id}});" class="close-image-dialog-button">
+                <i class="fa-solid fa-xmark"></i>
+            </a>
+            <a download href="{{ n.file }}" class="download-image-button">
+                <i class="fa-solid fa-download"></i>
+            </a>
+            <img src="{{ n.file }}">
+
+
+        </dialog>
+        <a onclick="open_image_dialog({{n.id}});">
+
+
+            <div class="item-block">
+
+
+                <img class=" cover" src="{{ n.file }}">
+
+
+            </div>
+        </a>
+        {% endfor %}
+        {% else %}
+        <div class="is-empty">
+            <p>Пока новостей нет</p>
+
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+</body>
+</html>

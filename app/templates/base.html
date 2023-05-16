@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/static/css/base.css">
     <link rel="stylesheet" type="text/css" href="/static/css/page.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/dialog.css">
     <script src="/static/js/jquery.js"></script>
     <!--    <link rel="stylesheet" type="text/css" href="/static/css/adaptive.css">-->
     <link rel="icon" href="/static/images/icon.ico">
@@ -24,6 +25,7 @@
 <body data-template="bruno2"
       class="f__preset-box f__site f__2 loading locale_ru bruno2 mod--search-disable mod--img-logo mod--header-static mod--menu-action-on-scroll mod--menu-static-on-scroll desktop adaptive-desktop mod--horizontal-menu mod--infoline-disable js--loading-cascade mod--font-none-preset layout-logo-left--by-logo "
       data-preview="">
+
 <div id="before">
     {% block before %}{% endblock %}
 </div>
@@ -45,15 +47,16 @@
                             <li><a href="{{ url_for('documents') }}">Уставные документы</a></li>
                             <!--                            <li><a href="{{ url_for('reporting') }}">Отчетность</a></li>-->
                             <li><a href="{{ url_for('smi') }}">СМИ о нас</a></li>
+                            <li><a href="{{ url_for('gallery') }}">Галерея</a></li>
                             <!--                            <li><a href="{{ url_for('partners') }}">Партнеры</a></li>-->
-                            <li><a href="{{ url_for('materials') }}">Полезные материалы</a></li>
+                            <!--                            <li><a href="{{ url_for('materials') }}">Полезные материалы</a></li>-->
                         </ul>
                     </li>
                     <li><a href="{{url_for('our_animals')}}">НАШИ ЖИВОТНЫЕ</a>
 
                     </li>
 
-                    <li><a href="{{url_for('activities')}}">МЕРОПРИЯТИЯ</a></li>
+                    <li><a href="{{url_for('materials')}}">ПОЛЕЗНЫЕ МАТЕРИАЛЫ</a></li>
                     <li><a href="{{url_for('partners')}}">ПАРТНЕРЫ</a></li>
                     <li><a href="{{url_for('news')}}">НОВОСТИ</a></li>
 
@@ -72,9 +75,14 @@
 
 
         </div>
-        <a class="me-admin" href="{{ url_for('profile') }}">Я администратор</a>
+        {% if user.is_authenticated %}
+        <a class="me-admin" href="{{ url_for('profile') }}">Панель управления</a>
+        {% else %}
+        <a class="me-admin" href="{{ url_for('profile') }}">Вход</a>
+        {% endif %}
 
     </div>
+
     <div class="nav-menu" id="mobile" style="display: none">
         <div class="nav-controls">
             <div class="logo">
@@ -98,14 +106,15 @@
                             <li><a href="{{ url_for('documents') }}">Уставные документы</a></li>
                             <!--                            <li><a href="{{ url_for('reporting') }}">Отчетность</a></li>-->
                             <li><a href="{{ url_for('smi') }}">СМИ о нас</a></li>
+                            <li><a href="{{ url_for('gallery') }}">Галерея</a></li>
                             <!--                            <li><a href="{{ url_for('partners') }}">Партнеры</a></li>-->
-                            <li><a href="{{ url_for('materials') }}">Полезные материалы</a></li>
+                            <!--                            <li><a href="{{ url_for('materials') }}">Полезные материалы</a></li>-->
                         </ul>
                     </li>
                     <li><a href="{{url_for('our_animals')}}">НАШИ ЖИВОТНЫЕ</a>
 
                     </li>
-
+                    <li><a href="{{url_for('materials')}}">ПОЛЕЗНЫЕ МАТЕРИАЛЫ</a></li>
 
                     <li><a href="{{url_for('activities')}}">МЕРОПРИЯТИЯ</a></li>
                     <li><a href="{{url_for('partners')}}">ПАРТНЕРЫ</a></li>
@@ -124,7 +133,12 @@
                 </ul>
             </nav>
 
-            <a class="me-admin" href="{{ url_for('profile') }}">Я администратор</a>
+            {% if user.is_authenticated %}
+            <a class="me-admin" href="{{ url_for('profile') }}">Панель управления</a>
+            {% else %}
+            <a class="me-admin" href="{{ url_for('profile') }}">Вход</a>
+            {% endif %}
+
         </div>
 
     </div>
@@ -133,7 +147,9 @@
     <div id="after">
         {% block after %}{% endblock %}
     </div>
+
 </div>
+
 
 
 </body>

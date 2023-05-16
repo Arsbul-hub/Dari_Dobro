@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends "base.html" %}
+
+<head>
+
+    {% block head %}
+
+    <meta charset="UTF-8">
+    <title>{{form._name}}</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/form.css">
+
+    {% endblock %}
+</head>
+<body>
+
+
+{% block after %}
+
+<div class="form-block">
+    <h1>{{form._name}}</h1>
+    <form action="" enctype="multipart/form-data" method="post">
+        {{ form.hidden_tag() }}
+        {{ form.title.label }}
+        <p>
+
+            {{ form.title(size=35) }}
+            {% for error in form.title.errors %}<br>
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </p>
+
+
+
+        {{ form.body.label }}
+        <p class="editor">
+
+            {{ form.body() }}
+            {% for error in form.body.errors %}<br>
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </p>
+
+        {{ form.submit() }}
+    </form>
+    {{ ckeditor.load() }}
+    {{ ckeditor.config(name='body') }}
+</div>
+{% endblock %}
+</body>
+</html>

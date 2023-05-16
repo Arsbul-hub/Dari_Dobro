@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+
+<head>
+
+    {% block head %}
+
+    <meta charset="UTF-8">
+    <title>{{form._name}}</title>
+    <script src="/static/js/form.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/form.css">
+
+    {% endblock %}
+</head>
+<body>
+
+
+{% block after %}
+<div class="form-block">
+    <h1>{{form._name}}</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+
+        {{ form.username.label }}
+        <p>
+            {{ form.username(size=32) }}
+            {% for error in form.username.errors %}<br>
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+
+        {{ form.password.label }}
+        <p>
+
+
+            {{ form.password(size=32) }}
+            <a style='font-size:15px;display: inline-flex; color: black;' type="button" onclick="show_password();">
+                <i id="eye" class='fas fa-eye'></i>
+            </a><br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        {{ form.password2.label }}
+        <p>
+            {{ form.password2(size=32) }}
+            {% for error in form.password2.errors %}<br>
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.remember_me() }}
+            {{ form.remember_me.label }}
+        </p>
+        {{ form.submit() }}
+    </form>
+</div>
+{% endblock %}
+</body>
+</html>

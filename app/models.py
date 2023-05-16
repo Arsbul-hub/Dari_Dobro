@@ -4,6 +4,7 @@ from app import db, db_session
 from datetime import datetime
 from flask_login import UserMixin, AnonymousUserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
+
 import sqlalchemy as sa
 
 __basemodel = db.Model
@@ -21,6 +22,7 @@ class User(UserMixin, __basemodel):
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
+
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
@@ -33,6 +35,14 @@ class News(__basemodel, SerializerMixin):
     cover = sa.Column(sa.String())
     timestamp = sa.Column(sa.DateTime, index=True, default=datetime.utcnow)
     deleted = sa.Column(sa.Boolean, default=False)
+
+
+class Materials(__basemodel, SerializerMixin):
+    __tablename__ = 'materials'
+    id = sa.Column(sa.Integer, primary_key=True)
+    body = sa.Column(sa.String())
+    title = sa.Column(sa.String())
+    timestamp = sa.Column(sa.DateTime, index=True, default=datetime.utcnow)
 
 
 class SmiPosts(__basemodel, SerializerMixin):
@@ -71,7 +81,14 @@ class Documents(__basemodel):
     __tablename__ = 'documents'
     id = sa.Column(sa.Integer, primary_key=True)
     title = sa.Column(sa.String())
-    ref = sa.Column(sa.String())
+    file = sa.Column(sa.String())
+
+
+class Gallery(__basemodel):
+    __tablename__ = 'gallery'
+    id = sa.Column(sa.Integer, primary_key=True)
+    title = sa.Column(sa.String())
+    file = sa.Column(sa.String())
 
 
 class Config(__basemodel):
@@ -85,4 +102,3 @@ class PagesData(__basemodel):
     page = sa.Column(sa.String, primary_key=True)
     title = sa.Column(sa.String)
     description = sa.Column(sa.String)
-

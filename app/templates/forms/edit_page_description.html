@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends "base.html" %}
+
+<head>
+
+    {% block head %}
+
+    <meta charset="UTF-8">
+    {% if page_name %}
+
+    <title>{{page_name}}</title>
+    {% else %}
+    <title>{{form._name}}</title>
+    {% endif %}
+    <link rel="stylesheet" type="text/css" href="/static/css/form.css">
+
+    {% endblock %}
+</head>
+<body>
+
+
+{% block after %}
+{{ ckeditor.load() }}
+<div class="form-block">
+    {% if page_name %}
+
+    <h1>{{page_name}}</h1>
+    {% else %}
+    <h1>{{form._name}}</h1>
+    {% endif %}
+    <form action="" enctype="multipart/form-data" method="post">
+        {{ form.hidden_tag() }}
+        {{ form.title.label }}
+        <p>
+
+            {{ form.title(size=32) }}
+            {% for error in form.title.errors %}<br>
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        {{ form.description.label }}
+        <p class="editor">
+
+            {{ form.description() }}
+            {% for error in form.description.errors %}<br>
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+
+        {{ form.save() }}
+    </form>
+
+    {{ ckeditor.config(name='description', height=500) }}
+</div>
+
+{% endblock %}
+</body>
+</html>

@@ -7,35 +7,42 @@ String.format = function () {
     return s;
 }
 
-function open_confirm_remove(id) {
-    document.getElementById(String.format('confirm-remove-dialog-{0}', id)).style.visibility = "visible"
+function open_confirm_dialog(id, dtype) {
+    var dialog = document.getElementById(String.format('confirm-dialog-{0}-{1}', id, dtype));
+    dialog.addEventListener('close', (e) => {
+        console.log("closed");
+        document.body.style.overflowY = "";
+    });
 
-    document.body.style.overflow = "hidden"
-    document.getElementsByClassName("item-block").style.pointerEvents = "none"
-    document.getElementById("all").style.opacity = "0.5"
-
+    dialog.showModal();
+    document.body.style.overflowY = "hidden";
 
 }
 
-function close_confirm_remove(id) {
-    document.getElementById(String.format('confirm-remove-dialog-{0}', id)).style.visibility = "hidden"
+function close_confirm_dialog(id, dtype) {
+    var dialog = document.getElementById(String.format('confirm-dialog-{0}-{1}', id, dtype));
 
-    document.body.style.overflow = "visible"
-    document.getElementById("all").style.opacity = 1
+    dialog.close();
+    
+
 }
 
-function open_confirm_move(id) {
-    document.getElementById(String.format('confirm-move-dialog-{0}', id)).style.visibility = "visible"
+function open_image_dialog(id) {
+    var dialog = document.getElementById(String.format('image-dialog-{0}', id));
+    dialog.addEventListener('close', (e) => {
+        console.log("closed");
+        document.body.style.overflowY = "";
+    });
 
-    document.body.style.overflow = "hidden"
-    document.getElementsByClassName("item-block").style.pointerEvents = "none"
+    dialog.showModal();
+    document.body.style.overflowY = "hidden";
 
-    document.getElementById("all").style.opacity = 0.5
 }
 
-function close_confirm_move(id) {
-    document.getElementById(String.format('confirm-move-dialog-{0}', id)).style.visibility = "hidden"
+function close_image_dialog(id) {
+    var dialog = document.getElementById(String.format('image-dialog-{0}', id));
 
-    document.body.style.overflow = "visible"
-    document.getElementById("all").style.opacity = 1
+    dialog.close();
+    
+
 }

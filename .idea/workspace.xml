@@ -4,20 +4,96 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Исправлен баг с формой настройкой сайта">
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Исправлены некоторые баги&#10;Реализованно редактирование страниц: главная, стать опекуном, стать волонтёром и помочь финансово.&#10;Теперь для этого нужно войти в аккаунт и нажать на кнопку редактирования на соответствующей странице. &#10;Убрано редактирование текста главной страницы из страницы настроек сайта.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/loaded_media/gg.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/contacts.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/contacts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/contacts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/dialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/dialog.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/documents.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/documents.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/navigation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/news.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/news.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/partners.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/partners.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/dialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/1000-b5579087f54a265b2124d2d3f670688c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/1661324439_28-sportishka-com-p-nakachennii-muzhik-negr-pinterest-51.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/2000-f59c02a1e04cf7888ba6915452bbb04c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/20230313_182237.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/20230313_182306.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/20230313_183627.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/500-05d07a8046fd40c432f5a72fa1b98d6d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/500-8d9890f038d32a87261305614a20896a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/500-e9e377dfd5d2c3cb67da69847020c01f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/500-edef651e0844e057fd6bdc6198f0a361.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/FWXVuYJDBBQ.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/S168xU_2x.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/TwpVEUNN2t8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/artwork-night-Moon-calm-forest-river-mountains-night-sky-stars-clouds-1723341.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/e2a30e5b666ba0ae9fbe2565d27274115e71bc24780d7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/gg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/i (1).webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/i (2).webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/i.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/lgCaz977ipE.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/logo-lightblue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/main-first-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/photo_5222148253447997224_y.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/photo_5253936642140522827_y.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/photo_5280950504668646034_y.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/sample.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/server-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/unnamed.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/yn6md_jv088.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/add_animal.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/add_animal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/add_document.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/add_document.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/add_news.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/add_news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/add_partner.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/add_partner.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/add_smi_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/add_smi_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/documents.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/documents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/edit_page_description.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/edit_page_description.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/site_settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/site_settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Помогите финансово.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/help_money.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Стать волонтером.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/volunteer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/Стать опекуном.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/opeka.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/our_animals.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/our_animals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/partners.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/partners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin_panel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/site_settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/site_settings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/smi_posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/smi_posts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/validators/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/validators/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/alembic.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/script.py.mako" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/016df00ac148_animals_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/11a65cb96ce0_animals_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/3488c0e8be94_users_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/3a5c094aaab8_.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/401763793d87_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/460c4169d9a5_documents_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/513562c0e9aa_config_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/5563d20e8761_.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/7407e6792fb2_postss_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/7dc6aa88d3f4_users_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/812c26ee6f2d_users_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/812dd50a5a01_.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/8e7fd34654d6_documents_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/9e48d3211f29_users_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/a0909748a218_config_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/b32bb9040d88_users_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/b67a520062d7_pets_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/cd69482098ae_animals_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/ce36321b9793_.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/ce873c9417f5_users_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/ee40f953ef68_news_table.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,25 +119,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Arsbul Programming/Desktop/дари добро/app/templates/errors&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Arsbul Programming/Desktop/дари добро/app/static/loaded_media",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\loaded_media" />
+      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\css" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\templates\errors" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\templates\forms" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\images\qr" />
     </key>
   </component>
@@ -102,6 +185,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680376174457</updated>
       <workItem from="1680438160543" duration="237000" />
+      <workItem from="1683980423769" duration="594000" />
     </task>
     <task id="LOCAL-00001" summary="Адаптация,&#10;Вкладка контакты">
       <created>1680878193592</created>
@@ -180,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682617549251</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Исправлены некоторые баги&#10;Реализованно редактирование страниц: главная, стать опекуном, стать волонтёром и помочь финансово.&#10;Теперь для этого нужно войти в аккаунт и нажать на кнопку редактирования на соответствующей странице. &#10;Убрано редактирование текста главной страницы из страницы настроек сайта.">
+      <created>1682795387385</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1682795387385</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,48 +299,8 @@
     <MESSAGE value="Небольшой фикс  бага, связанного с отображением редактора текста" />
     <MESSAGE value="Доработка стилей форм" />
     <MESSAGE value="Исправлен баг с формой настройкой сайта" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлен баг с формой настройкой сайта" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>294</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>299</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/db_session.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>191</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/forms.py</url>
-          <line>55</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>149</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>386</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Исправлены некоторые баги&#10;Реализованно редактирование страниц: главная, стать опекуном, стать волонтёром и помочь финансово.&#10;Теперь для этого нужно войти в аккаунт и нажать на кнопку редактирования на соответствующей странице. &#10;Убрано редактирование текста главной страницы из страницы настроек сайта." />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлены некоторые баги&#10;Реализованно редактирование страниц: главная, стать опекуном, стать волонтёром и помочь финансово.&#10;Теперь для этого нужно войти в аккаунт и нажать на кнопку редактирования на соответствующей странице. &#10;Убрано редактирование текста главной страницы из страницы настроек сайта." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
