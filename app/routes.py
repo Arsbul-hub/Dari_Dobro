@@ -565,7 +565,7 @@ def gallery():
             db.session.commit()
 
         return redirect(url_for("gallery"))
-    abort(500)
+
     return render_template("gallery.html", user=current_user, gallery_list=Gallery.query.all())
 
 
@@ -573,7 +573,7 @@ def gallery():
 def contacts():
     # mail = Config.query.filter_by(name="contact_mail").first()
     # grope_vk = Config.query.filter_by(name="contact_vk_link").first()
-    return render_template("contacts.html", user=current_user1)
+    return render_template("contacts.html", user=current_user)
 
 
 @app.route('/Мероприятия')
