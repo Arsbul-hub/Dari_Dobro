@@ -9,7 +9,8 @@
     <meta charset="UTF-8">
     <title>Профиль</title>
     <link rel="stylesheet" type="text/css" href="/static/css/profile.css">
-
+    <link rel="stylesheet" type="text/css" href="/static/css/dialog.css">
+    <script type="text/javascript" src="/static/js/dialog.js"></script>
     {% endblock %}
 </head>
 <body>
@@ -17,32 +18,59 @@
 {% block after %}
 
 <span class="title">{{user}}</span>
+<dialog id="confirm-dialog-user-logout" class="confirm-dialog">
+    <p class="dialog-title">Внимание</p>
+    <p>Вы действительно хотите выйти из профиля?</p>
+    <div class="buttons">
+        <a onclick="close_confirm_dialog('user', 'logout');">Отмена</a>
+        <a href="{{ url_for('logout') }}">Да</a>
+    </div>
+
+
+</dialog>
+<dialog id="confirm-dialog-user-remove" class="confirm-dialog">
+    <p class="dialog-title">Внимание</p>
+    <p>Вы действительно хотите удалить пользователя?</p>
+    <div class="buttons">
+        <a onclick="close_confirm_dialog('user', 'remove');">Отмена</a>
+        <a href="{{ url_for('delete_user', id=user.id) }}">Да</a>
+    </div>
+
+
+</dialog>
 <div class="buttons-list">
     <a href="{{ url_for('register') }}">
         <div class="content">
-
+            <i class="fa-solid fa-user-plus"></i>
             <p>Регистрация нового администратора</p>
         </div>
     </a>
     <a href="{{ url_for('site_settings') }}">
         <div class="content">
-
+            <i class="fa-solid fa-gear"></i>
             <p>Настройки сайта</p>
         </div>
     </a>
-    <a href="{{ url_for('file_manager') }}">
+    <a href="{{ url_for('flaskfilemanager.index') }}" target="_blank">
         <div class="content">
-
+            <i class="fa-solid fa-file"></i>
             <p>Файловый менеджер</p>
         </div>
     </a>
-    <a href="{{ url_for('logout') }}">
+    <a onclick=" open_confirm_dialog('user', 'logout') ">
         <div class="content">
-
+            <i class="fa-solid fa-right-from-bracket"></i>
             <p>Выйти</p>
         </div>
     </a>
-
+    {% if user.username != admin_username %}
+    <a onclick="open_confirm_dialog('user', 'remove')">
+        <div class="content" style="background-color:red">
+            <i class="fa-solid fa-trash"></i>
+            <p>Удалить пользователя</p>
+        </div>
+    </a>
+    {% endif %}
 </div>
 
 

@@ -1,15 +1,17 @@
 import locale
-from flask import Flask, Blueprint
+import os
+
+from flask import Flask, Blueprint, session
 from flask_ckeditor import CKEditor
 from flask_restful import Api
-
 
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from flask_login import LoginManager
+from flask_login import LoginManager, current_user
 import pymorphy3
 import flaskfilemanager
+
 app = Flask(__name__)
 app.config.from_object(Config)
 
@@ -27,6 +29,14 @@ locale.setlocale(
     category=locale.LC_ALL,
     locale="Russian"
 )
-flaskfilemanager.init(app)
+
+
+def my_access_control_function():
+    return current_user.is_authenticated
+
+
+flaskfilemanager.init(app,
+                      custom_config_json_path="static/json/filemanager.config.json",
+                      access_control_function=my_access_control_function)
 
 from app import routes, models

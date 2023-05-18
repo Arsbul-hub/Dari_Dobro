@@ -27,7 +27,6 @@ def load_file(name):
         return None
 
 
-
 @login.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
@@ -41,12 +40,16 @@ def uploaded_files(filename):
 @app.route('/reload_auth')
 def reload_auth_system():
     messages = ["Конфигурационный файл аутентификации пользователей был перезагружен!"]
+    admin = User.query.filter_by(username="Admin").first()
+    if admin:
+        admin.username = app.config["DEFAULT_ADMIN_USERNAME"]
+        admin.set_password(app.config["DEFAULT_ADMIN_PASSWORD"])
 
-    db.session.delete(User.query.filter_by(username="Admin").first())
-
-    admin = User(username=app.config["DEFAULT_ADMIN_USERNAME"])
-    admin.set_password(app.config["DEFAULT_ADMIN_PASSWORD"])
-    db.session.add(admin)
+    else:
+        admin = User()
+        admin.username = app.config["DEFAULT_ADMIN_USERNAME"]
+        admin.set_password(app.config["DEFAULT_ADMIN_PASSWORD"])
+        db.session.add(admin)
 
     db.session.commit()
     logout_user()
@@ -107,6 +110,17 @@ def logout():
     return redirect("/")
 
 
+@login_required
+@app.route("/delete_user")
+def delete_user():
+    user = User.query.get(request.args.get("id"))
+    if user and user.username != app.config["DEFAULT_ADMIN_USERNAME"]:
+        logout_user()
+        db.session.delete(user)
+        db.session.commit()
+    return redirect("/")
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -142,7 +156,7 @@ def register():
 @app.route("/Профиль")
 @login_required
 def profile():
-    return render_template("admin_panel.html", user=current_user)
+    return render_template("admin_panel.html", user=current_user, admin_username=app.config["DEFAULT_ADMIN_USERNAME"])
 
 
 @app.route("/Настройки сайта", methods=["GET", "POST"])
@@ -157,21 +171,27 @@ def site_settings():
                   formates=["png", "jpg", "jpeg", "webp"])
 
         Config.query.get("allow_background_image").value = form.allow_background_image.data
+
         db.session.commit()
         return redirect(url_for("profile"))
     else:
-
-        form.allow_background_image.data = int(Config.query.get("allow_background_image").value)
-
+        if Config.query.get("allow_background_image"):
+            form.allow_background_image.data = Config.query.get("allow_background_image").value
+        else:
+            new_config = Config()
+            new_config.name = "allow_background_image"
+            new_config.value = False
+            db.session.add(new_config)
+            db.session.commit()
     return render_template("forms/site_settings.html", user=current_user, config=Config, form=form)
 
 
-@login_required
-@app.route("/Файловый менеджер")
-def file_manager():
-    filemanager_link = url_for('flaskfilemanager.index')
-    print(filemanager_link)
-    return redirect(filemanager_link)
+# @login_required
+# @app.route("/Файловый менеджер")
+# def file_manager():
+#     filemanager_link = url_for('flaskfilemanager.index')
+#     print(filemanager_link)
+#     return redirect(filemanager_link)
 
 
 @login_required

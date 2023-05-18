@@ -58,12 +58,22 @@ nav ul {
 .topmenu > li > a {
   text-transform: uppercase;
   font-size: 15px;
-
+  padding: 2px 0;
   color: #404040;
+
+  white-space: normal;
+  transition: .5s ease-in-out;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
   
 }
-.topmenu li a:hover {
-color: #D5B45B; }
+.topmenu > li > a:hover {
+  color: #D5B45B; 
+  background-size: 100% 2px;
+}
 
 .submenu {
   
@@ -73,6 +83,7 @@ color: #D5B45B; }
   left: 0;
   top: 100%;
   z-index: 5;
+  background-color: ;
   width: auto;
   opacity: 0;
   visibility: hidden;

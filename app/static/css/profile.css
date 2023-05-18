@@ -5,8 +5,9 @@
     justify-content: center;
 }
 .buttons-list a {
-    width: 30%;
+    min-width: 30%;
     margin: 30px 0;
+    
 }
 
 .buttons-list {
@@ -20,25 +21,23 @@
     display: flex;
     background-color: green;
     height: 90px;
-    justify-content: center;
     border-radius: 10px;
+    padding: 0 20px;
     box-shadow: 0px 0px 15px darkgrey;
-    
-    
-    align-items: center;
-  
-  
-  }
-  .content p{
     font-size: x-large;
-    /* justify-content: center; */
     color: white;
     word-break: break-word;
     word-wrap: break-word;
     text-align: center;
-    padding: 0 15px;
+    justify-content: center;
+    align-items: center;
+    
+  
   }
 
+.content i {
+    padding: 20px;
+}
 @media only screen and  (max-width: 992px) {
 
 
