@@ -1,7 +1,7 @@
 from datetime import datetime
 import os
 
-from flask import render_template, send_from_directory, url_for, render_template_string, flash, redirect, request
+from flask import render_template, send_from_directory, url_for, render_template_string, flash, redirect, request, abort
 from flask_ckeditor import upload_fail, upload_success
 from werkzeug.datastructures import FileStorage
 from app import app, morph, db, db_session
@@ -565,6 +565,7 @@ def gallery():
             db.session.commit()
 
         return redirect(url_for("gallery"))
+    abort(500)
     return render_template("gallery.html", user=current_user, gallery_list=Gallery.query.all())
 
 
@@ -572,7 +573,7 @@ def gallery():
 def contacts():
     # mail = Config.query.filter_by(name="contact_mail").first()
     # grope_vk = Config.query.filter_by(name="contact_vk_link").first()
-    return render_template("contacts.html", user=current_user)
+    return render_template("contacts.html", user=current_user1)
 
 
 @app.route('/Мероприятия')
@@ -602,4 +603,11 @@ def volunteer():
 
 @app.errorhandler(404)
 def page_not_found(error):
+    print(error)
     return render_template('errors/404.html', user=current_user), 404
+
+
+@app.errorhandler(500)
+def internal_error(error):
+    print(error)
+    return render_template('errors/500.html', user=current_user), 500

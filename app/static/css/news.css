@@ -69,18 +69,10 @@
 
 
 
-.tools a {
-    display: inline-flex;
-    white-space: nowrap;
-    justify-content: flex-end;
-    margin-left: 10px;
-}
 
 .tools {
-    display: inline-flex;
+
     float: right;
-    justify-content: flex-end;
-    align-items: center;
 }
 
 .view-all {
@@ -88,8 +80,13 @@
 
     display: flex;
     color: black;
+    transition: .5s ease-in-out;
     font-weight: bold;
     align-items: flex-end;
+}
+.view-all:hover {
+    color: rgb(85, 85, 85);
+    font-size: 17px;
 }
 
 .content {

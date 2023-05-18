@@ -1,5 +1,5 @@
 {
-    "_comment": "IMPORTANT : go to the wiki page to know about options configuration https://github.com/servocoder/RichFilemanager/wiki/Configuration-options",
+    "_comment": "",
     "options": {
         "theme": "flat-dark",
         "showTitleAttr": false,
@@ -208,6 +208,6 @@
         "extra_js": [],
         "extra_js_async": true
     },
-    "url": "https://github.com/servocoder/RichFilemanager",
-    "version": "2.6.3"
+    "url": "https://vk.com/arsbul_programming",
+    "version": "1.0"
 }

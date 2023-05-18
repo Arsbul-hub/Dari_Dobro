@@ -1,7 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
 {% extends "base.html" %}
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <title>Не найдено!</title>
 
-{% block app_content %}
-    <h1>Произошла неожиданная ошибка</h1>
-    <p>Администратор был уведомлен.</p>
-    <p><a href="{{ url_for('main.index') }}">На главную</a></p>
+    <!--    <script>window.use_preset = false;</script>-->
+
+
+    {% endblock %}
+</head>
+<body >
+
+{% block after %}
+
+
+<div style="text-align:center;padding-top:10%;">
+
+
+    <p style="font-size:40px;padding-bottom:25px;">Произошла ошибка при загрузке страницы</p>
+
+</div>
 {% endblock %}
+</body>
+</html>

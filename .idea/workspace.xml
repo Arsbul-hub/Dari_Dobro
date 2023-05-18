@@ -4,19 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Немного подправлены страницы (оформление кода)">
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Добавлен файловый менеджер. &#10;Исправлена ошибка при переходе в настройки сайта.&#10;Добавлена анимация для вкладок верхней панели навигации.&#10;Исправлен визуальный баг с отображением подменю на верхней панели навигации на странице &quot;Контакты&quot; + исправлен баг с анимацией qr кода.&#10;Добавлена возможность удаления аккаунта. &#10;При нажатии кнопки выхода из профиля или при нажатии удаления появляется диалоговое окно с подтверждением действия.&#10;Добавлены мини-иконки на кнопках на панели администратора.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/admin_user.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/json/admin_user.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/contacts.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/contacts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/documents.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/documents.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/news.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/news.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/page.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/admin_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin_panel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/contacts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/icon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/json/admin_user.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin_user.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/json/filemanager.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/json/filemanager.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/errors/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/errors/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/errors/500.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -68,11 +73,11 @@
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\templates\errors" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\templates\errors" />
+      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\templates" />
+      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\json" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static" />
-      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app" />
-      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\templates\forms" />
-      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\images\qr" />
     </key>
   </component>
   <component name="RunManager">
@@ -212,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684243181745</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Добавлен файловый менеджер. &#10;Исправлена ошибка при переходе в настройки сайта.&#10;Добавлена анимация для вкладок верхней панели навигации.&#10;Исправлен визуальный баг с отображением подменю на верхней панели навигации на странице &quot;Контакты&quot; + исправлен баг с анимацией qr кода.&#10;Добавлена возможность удаления аккаунта. &#10;При нажатии кнопки выхода из профиля или при нажатии удаления появляется диалоговое окно с подтверждением действия.&#10;Добавлены мини-иконки на кнопках на панели администратора.">
+      <created>1684427630377</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684427630377</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +255,8 @@
     <MESSAGE value="Исправлены некоторые баги&#10;Реализованно редактирование страниц: главная, стать опекуном, стать волонтёром и помочь финансово.&#10;Теперь для этого нужно войти в аккаунт и нажать на кнопку редактирования на соответствующей странице. &#10;Убрано редактирование текста главной страницы из страницы настроек сайта." />
     <MESSAGE value="Исправлены некоторые баги.&#10;Добавлена страница с полезными материалами для просмотра + форма и страница для добавления и редактирования.&#10;Добавлена страница галереи, где можно просматривать фотографии и скачивать их + форма и страница для добавления и редактирования.&#10;Добавлена возможность редактировать добавляемые на сайт элементы: новости, животные, полезные материалы, партнёры, уставные документы, посты сми, фотографии.&#10;Добавлен файл &quot;admin_user.json&quot;, в котором хранится информация о базовом аккаунте администратора." />
     <MESSAGE value="Немного подправлены страницы (оформление кода)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Немного подправлены страницы (оформление кода)" />
+    <MESSAGE value="Добавлен файловый менеджер. &#10;Исправлена ошибка при переходе в настройки сайта.&#10;Добавлена анимация для вкладок верхней панели навигации.&#10;Исправлен визуальный баг с отображением подменю на верхней панели навигации на странице &quot;Контакты&quot; + исправлен баг с анимацией qr кода.&#10;Добавлена возможность удаления аккаунта. &#10;При нажатии кнопки выхода из профиля или при нажатии удаления появляется диалоговое окно с подтверждением действия.&#10;Добавлены мини-иконки на кнопках на панели администратора." />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен файловый менеджер. &#10;Исправлена ошибка при переходе в настройки сайта.&#10;Добавлена анимация для вкладок верхней панели навигации.&#10;Исправлен визуальный баг с отображением подменю на верхней панели навигации на странице &quot;Контакты&quot; + исправлен баг с анимацией qr кода.&#10;Добавлена возможность удаления аккаунта. &#10;При нажатии кнопки выхода из профиля или при нажатии удаления появляется диалоговое окно с подтверждением действия.&#10;Добавлены мини-иконки на кнопках на панели администратора." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

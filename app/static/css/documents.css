@@ -27,7 +27,7 @@
 
 .item-block {
   display: block;
-
+  transition: .5s ease-in-out;
   width: 30%;
   margin: 35px 0;
 }
@@ -42,14 +42,19 @@
   justify-content: center;
   border-radius: 10px;
   box-shadow: 0px 0px 15px darkgrey;
-  
+  transition: .5s ease-in-out;
   margin-top: 10px;
   align-items: center;
 
 
 }
+.content:hover {
+  background-color: rgb(29, 160, 29);
 
-
+}
+.item-block:hover {
+  width: 31%;
+}
 
 
 @media only screen and (max-width: 992px) {

@@ -16,7 +16,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     CKEDITOR_HEIGHT = 500
     CKEDITOR_FILE_UPLOADER = "upload"
-    with open("app/static/json/admin_user.json", "r") as f:
+    with open("app/admin_user.json", "r") as f:
         j = json.load(f)
         DEFAULT_ADMIN_USERNAME = j["username"]
         DEFAULT_ADMIN_PASSWORD = j["password"]

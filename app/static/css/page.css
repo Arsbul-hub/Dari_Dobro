@@ -8,7 +8,8 @@
 .tools a {
   display: inline-flex;
   justify-content: flex-end;
-
+  font-size: 22px;
+  transition: .5s ease-in-out;
   white-space: nowrap;
   margin: 0 8px;
 }
@@ -19,8 +20,9 @@
   justify-content: flex-end;
   flex-wrap: nowrap;
 }
-.tools i {
-  font-size: 22px;
+
+.tools a:hover{
+    font-size: 25px;
 }
 /*Блок создания нового элемента*/
 .is-empty {

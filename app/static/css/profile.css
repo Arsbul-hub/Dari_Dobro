@@ -6,6 +6,7 @@
 }
 .buttons-list a {
     min-width: 30%;
+    transition: .5s ease-in-out;
     margin: 30px 0;
     
 }
@@ -24,7 +25,8 @@
     border-radius: 10px;
     padding: 0 20px;
     box-shadow: 0px 0px 15px darkgrey;
-    font-size: x-large;
+    font-size: 21px;
+    transition: .5s ease-in-out;
     color: white;
     word-break: break-word;
     word-wrap: break-word;
@@ -34,7 +36,13 @@
     
   
   }
+.content:hover {
+    background-color: rgb(29, 160, 29);
 
+}
+.buttons-list a:hover  {
+    min-width: 31%;
+}
 .content i {
     padding: 20px;
 }
