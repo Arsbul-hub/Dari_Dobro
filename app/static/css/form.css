@@ -19,6 +19,7 @@
 }
 .form-block h1 {
     font-weight: normal;
+    text-align: center;
     margin-top: 20px;
 }
 .form-block form {

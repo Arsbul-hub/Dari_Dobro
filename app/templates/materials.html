@@ -39,7 +39,7 @@
 
         <dialog id="confirm-dialog-{{n.id}}-remove" class="confirm-dialog">
             <p class="dialog-title">Внимание</p>
-            <p>Вы действительно хотите удалить эту новость?</p>
+            <p>Вы действительно хотите удалить этот блок?</p>
             <div class="buttons">
                 <a onclick="close_confirm_dialog({{n.id}}, 'remove');">Отмена</a>
                 <a href="{{url_for('materials', action='remove', id=n.id)}}">Да</a>
@@ -69,7 +69,7 @@
                     <span class="title-block">{{ n.title }}</span>
                     <hr class="separator">
                     <div class="materials-body">
-<!--                        Текст новости чисто без разметки -->
+
                         <p>
                             {{n.body | safe}}
                         </p>
@@ -85,7 +85,8 @@
         {% endfor %}
         {% else %}
         <div class="is-empty">
-            <p>Пока новостей нет</p>
+            <i class="fa-solid fa-image"></i>
+            <p>Пока здесь пусто</p>
 
         </div>
         {% endif %}

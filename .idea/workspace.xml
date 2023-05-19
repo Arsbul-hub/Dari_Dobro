@@ -4,10 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Доработана верхняя панель навигации и анимации кнопок на ней.&#10;Созданы анимации под кнопки инструментов, под кнопки просмотра документов и для кнопки &quot;Читать дальше&quot;.&#10;Исправлен баг с загрузкой стилей на страницах ошибок (404 и 500)&#10;Финальная версия проекта&#10;:D">
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Исправление багов и недочётов">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/Без имени.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/admin_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin_panel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/documents.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/documents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/forms/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/gallery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/materials.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/materials.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/our_animals.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/our_animals.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/partners.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/partners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/smi_posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/smi_posts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +233,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684445390464</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Исправление багов и недочётов">
+      <created>1684446178315</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684446178315</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Исправление багов и недочётов">
+      <created>1684446259477</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684446259477</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +280,8 @@
     <MESSAGE value="Немного подправлены страницы (оформление кода)" />
     <MESSAGE value="Добавлен файловый менеджер. &#10;Исправлена ошибка при переходе в настройки сайта.&#10;Добавлена анимация для вкладок верхней панели навигации.&#10;Исправлен визуальный баг с отображением подменю на верхней панели навигации на странице &quot;Контакты&quot; + исправлен баг с анимацией qr кода.&#10;Добавлена возможность удаления аккаунта. &#10;При нажатии кнопки выхода из профиля или при нажатии удаления появляется диалоговое окно с подтверждением действия.&#10;Добавлены мини-иконки на кнопках на панели администратора." />
     <MESSAGE value="Доработана верхняя панель навигации и анимации кнопок на ней.&#10;Созданы анимации под кнопки инструментов, под кнопки просмотра документов и для кнопки &quot;Читать дальше&quot;.&#10;Исправлен баг с загрузкой стилей на страницах ошибок (404 и 500)&#10;Финальная версия проекта&#10;:D" />
-    <option name="LAST_COMMIT_MESSAGE" value="Доработана верхняя панель навигации и анимации кнопок на ней.&#10;Созданы анимации под кнопки инструментов, под кнопки просмотра документов и для кнопки &quot;Читать дальше&quot;.&#10;Исправлен баг с загрузкой стилей на страницах ошибок (404 и 500)&#10;Финальная версия проекта&#10;:D" />
+    <MESSAGE value="Исправление багов и недочётов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправление багов и недочётов" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -259,6 +290,11 @@
           <url>file://$PROJECT_DIR$/app/routes.py</url>
           <line>41</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routes.py</url>
+          <line>177</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

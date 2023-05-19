@@ -176,7 +176,7 @@ def site_settings():
         return redirect(url_for("profile"))
     else:
         if Config.query.get("allow_background_image"):
-            form.allow_background_image.data = Config.query.get("allow_background_image").value
+            form.allow_background_image.data = int(Config.query.get("allow_background_image").value)
         else:
             new_config = Config()
             new_config.name = "allow_background_image"

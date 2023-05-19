@@ -190,14 +190,9 @@
         {% endfor %}
         {% else %}
         <div class="is-empty">
+            <i class="fa-solid fa-image"></i>
             <p>Пока здесь пусто</p>
-            {% if user.is_authenticated %}
 
-
-            <a href="{{url_for('add_animal')}}">Добавить животное</a>
-
-
-            {% endif %}
         </div>
         {% endif %}
     </div>

@@ -28,15 +28,19 @@ class RegistrationForm(FlaskForm):
     username = StringField('Имя пользователя', validators=[DataRequired()])
 
     password = PasswordField('Пароль', validators=[DataRequired()])
-    password2 = PasswordField('Повтор пароля', validators=[DataRequired(), EqualTo('password')])
-    remember_me = BooleanField('Запомнить меня')
+    password2 = PasswordField('Повтор пароля', validators=[DataRequired()])
+    # remember_me = BooleanField('Запомнить меня')
     submit = SubmitField('Зарегистрироваться')
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
 
         if user:
-            raise ValidationError('Please use a different username.')
+            raise ValidationError('Это имя пользователя занято')
+
+    def validate_password2(self, password):
+        if password.data != self.password.data:
+            raise ValidationError('Пароли не совпадают')
 
 
 class CreateNewsForm(FlaskForm):

@@ -118,7 +118,7 @@
                     </li>
                     <li><a href="{{url_for('materials')}}">ПОЛЕЗНЫЕ МАТЕРИАЛЫ</a></li>
 
-                    <li><a href="{{url_for('activities')}}">МЕРОПРИЯТИЯ</a></li>
+
                     <li><a href="{{url_for('partners')}}">ПАРТНЕРЫ</a></li>
                     <li><a href="{{url_for('news')}}">НОВОСТИ</a></li>
 
@@ -136,9 +136,9 @@
             </nav>
 
             {% if user.is_authenticated %}
-            <a class="me-admin" href="{{ url_for('profile') }}">Панель управления</a>
+            <a class="me-admin" href="{{ url_for('profile') }}"><p>Панель управления</p></a>
             {% else %}
-            <a class="me-admin" href="{{ url_for('profile') }}">Вход</a>
+            <a class="me-admin" href="{{ url_for('profile') }}"></a>
             {% endif %}
 
         </div>

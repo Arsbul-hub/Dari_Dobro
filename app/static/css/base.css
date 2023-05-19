@@ -145,6 +145,7 @@ a {
   visibility: visible;
   transform: scaleY(1);
 }
+
 #after {
   padding-bottom: 100px;
 }
