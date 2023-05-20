@@ -217,7 +217,7 @@ def edit_page_description():
         if PagesData.query.get(page):
             data = PagesData.query.get(page)
             data.description = form.description.data
-            data.name = form.title.data
+            data.title = form.title.data
         else:
             data = PagesData()
             data.page = page
@@ -228,7 +228,8 @@ def edit_page_description():
         return redirect(url_for(page))
     elif PagesData.query.get(page):
         form.description.data = PagesData.query.get(page).description
-        form.title.data = PagesData.query.get(page).name
+
+        form.title.data = PagesData.query.get(page).title
     return render_template("forms/edit_page_description.html", user=current_user, form=form, page_name=page_name)
 
 
