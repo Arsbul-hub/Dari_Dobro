@@ -10,7 +10,7 @@
   
 }
 .title-block {
-  font-size: xx-large;
+  font-size: 30px;
   font-weight: normal;
 }
 .news {
@@ -40,77 +40,11 @@
 
 }
 
-@media only screen and (min-width: 1200px) {
 
-    .title {
-        font-size: 30px;
-    }
-
-    span {
-        font-size: 30px;
-    }
-
-    .tools i {
-        font-size: 24px;
-    }
-
-    .tools a {
-        margin: 0 8px;
-    }
-
-
-    .view-all {
-        font-size: 18px;
-    }
-    .news-body span, p, h1, h2, h3, h4, h5, h6 {
-        font-size: 17px;
-        font-weight: normal;
-    }
-
-
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-    /* Общие стили */
-    .title {
-        font-size: 30px;
-    }
-
-    span {
-        font-size: 30px;
-    }
-
-    .tools i {
-        font-size: 24px;
-    }
-
-    .tools a {
-        margin: 0 8px;
-    }
-
-    .item-block {
-        width: 600px;
-    }
-
-    .news-body span, p, h1, h2, h3, h4, h5, h6 {
-        font-size: 18px;
-        font-weight: normal;
-    }
-
-
-    .view-all {
-        font-size: 22px;
-    }
-}
 /* mobile */
-@media only screen and (min-width: 768px) and (max-width: 992px) { 
-    p {
-        font-size: 40px;
-    }
+@media only screen and (max-width: 992px) { 
 
-    span {
-        font-size: 50px;
-    }
+
     .cover {
       height: 100%;
     }
@@ -119,26 +53,13 @@
     }
 
     .title-block {
-        font-size: 43px;
+        
+        font-size: 23px;
     }
-
-    .item-block {
-        width: 90vw;
-    }
-    .content {
-      height: 40vh;
-    }
-    .news-body p {
-        font-size: 30px;
-        font-weight: normal;
+    .news {
+        margin: 10px 10px;
     }
 
 
 }
 
-@media only screen and (min-width: 480px) and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 320px) and (max-width: 480px) {
-}
