@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Исправление бага связанного с отображением новости">
-      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/vk_group.jpg" beforeDir="false" />
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Исправление бага со стилем диалогового окна в галерее">
+      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -300,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684621038838</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Исправление бага со стилем диалогового окна в галерее">
+      <created>1684621283931</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1684621283931</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,7 +349,8 @@
     <MESSAGE value="Подправка стилей" />
     <MESSAGE value="Исправление бага связанного с языком страниц (на некоторых был английский и google переводчик постоянно переводил русские страницы)&#10;Чистка проекта от лишних файлов" />
     <MESSAGE value="Исправление бага связанного с отображением новости" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправление бага связанного с отображением новости" />
+    <MESSAGE value="Исправление бага со стилем диалогового окна в галерее" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправление бага со стилем диалогового окна в галерее" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
