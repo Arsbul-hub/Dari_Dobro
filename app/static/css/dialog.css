@@ -38,6 +38,7 @@
 
 .image-dialog {
   height: 100%;
+  width: 60%;
   border: unset;
   padding: 0;
   border-radius: 10px;
