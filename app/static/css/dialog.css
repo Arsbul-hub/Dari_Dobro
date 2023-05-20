@@ -90,4 +90,7 @@
     width: 100%;
     padding: 0;
   }
+  .confirm-dialog {
+    min-width: unset;
+  }
 }

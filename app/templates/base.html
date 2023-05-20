@@ -137,7 +137,7 @@
             {% if user.is_authenticated %}
             <a class="me-admin" href="{{ url_for('admin_panel') }}">Панель управления</a>
             {% else %}
-            <a class="me-admin" href="{{ url_for('admin_panel') }}"></a>
+            <a class="me-admin" href="{{ url_for('admin_panel') }}">Вход</a>
             {% endif %}
 
         </div>
