@@ -1,5 +1,7 @@
+import pathlib
 from datetime import datetime
 import os
+from zipfile import ZipFile
 
 from flask import render_template, send_from_directory, url_for, render_template_string, flash, redirect, request, abort
 from flask_ckeditor import upload_fail, upload_success
@@ -143,7 +145,8 @@ def login():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data)
+        user = User()
+        user.username = form.username.data
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
@@ -153,9 +156,19 @@ def register():
     return render_template('forms/register.html', user=current_user, title='Register', form=form)
 
 
-@app.route("/Профиль")
+@app.route("/Панель управления")
 @login_required
-def profile():
+def admin_panel():
+    # Я хотел делать бэкапы, но не вышло
+    # action = request.args.get("action")
+    # if action == "get_backup":
+    #     n = datetime.now()
+    #     with ZipFile(f"app/static/backups/backup-{n.year}-{n.month}-{n.day}-{n.hour}-{n.minute}-{n.second}.zip", "w") as zip_file:
+    #         zip_file.write("./app.db")
+    #         for resource in pathlib.Path("app/static/loaded_media/").iterdir():
+    #             zip_file.write(resource, arcname=f"media/{resource.name}")
+    #     send_from_directory("static/backups", f"backup-{n.year}-{n.month}-{n.day}-{n.hour}-{n.minute}-{n.second}.zip", as_attachment=True)
+
     return render_template("admin_panel.html", user=current_user, admin_username=app.config["DEFAULT_ADMIN_USERNAME"])
 
 
@@ -241,7 +254,7 @@ def add_news():
                 form.body.data = news_post.body
         else:
             return redirect(url_for("news"))
-    if form.validate_on_submit():
+    elif form.validate_on_submit():
         saved_cover = save_file(file=form.cover.data, formates=["png", "jpg", "jpeg", "webp"])
         news_post = News(title=form.title.data, body=form.body.data, cover=saved_cover)
         db.session.add(news_post)
@@ -303,7 +316,7 @@ def add_document():
                 form.title.data = document.title
         else:
             return redirect(url_for("documents"))
-    if form.validate_on_submit():
+    elif form.validate_on_submit():
         file = save_file(file=form.document.data, formates=["pdf", "pptx"])
         new_document = Documents(title=form.title.data, file=file)
         db.session.add(new_document)
@@ -367,7 +380,7 @@ def add_smi_post():
                 form.url.data = post.url
         else:
             return redirect(url_for("smi"))
-    if form.validate_on_submit():
+    elif form.validate_on_submit():
         saved_cover = form.cover_url.data
 
         smi_post = SmiPosts(title=form.title.data, cover=saved_cover, url=form.url.data)
@@ -398,7 +411,7 @@ def add_materials():
                 form.body.data = material.body
         else:
             return redirect(url_for("materials"))
-    if form.validate_on_submit():
+    elif form.validate_on_submit():
         new_materials = Materials()
         new_materials.title = form.title.data
         new_materials.body = form.body.data
@@ -466,7 +479,7 @@ def add_partner():
 
         else:
             return redirect(url_for("partners"))
-    if form.validate_on_submit():
+    elif form.validate_on_submit():
         out_path = save_file(file=form.logo.data)
 
         new_animal = Partners(name=form.name.data, logo=out_path, link=form.link.data)
@@ -500,7 +513,7 @@ def add_animal():
 
         else:
             return redirect(url_for("our_animals"))
-    if form.validate_on_submit():
+    elif form.validate_on_submit():
         out_path = save_file(file=form.cover.data)
 
         new_animal = Animals(name=form.name.data, body=form.body.data, cover=out_path)
@@ -569,11 +582,43 @@ def gallery():
     return render_template("gallery.html", user=current_user, gallery_list=Gallery.query.all())
 
 
+@login_required
+@app.route("/Редактировать контакты", methods=["GET", "POST"])
+def edit_contacts():
+    form = EditContacts()
+    if form.validate_on_submit():
+        Config.query.get("email").value = form.email.data
+        Config.query.get("vk_group_url").value = form.vk_url.data
+        if form.vk_qr.data:
+            Config.query.get("vk_group_qr").value = save_file(form.vk_qr.data, path="qr")
+        Config.query.get("phone_number").value = form.phone.data
+
+        db.session.commit()
+        return redirect(url_for("contacts"))
+    else:
+
+        if Config.query.get("email"):
+            form.email.data = Config.query.get("email").value
+        if Config.query.get("vk_group_url"):
+            form.vk_url.data = Config.query.get("vk_group_url").value
+        if Config.query.get("phone_number"):
+            form.phone.data = Config.query.get("phone_number").value
+    return render_template("forms/edit_contacts.html", user=current_user, form=form)
+
+
 @app.route("/Контакты")
 def contacts():
-    # mail = Config.query.filter_by(name="contact_mail").first()
-    # grope_vk = Config.query.filter_by(name="contact_vk_link").first()
-    return render_template("contacts.html", user=current_user)
+    email, vk_url, vk_qr, phone_number = "", "", "", ""
+    if Config.query.get("email"):
+        email = Config.query.get("email").value
+    if Config.query.get("vk_group_url"):
+        vk_url = Config.query.get("vk_group_url").value
+    if Config.query.get("vk_group_qr"):
+        vk_qr = Config.query.get("vk_group_qr").value
+    if Config.query.get("phone_number"):
+        phone_number = Config.query.get("phone_number").value
+    return render_template("contacts.html", user=current_user, email=email, vk_group_url=vk_url, vk_qr=vk_qr,
+                           phone_number=phone_number)
 
 
 @app.route('/Мероприятия')

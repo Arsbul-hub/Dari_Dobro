@@ -28,13 +28,7 @@
     margin-top: 30px;
     flex-direction: column
 }
-input[type=text] {
 
-    border: 1px solid #b1b1b1;
-    border-radius: 4px;
-    box-sizing: border-box;
-    padding: 12px 20px;
-}
 
 .custom-file-upload {
     border: 1px solid #ccc;
@@ -48,25 +42,22 @@ p {
     text-align: center;
 }
 
-input[type="url"] {
+input {
 
     border: 1px solid #b1b1b1;
     border-radius: 4px;
     box-sizing: border-box;
     padding: 12px 20px;
 }
-input[type="password"] {
-
-    border: 1px solid #b1b1b1;
-    border-radius: 4px;
-    box-sizing: border-box;
-    padding: 12px 20px;
+input[type=file] {
+    border-radius: unset;
+    border: unset;
 }
-
 input[type=submit] {
     margin: 30px auto;
     color: white;
     padding: 14px 30%;
+    box-sizing: none;
     background-color: #4CAF50;
     border: none;
     border-radius: 4px;

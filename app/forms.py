@@ -2,11 +2,11 @@ import re
 
 from flask_ckeditor import CKEditorField
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, FileField, URLField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, FileField, URLField, TelField, EmailField
 from wtforms.widgets import TextArea
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from app.models import User, Config, Documents, Gallery
-from app.validators import image_validation, pdf_validation, data_required
+from app.validators import image_validation, pdf_validation, data_required, phone_validation
 
 
 class LoginForm(FlaskForm):
@@ -170,3 +170,16 @@ class PageDataForm(FlaskForm):
     title = StringField("Заглавие страницы", validators=[DataRequired()])
     description = CKEditorField("Описание страницы", validators=[DataRequired()])
     save = SubmitField("Сохранить")
+
+
+class EditContacts(FlaskForm):
+    _name = "Редактировать контакты"
+    phone = StringField("Телефон", validators=[DataRequired(), phone_validation])
+    email = EmailField("Электронная почта", validators=[DataRequired()])
+    vk_url = URLField("Ссылка на группу в вк", validators=[DataRequired()])
+    vk_qr = FileField("QR код для группы в вк")
+    save = SubmitField("Сохранить")
+
+    def validate_vk_qr(self, field):
+        if not Config.query.get("vk_group_qr"):
+            raise ValidationError("This field is require.")

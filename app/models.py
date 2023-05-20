@@ -95,6 +95,7 @@ class Config(__basemodel):
     __tablename__ = 'config'
     name = sa.Column(sa.String(), primary_key=True)
     value = sa.Column(sa.String())
+    # category = sa.Column(sa.String())
 
 
 class PagesData(__basemodel):

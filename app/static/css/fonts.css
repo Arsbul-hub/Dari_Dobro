@@ -1,5 +1,9 @@
 /* latin */
 @font-face {
+    font-family: "OpenSans";
+    src: url("fonts/OpenSans.ttf");
+}
+@font-face {
     font-family: 'Abel';
     font-style: normal;
     font-weight: 400;

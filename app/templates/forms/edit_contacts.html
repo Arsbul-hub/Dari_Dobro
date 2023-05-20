@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends "base.html" %}
+
+<head>
+
+    {% block head %}
+
+    <meta charset="UTF-8">
+    <title>{{form._name}}</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/form.css">
+
+    {% endblock %}
+</head>
+<body>
+
+
+{% block after %}
+
+<div class="form-block">
+    <h1>{{form._name}}</h1>
+    <form action="" enctype="multipart/form-data" method="post">
+        {{ form.hidden_tag() }}
+        {{ form.phone.label }}
+        <p>
+
+            {{ form.phone(size=35) }}
+            {% for error in form.phone.errors %}<br>
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </p>
+
+        {{ form.email.label }}
+        <p>
+
+            {{ form.email(size=35) }}
+            {% for error in form.email.errors %}<br>
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </p>
+        {{ form.vk_url.label }}
+        <p>
+
+            {{ form.vk_url(size=35) }}
+            {% for error in form.vk_url.errors %}<br>
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </p>
+        {{ form.vk_qr.label }}
+        <p>
+
+            {{ form.vk_qr(size=35) }}
+            {% for error in form.vk_qr.errors %}<br>
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </p>
+        {{ form.save() }}
+    </form>
+
+</div>
+{% endblock %}
+</body>
+</html>

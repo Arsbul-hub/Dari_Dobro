@@ -23,11 +23,10 @@
 
 
 {% if user.is_authenticated %}
-<div class="is-empty" style="margin-top: 30px;">
 
-    <a href="{{url_for('add_partner')}}">Добавить партнёра</a>
+<a class="add_button" href="{{url_for('add_partner')}}">Добавить партнёра</a>
 
-</div>
+
 {% endif %}
 
 {% if partners %}
@@ -41,8 +40,9 @@
         {% if user.is_authenticated %}
 
         <dialog id="confirm-dialog-{{p.id}}-remove" class="confirm-dialog">
-            <p class="dialog-title">Внимание</p>
-            <p>Вы действительно хотите удалить этого партнёра?</p>
+
+            <p class="dialog-title">Вы действительно хотите удалить этого партнёра?</p>
+            <hr>
             <div class="buttons">
                 <a onclick="close_confirm_dialog({{p.id}}, 'remove');">Отмена</a>
                 <a href="{{url_for('partners', action='remove',  id=p.id)}}">Да</a>
@@ -82,8 +82,9 @@
 
 
 {% else %}
-<div class="is-empty" style="margin-top: 100px;">
-   <i class="fa-solid fa-image"></i>
+<div class="is-empty">
+    <img src="static/images/empty-box-icon.svg"
+         style="filter: invert(57%) sepia(6%) saturate(16%) hue-rotate(43deg) brightness(87%) contrast(89%);">
     <p>Пока здесь пусто</p>
 
 </div>

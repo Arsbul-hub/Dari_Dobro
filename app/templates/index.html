@@ -20,6 +20,7 @@
 
 
 
+
     </style>
     {% endif %}
     {% endblock %}
@@ -41,10 +42,13 @@
         <span class="title">Заголовок не задан</span>
         {% endif %}
         {% if user.is_authenticated %}
-        <a href="{{url_for('edit_page_description', page=request.endpoint, page_name=site_data.title)}}">
-            <i class="fa-solid fa-pen" style="font-size:24px"></i>
+        <div class="tools">
 
-        </a>
+            <a href="{{url_for('edit_page_description', page=request.endpoint, page_name=site_data.title)}}">
+                <i class="fa-solid fa-pen"></i>
+
+            </a>
+        </div>
         {% endif %}
     </div>
 

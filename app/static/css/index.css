@@ -56,7 +56,13 @@
     justify-content: space-between;
 
 }
+.tools a {
 
+    font-size:24px!important;
+}
+.tools a:hover {
+    font-size:27px!important;
+}
 @media only screen and (max-width: 992px){
 
     .description hr {

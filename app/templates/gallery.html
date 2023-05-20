@@ -23,11 +23,10 @@
 
 <span class="title">Галерея</span>
 {% if user.is_authenticated %}
-<div class="is-empty">
 
-    <a href="{{url_for('add_image_to_gallery')}}">Добавить изображение</a>
+<a class="add_button" href="{{url_for('add_image_to_gallery')}}">Добавить изображение</a>
 
-</div>
+
 {% endif %}
 
 <div id="news-blocks">
@@ -37,8 +36,9 @@
         {% if gallery_list %}
         {% for n in gallery_list %}
         <dialog id="confirm-dialog-{{n.id}}-remove" class="confirm-dialog">
-            <p class="dialog-title">Внимание</p>
-            <p>Вы действительно хотите удалить это изображение?</p>
+
+            <p class="dialog-title">Вы действительно хотите удалить это изображение?</p>
+            <hr>
             <div class="buttons">
                 <a onclick="close_confirm_dialog({{n.id}}, 'remove');">Отмена</a>
                 <a href="{{url_for('gallery', action='remove', id=n.id)}}">Да</a>
@@ -59,6 +59,7 @@
                 </div>
                 {% endif %}
             </div>
+            <hr>
             <a onclick="close_image_dialog({{n.id}});" class="close-image-dialog-button">
                 <i class="fa-solid fa-xmark"></i>
             </a>
@@ -83,7 +84,8 @@
         {% endfor %}
         {% else %}
         <div class="is-empty">
-            <i class="fa-solid fa-image"></i>
+            <img src="static/images/empty-box-icon.svg"
+                 style="filter: invert(57%) sepia(6%) saturate(16%) hue-rotate(43deg) brightness(87%) contrast(89%);">
             <p>Пока здесь пусто</p>
 
         </div>

@@ -6,8 +6,8 @@
 }
 
 .materials-list {
-    display: flex;
 
+    width: 80%;
     padding-bottom: 20px;
     flex-wrap: wrap;
     justify-content: center;

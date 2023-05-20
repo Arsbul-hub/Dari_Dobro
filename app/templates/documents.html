@@ -19,18 +19,19 @@
 {% block after %}
 <span class="title">Уставные документы</span>
 {% if user.is_authenticated %}
-<div class="is-empty">
 
-    <a href="{{url_for('add_document')}}">Добавить документ</a>
 
-</div>
+<a class="add_button" href="{{url_for('add_document')}}">Добавить документ</a>
+
+
 {% endif %}
 {% if documents %}
 <div class="documents-list">
     {% for document in documents %}
     <dialog id="confirm-dialog-{{document.id}}-remove" class="confirm-dialog">
-        <p class="dialog-title">Внимание</p>
-        <p>Вы действительно хотите удалить этот документ?</p>
+
+        <p class="dialog-title">Вы действительно хотите удалить этот документ?</p>
+        <hr>
         <div class="buttons">
             <a onclick="close_confirm_dialog({{document.id}}, 'remove');">Отмена</a>
             <a href="{{url_for('documents', action='remove',  id=document.id)}}">Да</a>
@@ -63,7 +64,8 @@
 </div>
 {% else %}
 <div class="is-empty">
-    <i class="fa-solid fa-image"></i>
+    <img src="static/images/empty-box-icon.svg"
+         style="filter: invert(57%) sepia(6%) saturate(16%) hue-rotate(43deg) brightness(87%) contrast(89%);">
     <p>Пока здесь пусто</p>
 
 </div>

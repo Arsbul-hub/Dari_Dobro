@@ -37,6 +37,7 @@
 
 
 
+
     </script>
     <title>Новости</title>
 
@@ -49,12 +50,10 @@
 {% block after %}
 
 <span class="title">Новости</span>
-{% if  user.is_authenticated %}
-<div class="is-empty">
+{% if user.is_authenticated %}
 
-    <a href="{{url_for('add_news')}}">Создать новость</a>
+<a class="add_button" href="{{url_for('add_news')}}">Создать новость</a>
 
-</div>
 
 {% endif %}
 <nav class="category-navigation">
@@ -70,8 +69,9 @@
         {% if news %}
         {% for n in news %}
         <dialog id="confirm-dialog-{{n.id}}-remove" class="confirm-dialog">
-            <p class="dialog-title">Внимание</p>
-            <p>Вы действительно хотите удалить эту новость?</p>
+
+            <p class="dialog-title">Вы действительно хотите удалить эту новость?</p>
+            <hr>
             <div class="buttons">
                 <a onclick="close_confirm_dialog({{n.id}}, 'remove');">Отмена</a>
                 <a href="{{url_for('news', action='remove', id=n.id)}}">Да</a>
@@ -126,7 +126,9 @@
         {% endfor %}
         {% else %}
         <div class="is-empty">
-            <p>Пока новостей нет</p>
+            <img src="static/images/empty-box-icon.svg"
+                 style="filter: invert(57%) sepia(6%) saturate(16%) hue-rotate(43deg) brightness(87%) contrast(89%);">
+            <p>Пока здесь пусто</p>
 
         </div>
         {% endif %}
@@ -136,8 +138,9 @@
         {% for n in old_news %}
 
         <dialog id="confirm-dialog-{{n.id}}-remove" class="confirm-dialog">
-            <p class="dialog-title">Внимание</p>
-            <p>Вы действительно хотите удалить эту новость?</p>
+
+            <p class="dialog-title">Вы действительно хотите удалить эту новость?</p>
+            <hr>
             <div class="buttons">
                 <a onclick="close_confirm_dialog({{n.id}}, 'remove');">Отмена</a>
                 <a href="{{url_for('news', action='remove', id=n.id)}}">Да</a>
@@ -190,8 +193,9 @@
         {% endfor %}
         {% else %}
         <div class="is-empty">
-            <i class="fa-solid fa-image"></i>
-            <p>Пока новостей нет</p>
+            <img src="static/images/empty-box-icon.svg"
+                 style="filter: invert(57%) sepia(6%) saturate(16%) hue-rotate(43deg) brightness(87%) contrast(89%);">
+            <p>Пока здесь пусто</p>
 
         </div>
         {% endif %}

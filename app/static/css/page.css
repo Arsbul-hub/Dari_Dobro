@@ -1,6 +1,13 @@
+a, input, label {
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    font-family: "OpenSans";
+}
+
 .title {
     font-size: 33px;
-    
+
     margin-top: 50px;
 }
 
@@ -30,17 +37,31 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 15px;
-    margin-bottom: 40px;
     font-size: 17px;
+
+    margin-top: 80px;
+    margin-bottom: 40px;
+    
+}
+.is-empty img {
+    width: 150px;
 }
 .is-empty p {
     color: gray;
+    
 }
 .is-empty i {
     color: gray;
     font-size: 50px;
 }
+.add_button {
+    display: block;
+    text-align: center;
+    margin: 15px 0;
+    color: gray;
+    font-size: 17px;
+}
+
 @media only screen and (max-width: 992px) {
     /*Паналь инструментов*/
     .tools i {
@@ -52,13 +73,20 @@
         margin: 0 8px;
     }
     /*Блок создания нового элемента*/
-
+    .is-empty {
+        margin-top: 60px;
+        
+    }
     .is-empty p {
         font-size: 20px;
     }
-    .is-empty a {
+
+    .is-empty i {
+        font-size: 30px;
+    }
+    .add_button {
+
         font-size: 20px;
     }
-    
 
 }

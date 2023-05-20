@@ -92,9 +92,9 @@
     background: linear-gradient(to bottom, rgba(var(--DE-menu__submenu-bg-color-number), 0), var(--DE-menu__submenu-bg))
 }
 
-body, .f-textarea, .mod--font-none-preset .searchform__input, .mod--font-none-preset .searchform__input[placeholder], .mod--font-none-preset .f-text, .mod--font-none-preset .de--main__font-family {
+/* body, .f-textarea, .mod--font-none-preset .searchform__input, .mod--font-none-preset .searchform__input[placeholder], .mod--font-none-preset .f-text, .mod--font-none-preset .de--main__font-family {
     font-family: var(--DE-common__site-font-name)
-}
+} */
 
 section.privatepage form .button, .md-top-slider_slide-content {
     font-family: var(--DE-common__site-font-name) !important

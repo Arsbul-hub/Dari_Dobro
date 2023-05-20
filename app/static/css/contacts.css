@@ -2,10 +2,17 @@ body {
     background-color: white;
 }
 .title {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
+    margin-top: 0!important;
+    margin-right: 10px;
 }
+.title-block {
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+
+}
+
 .contacts-block {
     display: flex;
     align-items: center;
@@ -60,7 +67,13 @@ body {
 
 
 
+.tools a {
 
+    font-size:24px!important;
+}
+.tools a:hover {
+    font-size:27px!important;
+}
 
 
 

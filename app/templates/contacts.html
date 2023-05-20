@@ -7,6 +7,7 @@
 
     {% block head %}
     <link type="text/css" rel="stylesheet" href="static/css/contacts.css">
+
     <title>Контакты</title>
     {% endblock %}
 </head>
@@ -14,28 +15,41 @@
 
 
 {% block after %}
-<span class="title">Контакты</span>
+<div class="title-block">
+
+    <span class="title">Контакты</span>
+
+    {% if user.is_authenticated %}
+    <div class="tools">
+        <a href="{{url_for('edit_contacts')}}">
+            <i class="fa-solid fa-pen" ></i>
+
+        </a>
+    </div>
+    {% endif %}
+</div>
 <div class="contacts-block">
 
     <div>
         <p>Наша почта:</p>
-        <a href="mailto: enimals33@mail.ru" style="font-size: 20px">enimals33@mail.ru</a>
+        <a href="mailto: enimals33@mail.ru" style="font-size: 20px">{{email}}</a><!-- enimals33@mail.ru-->
     </div>
     <div>
         <p>Телефон:</p>
-        <a href="tel:+79037136148" style="font-size: 34px">+79037136148</a>
+        <a href="tel:{{phone_number}}" style="font-size: 34px">{{phone_number}}</a> <!--79037136148-->
 
     </div>
     <div>
 
-        <a href="https://vk.com/public_dari_dobro_pokrov" target="_blank"
+        <a href="{{vk_group_url}}" target="_blank"
            style="color: black; margin: 10px 0">
             Подписывайтесь на нашу группу в вк:
         </a>
 
-        <a href="https://vk.com/public_dari_dobro_pokrov" target="_blank" style="color: black; background-image: none">
-            <img src="static/images/qr/vk_group.jpg">
+        <a href="{{vk_group_url}}" target="_blank" style="color: black; background-image: none">
+            <img src="{{vk_qr}}">
         </a>
+        <!--https://vk.com/public_dari_dobro_pokrov-->
     </div>
 </div>
 

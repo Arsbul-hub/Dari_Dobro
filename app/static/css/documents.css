@@ -68,5 +68,7 @@
     .item-block {
       width: 90%;
     }
-
+    .item-block:hover {
+      width: 90%;
+    }
 }

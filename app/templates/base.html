@@ -15,18 +15,17 @@
     <link rel="stylesheet" type="text/css" href="/static/css/base.css">
     <link rel="stylesheet" type="text/css" href="/static/css/page.css">
     <link rel="stylesheet" type="text/css" href="/static/css/dialog.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/fonts.css">
     <script src="/static/js/jquery.js"></script>
     <!--    <link rel="stylesheet" type="text/css" href="/static/css/adaptive.css">-->
-<!--    <link rel="icon" href="/static/images/icon.ico">-->
+    <!--    <link rel="icon" href="/static/images/icon.ico">-->
     <link rel="icon" href="/static/images/icon.png" type="image/png">
     <meta name="msapplication-TileImage" content="/static/images/icon.ico">
     <script src="https://kit.fontawesome.com/6957c188ce.js" crossorigin="anonymous"></script>
     <script src="/static/js/site.js"></script>
     <script src="/static/js/navigation.js"></script>
 </head>
-<body data-template="bruno2"
-      class="f__preset-box f__site f__2 loading locale_ru bruno2 mod--search-disable mod--img-logo mod--header-static mod--menu-action-on-scroll mod--menu-static-on-scroll desktop adaptive-desktop mod--horizontal-menu mod--infoline-disable js--loading-cascade mod--font-none-preset layout-logo-left--by-logo "
-      data-preview="">
+<body>
 
 <div id="before">
     {% block before %}{% endblock %}
@@ -58,7 +57,7 @@
 
                     </li>
 
-                    <li><a href="{{url_for('materials')}}">ПОЛЕЗНЫЕ МАТЕРИАЛЫ</a></li>
+
                     <li><a href="{{url_for('partners')}}">ПАРТНЕРЫ</a></li>
                     <li><a href="{{url_for('news')}}">НОВОСТИ</a></li>
 
@@ -69,6 +68,7 @@
                             <li><a href="{{ url_for('volunteer') }}">Стать волонтером</a></li>
                         </ul>
                     </li>
+                    <li><a href="{{url_for('materials')}}">ПОЛЕЗНАЯ ИНФОРМАЦИЯ</a></li>
                     <li><a href="{{url_for('contacts')}}">КОНТАКТЫ</a></li>
 
 
@@ -78,9 +78,9 @@
 
         </div>
         {% if user.is_authenticated %}
-        <a class="me-admin" href="{{ url_for('profile') }}">Панель управления</a>
+        <a class="me-admin" href="{{ url_for('admin_panel') }}">Панель управления</a>
         {% else %}
-        <a class="me-admin" href="{{ url_for('profile') }}">Вход</a>
+        <a class="me-admin" href="{{ url_for('admin_panel') }}">Вход</a>
         {% endif %}
 
     </div>
@@ -93,7 +93,7 @@
                 </a>
             </div>
 
-            <!--            <a class="me-admin" href="{{ url_for('profile') }}">Я администратор</a>-->
+            <!--            <a class="me-admin" href="{{ url_for('admin_panel') }}">Я администратор</a>-->
             <a onclick="open_navigation()" id="open-navigation"><i class="fa-solid fa-bars "></i></a>
             <a style="display: none" id="close-navigation" onclick="close_navigation()"><i class="fa fa-close"></i></a>
         </div>
@@ -116,8 +116,6 @@
                     <li><a href="{{url_for('our_animals')}}">НАШИ ЖИВОТНЫЕ</a>
 
                     </li>
-                    <li><a href="{{url_for('materials')}}">ПОЛЕЗНЫЕ МАТЕРИАЛЫ</a></li>
-
 
                     <li><a href="{{url_for('partners')}}">ПАРТНЕРЫ</a></li>
                     <li><a href="{{url_for('news')}}">НОВОСТИ</a></li>
@@ -129,6 +127,7 @@
                             <li><a href="{{ url_for('volunteer') }}">Стать волонтером</a></li>
                         </ul>
                     </li>
+                    <li><a href="{{url_for('materials')}}">ПОЛЕЗНАЯ ИНФОРМАЦИЯ</a></li>
                     <li><a href="{{url_for('contacts')}}">КОНТАКТЫ</a></li>
 
 
@@ -136,9 +135,9 @@
             </nav>
 
             {% if user.is_authenticated %}
-            <a class="me-admin" href="{{ url_for('profile') }}"><p>Панель управления</p></a>
+            <a class="me-admin" href="{{ url_for('admin_panel') }}">Панель управления</a>
             {% else %}
-            <a class="me-admin" href="{{ url_for('profile') }}"></a>
+            <a class="me-admin" href="{{ url_for('admin_panel') }}"></a>
             {% endif %}
 
         </div>
@@ -153,7 +152,6 @@
 
     </div>
 </div>
-
 
 
 </body>

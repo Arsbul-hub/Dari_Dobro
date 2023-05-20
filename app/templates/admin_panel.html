@@ -8,7 +8,7 @@
 
     <meta charset="UTF-8">
     <title>Профиль</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/profile.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/admin_panel.css">
     <link rel="stylesheet" type="text/css" href="/static/css/dialog.css">
     <script type="text/javascript" src="/static/js/dialog.js"></script>
     {% endblock %}
@@ -19,8 +19,9 @@
 
 <span class="title">{{user}}</span>
 <dialog id="confirm-dialog-user-logout" class="confirm-dialog">
-    <p class="dialog-title">Внимание</p>
-    <p>Вы действительно хотите выйти из профиля?</p>
+
+    <p class="dialog-title">Вы действительно хотите выйти из профиля?</p>
+    <hr>
     <div class="buttons">
         <a onclick="close_confirm_dialog('user', 'logout');">Отмена</a>
         <a href="{{ url_for('logout') }}">Да</a>
@@ -29,8 +30,9 @@
 
 </dialog>
 <dialog id="confirm-dialog-user-remove" class="confirm-dialog">
-    <p class="dialog-title">Внимание</p>
-    <p>Вы действительно хотите удалить пользователя?</p>
+
+    <p class="dialog-title">Вы действительно хотите удалить пользователя?</p>
+    <hr>
     <div class="buttons">
         <a onclick="close_confirm_dialog('user', 'remove');">Отмена</a>
         <a href="{{ url_for('delete_user', id=user.id) }}">Да</a>
@@ -57,6 +59,7 @@
             <p>Файловый менеджер</p>
         </div>
     </a>
+
     <a onclick=" open_confirm_dialog('user', 'logout') ">
         <div class="content">
             <i class="fa-sharp fa-solid fa-folder-open"></i>

@@ -712,16 +712,15 @@ body, html {
     font-size: 100%
 }
 
-html {
+/* html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
-}
+} */
 
 body {
     margin: 0;
     padding: 0;
-    font-family: "Open Sans", Helvetica, Verdana, "Lucida Grande", sans-serif;
     font-variant: normal;
     font-size: 16px;
     background-color: rgb(229 248 255);
@@ -734,9 +733,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
 }
-p {
-    font-family: arial;
-}
+
 body:not(.bot-version) {
     opacity: 0
 }
