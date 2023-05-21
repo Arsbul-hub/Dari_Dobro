@@ -60,18 +60,18 @@ class EditNewsForm(FlaskForm):
 
 
 class CreateMaterialsForm(FlaskForm):
-    _name = "Добавить материал"
-    title = StringField("Название поста:", validators=[DataRequired()])
+    _name = "Добавить информацию"
+    title = StringField("Название:", validators=[DataRequired()])
 
-    body = CKEditorField("Текст поста:", validators=[DataRequired()])
-    submit = SubmitField("Создать")
+    body = CKEditorField("Текст:", validators=[DataRequired()])
+    submit = SubmitField("Добавить")
 
 
 class EditMaterialsForm(FlaskForm):
-    _name = "Изменить материал"
-    title = StringField("Название поста:", validators=[DataRequired()])
+    _name = "Изменить информацию"
+    title = StringField("Название:", validators=[DataRequired()])
 
-    body = CKEditorField("Текст поста:", validators=[DataRequired()])
+    body = CKEditorField("Текст:", validators=[DataRequired()])
     submit = SubmitField("Сохранить")
 
 

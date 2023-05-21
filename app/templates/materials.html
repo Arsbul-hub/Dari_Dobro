@@ -30,71 +30,61 @@
 
 {% endif %}
 
-<div id="materials-blocks">
+{% if materials_list %}
+<div class="materials-list">
 
+    {% for n in materials_list %}
 
-    <div class="materials-list" id="new_materials">
-        {% if materials_list %}
-        {% for n in materials_list %}
+    <dialog id="confirm-dialog-{{n.id}}-remove" class="confirm-dialog">
 
-        <dialog id="confirm-dialog-{{n.id}}-remove" class="confirm-dialog">
-
-            <p class="dialog-title">Вы действительно хотите удалить этот блок?</p>
-            <hr>
-            <div class="buttons">
-                <a onclick="close_confirm_dialog({{n.id}}, 'remove');">Отмена</a>
-                <a href="{{url_for('materials', action='remove', id=n.id)}}">Да</a>
-            </div>
-
-
-        </dialog>
-
-        <div class="item-block">
-
-            {% if user.is_authenticated %}
-            <div class="tools">
-                <a href="{{url_for('add_materials', action='edit', id=n.id)}}">
-                    <i class="fa-solid fa-pen"></i>
-                </a>
-                <a onclick="open_confirm_dialog({{n.id}}, 'remove');">
-                    <i class="fa fa-trash-o"></i>
-                </a>
-            </div>
-            {% endif %}
-
-            <div class="content">
-
-                <img class=" cover" src="{{ n.cover }}">
-
-                <div class="materials">
-                    <span class="title-block">{{ n.title }}</span>
-                    <hr class="separator">
-                    <div class="materials-body">
-
-                        <p>
-                            {{n.body | safe}}
-                        </p>
-                    </div>
-
-                </div>
-
-
-            </div>
-
+        <p class="dialog-title">Вы действительно хотите удалить этот блок?</p>
+        <hr>
+        <div class="buttons">
+            <a onclick="close_confirm_dialog({{n.id}}, 'remove');">Отмена</a>
+            <a href="{{url_for('materials', action='remove', id=n.id)}}">Да</a>
         </div>
 
-        {% endfor %}
-        {% else %}
-        <div class="is-empty">
-            <img src="static/images/empty-box-icon.svg" style="filter: invert(57%) sepia(6%) saturate(16%) hue-rotate(43deg) brightness(87%) contrast(89%);">
-            <p>Пока здесь пусто</p>
 
+    </dialog>
+
+    <div class="item-block">
+
+        {% if user.is_authenticated %}
+        <div class="tools">
+            <a href="{{url_for('add_materials', action='edit', id=n.id)}}">
+                <i class="fa-solid fa-pen"></i>
+            </a>
+            <a onclick="open_confirm_dialog({{n.id}}, 'remove');">
+                <i class="fa fa-trash-o"></i>
+            </a>
         </div>
         {% endif %}
+
+        <div class="content">
+
+            <span class="title-block">{{ n.title }}</span>
+            <hr class="separator">
+            <div class="body">
+                {{n.body | safe}}
+
+            </div>
+
+
+        </div>
+
     </div>
 
-</div>
+    {% endfor %}
 
+</div>
+{% else %}
+<div class="is-empty">
+    <img src="static/images/empty-box-icon.svg"
+         style="filter: invert(57%) sepia(6%) saturate(16%) hue-rotate(43deg) brightness(87%) contrast(89%);">
+    <p>Пока здесь пусто</p>
+
+</div>
+{% endif %}
 
 
 {% endblock %}

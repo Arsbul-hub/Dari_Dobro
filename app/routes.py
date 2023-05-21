@@ -392,7 +392,7 @@ def add_smi_post():
     return render_template("forms/add_smi_post.html", user=current_user, form=form)
 
 
-@app.route("/Добавить материалы", methods=['GET', 'POST'])
+@app.route("/Добавить информацию", methods=['GET', 'POST'])
 @login_required
 def add_materials():
     action = request.args.get("action")
@@ -423,7 +423,7 @@ def add_materials():
     return render_template("forms/add_materials.html", user=current_user, form=form)
 
 
-@app.route("/Полезные материалы")
+@app.route("/Полезная информация")
 def materials():
     action = request.args.get('action')
 
