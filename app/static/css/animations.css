@@ -1,0 +1,4 @@
+@keyframes ani {
+    0% {transform: translateX(-300%);}
+    100% {transform: translateY(0);}
+}

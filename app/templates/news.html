@@ -9,25 +9,31 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/static/css/news.css">
     <link rel="stylesheet" type="text/css" href="/static/css/navigation.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/dialog.css">
-    <script type="text/javascript" src="/static/js/dialog.js"></script>
+
     <script>
 
 
             function show_new() {
 
-            document.getElementById("new_news").style.opacity = 1;
-            document.getElementById("old_news").style.opacity = 0;
-            document.getElementById("old_news").style.visibility = "hidden";
-            document.getElementById("new_news").style.visibility = "visible";
+            document.getElementById("new_news").style.display = "flex";
+            document.getElementById("old_news").style.display = "none";
+            document.getElementById("old_news").style.opacity = "0";
+            document.getElementById("new_news").style.opacity = "1";
+            document.getElementById("with_us").style.backgroundColor = "#0470b8"
+            document.getElementById("in_house").style.backgroundColor = "green"
         }
         function show_old() {
 
-            document.getElementById("new_news").style.opacity = 0;
-            document.getElementById("old_news").style.opacity = 1;
-            document.getElementById("old_news").style.visibility = "visible";
-            document.getElementById("new_news").style.visibility = "hidden";
+
+            document.getElementById("new_news").style.display = "none";
+            document.getElementById("old_news").style.display = "flex";
+            document.getElementById("old_news").style.opacity = "1";
+            document.getElementById("new_news").style.opacity = "0";
+            document.getElementById("with_us").style.backgroundColor = "green"
+            document.getElementById("in_house").style.backgroundColor = "#0470b8"
         }
+
+
 
 
 
@@ -58,8 +64,8 @@
 {% endif %}
 <nav class="category-navigation">
     <ul>
-        <li><a onclick="show_new()">Новые</a></li>
-        <li><a onclick="show_old()">Более старые</a></li>
+        <li id="with_us" style="background-color: #0470b8"><a onclick="show_new()">Новые</a></li>
+        <li id="in_house"><a onclick="show_old()">Более старые</a></li>
     </ul>
 </nav>
 <div id="news-blocks">
@@ -108,13 +114,14 @@
                 <img class=" cover" src="{{ n.cover }}">
 
                 <div class="news">
-                    <h2 class="title-block">{{ n.title }}</h2>
-                    <div class="news-body">
+                    <span class="title-block">{{ n.title }}</span>
+                    <hr>
+                    <p class="news-body">
                         <!--                        Текст новости чисто без разметки -->
-                        <p>
-                            {{beautiful_soup(n.body, 'html.parser').get_text('<br>') | safe}}
-                        </p>
-                    </div>
+
+                            {{ BeautifulSoup(n.body, 'lxml').get_text()}}
+
+                    </p>
                     <a class="view-all" href="{{url_for('news', action='show', id=n.id)}}">Читать дальше</a>
                 </div>
 
@@ -133,7 +140,7 @@
         </div>
         {% endif %}
     </div>
-    <div class="news-list" id="old_news" style="visibility: hidden; opacity: 0;">
+    <div class="news-list" id="old_news" style="opacity: 0; display: none;">
         {% if old_news %}
         {% for n in old_news %}
 
@@ -177,10 +184,13 @@
                 <img class=" cover" src="{{ n.cover }}">
 
                 <div class="news">
-                    <h2 class="title-block">{{ n.title }}</h2>
+                    <span class="title-block">{{ n.title }}</span>
+                    <hr>
                     <div class="news-body">
                         <!--                        Текст новости чисто без разметки -->
-                        {{beautiful_soup(n.body).get_text()}}
+                        <p>
+                            {{ BeautifulSoup(n.body, 'lxml').get_text()}}
+                        </p>
                     </div>
                     <a class="view-all" href="{{url_for('news', action='show', id=n.id)}}"><h3>Читать дальше</h3></a>
                 </div>

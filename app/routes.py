@@ -1,24 +1,16 @@
-import pathlib
-from datetime import datetime
 import os
-from zipfile import ZipFile
-
-from flask import render_template, send_from_directory, url_for, render_template_string, flash, redirect, request, abort
+from flask import render_template, send_from_directory, url_for, flash, redirect, request
 from flask_ckeditor import upload_fail, upload_success
-from werkzeug.datastructures import FileStorage
-from app import app, morph, db, db_session
+from app import app, morph
 from PIL import Image
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import *
 from app.forms import *
 from werkzeug.urls import url_parse
 from app import login
-
-from urllib.parse import unquote
+from flask import session
 
 from bs4 import BeautifulSoup
-
-from app.validators import image_validation
 
 
 def load_file(name):
@@ -102,6 +94,7 @@ def index():
     allow_background_image = False
     if Config.query.get("allow_background_image"):
         allow_background_image = Config.query.get("allow_background_image").value
+
     return render_template("index.html", user=current_user, site_data=data,
                            allow_background_image=allow_background_image)
 
@@ -126,17 +119,21 @@ def delete_user():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    if form.validate_on_submit():
 
+    if session.get("wrong_password_date") and (
+            datetime.now() - datetime.fromisoformat(session["wrong_password_date"])).seconds >= 5 * 60:
+        session.pop("wrong_password_date")
+        session.pop("wrong_passwords")
+    if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
-        if user is None or not user.check_password(form.password.data):
-            flash('Invalid username or password')
-            return redirect("/login")
+
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('index')
         return redirect(next_page)
+    else:
+        session["wrong_passwords"] = 0
     return render_template('forms/login.html', user=current_user, title='Sign In', form=form)
 
 
@@ -152,7 +149,7 @@ def register():
         db.session.commit()
         # login_user(user, remember=form.remember_me.data)
         flash('Congratulations, you are now a registered admin!')
-        return redirect(url_for('profile'))
+        return redirect(url_for('index'))
     return render_template('forms/register.html', user=current_user, title='Register', form=form)
 
 
@@ -286,7 +283,7 @@ def news():
     news_list = list(filter(lambda n: (datetime.today() - n.timestamp).total_seconds() < 3600 * 24 * 10, news))
     old_news_list = list(filter(lambda n: (datetime.today() - n.timestamp).total_seconds() > 3600 * 24 * 10, news))
 
-    return render_template("news.html", user=current_user, beautiful_soup=BeautifulSoup, news=news_list,
+    return render_template("news.html", user=current_user, BeautifulSoup=BeautifulSoup, news=news_list,
                            old_news=old_news_list,
                            morph=morph, today=datetime.today(),
                            case={"gent"})
@@ -550,7 +547,8 @@ def our_animals():
     animals = Animals.query.filter_by(have_house=False).all()
     no_animals = Animals.query.filter_by(have_house=True).all()
     animals.reverse()
-    return render_template("our_animals.html", animals=animals, no_animals=no_animals, user=current_user)
+
+    return render_template("our_animals.html", BeautifulSoup=BeautifulSoup, animals=animals, no_animals=no_animals, user=current_user)
 
 
 @app.route("/Добавить изображение", methods=['GET', 'POST'])

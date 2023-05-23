@@ -28,3 +28,19 @@
 
 }
 
+
+@media only screen and (max-width: 992px) {
+
+
+    .category-navigation li:hover {
+        background-color: green;
+    
+    
+    }
+    .category-navigation li a:hover {
+        text-decoration: none;
+    
+    }
+    
+
+}

@@ -1,4 +1,14 @@
 
+#deleted {
+    display: none;
+    opacity: 0;
+
+    animation: ani 1s forwards;
+}
+#not-deleted {
+
+    animation: ani 1s forwards;
+}
 .title {
 
     display: flex;
@@ -9,7 +19,7 @@
 }
 .animals-list {
     display: flex;
-    position: absolute;
+    /* position: absolute; */
 
     padding-bottom: 20px;
     flex-wrap: wrap;
@@ -43,15 +53,15 @@
 
 .item-block {
     display: block;
-
+    width: 40%;
     margin: 50px;
 }
 
-.animals {
+.animal {
 
     display: block;
 
-    margin-left: 10px;
+    margin: 0 10px;
 
     vertical-align: top;
 
@@ -68,10 +78,11 @@
 }*/
 
 .animals-body {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: grey;
-    font-size: 20px;
+    white-space: normal;    
+    color: gray;
+
+
+    font-size: 18px;
     font-weight: normal;
 }
 
@@ -112,8 +123,8 @@
 .content {
     display: flex;
     background-color: white;
-
     border-radius: 10px;
+    padding: 10px 0;
     box-shadow: 0px 0px 15px darkgrey;
     white-space: nowrap;
     margin-top: 10px;
@@ -121,11 +132,11 @@
 }
 
 .cover {
-
     display: block;
     border-top: 10px;
-    margin: 10px auto;
-    width: 95%;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0 10px;
 }
 
 
@@ -136,15 +147,17 @@
 
 
 
-    .title-block {
-        font-size: 40px;
+    .animal .title-block {
+        font-size: 30px;
     }
 
     .item-block {
-        width: 70%;
+        width: 90%;
+        margin: 0;
     }
 
-
-
+    .animals-body {
+        font-size: 19px;
+    }
 
 }

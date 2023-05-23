@@ -10,26 +10,30 @@
     <link rel="stylesheet" type="text/css" href="/static/css/animals.css">
     <link rel="stylesheet" type="text/css" href="/static/css/navigation.css">
     <link rel="stylesheet" type="text/css" href="/static/css/dialog.css">
+
     <script type="text/javascript" src="/static/js/dialog.js"></script>
     <script>
 
         function show_new() {
 
-            document.getElementById("not-deleted").style.opacity = 1;
-            document.getElementById("deleted").style.opacity = 0;
-            document.getElementById("deleted").style.visibility = "hidden";
-            document.getElementById("not-deleted").style.visibility = "visible";
-
+            document.getElementById("not-deleted").style.display = "flex";
+            document.getElementById("deleted").style.display = "none";
+            document.getElementById("deleted").style.opacity = "0";
+            document.getElementById("not-deleted").style.opacity = "1";
+            document.getElementById("with_us").style.backgroundColor = "#0470b8"
+            document.getElementById("in_house").style.backgroundColor = "green"
         }
 
         function show_old() {
 
-            document.getElementById("not-deleted").style.opacity = 0;
-            document.getElementById("deleted").style.opacity = 1;
-            document.getElementById("deleted").style.visibility = "visible";
-            document.getElementById("not-deleted").style.visibility = "hidden";
-
+            document.getElementById("not-deleted").style.display = "none";
+            document.getElementById("deleted").style.display = "flex";
+            document.getElementById("deleted").style.opacity = "1";
+            document.getElementById("not-deleted").style.opacity = "0";
+            document.getElementById("with_us").style.backgroundColor = "green"
+            document.getElementById("in_house").style.backgroundColor = "#0470b8"
         }
+
 
 
 
@@ -54,8 +58,8 @@
 {% endif %}
 <nav class="category-navigation">
     <ul>
-        <li><a onclick="show_new()">Сейчас у нас</a></li>
-        <li><a onclick="show_old()">Вернулись домой</a></li>
+        <li id="with_us" style="background-color: #0470b8"><a onclick="show_new()">Сейчас у нас</a></li>
+        <li id="in_house"><a onclick="show_old()">Вернулись домой</a></li>
     </ul>
 </nav>
 
@@ -87,9 +91,7 @@
 
 
             <div class="tools">
-                {% if animals.index(animal) == 0 %}
 
-                {% endif %}
                 <a onclick="open_confirm_dialog({{animal.id}}, 'move');">
                     <i class="fa-solid fa-house"></i>
                 </a>
@@ -105,10 +107,14 @@
 
                 <img class="cover" src="{{ animal.cover }}">
 
-                <div class="animals">
+                <div class="animal">
                     <span class="title-block">{{ animal.name }}</span>
+                    <hr>
                     <div class="animals-body">
-                        {{ animal.body|safe }}
+                        <p>
+                            {{ BeautifulSoup(animal.body, 'lxml').get_text()}}
+                        </p>
+
                     </div>
 
                 </div>
@@ -127,7 +133,7 @@
         {% endif %}
     </div>
 
-    <div class="animals-list" id="deleted" style="visibility: hidden; opacity: 0;">
+    <div class="animals-list" id="deleted" style="">
         {% if no_animals %}
         {% for animal in no_animals %}
         <dialog id="confirm-dialog-{{animal.id}}-remove" class="confirm-dialog">
@@ -140,11 +146,11 @@
             </div>
         </dialog>
         <dialog id="confirm-dialog-{{animal.id}}-move" class="confirm-dialog">
-            <p class="dialog-title">Вы действительно хотите отправить это животное домой?</p>
+            <p class="dialog-title">Вы действительно хотите вернуть л-это животное?</p>
             <hr>
             <div class="buttons">
                 <a onclick="close_confirm_dialog({{animal.id}}, 'move');">Отмена</a>
-                <a href="{{url_for('our_animals', action='move_to_house',  id=animal.id)}}">Да</a>
+                <a href="{{url_for('our_animals', action='move_to_vet',  id=animal.id)}}">Да</a>
             </div>
         </dialog>
         <div class="item-block">
@@ -154,9 +160,7 @@
 
 
             <div class="tools">
-                {% if no_animals.index(animal) == 0 %}
-                <a href="{{url_for('add_animal')}}">Добавить животное</a>
-                {% endif %}
+
                 <a onclick="open_confirm_dialog({{animal.id}}, 'move');">
                     <i class="fa-solid fa-shield-dog"></i>
                 </a>
@@ -170,16 +174,16 @@
             {% endif %}
             <div class="content">
 
-                <img class=" cover" src="{{ animal.cover }}">
+                <img class="cover" src="{{ animal.cover }}">
 
-                <div class="animals">
+                <div class="animal">
                     <span class="title-block">{{ animal.name }}</span>
-                    <div class="animals-body">
-                        {{ animal.body|safe }}
-                    </div>
+                    <hr>
+                    <p class="animals-body">
+                        {{ BeautifulSoup(animal.body, 'lxml').get_text()}}
+                    </p>
 
                 </div>
-
 
             </div>
         </div>

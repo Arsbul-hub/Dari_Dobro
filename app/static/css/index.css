@@ -72,6 +72,9 @@
         padding: 0;
         height: 0;
     }
+    .title {
+        font-size: calc((30vw - 20vw)/ 10 + 1.25rem)!important;
+    }
         .
 
 }

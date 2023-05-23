@@ -4,20 +4,43 @@
 
 <head>
 
-{% block head %}
+    {% block head %}
 
     <meta charset="UTF-8">
     <title>Новость</title>
     <link rel="stylesheet" type="text/css" href="/static/css/view_news.css">
 
-{% endblock %}
+    <script type="text/javascript" src="/static/js/dialog.js"></script>
+    {% endblock %}
 </head>
 
 <body>
 
 
 {% block after %}
+{% if user.is_authenticated %}
+<dialog id="confirm-dialog-{{news.id}}-remove" class="confirm-dialog">
 
+    <p class="dialog-title">Вы действительно хотите удалить эту новость?</p>
+    <hr>
+    <div class="buttons">
+        <a onclick="close_confirm_dialog({{news.id}}, 'remove');">Отмена</a>
+        <a href="{{url_for('news', action='remove', id=news.id)}}">Да</a>
+    </div>
+
+
+</dialog>
+
+
+<div class="tools" style=" width: 90%; margin: auto;">
+    <a href="{{url_for('add_news', action='edit', id=news.id)}}">
+        <i class="fa-solid fa-pen"></i>
+    </a>
+    <a onclick="open_confirm_dialog({{news.id}}, 'remove');">
+        <i class="fa fa-trash-o"></i>
+    </a>
+</div>
+{% endif %}
 <div class="news-content">
 
 
@@ -25,6 +48,7 @@
 
     <div class="news">
         <span class="title-block">{{ news.title }}</span>
+        <hr>
         <div class="news-body">{{ news.body|safe }}</div>
 
     </div>

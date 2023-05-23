@@ -1,5 +1,7 @@
 import re
+from datetime import datetime
 
+from flask import session
 from flask_ckeditor import CKEditorField
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, FileField, URLField, TelField, EmailField
@@ -18,8 +20,17 @@ class LoginForm(FlaskForm):
 
     def validate_password(self, password):
         user = User.query.filter_by(username=self.username.data).first()
-
+        print(session.get("wrong_passwords"))
+        if session.get("wrong_password_date") and (
+                datetime.now() - datetime.fromisoformat(session["wrong_password_date"])).seconds < 5 * 60:
+            raise ValidationError('Ошибка!')
         if not user or not user.check_password(self.password.data):
+            if session.get("wrong_passwords") < 2:
+                session["wrong_passwords"] += 1
+            elif session["wrong_passwords"] >= 2 and not session.get("wrong_password_date"):
+                session["wrong_password_date"] = datetime.now().isoformat()
+
+
             raise ValidationError('Неверное имя пользователя или пароль.')
 
 
