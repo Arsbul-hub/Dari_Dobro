@@ -37,7 +37,7 @@
     cursor: pointer;
 }
 p {
-    white-space: nowrap;
+
     margin-top: 30px;
     text-align: center;
 }
@@ -70,7 +70,18 @@ label {
     text-align: center;
 }
 
-
+#password-field {
+    position: relative;
+}
+#password-field #view {
+    position: absolute;
+    color: black;
+	top: 11px;
+	right: 6px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
 @media only screen and (max-width: 992px) {
 
     .form-block {

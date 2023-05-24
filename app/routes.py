@@ -62,7 +62,11 @@ def upload():
     return upload_success(url, filename=f.filename)
 
 
-def save_file(file, path="", name=None, formates=[]):
+def save_file(file, path="", name=None, formates=[], service_path="", allow_replace=False):
+    full_path = "static/loaded_media"
+    if service_path:
+        full_path = f"static/{service_path}"
+
     if not file:
         return None
     if name:
@@ -73,13 +77,14 @@ def save_file(file, path="", name=None, formates=[]):
     extension = file.filename.split('.')[-1].lower()
     if formates and extension not in formates:
         return upload_fail(message='Файл не соответствует формату')
-    n = 1
+    if not allow_replace:
+        n = 1
 
-    while os.path.exists(f"app/static/loaded_media/{path}/{file.filename}"):
-        file.filename = f"{filename}_{n}.{extension}"
-        print(f"{filename}_{n}.{extension}")
-        n += 1
-    file.save(f"app/static/loaded_media/{path}/{file.filename}")
+        while os.path.exists(f"app/static/loaded_media/{path}/{file.filename}"):
+            file.filename = f"{filename}_{n}.{extension}"
+            print(f"{filename}_{n}.{extension}")
+            n += 1
+    file.save(f"app/{full_path}/{path}/{file.filename}")
     return f"static/loaded_media/{path}/{file.filename}"
 
 
@@ -176,14 +181,15 @@ def site_settings():
 
     if form.validate_on_submit():
 
-        save_file(file=form.site_logo.data, path="images", name="logo.png", formates=["png", "jpg", "jpeg", "webp"])
-        save_file(file=form.background_image.data, path="images", name="background_image.png",
+        save_file(file=form.site_logo.data, service_path="images", name="logo.png",
                   formates=["png", "jpg", "jpeg", "webp"])
+        save_file(file=form.background_image.data, service_path="images", name="background_image.png",
+                  formates=["png", "jpg", "jpeg", "webp"], )
 
         Config.query.get("allow_background_image").value = form.allow_background_image.data
 
         db.session.commit()
-        return redirect(url_for("profile"))
+        return redirect(url_for("admin_panel"))
     else:
         if Config.query.get("allow_background_image"):
             form.allow_background_image.data = int(Config.query.get("allow_background_image").value)
@@ -548,7 +554,8 @@ def our_animals():
     no_animals = Animals.query.filter_by(have_house=True).all()
     animals.reverse()
 
-    return render_template("our_animals.html", BeautifulSoup=BeautifulSoup, animals=animals, no_animals=no_animals, user=current_user)
+    return render_template("our_animals.html", BeautifulSoup=BeautifulSoup, animals=animals, no_animals=no_animals,
+                           user=current_user)
 
 
 @app.route("/Добавить изображение", methods=['GET', 'POST'])

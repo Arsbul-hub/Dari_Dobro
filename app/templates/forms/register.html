@@ -31,11 +31,11 @@
         </p>
 
         {{ form.password.label }}
-        <p>
+        <p id="password-field">
 
 
             {{ form.password(size=32) }}
-            <a style='font-size:15px;display: inline-flex; color: black;' type="button" onclick="show_password();">
+            <a id="view" onclick="show_password();">
                 <i id="eye" class='fas fa-eye'></i>
             </a><br>
             {% for error in form.password.errors %}
