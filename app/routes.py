@@ -636,20 +636,20 @@ def activities():
 def help_money():
     data = PagesData.query.get("help_money")
 
-    return render_template("index.html", user=current_user, site_data=data)
+    return render_template("help_money.html", user=current_user, site_data=data)
 
 
 @app.route('/Стать опекуном')
 def opeka():
     data = PagesData.query.get("opeka")
 
-    return render_template("index.html", user=current_user, site_data=data)
+    return render_template("opeka.html", user=current_user, site_data=data)
 
 
 @app.route('/Стать волонтером')
 def volunteer():
     data = PagesData.query.get("volunteer")
-    return render_template("index.html", user=current_user, site_data=data)
+    return render_template("volunteer.html", user=current_user, site_data=data)
 
 
 @app.errorhandler(404)
