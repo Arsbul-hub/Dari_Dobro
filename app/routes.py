@@ -94,6 +94,7 @@ def remove_file(path):
 
 
 @app.route('/')
+@app.route("/index")
 def index():
     data = PagesData.query.get("index")
     allow_background_image = False
