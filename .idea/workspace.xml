@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Исправлен баг, связанный с ошибкой в файле __init__.py на хостинге">
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Добавлены страницы">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/help_money.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/help_money.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -345,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684948061586</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Добавлены страницы">
+      <created>1684948540583</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1684948540583</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,7 +368,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Изменены названия шаблонов с русского на английский во избежание дальнейших багов.&#10;Исправлен баг с отображением страницы профиля, в том числе и на мобильных устройствах" />
     <MESSAGE value="Удалены некоторые страницы.&#10;Изменена страница &quot;404&quot;" />
     <MESSAGE value="Небольшой фикс  бага, связанного с отображением редактора текста" />
     <MESSAGE value="Доработка стилей форм" />
@@ -388,7 +392,8 @@
     <MESSAGE value="Исправление бага, связанного с новостями и с животными, изображение большого разрешения съезжало. + исправление бага с текстом под фотографиями. + правка стиля на странице просмотра 1 новости" />
     <MESSAGE value="Исправлен баг, связанный с сохранением фонового изображения.&#10;Правка стиля формы" />
     <MESSAGE value="Исправлен баг, связанный с ошибкой в файле __init__.py на хостинге" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлен баг, связанный с ошибкой в файле __init__.py на хостинге" />
+    <MESSAGE value="Добавлены страницы" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены страницы" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
