@@ -3,7 +3,7 @@ import os
 
 from flask import Flask, Blueprint, session
 from flask_ckeditor import CKEditor
-from flask_mail import Mail
+
 from flask_restful import Api
 
 from config import Config
@@ -15,7 +15,7 @@ import flaskfilemanager
 
 app = Flask(__name__)
 app.config.from_object(Config)
-mail = Mail(app)
+
 ckeditor = CKEditor(app)
 blueprint = Blueprint('app_api', __name__, template_folder='templates')
 
