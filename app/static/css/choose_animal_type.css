@@ -1,0 +1,59 @@
+.title {
+    text-align: center;
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition-property: background-size;
+    background-size: 100%;
+    transition: .5s ease;
+}
+.card:hover {
+    background-size: calc(100% + 40px);
+}
+.cards a {
+    width: 400px;
+    height: 300px;
+    margin: 20px;
+}
+.card p {
+
+    font-size: 60px;
+    color: white;
+}
+.cards {
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#dogs {
+    background-image: url("/static/images/dog.jpg");
+    
+}
+
+#cats {
+    background-image: url("/static/images/cat.jpg");
+}
+
+/* mobile */
+@media only screen and (max-width: 992px) { 
+
+
+    .cards a {
+        width: 100%;
+        height: 300px;
+    }    
+    .cards {
+        margin-top: 0;
+    }
+
+}

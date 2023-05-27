@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends "base.html" %}
+
+<head>
+
+    {% block head %}
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/css/choose_animal_type.css">
+
+    <title>Наши животные</title>
+
+    {% endblock %}
+</head>
+
+<body>
+{% block after %}
+
+
+
+
+<div class="cards">
+    <a href="{{url_for('our_animals', gender=gender, animal_type='dog', age_type='normal')}}">
+        <div class="card" id="dogs">
+            <p>Собаки</p>
+        </div>
+    </a>
+    <a href="{{url_for('our_animals', gender=gender, animal_type='cat', age_type='normal')}}">
+        <div class="card" id="cats">
+            <p>Кошки</p>
+        </div>
+    </a>
+
+</div>
+{% endblock %}
+</body>
+</html>

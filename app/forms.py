@@ -4,7 +4,8 @@ from datetime import datetime
 from flask import session
 from flask_ckeditor import CKEditorField
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, FileField, URLField, TelField, EmailField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, FileField, URLField, TelField, EmailField, \
+    SelectField
 from wtforms.widgets import TextArea
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from app.models import User, Config, Documents, Gallery
@@ -30,7 +31,6 @@ class LoginForm(FlaskForm):
                 session["wrong_passwords"] += 1
             elif session["wrong_passwords"] >= 2 and not session.get("wrong_password_date"):
                 session["wrong_password_date"] = datetime.now().isoformat()
-
 
             raise ValidationError('Неверное имя пользователя или пароль.')
 
@@ -111,6 +111,10 @@ class AddAnimalForm(FlaskForm):
     _name = "Добавить животное"
     name = StringField("Кличка нового животного:", validators=[DataRequired()])
     cover = FileField("Фотография:", validators=[DataRequired(), image_validation])
+    gender = SelectField("Пол", choices=[("girl", "Женский"), ("girl", "Мужской")], validators=[DataRequired()])
+    animal_type = SelectField("Тип животного", choices=[("dog", "Собака"), ("cat", "Кошка")],
+                              validators=[DataRequired()])
+    age = SelectField("Возраст", choices=[("normal", "Взрослый"), ("small", "Ребёнок")], validators=[DataRequired()])
     body = CKEditorField("Информация о животном:", validators=[DataRequired()])
     submit = SubmitField("Добавить")
 
@@ -119,6 +123,10 @@ class EditAnimalForm(FlaskForm):
     _name = "Изменить животное"
     name = StringField("Кличка нового животного:", validators=[DataRequired()])
     cover = FileField("Фотография:", validators=[image_validation])
+    gender = SelectField("Пол", choices=[("girl", "Женский"), ("girl", "Мужской")], validators=[DataRequired()])
+    animal_type = SelectField("Тип животного", choices=[("dog", "Собака"), ("cat", "Кошка")],
+                              validators=[DataRequired()])
+    age = SelectField("Возраст", choices=[("normal", "Взрослый"), ("small", "Ребёнок")], validators=[DataRequired()])
     body = CKEditorField("Информация о животном:", validators=[DataRequired()])
     submit = SubmitField("Сохранить")
 
@@ -190,10 +198,20 @@ class EditContacts(FlaskForm):
     _name = "Редактировать контакты"
     phone = StringField("Телефон", validators=[DataRequired(), phone_validation])
     email = EmailField("Электронная почта", validators=[DataRequired()])
-    vk_url = URLField("Ссылка на группу в вк", validators=[DataRequired()])
-    vk_qr = FileField("QR код для группы в вк")
+    vk = URLField("Вк", validators=[DataRequired()])
+    ok = URLField("Одноклассники", validators=[DataRequired()])
+    dzen = URLField("Дзен", validators=[DataRequired()])
     save = SubmitField("Сохранить")
 
     def validate_vk_qr(self, field):
         if not Config.query.get("vk_group_qr"):
             raise ValidationError("This field is require.")
+
+
+class AddSocialNetwork(FlaskForm):
+    _name = "Добавить соц.сеть"
+    name = StringField("Название", validators=[DataRequired()])
+    description = StringField("Описание", validators=[DataRequired()])
+    url = URLField("Ссылка", validators=[DataRequired()])
+
+    save = SubmitField("Добавить")

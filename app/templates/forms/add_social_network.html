@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends "base.html" %}
+
+<head>
+
+    {% block head %}
+
+    <meta charset="UTF-8">
+    <title>{{form._name}}</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/form.css">
+
+    {% endblock %}
+</head>
+<body>
+
+
+{% block after %}
+
+<div class="form-block">
+    <h1>{{form._name}}</h1>
+    <form action="" enctype="multipart/form-data" method="post">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }}
+        <p>
+
+            {{ form.name(size=35) }}
+            {% for error in form.name.errors %}<br>
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </p>
+        {{ form.url.label }}
+        <p>
+
+            {{ form.url(size=35) }}
+            {% for error in form.url.errors %}<br>
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </p>
+
+<!--        {{ form.qr.label }}-->
+<!--        <p>-->
+
+<!--            {{ form.qr(size=35) }}-->
+<!--            {% for error in form.qr.errors %}<br>-->
+<!--            <span class="error">{{ error }}</span>-->
+<!--            {% endfor %}-->
+<!--        </p>-->
+        {{ form.description.label }}
+        <p>
+
+            {{ form.description(size=35) }}
+            {% for error in form.description.errors %}<br>
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </p>
+
+        {{ form.save() }}
+    </form>
+
+</div>
+{% endblock %}
+</body>
+</html>

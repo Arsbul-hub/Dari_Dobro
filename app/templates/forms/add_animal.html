@@ -32,7 +32,33 @@
             {% endfor %}
         </p>
 
+        {{ form.gender.label }}
+        <p>
+            {{ form.gender() }}
 
+            {% for error in form.gender.errors %}<br>
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+
+        </p>
+        {{ form.age.label }}
+        <p>
+            {{ form.age() }}
+
+            {% for error in form.age.errors %}<br>
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+
+        </p>
+        {{ form.animal_type.label }}
+        <p>
+            {{ form.animal_type() }}
+
+            {% for error in form.animal_type.errors %}<br>
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+
+        </p>
         {{ form.cover.label }}
         <p>
             {{ form.cover(size=32) }}
@@ -50,6 +76,8 @@
             {% endfor %}
 
         </p>
+
+
         {{ form.submit() }}
     </form>
     {{ ckeditor.load() }}

@@ -22,38 +22,60 @@
     {% if user.is_authenticated %}
     <div class="tools">
         <a href="{{url_for('edit_contacts')}}">
-            <i class="fa-solid fa-pen" ></i>
+            <i class="fa-solid fa-pen"></i>
 
         </a>
     </div>
     {% endif %}
 </div>
-<div class="contacts-block">
+<div id="contacts">
+    <div class="contacts-info">
 
-    <div>
-        <p>Наша почта:</p>
-        <a href="mailto: enimals33@mail.ru" style="font-size: 20px">{{email}}</a>
+        <div class="info">
+            <p>Наша почта:</p>
+            <a href="mailto: enimals33@mail.ru" style="font-size: 20px">{{email}}</a>
+        </div>
+        <div class="info">
+            <p>Телефон:</p>
+            <a href="tel:{{phone_number}}" style="font-size: 34px">{{phone_number}}</a>
+
+        </div>
+
+
     </div>
-    <div>
-        <p>Телефон:</p>
-        <a href="tel:{{phone_number}}" style="font-size: 34px">{{phone_number}}</a>
+    <img src="/static/images/animals_5.jpg" id="separator">
+    <div class="social-networks-list">
 
-    </div>
-    <div>
+        <a href="{{dzen}}" target="_blank" style="color: black; margin: 10px 0">
+            <div class="social-network" id="dzen">
+                <img src="/static/images/dzen.png">
+                <p>Наш Дзен</p>
 
-        <a href="{{vk_group_url}}" target="_blank"
-           style="color: black; margin: 10px 0">
-            Подписывайтесь на нашу группу в вк:
+
+                <!--https://vk.com/public_dari_dobro_pokrov-->
+            </div>
         </a>
+        <a href={{ok}}" target="_blank" style="color: black; margin: 10px 0">
+            <div class="social-network" id="ok">
+                <i class="fa-brands fa-square-odnoklassniki"></i>
+                <p>Мы в одноклассниках</p>
 
-        <a href="{{vk_group_url}}" target="_blank" style="color: black; background-image: none">
-            <img src="{{vk_qr}}">
+
+                <!--https://vk.com/public_dari_dobro_pokrov-->
+            </div>
         </a>
-        <!--https://vk.com/public_dari_dobro_pokrov-->
+        <a href="{{vk}}" target="_blank" style="color: black; margin: 10px 0">
+            <div class="social-network" id="vk">
+                <i class="fa-brands fa-vk"></i>
+                <p>Мы во вконтакте</p>
+
+
+                <!--https://vk.com/public_dari_dobro_pokrov-->
+            </div>
+        </a>
     </div>
+
 </div>
-
-
 {% endblock %}
 </body>
 </html>

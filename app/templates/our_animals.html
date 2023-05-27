@@ -35,11 +35,6 @@
         }
 
 
-
-
-
-
-
     </script>
     <title>Наши животные</title>
 
@@ -49,8 +44,11 @@
 <body>
 {% block after %}
 
-
-<span class="title">Наши животные</span>
+{% if request.args.get('animal_type') == "dog" %}
+<p class="title">Наши собаки</p>
+{% else %}
+<p class="title">Наши кошки</p>
+{% endif %}
 {% if user.is_authenticated %}
 
 <a class="add_button" href="{{url_for('add_animal')}}">Добавить животное</a>
@@ -73,7 +71,7 @@
             <hr>
             <div class="buttons">
                 <a onclick="close_confirm_dialog({{animal.id}}, 'remove');">Отмена</a>
-                <a href="{{url_for('our_animals', action='remove',  id=animal.id)}}">Да</a>
+                <a href="{{url_for('our_animals', action='remove',  id=animal.id, previous=request.full_path)}}">Да</a>
             </div>
         </dialog>
         <dialog id="confirm-dialog-{{animal.id}}-move" class="confirm-dialog">
@@ -84,74 +82,29 @@
                 <a href="{{url_for('our_animals', action='move_to_house',  id=animal.id)}}">Да</a>
             </div>
         </dialog>
-        <div class="item-block">
+        <dialog id="image-dialog-{{animal.id}}" class="image-dialog">
 
-
-            {% if user.is_authenticated %}
-
-
-            <div class="tools">
-
-                <a onclick="open_confirm_dialog({{animal.id}}, 'move');">
-                    <i class="fa-solid fa-house"></i>
+            <a onclick="close_image_dialog({{animal.id}});" class="close-image-dialog-button">
+                <i class="fa-solid fa-xmark"></i>
+            </a>
+            <div class="top">
+                <a onclick="close_image_dialog({{animal.id}});" class="close-image-dialog-button">
+                    <i class="fa-solid fa-xmark"></i>
                 </a>
-                <a href="{{url_for('add_animal', action='edit', id=animal.id)}}">
-                    <i class="fa-solid fa-pen"></i>
-                </a>
-                <a onclick="open_confirm_dialog({{animal.id}}, 'remove');">
-                    <i class="fa fa-trash-o"></i>
+                <span>{{animal.name}}</span>
+
+
+                <a download href="{{ animal.cover }}" class="download-image-button">
+                    <i class="fa-solid fa-download"></i>
                 </a>
             </div>
-            {% endif %}
-            <div class="content">
-
-                <img class="cover" src="{{ animal.cover }}">
-
-                <div class="animal">
-                    <span class="title-block">{{ animal.name }}</span>
-                    <hr>
-                    <div class="animals-body">
-                        <p>
-                            {{ BeautifulSoup(animal.body, 'lxml').get_text()}}
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-        {% endfor %}
-        {% else %}
-        <div class="is-empty">
-            <img src="static/images/empty-box-icon.svg"
-                 style="filter: invert(57%) sepia(6%) saturate(16%) hue-rotate(43deg) brightness(87%) contrast(89%);">
-            <p>Пока здесь пусто</p>
-
-        </div>
-        {% endif %}
-    </div>
-
-    <div class="animals-list" id="deleted" style="">
-        {% if no_animals %}
-        {% for animal in no_animals %}
-        <dialog id="confirm-dialog-{{animal.id}}-remove" class="confirm-dialog">
-
-            <p class="dialog-title">Вы действительно хотите удалить это животное?</p>
             <hr>
-            <div class="buttons">
-                <a onclick="close_confirm_dialog({{animal.id}}, 'remove');">Отмена</a>
-                <a href="{{url_for('our_animals', action='remove',  id=animal.id)}}">Да</a>
-            </div>
-        </dialog>
-        <dialog id="confirm-dialog-{{animal.id}}-move" class="confirm-dialog">
-            <p class="dialog-title">Вы действительно хотите вернуть л-это животное?</p>
-            <hr>
-            <div class="buttons">
-                <a onclick="close_confirm_dialog({{animal.id}}, 'move');">Отмена</a>
-                <a href="{{url_for('our_animals', action='move_to_vet',  id=animal.id)}}">Да</a>
-            </div>
+            <a download href="{{ animal.cover }}" class="download-image-button">
+                <i class="fa-solid fa-download"></i>
+            </a>
+            <img src="{{ animal.cover }}">
+
+
         </dialog>
         <div class="item-block">
 
@@ -173,8 +126,95 @@
             </div>
             {% endif %}
             <div class="content">
+                <a onclick="open_image_dialog({{animal.id}});">
+                    <img class="cover" src="{{ animal.cover }}">
+                </a>
 
-                <img class="cover" src="{{ animal.cover }}">
+                <div class="animal">
+                    <span class="title-block">{{ animal.name }}</span>
+                    <hr>
+                    <p class="animals-body">
+                        {{ BeautifulSoup(animal.body, 'lxml').get_text()}}
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="is-empty">
+            <img src="static/images/empty-box-icon.svg"
+                 style="filter: invert(57%) sepia(6%) saturate(16%) hue-rotate(43deg) brightness(87%) contrast(89%);">
+            <p>Пока здесь пусто</p>
+
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="animals-list" id="deleted" style="">
+        {% if no_animals %}
+        {% for animal in no_animals %}
+        <dialog id="confirm-dialog-{{animal.id}}-remove" class="confirm-dialog">
+
+            <p class="dialog-title">Вы действительно хотите удалить это животное?</p>
+            <hr>
+            <div class="buttons">
+                <a onclick="close_confirm_dialog({{animal.id}}, 'remove');">Отмена</a>
+                <a href="{{url_for('our_animals', action='remove',  id=animal.id, previous=request.full_path)}}">Да</a>
+            </div>
+        </dialog>
+        <dialog id="confirm-dialog-{{animal.id}}-move" class="confirm-dialog">
+            <p class="dialog-title">Вы действительно хотите вернуть л-это животное?</p>
+            <hr>
+            <div class="buttons">
+                <a onclick="close_confirm_dialog({{animal.id}}, 'move');">Отмена</a>
+                <a href="{{url_for('our_animals', action='move_to_vet',  id=animal.id)}}">Да</a>
+            </div>
+        </dialog>
+        <dialog id="image-dialog-{{animal.id}}" class="image-dialog">
+
+
+            <div class="top">
+                <a onclick="close_image_dialog({{animal.id}});" class="close-image-dialog-button">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+                <span>{{animal.name}}</span>
+
+
+                <a download href="{{ animal.cover }}" class="download-image-button">
+                    <i class="fa-solid fa-download"></i>
+                </a>
+            </div>
+            <hr>
+
+            <img src="{{ animal.cover }}">
+
+
+        </dialog>
+        <div class="item-block">
+
+
+            {% if user.is_authenticated %}
+
+
+            <div class="tools">
+
+                <a onclick="open_confirm_dialog({{animal.id}}, 'move');">
+                    <i class="fa-solid fa-shield-dog"></i>
+                </a>
+                <a href="{{url_for('add_animal', action='edit', id=animal.id)}}">
+                    <i class="fa-solid fa-pen"></i>
+                </a>
+                <a onclick="open_confirm_dialog({{animal.id}}, 'remove');">
+                    <i class="fa fa-trash-o"></i>
+                </a>
+            </div>
+            {% endif %}
+            <div class="content">
+                <a onclick="open_image_dialog({{animal.id}});">
+                    <img class="cover" src="{{ animal.cover }}">
+                </a>
 
                 <div class="animal">
                     <span class="title-block">{{ animal.name }}</span>

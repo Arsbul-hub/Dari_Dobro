@@ -49,6 +49,10 @@
         <dialog id="image-dialog-{{n.id}}" class="image-dialog">
 
             <div class="top">
+                <a onclick="close_image_dialog({{n.id}});" class="close-image-dialog-button">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+
                 <span>{{n.title}}</span>
                 {% if user.is_authenticated %}
                 <div class="tools">
@@ -58,29 +62,28 @@
                     </a>
                 </div>
                 {% endif %}
+
+
+                <a download href="{{ n.file }}" class="download-image-button">
+                    <i class="fa-solid fa-download"></i>
+                </a>
             </div>
             <hr>
-            <a onclick="close_image_dialog({{n.id}});" class="close-image-dialog-button">
-                <i class="fa-solid fa-xmark"></i>
-            </a>
-            <a download href="{{ n.file }}" class="download-image-button">
-                <i class="fa-solid fa-download"></i>
-            </a>
+
             <img src="{{ n.file }}">
 
 
         </dialog>
-        <a onclick="open_image_dialog({{n.id}});">
+
+        <div class="item-block">
+            <a  onclick="open_image_dialog({{n.id}});">
 
 
-            <div class="item-block">
+                <img class="cover" src="{{ n.file }}">
+            </a>
 
+        </div>
 
-                <img class=" cover" src="{{ n.file }}">
-
-
-            </div>
-        </a>
         {% endfor %}
         {% else %}
         <div class="is-empty">

@@ -22,7 +22,6 @@ class User(UserMixin, __basemodel):
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
-
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
@@ -67,6 +66,9 @@ class Animals(__basemodel):
     id = sa.Column(sa.Integer, primary_key=True)
     body = sa.Column(sa.String())
     name = sa.Column(sa.String())
+    gender = sa.Column(sa.String())
+    animal_type = sa.Column(sa.String())
+    age_type = sa.Column(sa.String())
     cover = sa.Column(sa.String())
     have_house = sa.Column(sa.Boolean, default=False)
 
@@ -93,8 +95,19 @@ class Gallery(__basemodel):
 
 class Config(__basemodel):
     __tablename__ = 'config'
-    name = sa.Column(sa.String(), primary_key=True)
+    key = sa.Column(sa.String(), primary_key=True)
     value = sa.Column(sa.String())
+    category = sa.Column(sa.String())
+    # category = sa.Column(sa.String())
+
+
+class SocialNetworks(__basemodel):
+    __tablename__ = 'social_networks'
+    name = sa.Column(sa.String(), primary_key=True)
+    url = sa.Column(sa.String())
+    description = sa.Column(sa.String())
+    qr = sa.Column(sa.String())
+
     # category = sa.Column(sa.String())
 
 

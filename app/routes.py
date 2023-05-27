@@ -75,16 +75,27 @@ def save_file(file, path="", name=None, formates=[], service_path="", allow_repl
         os.makedirs(f"app/static/loaded_media/{path}")
     filename = file.filename.split('.')[0].lower()
     extension = file.filename.split('.')[-1].lower()
-    if formates and extension not in formates:
-        return upload_fail(message='Файл не соответствует формату')
+
     if not allow_replace:
         n = 1
 
         while os.path.exists(f"app/static/loaded_media/{path}/{file.filename}"):
             file.filename = f"{filename}_{n}.{extension}"
-            print(f"{filename}_{n}.{extension}")
             n += 1
-    file.save(f"app/{full_path}/{path}/{file.filename}")
+    if "image" in file.content_type:
+        image = Image.open(file)
+        if image.width > 2000:
+            require_width = 2000  # Уменьшенный размер (ширина)
+            new_size = require_width, int((float(image.size[1]) * float((require_width / float(image.size[0])))))
+            image = image.resize(new_size, Image.LANCZOS)
+
+        elif image.height > 1300:
+            require_height = 1300  # Уменьшенный размер (высота)
+            new_size = int((float(image.size[0]) * float((require_height / float(image.size[1]))))), require_height
+            image = image.resize(new_size, Image.LANCZOS)
+        image.save(f"app/{full_path}/{path}/{file.filename}")
+    else:
+        file.save(f"app/{full_path}/{path}/{file.filename}")
     return f"static/loaded_media/{path}/{file.filename}"
 
 
@@ -169,7 +180,7 @@ def admin_panel():
     #     with ZipFile(f"app/static/backups/backup-{n.year}-{n.month}-{n.day}-{n.hour}-{n.minute}-{n.second}.zip", "w") as zip_file:
     #         zip_file.write("./app.db")
     #         for resource in pathlib.Path("app/static/loaded_media/").iterdir():
-    #             zip_file.write(resource, arcname=f"media/{resource.name}")
+    #             zip_file.write(resource, arcname=f"media/{resource.key}")
     #     send_from_directory("static/backups", f"backup-{n.year}-{n.month}-{n.day}-{n.hour}-{n.minute}-{n.second}.zip", as_attachment=True)
 
     return render_template("admin_panel.html", user=current_user, admin_username=app.config["DEFAULT_ADMIN_USERNAME"])
@@ -196,7 +207,7 @@ def site_settings():
             form.allow_background_image.data = int(Config.query.get("allow_background_image").value)
         else:
             new_config = Config()
-            new_config.name = "allow_background_image"
+            new_config.key = "allow_background_image"
             new_config.value = False
             db.session.add(new_config)
             db.session.commit()
@@ -470,7 +481,7 @@ def add_partner():
         partner = Partners.query.get(request.args.get("id"))
         if partner:
             if form.validate_on_submit():
-                partner.name = form.name.data
+                partner.key = form.name.data
                 partner.link = form.link.data
                 if form.logo.data:
                     partner.logo = save_file(form.logo.data)
@@ -478,10 +489,8 @@ def add_partner():
                 db.session.commit()
                 return redirect(url_for("partners"))
             else:
-                form.name.data = partner.name
+                form.name.data = partner.key
                 form.link.data = partner.link
-
-
         else:
             return redirect(url_for("partners"))
     elif form.validate_on_submit():
@@ -499,43 +508,53 @@ def add_partner():
 @login_required
 def add_animal():
     action = request.args.get("action")
+
     form = AddAnimalForm()
     if action == "edit":
         form = EditAnimalForm()
         animal = Animals.query.get(request.args.get("id"))
         if animal:
             if form.validate_on_submit():
-                animal.name = form.name.data
+                animal.key = form.name.data
                 animal.body = form.body.data
+                animal.animal_type = form.animal_type.data
+                animal.age = form.age.data
+                animal.gender = form.gender.data
                 if form.cover.data:
                     animal.cover = save_file(form.cover.data)
                 db.session.commit()
-                return redirect(url_for("our_animals"))
+                return redirect(request.args.get("previous"))
             else:
-                form.name.data = animal.name
+                form.name.data = animal.key
                 form.body.data = animal.body
 
-
+                form.animal_type.data = animal.animal_type
+                form.age.data = animal.age
+                form.gender.data = animal.gender
         else:
-            return redirect(url_for("our_animals"))
+            return redirect(url_for("our_animals", gender=form.gender.data, animal_type=form.animal_type.data,
+                                    age_type=form.age.data))
     elif form.validate_on_submit():
         out_path = save_file(file=form.cover.data)
 
-        new_animal = Animals(name=form.name.data, body=form.body.data, cover=out_path)
+        new_animal = Animals(name=form.name.data, gender=form.gender.data, animal_type=form.animal_type.data,
+                             age_type=form.age.data, body=form.body.data, cover=out_path)
         db.session.add(new_animal)
         db.session.commit()
         flash('Вы добавили новое животное!')
-        return redirect(url_for("our_animals"))
+        return redirect(
+            url_for("our_animals", gender=form.gender.data, animal_type=form.animal_type.data, age_type=form.age.data))
     return render_template("forms/add_animal.html", user=current_user, form=form)
 
 
 @app.route('/Наши животные')
 def our_animals():
     action = request.args.get('action')
-    if action == "show":
-        animal = Animals.query.get(request.args.get('id'))
-        return render_template("show_animal.html", animal=animal)
-    elif current_user.is_authenticated and action:
+    gender = request.args.get("gender")
+    animal_type = request.args.get("animal_type")
+    age_type = request.args.get("age_type")
+
+    if current_user.is_authenticated and action:
         if action == "remove":
             db.session.delete(Animals.query.get(request.args.get('id')))
 
@@ -550,10 +569,14 @@ def our_animals():
             animal.move_to_vet()
 
             db.session.commit()
-        return redirect(url_for("our_animals"))
-    animals = Animals.query.filter_by(have_house=False).all()
-    no_animals = Animals.query.filter_by(have_house=True).all()
-    animals.reverse()
+        return redirect(request.args.get("previous"))
+
+    if gender and not animal_type:
+        return render_template("choose_animal_type.html", gender=gender, user=current_user)
+
+    animals = Animals.query.filter_by(have_house=False, animal_type=animal_type, gender=gender, age_type=age_type).all()
+    no_animals = Animals.query.filter_by(have_house=True, animal_type=animal_type, gender=gender,
+                                         age_type=age_type).all()
 
     return render_template("our_animals.html", BeautifulSoup=BeautifulSoup, animals=animals, no_animals=no_animals,
                            user=current_user)
@@ -594,38 +617,55 @@ def gallery():
 def edit_contacts():
     form = EditContacts()
     if form.validate_on_submit():
-        Config.query.get("email").value = form.email.data
-        Config.query.get("vk_group_url").value = form.vk_url.data
-        if form.vk_qr.data:
-            Config.query.get("vk_group_qr").value = save_file(form.vk_qr.data, path="qr")
-        Config.query.get("phone_number").value = form.phone.data
+        if Config.query.filter_by(category="contacts").all():
+            Config.query.get("email").value = form.email.data
+            Config.query.get("phone_number").value = form.phone.data
+            Config.query.get("vk_url").value = form.vk.data
+            Config.query.get("ok_url").value = form.ok.data
+            Config.query.get("dzen_url").value = form.dzen.data
+        else:
+            db.session.add(Config(key="email", value=form.email.data, category="contacts"))
 
+            db.session.add(Config(key="phone_number", value=form.phone.data, category="contacts"))
+            db.session.add(Config(key="vk_url", value=form.vk.data, category="contacts"))
+            db.session.add(Config(key="ok_url", value=form.ok.data, category="contacts"))
+            db.session.add(Config(key="dzen_url", value=form.dzen.data, category="contacts"))
         db.session.commit()
         return redirect(url_for("contacts"))
     else:
 
-        if Config.query.get("email"):
+        if Config.query.filter_by(category="contacts").all():
             form.email.data = Config.query.get("email").value
-        if Config.query.get("vk_group_url"):
-            form.vk_url.data = Config.query.get("vk_group_url").value
-        if Config.query.get("phone_number"):
             form.phone.data = Config.query.get("phone_number").value
+            form.vk.data = Config.query.get("vk_url").value
+            form.ok.data = Config.query.get("ok_url").value
+            form.dzen.data = Config.query.get("dzen_url").value
     return render_template("forms/edit_contacts.html", user=current_user, form=form)
 
 
 @app.route("/Контакты")
 def contacts():
-    email, vk_url, vk_qr, phone_number = "", "", "", ""
-    if Config.query.get("email"):
+    email, phone_number, vk, ok, dzen = "", "", "", "", ""
+    if Config.query.filter_by(category="contacts").all():
         email = Config.query.get("email").value
-    if Config.query.get("vk_group_url"):
-        vk_url = Config.query.get("vk_group_url").value
-    if Config.query.get("vk_group_qr"):
-        vk_qr = Config.query.get("vk_group_qr").value
-    if Config.query.get("phone_number"):
         phone_number = Config.query.get("phone_number").value
-    return render_template("contacts.html", user=current_user, email=email, vk_group_url=vk_url, vk_qr=vk_qr,
-                           phone_number=phone_number)
+        vk = Config.query.get("vk_url").value
+        ok = Config.query.get("ok_url").value
+        dzen = Config.query.get("dzen_url").value
+    return render_template("contacts.html", user=current_user, email=email, phone_number=phone_number, vk=vk, ok=ok,
+                           dzen=dzen)
+
+
+@login_required
+@app.route("/Добавить социальную сеть", methods=["GET", "POST"])
+def add_social_network():
+    form = AddSocialNetwork()
+    if form.validate_on_submit():
+        social_network = SocialNetworks(name=form.name.data, description=form.description.data, url=form.url.data)
+        db.session.add(social_network)
+        db.session.commit()
+        return redirect(url_for("contacts"))
+    return render_template("forms/add_social_network.html", user=current_user, form=form)
 
 
 @app.route('/Мероприятия')

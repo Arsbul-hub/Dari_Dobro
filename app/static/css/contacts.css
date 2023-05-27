@@ -13,18 +13,29 @@ body {
 
 }
 
-.contacts-block {
+.contacts-info {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin-bottom: 20px;
+    width: 500px;
+}
+
+.social-networks-list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+}
+.social-networks-list a{
+    width: 70%;
 }
 
 
-.contacts-block div {
+.contacts-info .info {
 
-    margin-top: 40px;
+    margin-bottom: 40px;
     padding: 0 10px;
     display: flex;
     align-items: center;
@@ -32,24 +43,19 @@ body {
 
 }
 
-.contacts-block .phone-number {
+.contacts-info .phone-number {
 
     margin: 0 10px;
     background-image: none;
 }
-.contacts-block p {
+.contacts-info p {
     font-size: 21px;
     text-align: center;
     text-align: center;
     white-space: nowrap;
 }
 
-.contacts-block img {
-    display: block;
-    width: 250px;
-
-}
-.contacts-block a {
+.contacts-info a {
     font-size: 21px;
     white-space: normal;
     text-align: center;
@@ -62,7 +68,7 @@ body {
 }
 
 
-.contacts-block a:hover {
+.contacts-info a:hover {
 
     
     background-size: 100% 2px;
@@ -80,3 +86,52 @@ body {
 
 
 
+#contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    margin-top: 30px;
+
+}
+#separator {
+    width: 300px;
+    border-radius: 63px;
+}
+.social-network {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 20px;
+    justify-content: center;
+    padding: 0 30px;
+    font-size: 20px;
+
+}
+.social-network i {
+    font-size: 30px;
+    margin: 20px;
+}
+#dzen {
+    border: 3px black solid;
+
+}
+#ok {
+    border: 3px #ed812b solid;
+    color: #ed812b;
+}
+#vk {
+    border: 3px #0077ff solid;
+    color: #0077ff;
+}
+
+.social-network p {
+
+}
+.social-network img {
+    margin: 20px;
+    width: 100px;
+    width: 30px;
+
+}

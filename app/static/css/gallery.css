@@ -38,7 +38,7 @@
 
 .item-block {
     display: block;
-    width: 200px ;
+    width: 250px ;
     margin: 10px;
 
 }
@@ -96,6 +96,7 @@
     display: block;
     border-top: 10px;
     width: 100%;
+    transition: .5s ease-in-out;
 
 
 }

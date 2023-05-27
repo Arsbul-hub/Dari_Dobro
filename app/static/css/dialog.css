@@ -48,6 +48,7 @@
 
 .image-dialog .top {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
 }
@@ -57,7 +58,7 @@
   margin: 0 auto;
   padding: 10px;
 
-  height: 90%;
+  width: 100%;
 }
 .image-dialog span {
   font-size: 24px;

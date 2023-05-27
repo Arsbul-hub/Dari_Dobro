@@ -39,22 +39,33 @@
             <span class="error">{{ error }}</span>
             {% endfor %}
         </p>
-        {{ form.vk_url.label }}
+        {{ form.vk.label }}
         <p>
 
-            {{ form.vk_url(size=35) }}
-            {% for error in form.vk_url.errors %}<br>
+            {{ form.vk(size=35) }}
+            {% for error in form.vk.errors %}<br>
             <span class="error">{{ error }}</span>
             {% endfor %}
         </p>
-        {{ form.vk_qr.label }}
+
+        {{ form.ok.label }}
         <p>
 
-            {{ form.vk_qr(size=35) }}
-            {% for error in form.vk_qr.errors %}<br>
+            {{ form.ok(size=35) }}
+            {% for error in form.ok.errors %}<br>
             <span class="error">{{ error }}</span>
             {% endfor %}
         </p>
+
+        {{ form.dzen.label }}
+        <p>
+
+            {{ form.dzen(size=35) }}
+            {% for error in form.dzen.errors %}<br>
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </p>
+
         {{ form.save() }}
     </form>
 

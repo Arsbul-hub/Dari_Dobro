@@ -5,7 +5,7 @@ from app import db
 from app.models import News
 
 parser = reqparse.RequestParser()
-parser.add_argument('name', required=True)
+parser.add_argument('key', required=True)
 def abort_if_news_not_found(id):
     if not News.query.filter_by(id=id).first():
         return abort(404, message=f"News {id} not found")
@@ -17,4 +17,4 @@ class NewsResource(Resource):
         news = News.query.filter_by(id=id).first()
         abort_if_news_not_found(id)
 
-        return jsonify(news.to_dict(only=("name", "body", "cover", "timestamp")))
+        return jsonify(news.to_dict(only=("key", "body", "cover", "timestamp")))

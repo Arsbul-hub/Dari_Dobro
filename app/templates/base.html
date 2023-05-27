@@ -5,7 +5,29 @@
 
 
     {% block head %}{% endblock %}
+    <meta name="yandex-verification" content="9bdaca495b0e0142" />
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93703561, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/93703561" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/fonts.css">
     <!--"/static/css/build_cms_front.css"-->
     <link rel="stylesheet" type="text/css"
           href="static/css/build_cms_front.css">
@@ -15,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/base.css">
     <link rel="stylesheet" type="text/css" href="/static/css/page.css">
     <link rel="stylesheet" type="text/css" href="/static/css/dialog.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/fonts.css">
+
     <link rel="stylesheet" type="text/css" href="/static/css/animations.css">
     <script type="text/javascript" src="/static/js/dialog.js"></script>
     <script src="/static/js/jquery.js"></script>
@@ -55,8 +77,12 @@
                             <!--                            <li><a href="{{ url_for('materials') }}">Полезные материалы</a></li>-->
                         </ul>
                     </li>
-                    <li><a href="{{url_for('our_animals')}}">НАШИ ЖИВОТНЫЕ</a>
+                    <li><a >НАШИ ЖИВОТНЫЕ</a>
+                        <ul class="submenu">
+                            <li><a href="{{url_for('our_animals', gender='men')}}">Мальчики</a></li>
+                            <li><a href="{{url_for('our_animals', gender='girl')}}">Девочки</a></li>
 
+                        </ul>
                     </li>
 
 
@@ -115,9 +141,14 @@
                             <!--                            <li><a href="{{ url_for('materials') }}">Полезные материалы</a></li>-->
                         </ul>
                     </li>
-                    <li><a href="{{url_for('our_animals')}}">НАШИ ЖИВОТНЫЕ</a>
+                    <li><a >НАШИ ЖИВОТНЫЕ</a>
+                        <ul class="submenu">
+                            <li><a href="{{url_for('our_animals', gender='men')}}">Мальчики</a></li>
+                            <li><a href="{{url_for('our_animals', gender='girl')}}">Девочки</a></li>
 
+                        </ul>
                     </li>
+
 
                     <li><a href="{{url_for('partners')}}">ПАРТНЕРЫ</a></li>
                     <li><a href="{{url_for('news')}}">НОВОСТИ</a></li>
