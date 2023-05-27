@@ -4,41 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Добавлен файл sitemap">
-      <change afterPath="$PROJECT_DIR$/app/static/images/cat.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/images/dog.jpg" afterDir="false" />
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Исправлены баги. Правка стилей. Добавлено разделение животных на мальчиков и девочек, кошек и собак.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/css/animals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/animals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/contacts.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/contacts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/dialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/dialog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/gallery.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/gallery.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/IMG-20230512-WA0006.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/loaded_media/IMG-20230512-WA0006.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/img-20230512-wa0006_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/lst_9464_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/lst_9464_4_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/lst_9464_4_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/lst_9464_4_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/lst_9464_4_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/lst_9464_4_5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/forms/add_animal.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/add_animal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/forms/edit_contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/edit_contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/gallery.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/our_animals.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/our_animals.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/alembic.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/script.py.mako" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/85167ff2cbbc_.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/b50ec5ce817f_.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/edd5a6116cc7_.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -433,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684949520279</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Исправлены баги. Правка стилей. Добавлено разделение животных на мальчиков и девочек, кошек и собак.">
+      <created>1685211797011</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1685211797011</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,7 +429,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Доработка стилей форм" />
     <MESSAGE value="Исправлен баг с формой настройкой сайта" />
     <MESSAGE value="Исправлены некоторые баги&#10;Реализованно редактирование страниц: главная, стать опекуном, стать волонтёром и помочь финансово.&#10;Теперь для этого нужно войти в аккаунт и нажать на кнопку редактирования на соответствующей странице. &#10;Убрано редактирование текста главной страницы из страницы настроек сайта." />
     <MESSAGE value="Исправлены некоторые баги.&#10;Добавлена страница с полезными материалами для просмотра + форма и страница для добавления и редактирования.&#10;Добавлена страница галереи, где можно просматривать фотографии и скачивать их + форма и страница для добавления и редактирования.&#10;Добавлена возможность редактировать добавляемые на сайт элементы: новости, животные, полезные материалы, партнёры, уставные документы, посты сми, фотографии.&#10;Добавлен файл &quot;admin_user.json&quot;, в котором хранится информация о базовом аккаунте администратора." />
@@ -476,19 +453,20 @@
     <MESSAGE value="Добавлены страницы" />
     <MESSAGE value="Добавлен метатег" />
     <MESSAGE value="Добавлен файл sitemap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен файл sitemap" />
+    <MESSAGE value="Исправлены баги. Правка стилей. Добавлено разделение животных на мальчиков и девочек, кошек и собак." />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлены баги. Правка стилей. Добавлено разделение животных на мальчиков и девочек, кошек и собак." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>557</line>
+          <line>556</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>617</line>
+          <line>615</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

@@ -15,6 +15,18 @@
 }
 .title-block {
     font-size: 30px;
+display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.title-block .age {
+    font-size: 20px;
+    color: gray;
+
+    margin-left: 20px;
 }
 .animals-list {
     display: flex;
@@ -147,7 +159,7 @@
 
 
     .animal .title-block {
-        font-size: 30px;
+        font-size: 26px;
     }
 
     .item-block {

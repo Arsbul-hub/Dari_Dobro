@@ -35,6 +35,9 @@
         }
 
 
+
+
+
     </script>
     <title>Наши животные</title>
 
@@ -131,7 +134,19 @@
                 </a>
 
                 <div class="animal">
-                    <span class="title-block">{{ animal.name }}</span>
+                    <div class="title-block">
+                        <span>{{ animal.name }}</span>
+                        {% if animal.age_type == "normal" %}
+                        <span class="age">(Взрослый)</span>
+                        {% else %}
+                        {% if request.args.get("animal_type") == "dog" %}
+                        <span class="age">(Щенок)</span>
+                        {% else %}
+                        <span class="age">(Котёнок)</span>
+                        {% endif %}
+                        {% endif %}
+                    </div>
+
                     <hr>
                     <p class="animals-body">
                         {{ BeautifulSoup(animal.body, 'lxml').get_text()}}
@@ -217,7 +232,18 @@
                 </a>
 
                 <div class="animal">
-                    <span class="title-block">{{ animal.name }}</span>
+                    <div class="title-block">
+                        <span>{{ animal.name }}</span>
+                        {% if animal.age_type == "normal" %}
+                        <span class="age">(Взрослый)</span>
+                        {% else %}
+                        {% if request.args.get("animal_type") == "dog" %}
+                        <span class="age">(Щенок)</span>
+                        {% else %}
+                        <span class="age">(Котёнок)</span>
+                        {% endif %}
+                        {% endif %}
+                    </div>
                     <hr>
                     <p class="animals-body">
                         {{ BeautifulSoup(animal.body, 'lxml').get_text()}}

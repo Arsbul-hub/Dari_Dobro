@@ -532,8 +532,7 @@ def add_animal():
                 form.age.data = animal.age
                 form.gender.data = animal.gender
         else:
-            return redirect(url_for("our_animals", gender=form.gender.data, animal_type=form.animal_type.data,
-                                    age_type=form.age.data))
+            return redirect(url_for("our_animals", gender=form.gender.data, animal_type=form.animal_type.data))
     elif form.validate_on_submit():
         out_path = save_file(file=form.cover.data)
 
@@ -543,7 +542,7 @@ def add_animal():
         db.session.commit()
         flash('Вы добавили новое животное!')
         return redirect(
-            url_for("our_animals", gender=form.gender.data, animal_type=form.animal_type.data, age_type=form.age.data))
+            url_for("our_animals", gender=form.gender.data, animal_type=form.animal_type.data))
     return render_template("forms/add_animal.html", user=current_user, form=form)
 
 
@@ -552,7 +551,7 @@ def our_animals():
     action = request.args.get('action')
     gender = request.args.get("gender")
     animal_type = request.args.get("animal_type")
-    age_type = request.args.get("age_type")
+
 
     if current_user.is_authenticated and action:
         if action == "remove":
@@ -574,9 +573,8 @@ def our_animals():
     if gender and not animal_type:
         return render_template("choose_animal_type.html", gender=gender, user=current_user)
 
-    animals = Animals.query.filter_by(have_house=False, animal_type=animal_type, gender=gender, age_type=age_type).all()
-    no_animals = Animals.query.filter_by(have_house=True, animal_type=animal_type, gender=gender,
-                                         age_type=age_type).all()
+    animals = Animals.query.filter_by(have_house=False, animal_type=animal_type, gender=gender).all()
+    no_animals = Animals.query.filter_by(have_house=True, animal_type=animal_type, gender=gender).all()
 
     return render_template("our_animals.html", BeautifulSoup=BeautifulSoup, animals=animals, no_animals=no_animals,
                            user=current_user)
