@@ -7,12 +7,14 @@
 
 .news-list {
     display: flex;
-    position: absolute;
+
     padding-bottom: 20px;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 25px;
-    transition: .5s ease-in-out;
+
+    animation: show_animation 1s forwards;
+
 }
 
 .news-date {

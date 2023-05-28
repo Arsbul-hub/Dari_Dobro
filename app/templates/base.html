@@ -35,11 +35,13 @@
 
     <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/static/css/base.css">
+
     <link rel="stylesheet" type="text/css" href="/static/css/page.css">
     <link rel="stylesheet" type="text/css" href="/static/css/dialog.css">
 
     <link rel="stylesheet" type="text/css" href="/static/css/animations.css">
     <script type="text/javascript" src="/static/js/dialog.js"></script>
+    <script type="text/javascript" src="/static/js/base.js"></script>
     <script src="/static/js/jquery.js"></script>
     <!--    <link rel="stylesheet" type="text/css" href="/static/css/adaptive.css">-->
     <!--    <link rel="icon" href="/static/images/icon.ico">-->
@@ -122,8 +124,8 @@
             </div>
 
             <!--            <a class="me-admin" href="{{ url_for('admin_panel') }}">Я администратор</a>-->
-            <a onclick="open_navigation()" id="open-navigation"><i class="fa-solid fa-bars "></i></a>
-            <a style="display: none" id="close-navigation" onclick="close_navigation()"><i class="fa fa-close"></i></a>
+            <a onclick="open_top_menu()" id="open-navigation"><i class="fa-solid fa-bars "></i></a>
+            <a style="display: none" id="close-navigation" onclick="close_top_menu()"><i class="fa fa-close"></i></a>
         </div>
         <div id="navigation">
 
@@ -143,9 +145,8 @@
                     </li>
                     <li><a >НАШИ ЖИВОТНЫЕ</a>
                         <ul class="submenu">
-                            <li><a href="{{url_for('our_animals', gender='men')}}">Мальчики</a></li>
                             <li><a href="{{url_for('our_animals', gender='girl')}}">Девочки</a></li>
-
+                            <li><a href="{{url_for('our_animals', gender='men')}}">Мальчики</a></li>
                         </ul>
                     </li>
 

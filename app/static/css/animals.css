@@ -3,11 +3,11 @@
     display: none;
     opacity: 0;
 
-    animation: ani 1s forwards;
+    animation: show_animation 1s forwards;
 }
 #not-deleted {
 
-    animation: ani 1s forwards;
+    animation: show_animation 1s forwards;
 }
 .title {
     text-align: center;

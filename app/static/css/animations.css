@@ -1,4 +1,36 @@
-@keyframes ani {
+@keyframes animation1 {
     0% {transform: translateX(-300%);}
     100% {transform: translateY(0);}
+}
+@keyframes base_animation {
+    0% {
+        opacity: 0;
+        transform: translateX(-300%);
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+@keyframes show_animation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+}
+
+
+@keyframes hide_animation {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      visibility: visible;
+      opacity: 0;
+    }
 }

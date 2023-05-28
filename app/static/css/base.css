@@ -192,11 +192,11 @@ a {
 
   }
   #navigation {
-    height: 0;
+
     margin-top: 20px;
     background: rgb(229 248 255);
-    opacity: 0; 
-    visibility: hidden
+    display: none;
+    opacity: 0;
   }
   .topmenu {
 
@@ -233,7 +233,7 @@ a {
 
     float: none;
     position: static;
-
+    
   
   }
 

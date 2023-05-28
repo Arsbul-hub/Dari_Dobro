@@ -9,11 +9,11 @@
     display: none;
     opacity: 0;
 
-    animation: ani 1s forwards;
+    animation: show_animation 1s forwards;
 }
 #new_news {
 
-    animation: ani 1s forwards;
+    animation: show_animation 1s forwards;
 }
 .news-list {
     display: flex;

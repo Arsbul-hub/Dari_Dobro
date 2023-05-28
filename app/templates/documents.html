@@ -25,8 +25,9 @@
 
 
 {% endif %}
-{% if documents %}
+
 <div class="documents-list">
+    {% if documents %}
     {% for document in documents %}
     <dialog id="confirm-dialog-{{document.id}}-remove" class="confirm-dialog">
 
@@ -61,16 +62,17 @@
     </div>
 
     {% endfor %}
-</div>
-{% else %}
-<div class="is-empty">
-    <img src="static/images/empty-box-icon.svg"
-         style="filter: invert(57%) sepia(6%) saturate(16%) hue-rotate(43deg) brightness(87%) contrast(89%);">
-    <p>Пока здесь пусто</p>
+    {% else %}
+    <div class="is-empty">
+        <img src="static/images/empty-box-icon.svg"
+             style="filter: invert(57%) sepia(6%) saturate(16%) hue-rotate(43deg) brightness(87%) contrast(89%);">
+        <p>Пока здесь пусто</p>
 
+    </div>
+    {% endif %}
+    {% endblock %}
 </div>
-{% endif %}
-{% endblock %}
+
 
 </body>
 </html><!-- cached 2022-12-02 18:49:34 e1f06ea3656617814ddc75707df638f9 -->

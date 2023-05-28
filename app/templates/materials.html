@@ -30,9 +30,9 @@
 
 {% endif %}
 
-{% if materials_list %}
-<div class="materials-list">
 
+<div class="materials-list">
+    {% if materials_list %}
     {% for n in materials_list %}
 
     <dialog id="confirm-dialog-{{n.id}}-remove" class="confirm-dialog">
@@ -75,16 +75,16 @@
     </div>
 
     {% endfor %}
+    {% else %}
+    <div class="is-empty">
+        <img src="static/images/empty-box-icon.svg"
+             style="filter: invert(57%) sepia(6%) saturate(16%) hue-rotate(43deg) brightness(87%) contrast(89%);">
+        <p>Пока здесь пусто</p>
+
+    </div>
+    {% endif %}
 
 </div>
-{% else %}
-<div class="is-empty">
-    <img src="static/images/empty-box-icon.svg"
-         style="filter: invert(57%) sepia(6%) saturate(16%) hue-rotate(43deg) brightness(87%) contrast(89%);">
-    <p>Пока здесь пусто</p>
-
-</div>
-{% endif %}
 
 
 {% endblock %}
