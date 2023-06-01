@@ -89,7 +89,7 @@ body {
 #contacts {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: row-reverse;
     flex-wrap: wrap;
     margin-top: 30px;
@@ -97,7 +97,7 @@ body {
 }
 #separator {
     width: 300px;
-    border-radius: 63px;
+    border-radius: 25px;
 }
 .social-network {
     display: flex;

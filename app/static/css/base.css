@@ -203,7 +203,7 @@ a {
     flex-direction: column;
   }
   #close-navigation {
-     display: flex; 
+    display: flex; 
     justify-content: flex-end;
     font-size: 30px;
 

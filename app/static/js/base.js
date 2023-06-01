@@ -1,6 +1,6 @@
 function open_top_menu() {
     document.getElementById("navigation").style.display = "block";
-    document.getElementById("navigation").style.animation = "base_animation 1s forwards";
+    document.getElementById("navigation").style.animation = "base_animation 0.5s forwards";
     document.getElementById("open-navigation").style.display = "none";
     document.getElementById("close-navigation").style.display = "block";
 
@@ -13,7 +13,7 @@ function open_top_menu() {
 
 function close_top_menu() {
     document.getElementById("navigation").style.display = "none";
-    document.getElementById("navigation").style.animation = "base_animation 1s forwards";
+
     document.getElementById("open-navigation").style.display = "block";
     document.getElementById("close-navigation").style.display = "none";
     document.getElementById("before").style.display = "block";

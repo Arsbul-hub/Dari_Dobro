@@ -481,7 +481,7 @@ def add_partner():
         partner = Partners.query.get(request.args.get("id"))
         if partner:
             if form.validate_on_submit():
-                partner.key = form.name.data
+                partner.name = form.name.data
                 partner.link = form.link.data
                 if form.logo.data:
                     partner.logo = save_file(form.logo.data)
@@ -489,7 +489,7 @@ def add_partner():
                 db.session.commit()
                 return redirect(url_for("partners"))
             else:
-                form.name.data = partner.key
+                form.name.data = partner.name
                 form.link.data = partner.link
         else:
             return redirect(url_for("partners"))
@@ -515,21 +515,21 @@ def add_animal():
         animal = Animals.query.get(request.args.get("id"))
         if animal:
             if form.validate_on_submit():
-                animal.key = form.name.data
+                animal.name = form.name.data
                 animal.body = form.body.data
                 animal.animal_type = form.animal_type.data
-                animal.age = form.age.data
+                animal.age_type = form.age.data
                 animal.gender = form.gender.data
                 if form.cover.data:
                     animal.cover = save_file(form.cover.data)
                 db.session.commit()
                 return redirect(request.args.get("previous"))
             else:
-                form.name.data = animal.key
+                form.name.data = animal.name
                 form.body.data = animal.body
 
                 form.animal_type.data = animal.animal_type
-                form.age.data = animal.age
+                form.age.data = animal.age_type
                 form.gender.data = animal.gender
         else:
             return redirect(url_for("our_animals", gender=form.gender.data, animal_type=form.animal_type.data))

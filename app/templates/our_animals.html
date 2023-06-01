@@ -19,6 +19,7 @@
             document.getElementById("not-deleted").style.display = "flex";
             document.getElementById("deleted").style.display = "none";
             document.getElementById("deleted").style.opacity = "0";
+
             document.getElementById("not-deleted").style.opacity = "1";
             document.getElementById("with_us").style.backgroundColor = "#0470b8"
             document.getElementById("in_house").style.backgroundColor = "green"
@@ -29,6 +30,7 @@
             document.getElementById("not-deleted").style.display = "none";
             document.getElementById("deleted").style.display = "flex";
             document.getElementById("deleted").style.opacity = "1";
+
             document.getElementById("not-deleted").style.opacity = "0";
             document.getElementById("with_us").style.backgroundColor = "green"
             document.getElementById("in_house").style.backgroundColor = "#0470b8"
@@ -60,7 +62,7 @@
 <nav class="category-navigation">
     <ul>
         <li id="with_us" style="background-color: #0470b8"><a onclick="show_new()">Сейчас у нас</a></li>
-        <li id="in_house"><a onclick="show_old()">Вернулись домой</a></li>
+        <li id="in_house"><a onclick="show_old()">Нашли дом</a></li>
     </ul>
 </nav>
 
@@ -120,7 +122,7 @@
                 <a onclick="open_confirm_dialog({{animal.id}}, 'move');">
                     <i class="fa-solid fa-shield-dog"></i>
                 </a>
-                <a href="{{url_for('add_animal', action='edit', id=animal.id)}}">
+                <a href="{{url_for('add_animal', action='edit', id=animal.id, previous=request.full_path)}}">
                     <i class="fa-solid fa-pen"></i>
                 </a>
                 <a onclick="open_confirm_dialog({{animal.id}}, 'remove');">
@@ -218,7 +220,7 @@
                 <a onclick="open_confirm_dialog({{animal.id}}, 'move');">
                     <i class="fa-solid fa-shield-dog"></i>
                 </a>
-                <a href="{{url_for('add_animal', action='edit', id=animal.id)}}">
+                <a href="{{url_for('add_animal', action='edit', id=animal.id, previous=request.full_path)}}">
                     <i class="fa-solid fa-pen"></i>
                 </a>
                 <a onclick="open_confirm_dialog({{animal.id}}, 'remove');">

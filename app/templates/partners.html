@@ -29,10 +29,10 @@
 
 {% endif %}
 
-{% if partners %}
-<hr>
-<div class="partners-list">
 
+
+<div class="partners-list">
+    {% if partners %}
     {% for p in partners %}
 
 
@@ -77,10 +77,6 @@
 
 
     {% endfor %}
-
-</div>
-
-
 {% else %}
 <div class="is-empty">
     <img src="static/images/empty-box-icon.svg"
@@ -89,6 +85,10 @@
 
 </div>
 {% endif %}
+</div>
+
+
+
 
 
 {% endblock %}
