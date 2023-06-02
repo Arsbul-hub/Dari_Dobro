@@ -107,12 +107,14 @@ def remove_file(path):
 @app.route('/')
 @app.route("/index")
 def index():
+    print(request.args.get("is_xhr"))
     data = PagesData.query.get("index")
     allow_background_image = False
-    if Config.query.get("allow_background_image"):
+    site_name = ""
+    if Config.query.filter_by(category="config").all():
         allow_background_image = Config.query.get("allow_background_image").value
-
-    return render_template("index.html", user=current_user, site_data=data,
+        site_name = Config.query.get("site_name").value
+    return render_template("index.html", user=current_user, site_data=data, site_name=site_name,
                            allow_background_image=allow_background_image)
 
 
@@ -193,23 +195,22 @@ def site_settings():
 
     if form.validate_on_submit():
 
-        save_file(file=form.site_logo.data, service_path="images", name="logo.png",
+        save_file(file=form.site_logo.data, service_path="images", name="vse_zveri.png",
                   formates=["png", "jpg", "jpeg", "webp"])
         save_file(file=form.background_image.data, service_path="images", name="background_image.png",
                   formates=["png", "jpg", "jpeg", "webp"], )
 
         Config.query.get("allow_background_image").value = form.allow_background_image.data
-
+        Config.query.get("site_name").value = form.site_name.data
         db.session.commit()
         return redirect(url_for("admin_panel"))
     else:
-        if Config.query.get("allow_background_image"):
+        if Config.query.filter_by(category="config").all():
             form.allow_background_image.data = int(Config.query.get("allow_background_image").value)
+            form.site_name.data = Config.query.get("site_name").value
         else:
-            new_config = Config()
-            new_config.key = "allow_background_image"
-            new_config.value = False
-            db.session.add(new_config)
+            db.session.add(Config(key="allow_background_image", value=False, category="config"))
+            db.session.add(Config(key="site_name", value="", category="config"))
             db.session.commit()
     return render_template("forms/site_settings.html", user=current_user, config=Config, form=form)
 
@@ -552,7 +553,6 @@ def our_animals():
     gender = request.args.get("gender")
     animal_type = request.args.get("animal_type")
 
-
     if current_user.is_authenticated and action:
         if action == "remove":
             db.session.delete(Animals.query.get(request.args.get('id')))
@@ -693,11 +693,11 @@ def volunteer():
 
 @app.errorhandler(404)
 def page_not_found(error):
-    print(error)
+
     return render_template('errors/404.html', user=current_user), 404
 
 
 @app.errorhandler(500)
 def internal_error(error):
-    print(error)
+
     return render_template('errors/500.html', user=current_user), 500

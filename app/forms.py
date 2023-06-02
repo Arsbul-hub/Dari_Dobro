@@ -184,6 +184,7 @@ class ConfigForm(FlaskForm):
     site_logo = FileField("Логотип сайта", validators=[image_validation])
     background_image = FileField("Фоновое изображение главной страницы", validators=[image_validation])
     allow_background_image = BooleanField("Отображать фоновое изображение")
+    site_name = StringField("Название сайта")
     save = SubmitField("Сохранить")
 
 

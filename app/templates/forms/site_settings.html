@@ -42,7 +42,13 @@
             {{form.allow_background_image()}}
             {{form.allow_background_image.label}}
         </p>
-
+        {{form.site_name.label}}
+        <p>
+            {{ form.site_name(size=32) }}
+            {% for error in form.site_name.errors %}<br>
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
         {{ form.save() }}
     </form>
 

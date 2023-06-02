@@ -5,11 +5,14 @@
 <head>
     {% block head %}
     <meta charset="utf-8">
+    {% if site_name %}
+    <title>{{ site_name }}</title>
+    {% else %}
     {% if site_data.title %}
     <title>{{ site_data.title }}</title>
     {% else %}
     <title>Не известно</title>
-
+    {% endif %}
     {% endif %}
     <meta name="Keywords" content="Покров, Дари добро, дари добро, покров волонтёры, волонтёры, помощь животным">
     <link rel="stylesheet" type="text/css" href="/static/css/index.css">
@@ -19,6 +22,8 @@
             #bg-image {
                 visibility: visible;
             }
+
+
 
 
 

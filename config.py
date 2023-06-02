@@ -15,6 +15,7 @@ class Config:
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     CKEDITOR_HEIGHT = 500
+
     CKEDITOR_FILE_UPLOADER = "upload"
     with open("app/admin_user.json", "r") as f:
         j = json.load(f)
