@@ -7,9 +7,11 @@
     white-space: nowrap;
     border-radius: 5px;
     transition: .5s ease-in-out;
-    background-color: green;
+    background-color: gray;
 }
-.category-navigation li a {
+
+
+.category-navigation li {
     color: white;
     transition: .5s ease-in-out;
 }
@@ -22,12 +24,12 @@
     text-decoration: underline;
 
 }
-.category-navigation li:hover {
+/* .category-navigation li:hover {
     background-color: #0470b8;
 
 
 }
-
+ */
 
 @media only screen and (max-width: 992px) {
 

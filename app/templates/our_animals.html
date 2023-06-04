@@ -14,26 +14,26 @@
     <script type="text/javascript" src="/static/js/dialog.js"></script>
     <script>
 
-        function show_new() {
+        function show_with_us() {
 
             document.getElementById("not-deleted").style.display = "flex";
             document.getElementById("deleted").style.display = "none";
             document.getElementById("deleted").style.opacity = "0";
 
             document.getElementById("not-deleted").style.opacity = "1";
-            document.getElementById("with_us").style.backgroundColor = "#0470b8"
-            document.getElementById("in_house").style.backgroundColor = "green"
+            document.getElementById("with_us").style.backgroundColor = "green"
+            document.getElementById("in_house").style.backgroundColor = "gray"
         }
 
-        function show_old() {
+        function show_in_house() {
 
             document.getElementById("not-deleted").style.display = "none";
             document.getElementById("deleted").style.display = "flex";
             document.getElementById("deleted").style.opacity = "1";
 
             document.getElementById("not-deleted").style.opacity = "0";
-            document.getElementById("with_us").style.backgroundColor = "green"
-            document.getElementById("in_house").style.backgroundColor = "#0470b8"
+            document.getElementById("with_us").style.backgroundColor = "gray"
+            document.getElementById("in_house").style.backgroundColor = "green"
         }
 
 
@@ -61,8 +61,8 @@
 {% endif %}
 <nav class="category-navigation">
     <ul>
-        <li id="with_us" style="background-color: #0470b8"><a onclick="show_new()">Сейчас у нас</a></li>
-        <li id="in_house"><a onclick="show_old()">Нашли дом</a></li>
+        <a onclick="show_with_us()"><li id="with_us" style="background-color: green;">Сейчас у нас</li></a>
+        <a onclick="show_in_house()"><li id="in_house">Нашли дом</li></a>
     </ul>
 </nav>
 

@@ -19,8 +19,8 @@
             document.getElementById("old_news").style.display = "none";
             document.getElementById("old_news").style.opacity = "0";
             document.getElementById("new_news").style.opacity = "1";
-            document.getElementById("with_us").style.backgroundColor = "#0470b8"
-            document.getElementById("in_house").style.backgroundColor = "green"
+            document.getElementById("with_us").style.backgroundColor = "green"
+            document.getElementById("in_house").style.backgroundColor = "gray"
         }
         function show_old() {
 
@@ -29,9 +29,10 @@
             document.getElementById("old_news").style.display = "flex";
             document.getElementById("old_news").style.opacity = "1";
             document.getElementById("new_news").style.opacity = "0";
-            document.getElementById("with_us").style.backgroundColor = "green"
-            document.getElementById("in_house").style.backgroundColor = "#0470b8"
+            document.getElementById("with_us").style.backgroundColor = "gray"
+            document.getElementById("in_house").style.backgroundColor = "green"
         }
+
 
 
 
@@ -64,8 +65,12 @@
 {% endif %}
 <nav class="category-navigation">
     <ul>
-        <li id="with_us" style="background-color: #0470b8"><a onclick="show_new()">Новые</a></li>
-        <li id="in_house"><a onclick="show_old()">Более старые</a></li>
+        <a onclick="show_new()">
+            <li id="with_us" style="background-color: green">Новые</li>
+        </a>
+        <a onclick="show_old()">
+            <li id="in_house">Более старые</li>
+        </a>
     </ul>
 </nav>
 <div id="news-blocks">
@@ -119,7 +124,7 @@
                     <p class="news-body">
                         <!--                        Текст новости чисто без разметки -->
 
-                            {{ BeautifulSoup(n.body, 'lxml').get_text()}}
+                        {{ BeautifulSoup(n.body, 'lxml').get_text()}}
 
                     </p>
                     <a class="view-all" href="{{url_for('news', action='show', id=n.id)}}">Читать дальше</a>

@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Обновление иконки сайта">
-      <change afterPath="$PROJECT_DIR$/app/static/loaded_media/vse_zveri.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/loaded_media/СББЖ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/loaded_media/Свидетельство о гос регистарции Дари Добро.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/loaded_media/устав Дари добро.pdf" afterDir="false" />
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Добавлены файлы для сайта. &#10;Добавлена возможность редактировать название, сайта, отображаемое в поиске.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/server-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/forms/site_settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/site_settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/navigation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/our_animals.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/our_animals.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,24 +34,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Arsbul Programming/Desktop/дари добро/app/static/loaded_media",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Arsbul Programming/Desktop/дари добро/app/static/loaded_media&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\loaded_media" />
@@ -446,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685649825208</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Добавлены файлы для сайта. &#10;Добавлена возможность редактировать название, сайта, отображаемое в поиске.">
+      <created>1685712094544</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1685712094544</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +463,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлен файловый менеджер. &#10;Исправлена ошибка при переходе в настройки сайта.&#10;Добавлена анимация для вкладок верхней панели навигации.&#10;Исправлен визуальный баг с отображением подменю на верхней панели навигации на странице &quot;Контакты&quot; + исправлен баг с анимацией qr кода.&#10;Добавлена возможность удаления аккаунта. &#10;При нажатии кнопки выхода из профиля или при нажатии удаления появляется диалоговое окно с подтверждением действия.&#10;Добавлены мини-иконки на кнопках на панели администратора." />
     <MESSAGE value="Доработана верхняя панель навигации и анимации кнопок на ней.&#10;Созданы анимации под кнопки инструментов, под кнопки просмотра документов и для кнопки &quot;Читать дальше&quot;.&#10;Исправлен баг с загрузкой стилей на страницах ошибок (404 и 500)&#10;Финальная версия проекта&#10;:D" />
     <MESSAGE value="Исправление багов и недочётов" />
     <MESSAGE value="Исправление багов.&#10;Добавлена возможность редактировать вкладку &quot;Контакты&quot;.&#10;Исправлены анимации у кнопок во вкладке &quot;Уставные документы&quot;.&#10;Изменено положение вкладки &quot;Полезные материалы&quot; на верхней панели навигации.&#10;Изменён дизайн диалоговых окон. &#10;Добавлен новый шрифт &quot;Open Sans&quot; от google.&#10;Переименована страница с названием &quot;Профиль&quot; на название &quot;Панель управления&quot;.&#10;Финальная версия проекта." />
@@ -489,7 +487,8 @@
     <MESSAGE value="Добавлены анимации" />
     <MESSAGE value="Фиксы багов" />
     <MESSAGE value="Обновление иконки сайта" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновление иконки сайта" />
+    <MESSAGE value="Добавлены файлы для сайта. &#10;Добавлена возможность редактировать название, сайта, отображаемое в поиске." />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены файлы для сайта. &#10;Добавлена возможность редактировать название, сайта, отображаемое в поиске." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
