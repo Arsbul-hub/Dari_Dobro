@@ -13,16 +13,16 @@ from flask_login import LoginManager, current_user
 import pymorphy3
 import flaskfilemanager
 
-app = Flask(__name__)
-app.config.from_object(Config)
+application = Flask(__name__)
+application.config.from_object(Config)
 
-ckeditor = CKEditor(app)
+ckeditor = CKEditor(application)
 blueprint = Blueprint('app_api', __name__, template_folder='templates')
 
 db = SQLAlchemy()
-db.init_app(app)
-migrate = Migrate(app, db, render_as_batch=True)
-login = LoginManager(app)
+db.init_app(application)
+migrate = Migrate(application, db, render_as_batch=True)
+login = LoginManager(application)
 login.login_view = 'login'
 
 morph = pymorphy3.MorphAnalyzer()
@@ -36,8 +36,8 @@ def my_access_control_function():
     return current_user.is_authenticated
 
 
-flaskfilemanager.init(app,
+flaskfilemanager.init(application,
                       custom_config_json_path="static/json/filemanager.config.json",
                       access_control_function=my_access_control_function)
 
-from app import routes, models
+from application import routes, models

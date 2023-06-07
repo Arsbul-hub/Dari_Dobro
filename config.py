@@ -11,7 +11,7 @@ class Config:
 
     FLASKFILEMANAGER_FILE_PATH = "app/static/loaded_media"
 
-    # FLASKFILEMANAGER_CUSTOM_CONFIG_JSON_PATH = "app/static/json/filemanager.config.json"
+    # FLASKFILEMANAGER_CUSTOM_CONFIG_JSON_PATH = "application/static/json/filemanager.config.json"
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     CKEDITOR_HEIGHT = 500

@@ -1,6 +1,6 @@
-from app import app, blueprint, db_session
+from app import application, blueprint, db_session
 
 if __name__ == '__main__':
-    # db_session.global_init("app.db")
+    # db_session.global_init("application.db")
 
-    app.run(host='0.0.0.0', port=80, debug=True)
+    application.run(host='0.0.0.0', port=80, debug=True)

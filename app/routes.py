@@ -1,7 +1,7 @@
 import os
 from flask import render_template, send_from_directory, url_for, flash, redirect, request
 from flask_ckeditor import upload_fail, upload_success
-from app import app, morph
+from app import application, morph
 from PIL import Image
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import *
@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 
 def load_file(name):
     try:
-        return Image.open("app/" + name)
+        return Image.open("application/" + name)
 
     except FileNotFoundError:
         return None
@@ -26,23 +26,23 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
-@app.route('/files/<path:filename>')
+@application.route('/files/<path:filename>')
 def uploaded_files(filename):
     return send_from_directory("static/loaded_media", filename)
 
 
-@app.route('/reload_auth')
+@application.route('/reload_auth')
 def reload_auth_system():
     messages = ["Конфигурационный файл аутентификации пользователей был перезагружен!"]
     admin = User.query.filter_by(username="Admin").first()
     if admin:
-        admin.username = app.config["DEFAULT_ADMIN_USERNAME"]
-        admin.set_password(app.config["DEFAULT_ADMIN_PASSWORD"])
+        admin.username = application.config["DEFAULT_ADMIN_USERNAME"]
+        admin.set_password(application.config["DEFAULT_ADMIN_PASSWORD"])
 
     else:
         admin = User()
-        admin.username = app.config["DEFAULT_ADMIN_USERNAME"]
-        admin.set_password(app.config["DEFAULT_ADMIN_PASSWORD"])
+        admin.username = application.config["DEFAULT_ADMIN_USERNAME"]
+        admin.set_password(application.config["DEFAULT_ADMIN_PASSWORD"])
         db.session.add(admin)
 
     db.session.commit()
@@ -51,7 +51,7 @@ def reload_auth_system():
     return render_template("service/Уведомление.html", title="Внимание", messages=messages)
 
 
-@app.route('/upload', methods=['POST', "GET"])
+@application.route('/upload', methods=['POST', "GET"])
 def upload():
     f = request.files.get('upload')
     # Add more validations here
@@ -71,15 +71,15 @@ def save_file(file, path="", name=None, formates=[], service_path="", allow_repl
         return None
     if name:
         file.filename = name
-    if path and not os.path.exists(f"app/static/loaded_media/{path}"):
-        os.makedirs(f"app/static/loaded_media/{path}")
+    if path and not os.path.exists(f"application/static/loaded_media/{path}"):
+        os.makedirs(f"application/static/loaded_media/{path}")
     filename = file.filename.split('.')[0].lower()
     extension = file.filename.split('.')[-1].lower()
 
     if not allow_replace:
         n = 1
 
-        while os.path.exists(f"app/static/loaded_media/{path}/{file.filename}"):
+        while os.path.exists(f"application/static/loaded_media/{path}/{file.filename}"):
             file.filename = f"{filename}_{n}.{extension}"
             n += 1
     if "image" in file.content_type:
@@ -93,19 +93,19 @@ def save_file(file, path="", name=None, formates=[], service_path="", allow_repl
             require_height = 1300  # Уменьшенный размер (высота)
             new_size = int((float(image.size[0]) * float((require_height / float(image.size[1]))))), require_height
             image = image.resize(new_size, Image.LANCZOS)
-        image.save(f"app/{full_path}/{path}/{file.filename}")
+        image.save(f"application/{full_path}/{path}/{file.filename}")
     else:
-        file.save(f"app/{full_path}/{path}/{file.filename}")
+        file.save(f"application/{full_path}/{path}/{file.filename}")
     return f"static/loaded_media/{path}/{file.filename}"
 
 
 def remove_file(path):
-    if os.path.exists("app/" + path):
-        os.remove("app/" + path)
+    if os.path.exists("application/" + path):
+        os.remove("application/" + path)
 
 
-@app.route('/')
-@app.route("/index")
+@application.route('/')
+@application.route("/index")
 def index():
     print(request.args.get("is_xhr"))
     data = PagesData.query.get("index")
@@ -118,24 +118,24 @@ def index():
                            allow_background_image=allow_background_image)
 
 
-@app.route('/logout')
+@application.route('/logout')
 def logout():
     logout_user()
     return redirect("/")
 
 
 @login_required
-@app.route("/delete_user")
+@application.route("/delete_user")
 def delete_user():
     user = User.query.get(request.args.get("id"))
-    if user and user.username != app.config["DEFAULT_ADMIN_USERNAME"]:
+    if user and user.username != application.config["DEFAULT_ADMIN_USERNAME"]:
         logout_user()
         db.session.delete(user)
         db.session.commit()
     return redirect("/")
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@application.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
 
@@ -156,7 +156,7 @@ def login():
     return render_template('forms/login.html', user=current_user, title='Sign In', form=form)
 
 
-@app.route('/register', methods=['GET', 'POST'])
+@application.route('/register', methods=['GET', 'POST'])
 @login_required
 def register():
     form = RegistrationForm()
@@ -172,30 +172,30 @@ def register():
     return render_template('forms/register.html', user=current_user, title='Register', form=form)
 
 
-@app.route("/Панель управления")
+@application.route("/Панель управления")
 @login_required
 def admin_panel():
     # Я хотел делать бэкапы, но не вышло
     # action = request.args.get("action")
     # if action == "get_backup":
     #     n = datetime.now()
-    #     with ZipFile(f"app/static/backups/backup-{n.year}-{n.month}-{n.day}-{n.hour}-{n.minute}-{n.second}.zip", "w") as zip_file:
-    #         zip_file.write("./app.db")
-    #         for resource in pathlib.Path("app/static/loaded_media/").iterdir():
+    #     with ZipFile(f"application/static/backups/backup-{n.year}-{n.month}-{n.day}-{n.hour}-{n.minute}-{n.second}.zip", "w") as zip_file:
+    #         zip_file.write("./application.db")
+    #         for resource in pathlib.Path("application/static/loaded_media/").iterdir():
     #             zip_file.write(resource, arcname=f"media/{resource.key}")
     #     send_from_directory("static/backups", f"backup-{n.year}-{n.month}-{n.day}-{n.hour}-{n.minute}-{n.second}.zip", as_attachment=True)
 
-    return render_template("admin_panel.html", user=current_user, admin_username=app.config["DEFAULT_ADMIN_USERNAME"])
+    return render_template("admin_panel.html", user=current_user, admin_username=application.config["DEFAULT_ADMIN_USERNAME"])
 
 
-@app.route("/Настройки сайта", methods=["GET", "POST"])
+@application.route("/Настройки сайта", methods=["GET", "POST"])
 @login_required
 def site_settings():
     form = ConfigForm()
 
     if form.validate_on_submit():
 
-        save_file(file=form.site_logo.data, service_path="images", name="vse_zveri.png",
+        save_file(file=form.site_logo.data, service_path="images", name="logo.png",
                   formates=["png", "jpg", "jpeg", "webp"])
         save_file(file=form.background_image.data, service_path="images", name="background_image.png",
                   formates=["png", "jpg", "jpeg", "webp"], )
@@ -216,7 +216,7 @@ def site_settings():
 
 
 # @login_required
-# @app.route("/Файловый менеджер")
+# @application.route("/Файловый менеджер")
 # def file_manager():
 #     filemanager_link = url_for('flaskfilemanager.index')
 #     print(filemanager_link)
@@ -224,7 +224,7 @@ def site_settings():
 
 
 @login_required
-@app.route("/Изменить страницу", methods=["GET", "POST"])
+@application.route("/Изменить страницу", methods=["GET", "POST"])
 def edit_page_description():
     form = PageDataForm()
     page = request.args.get("page")
@@ -249,7 +249,7 @@ def edit_page_description():
     return render_template("forms/edit_page_description.html", user=current_user, form=form, page_name=page_name)
 
 
-@app.route("/Добавить новость", methods=['GET', 'POST'])
+@application.route("/Добавить новость", methods=['GET', 'POST'])
 @login_required
 def add_news():
     action = request.args.get("action")
@@ -281,7 +281,7 @@ def add_news():
     return render_template("forms/add_news.html", user=current_user, form=form)
 
 
-@app.route("/Новости")
+@application.route("/Новости")
 def news():
     action = request.args.get('action')
 
@@ -308,12 +308,12 @@ def news():
                            case={"gent"})
 
 
-@app.route('/Отчётность')
+@application.route('/Отчётность')
 def reporting():
     return render_template("Отчетность.html", user=current_user)
 
 
-@app.route("/Добавить документ", methods=['GET', 'POST'])
+@application.route("/Добавить документ", methods=['GET', 'POST'])
 @login_required
 def add_document():
     action = request.args.get("action")
@@ -343,7 +343,7 @@ def add_document():
     return render_template("forms/add_document.html", user=current_user, form=form)
 
 
-@app.route('/Документы')
+@application.route('/Документы')
 def documents():
     documents_list = Documents.query.all()
     action = request.args.get('action')
@@ -358,7 +358,7 @@ def documents():
     return render_template("documents.html", user=current_user, documents=documents_list)
 
 
-@app.route('/Сми о нас')
+@application.route('/Сми о нас')
 def smi():
     action = request.args.get("action")
 
@@ -375,7 +375,7 @@ def smi():
     return render_template("smi_posts.html", user=current_user, posts=posts, today=datetime.today())
 
 
-@app.route("/Добавить пост сми", methods=['GET', 'POST'])
+@application.route("/Добавить пост сми", methods=['GET', 'POST'])
 @login_required
 def add_smi_post():
     action = request.args.get("action")
@@ -408,7 +408,7 @@ def add_smi_post():
     return render_template("forms/add_smi_post.html", user=current_user, form=form)
 
 
-@app.route("/Добавить информацию", methods=['GET', 'POST'])
+@application.route("/Добавить информацию", methods=['GET', 'POST'])
 @login_required
 def add_materials():
     action = request.args.get("action")
@@ -439,7 +439,7 @@ def add_materials():
     return render_template("forms/add_materials.html", user=current_user, form=form)
 
 
-@app.route("/Полезная информация")
+@application.route("/Полезная информация")
 def materials():
     action = request.args.get('action')
 
@@ -454,7 +454,7 @@ def materials():
     return render_template("materials.html", user=current_user, materials_list=Materials.query.all())
 
 
-@app.route('/Партнёры')
+@application.route('/Партнёры')
 def partners():
     action = request.args.get('action')
     partners = Partners.query.all()
@@ -472,7 +472,7 @@ def partners():
                            user=current_user)
 
 
-@app.route("/Добавить партнёра", methods=['GET', 'POST'])
+@application.route("/Добавить партнёра", methods=['GET', 'POST'])
 @login_required
 def add_partner():
     action = request.args.get("action")
@@ -505,7 +505,7 @@ def add_partner():
     return render_template("forms/add_partner.html", user=current_user, form=form)
 
 
-@app.route("/Добавить животное", methods=['GET', 'POST'])
+@application.route("/Добавить животное", methods=['GET', 'POST'])
 @login_required
 def add_animal():
     action = request.args.get("action")
@@ -547,7 +547,7 @@ def add_animal():
     return render_template("forms/add_animal.html", user=current_user, form=form)
 
 
-@app.route('/Наши животные')
+@application.route('/Наши животные')
 def our_animals():
     action = request.args.get('action')
     gender = request.args.get("gender")
@@ -580,7 +580,7 @@ def our_animals():
                            user=current_user)
 
 
-@app.route("/Добавить изображение", methods=['GET', 'POST'])
+@application.route("/Добавить изображение", methods=['GET', 'POST'])
 @login_required
 def add_image_to_gallery():
     action = request.args.get("action")
@@ -595,7 +595,7 @@ def add_image_to_gallery():
     return render_template("forms/add_image.html", user=current_user, form=form)
 
 
-@app.route("/Галерея")
+@application.route("/Галерея")
 def gallery():
     action = request.args.get('action')
     if current_user.is_authenticated and action:
@@ -611,7 +611,7 @@ def gallery():
 
 
 @login_required
-@app.route("/Редактировать контакты", methods=["GET", "POST"])
+@application.route("/Редактировать контакты", methods=["GET", "POST"])
 def edit_contacts():
     form = EditContacts()
     if form.validate_on_submit():
@@ -641,7 +641,7 @@ def edit_contacts():
     return render_template("forms/edit_contacts.html", user=current_user, form=form)
 
 
-@app.route("/Контакты")
+@application.route("/Контакты")
 def contacts():
     email, phone_number, vk, ok, dzen = "", "", "", "", ""
     if Config.query.filter_by(category="contacts").all():
@@ -655,7 +655,7 @@ def contacts():
 
 
 @login_required
-@app.route("/Добавить социальную сеть", methods=["GET", "POST"])
+@application.route("/Добавить социальную сеть", methods=["GET", "POST"])
 def add_social_network():
     form = AddSocialNetwork()
     if form.validate_on_submit():
@@ -666,38 +666,38 @@ def add_social_network():
     return render_template("forms/add_social_network.html", user=current_user, form=form)
 
 
-@app.route('/Мероприятия')
+@application.route('/Мероприятия')
 def activities():
     return redirect("/")
 
 
-@app.route('/Помогите финансово')
+@application.route('/Помогите финансово')
 def help_money():
     data = PagesData.query.get("help_money")
 
     return render_template("help_money.html", user=current_user, site_data=data)
 
 
-@app.route('/Стать опекуном')
+@application.route('/Стать опекуном')
 def opeka():
     data = PagesData.query.get("opeka")
 
     return render_template("opeka.html", user=current_user, site_data=data)
 
 
-@app.route('/Стать волонтером')
+@application.route('/Стать волонтером')
 def volunteer():
     data = PagesData.query.get("volunteer")
     return render_template("volunteer.html", user=current_user, site_data=data)
 
 
-@app.errorhandler(404)
+@application.errorhandler(404)
 def page_not_found(error):
 
     return render_template('errors/404.html', user=current_user), 404
 
 
-@app.errorhandler(500)
+@application.errorhandler(500)
 def internal_error(error):
 
     return render_template('errors/500.html', user=current_user), 500
