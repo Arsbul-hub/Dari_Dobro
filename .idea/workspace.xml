@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Небольшая правка стилей">
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Баг">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/passenger_wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/passenger_wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -456,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686167346515</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Баг">
+      <created>1686170927430</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1686170927430</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -474,7 +483,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправление багов и недочётов" />
     <MESSAGE value="Исправление багов.&#10;Добавлена возможность редактировать вкладку &quot;Контакты&quot;.&#10;Исправлены анимации у кнопок во вкладке &quot;Уставные документы&quot;.&#10;Изменено положение вкладки &quot;Полезные материалы&quot; на верхней панели навигации.&#10;Изменён дизайн диалоговых окон. &#10;Добавлен новый шрифт &quot;Open Sans&quot; от google.&#10;Переименована страница с названием &quot;Профиль&quot; на название &quot;Панель управления&quot;.&#10;Финальная версия проекта." />
     <MESSAGE value="Исправление багов." />
     <MESSAGE value="Исправление багов с текстом во вкладке &quot;Контакты&quot;." />
@@ -499,7 +507,8 @@
     <MESSAGE value="Обновление иконки сайта" />
     <MESSAGE value="Добавлены файлы для сайта. &#10;Добавлена возможность редактировать название, сайта, отображаемое в поиске." />
     <MESSAGE value="Небольшая правка стилей" />
-    <option name="LAST_COMMIT_MESSAGE" value="Небольшая правка стилей" />
+    <MESSAGE value="Баг" />
+    <option name="LAST_COMMIT_MESSAGE" value="Баг" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
