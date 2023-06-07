@@ -40,4 +40,4 @@ flaskfilemanager.init(application,
                       custom_config_json_path="static/json/filemanager.config.json",
                       access_control_function=my_access_control_function)
 
-from application import routes, models
+from app import routes, models
