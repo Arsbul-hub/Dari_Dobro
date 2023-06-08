@@ -1,4 +1,6 @@
 import os
+import string
+
 from flask import render_template, send_from_directory, url_for, flash, redirect, request
 from flask_ckeditor import upload_fail, upload_success
 from app import application, morph
@@ -9,13 +11,13 @@ from app.forms import *
 from werkzeug.urls import url_parse
 from app import login
 from flask import session
-
+import random
 from bs4 import BeautifulSoup
 
 
 def load_file(name):
     try:
-        return Image.open("application/" + name)
+        return Image.open("app/" + name)
 
     except FileNotFoundError:
         return None
@@ -62,26 +64,24 @@ def upload():
     return upload_success(url, filename=f.filename)
 
 
-def save_file(file, path="", name=None, formates=[], service_path="", allow_replace=False):
+def namegen(size=6):
+    return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(size))
+
+
+def save_file(file, path="", name=None, formates=[], service_path=""):
     full_path = "static/loaded_media"
+    extension = file.filename.split('.')[-1].lower()
+    file.filename = namegen(8).replace(" ", "") + "." + extension
     if service_path:
         full_path = f"static/{service_path}"
 
     if not file:
         return None
     if name:
-        file.filename = name
-    if path and not os.path.exists(f"application/static/loaded_media/{path}"):
-        os.makedirs(f"application/static/loaded_media/{path}")
-    filename = file.filename.split('.')[0].lower()
-    extension = file.filename.split('.')[-1].lower()
+        file.filename = name.replace(' ', '')
+    if path and not os.path.exists(f"app/static/loaded_media/{path}"):
+        os.makedirs(f"app/static/loaded_media/{path}")
 
-    if not allow_replace:
-        n = 1
-
-        while os.path.exists(f"application/static/loaded_media/{path}/{file.filename}"):
-            file.filename = f"{filename}_{n}.{extension}"
-            n += 1
     if "image" in file.content_type:
         image = Image.open(file)
         if image.width > 2000:
@@ -93,21 +93,19 @@ def save_file(file, path="", name=None, formates=[], service_path="", allow_repl
             require_height = 1300  # Уменьшенный размер (высота)
             new_size = int((float(image.size[0]) * float((require_height / float(image.size[1]))))), require_height
             image = image.resize(new_size, Image.LANCZOS)
-        image.save(f"application/{full_path}/{path}/{file.filename}")
+        image.save(f"app/{full_path}/{path}/{file.filename}")
     else:
-        file.save(f"application/{full_path}/{path}/{file.filename}")
+        file.save(f"app/{full_path}/{path}/{file.filename}")
     return f"static/loaded_media/{path}/{file.filename}"
 
 
 def remove_file(path):
-    if os.path.exists("application/" + path):
-        os.remove("application/" + path)
+    if os.path.exists("app/" + path):
+        os.remove("app/" + path)
 
 
 @application.route('/')
-@application.route("/index")
 def index():
-    print(request.args.get("is_xhr"))
     data = PagesData.query.get("index")
     allow_background_image = False
     site_name = ""
@@ -124,8 +122,8 @@ def logout():
     return redirect("/")
 
 
-@login_required
 @application.route("/delete_user")
+@login_required
 def delete_user():
     user = User.query.get(request.args.get("id"))
     if user and user.username != application.config["DEFAULT_ADMIN_USERNAME"]:
@@ -172,7 +170,7 @@ def register():
     return render_template('forms/register.html', user=current_user, title='Register', form=form)
 
 
-@application.route("/Панель управления")
+@application.route("/admin_panel")
 @login_required
 def admin_panel():
     # Я хотел делать бэкапы, но не вышло
@@ -185,10 +183,11 @@ def admin_panel():
     #             zip_file.write(resource, arcname=f"media/{resource.key}")
     #     send_from_directory("static/backups", f"backup-{n.year}-{n.month}-{n.day}-{n.hour}-{n.minute}-{n.second}.zip", as_attachment=True)
 
-    return render_template("admin_panel.html", user=current_user, admin_username=application.config["DEFAULT_ADMIN_USERNAME"])
+    return render_template("admin_panel.html", user=current_user,
+                           admin_username=application.config["DEFAULT_ADMIN_USERNAME"])
 
 
-@application.route("/Настройки сайта", methods=["GET", "POST"])
+@application.route("/site_settings", methods=["GET", "POST"])
 @login_required
 def site_settings():
     form = ConfigForm()
@@ -198,7 +197,7 @@ def site_settings():
         save_file(file=form.site_logo.data, service_path="images", name="logo.png",
                   formates=["png", "jpg", "jpeg", "webp"])
         save_file(file=form.background_image.data, service_path="images", name="background_image.png",
-                  formates=["png", "jpg", "jpeg", "webp"], )
+                  formates=["png", "jpg", "jpeg", "webp"])
 
         Config.query.get("allow_background_image").value = form.allow_background_image.data
         Config.query.get("site_name").value = form.site_name.data
@@ -223,8 +222,8 @@ def site_settings():
 #     return redirect(filemanager_link)
 
 
+@application.route("/edit_page", methods=["GET", "POST"])
 @login_required
-@application.route("/Изменить страницу", methods=["GET", "POST"])
 def edit_page_description():
     form = PageDataForm()
     page = request.args.get("page")
@@ -249,7 +248,7 @@ def edit_page_description():
     return render_template("forms/edit_page_description.html", user=current_user, form=form, page_name=page_name)
 
 
-@application.route("/Добавить новость", methods=['GET', 'POST'])
+@application.route("/add_news", methods=['GET', 'POST'])
 @login_required
 def add_news():
     action = request.args.get("action")
@@ -281,11 +280,10 @@ def add_news():
     return render_template("forms/add_news.html", user=current_user, form=form)
 
 
-@application.route("/Новости")
+@application.route("/news")
 def news():
     action = request.args.get('action')
 
-    print(action)
     if action == "show":
         news_list = News.query.get(request.args.get('id'))
         return render_template("show_news.html", user=current_user, news=news_list)
@@ -308,12 +306,7 @@ def news():
                            case={"gent"})
 
 
-@application.route('/Отчётность')
-def reporting():
-    return render_template("Отчетность.html", user=current_user)
-
-
-@application.route("/Добавить документ", methods=['GET', 'POST'])
+@application.route("/add_document", methods=['GET', 'POST'])
 @login_required
 def add_document():
     action = request.args.get("action")
@@ -343,7 +336,7 @@ def add_document():
     return render_template("forms/add_document.html", user=current_user, form=form)
 
 
-@application.route('/Документы')
+@application.route('/documents')
 def documents():
     documents_list = Documents.query.all()
     action = request.args.get('action')
@@ -358,11 +351,9 @@ def documents():
     return render_template("documents.html", user=current_user, documents=documents_list)
 
 
-@application.route('/Сми о нас')
+@application.route('/smi')
 def smi():
     action = request.args.get("action")
-
-    print(action)
 
     if current_user.is_authenticated and action == "remove":
         db.session.delete(SmiPosts.query.get(request.args.get('id')))
@@ -371,11 +362,11 @@ def smi():
         return redirect(url_for("smi"))
 
     posts = SmiPosts.query.all()
-    print(posts)
+
     return render_template("smi_posts.html", user=current_user, posts=posts, today=datetime.today())
 
 
-@application.route("/Добавить пост сми", methods=['GET', 'POST'])
+@application.route("/add_smi_post", methods=['GET', 'POST'])
 @login_required
 def add_smi_post():
     action = request.args.get("action")
@@ -408,7 +399,7 @@ def add_smi_post():
     return render_template("forms/add_smi_post.html", user=current_user, form=form)
 
 
-@application.route("/Добавить информацию", methods=['GET', 'POST'])
+@application.route("/add_information", methods=['GET', 'POST'])
 @login_required
 def add_materials():
     action = request.args.get("action")
@@ -439,7 +430,7 @@ def add_materials():
     return render_template("forms/add_materials.html", user=current_user, form=form)
 
 
-@application.route("/Полезная информация")
+@application.route("/information")
 def materials():
     action = request.args.get('action')
 
@@ -454,7 +445,7 @@ def materials():
     return render_template("materials.html", user=current_user, materials_list=Materials.query.all())
 
 
-@application.route('/Партнёры')
+@application.route('/partners')
 def partners():
     action = request.args.get('action')
     partners = Partners.query.all()
@@ -472,7 +463,7 @@ def partners():
                            user=current_user)
 
 
-@application.route("/Добавить партнёра", methods=['GET', 'POST'])
+@application.route("/add_partner", methods=['GET', 'POST'])
 @login_required
 def add_partner():
     action = request.args.get("action")
@@ -505,7 +496,7 @@ def add_partner():
     return render_template("forms/add_partner.html", user=current_user, form=form)
 
 
-@application.route("/Добавить животное", methods=['GET', 'POST'])
+@application.route("/add_animal", methods=['GET', 'POST'])
 @login_required
 def add_animal():
     action = request.args.get("action")
@@ -547,7 +538,7 @@ def add_animal():
     return render_template("forms/add_animal.html", user=current_user, form=form)
 
 
-@application.route('/Наши животные')
+@application.route('/our_animals')
 def our_animals():
     action = request.args.get('action')
     gender = request.args.get("gender")
@@ -580,7 +571,7 @@ def our_animals():
                            user=current_user)
 
 
-@application.route("/Добавить изображение", methods=['GET', 'POST'])
+@application.route("/add_image", methods=['GET', 'POST'])
 @login_required
 def add_image_to_gallery():
     action = request.args.get("action")
@@ -595,7 +586,7 @@ def add_image_to_gallery():
     return render_template("forms/add_image.html", user=current_user, form=form)
 
 
-@application.route("/Галерея")
+@application.route("/gallery")
 def gallery():
     action = request.args.get('action')
     if current_user.is_authenticated and action:
@@ -610,8 +601,8 @@ def gallery():
     return render_template("gallery.html", user=current_user, gallery_list=Gallery.query.all())
 
 
+@application.route("/edit_contacts", methods=["GET", "POST"])
 @login_required
-@application.route("/Редактировать контакты", methods=["GET", "POST"])
 def edit_contacts():
     form = EditContacts()
     if form.validate_on_submit():
@@ -641,7 +632,7 @@ def edit_contacts():
     return render_template("forms/edit_contacts.html", user=current_user, form=form)
 
 
-@application.route("/Контакты")
+@application.route("/contacts")
 def contacts():
     email, phone_number, vk, ok, dzen = "", "", "", "", ""
     if Config.query.filter_by(category="contacts").all():
@@ -654,38 +645,37 @@ def contacts():
                            dzen=dzen)
 
 
-@login_required
-@application.route("/Добавить социальную сеть", methods=["GET", "POST"])
-def add_social_network():
-    form = AddSocialNetwork()
-    if form.validate_on_submit():
-        social_network = SocialNetworks(name=form.name.data, description=form.description.data, url=form.url.data)
-        db.session.add(social_network)
-        db.session.commit()
-        return redirect(url_for("contacts"))
-    return render_template("forms/add_social_network.html", user=current_user, form=form)
+# @login_required
+# @application.route("/Добавить социальную сеть", methods=["GET", "POST"])
+# def add_social_network():
+#     form = AddSocialNetwork()
+#     if form.validate_on_submit():
+#         social_network = SocialNetworks(name=form.name.data, description=form.description.data, url=form.url.data)
+#         db.session.add(social_network)
+#         db.session.commit()
+#         return redirect(url_for("contacts"))
+#     return render_template("forms/add_social_network.html", user=current_user, form=form)
+#
 
+# @application.route('/Мероприятия')
+# def activities():
+#     return redirect("/")
 
-@application.route('/Мероприятия')
-def activities():
-    return redirect("/")
-
-
-@application.route('/Помогите финансово')
+@application.route('/help_money')
 def help_money():
     data = PagesData.query.get("help_money")
 
     return render_template("help_money.html", user=current_user, site_data=data)
 
 
-@application.route('/Стать опекуном')
+@application.route('/opeka')
 def opeka():
     data = PagesData.query.get("opeka")
 
     return render_template("opeka.html", user=current_user, site_data=data)
 
 
-@application.route('/Стать волонтером')
+@application.route('/volunteer')
 def volunteer():
     data = PagesData.query.get("volunteer")
     return render_template("volunteer.html", user=current_user, site_data=data)
@@ -693,11 +683,9 @@ def volunteer():
 
 @application.errorhandler(404)
 def page_not_found(error):
-
     return render_template('errors/404.html', user=current_user), 404
 
 
 @application.errorhandler(500)
 def internal_error(error):
-
     return render_template('errors/500.html', user=current_user), 500
