@@ -69,8 +69,6 @@ def namegen(size=6):
 
 
 def save_file(file, path="", name=None, formates=[], service_path=""):
-    if file.content_length == 0:
-        return None
     full_path = "static/loaded_media"
     extension = file.filename.split('.')[-1].lower()
     file.filename = namegen(8).replace(" ", "") + "." + extension
@@ -193,12 +191,12 @@ def site_settings():
     form = ConfigForm()
 
     if form.validate_on_submit():
-        # if form.site_logo.data:
-        save_file(file=form.site_logo.data, service_path="images", name="logo.png",
-                  formates=["png", "jpg", "jpeg", "webp"])
-        # if form.background_image.data:
-        save_file(file=form.background_image.data, service_path="images", name="background_image.png",
-                  formates=["png", "jpg", "jpeg", "webp"])
+        if form.site_logo.data:
+            save_file(file=form.site_logo.data, service_path="images", name="logo.png",
+                      formates=["png", "jpg", "jpeg", "webp"])
+        if form.background_image.data:
+            save_file(file=form.background_image.data, service_path="images", name="background_image.png",
+                      formates=["png", "jpg", "jpeg", "webp"])
 
         Config.query.get("allow_background_image").value = form.allow_background_image.data
         Config.query.get("site_name").value = form.site_name.data
