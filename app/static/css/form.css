@@ -71,10 +71,10 @@ label {
 }
 
 #password-field {
-    position: relative;
+    /* position: relative; */
 }
 #password-field #view {
-    position: absolute;
+    /* position: absolute; */
     color: black;
 	top: 11px;
 	right: 6px;
