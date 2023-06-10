@@ -11,7 +11,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager, current_user
 import pymorphy3
-from app import filemanager
+import flaskfilemanager as filemanager
 
 application = Flask(__name__)
 application.config.from_object(Config)

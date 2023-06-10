@@ -685,6 +685,3 @@ def page_not_found(error):
     return render_template('errors/404.html', user=current_user), 404
 
 
-@application.errorhandler(500)
-def internal_error(error):
-    return render_template('errors/500.html', user=current_user), 500
