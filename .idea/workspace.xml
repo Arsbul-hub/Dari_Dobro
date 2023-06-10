@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Чистка от ненужных файлов">
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Правки стилей">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/dzen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/gallery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/dialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/dialog.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/validators/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/validators/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -129,13 +130,6 @@
       <workItem from="1680438160543" duration="237000" />
       <workItem from="1683980423769" duration="594000" />
       <workItem from="1685015487838" duration="3000" />
-    </task>
-    <task id="LOCAL-00008" summary="Удалены некоторые страницы.&#10;Изменена страница &quot;404&quot;">
-      <created>1682487627077</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1682487627077</updated>
     </task>
     <task id="LOCAL-00009" summary="Небольшой фикс  бага, связанного с отображением редактора текста">
       <created>1682605881373</created>
@@ -473,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686422457997</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Правки стилей">
+      <created>1686423249422</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1686423249422</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +492,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Подправка стилей" />
     <MESSAGE value="Исправление бага связанного с языком страниц (на некоторых был английский и google переводчик постоянно переводил русские страницы)&#10;Чистка проекта от лишних файлов" />
     <MESSAGE value="Исправление бага связанного с отображением новости" />
     <MESSAGE value="Исправление бага со стилем диалогового окна в галерее" />
@@ -516,7 +516,8 @@
     <MESSAGE value="Изменение названия главного шаблона" />
     <MESSAGE value="Фиксы багов" />
     <MESSAGE value="Чистка от ненужных файлов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Чистка от ненужных файлов" />
+    <MESSAGE value="Правки стилей" />
+    <option name="LAST_COMMIT_MESSAGE" value="Правки стилей" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -543,8 +544,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python310/Lib/site-packages/flaskfilemanager/filemanager.py</url>
-          <line>610</line>
+          <line>612</line>
           <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routes.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routes.py</url>
+          <line>82</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

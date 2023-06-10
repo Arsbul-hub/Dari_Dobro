@@ -80,7 +80,7 @@ def save_file(file, path="", name=None, formates=[], service_path=""):
     if path and not os.path.exists(f"app/static/loaded_media/{path}"):
         os.makedirs(f"app/static/loaded_media/{path}")
 
-    if "image" in file.content_type:
+    if "image" in file.content_type and "svg+xml" not in file.content_type:
         image = Image.open(file)
         if image.width > 2000:
             require_width = 2000  # Уменьшенный размер (ширина)
@@ -682,5 +682,3 @@ def volunteer():
 @application.errorhandler(404)
 def page_not_found(error):
     return render_template('errors/404.html', user=current_user), 404
-
-

@@ -1,7 +1,7 @@
 from wtforms import ValidationError
 
 FORMATES = {
-    "image": ["png", "jpg", "jpeg", "webp"],
+    "image": ["png", "jpg", "jpeg", "webp", "svg"],
     "document": ["pdf", "doc", "docx"]
 }
 
@@ -24,5 +24,6 @@ def pdf_validation(form, field):
 def phone_validation(form, field):
     phone = field.data.replace(" ", "").replace("+", "")
 
-    if ((phone[0] != "7" and phone[0] != "8") or len(phone) != 11) or (phone[0] != "7" and phone[0] != "8") and len(phone) != 11 and not phone.isdigit():
+    if ((phone[0] != "7" and phone[0] != "8") or len(phone) != 11) or (phone[0] != "7" and phone[0] != "8") and len(
+            phone) != 11 and not phone.isdigit():
         raise ValidationError("Некорректный номер телефона")
