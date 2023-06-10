@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Правки стилей">
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Добавлена возможность загрузки векторных изображений">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app-ads.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/dialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/dialog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/validators/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/validators/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/base_adaptive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/css.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/css_user.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/main.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base_template.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,13 +136,6 @@
       <workItem from="1680438160543" duration="237000" />
       <workItem from="1683980423769" duration="594000" />
       <workItem from="1685015487838" duration="3000" />
-    </task>
-    <task id="LOCAL-00009" summary="Небольшой фикс  бага, связанного с отображением редактора текста">
-      <created>1682605881373</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1682605881373</updated>
     </task>
     <task id="LOCAL-00010" summary="Доработка стилей форм">
       <created>1682617495863</created>
@@ -474,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686423249422</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Добавлена возможность загрузки векторных изображений">
+      <created>1686424140182</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1686424140182</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +498,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправление бага связанного с языком страниц (на некоторых был английский и google переводчик постоянно переводил русские страницы)&#10;Чистка проекта от лишних файлов" />
     <MESSAGE value="Исправление бага связанного с отображением новости" />
     <MESSAGE value="Исправление бага со стилем диалогового окна в галерее" />
     <MESSAGE value="Доработка стилей галереи" />
@@ -517,7 +522,8 @@
     <MESSAGE value="Фиксы багов" />
     <MESSAGE value="Чистка от ненужных файлов" />
     <MESSAGE value="Правки стилей" />
-    <option name="LAST_COMMIT_MESSAGE" value="Правки стилей" />
+    <MESSAGE value="Добавлена возможность загрузки векторных изображений" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена возможность загрузки векторных изображений" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

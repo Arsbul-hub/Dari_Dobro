@@ -209,10 +209,3 @@ class EditContacts(FlaskForm):
             raise ValidationError("This field is require.")
 
 
-class AddSocialNetwork(FlaskForm):
-    _name = "Добавить соц.сеть"
-    name = StringField("Название", validators=[DataRequired()])
-    description = StringField("Описание", validators=[DataRequired()])
-    url = URLField("Ссылка", validators=[DataRequired()])
-
-    save = SubmitField("Добавить")

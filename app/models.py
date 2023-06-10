@@ -101,16 +101,6 @@ class Config(__basemodel):
     # category = sa.Column(sa.String())
 
 
-class SocialNetworks(__basemodel):
-    __tablename__ = 'social_networks'
-    name = sa.Column(sa.String(), primary_key=True)
-    url = sa.Column(sa.String())
-    description = sa.Column(sa.String())
-    qr = sa.Column(sa.String())
-
-    # category = sa.Column(sa.String())
-
-
 class PagesData(__basemodel):
     __tablename__ = 'pages_data'
     page = sa.Column(sa.String, primary_key=True)

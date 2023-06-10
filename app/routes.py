@@ -68,7 +68,7 @@ def namegen(size=6):
     return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(size))
 
 
-def save_file(file, path="", name=None, formates=[], service_path=""):
+def save_file(file, path="", name=None, service_path=""):
     full_path = "static/loaded_media"
     extension = file.filename.split('.')[-1].lower()
     file.filename = namegen(8).replace(" ", "") + "." + extension
@@ -192,11 +192,9 @@ def site_settings():
 
     if form.validate_on_submit():
         if form.site_logo.data:
-            save_file(file=form.site_logo.data, service_path="images", name="logo.png",
-                      formates=["png", "jpg", "jpeg", "webp"])
+            save_file(file=form.site_logo.data, service_path="images", name="logo.png")
         if form.background_image.data:
-            save_file(file=form.background_image.data, service_path="images", name="background_image.png",
-                      formates=["png", "jpg", "jpeg", "webp"])
+            save_file(file=form.background_image.data, service_path="images", name="background_image.png")
 
         Config.query.get("allow_background_image").value = form.allow_background_image.data
         Config.query.get("site_name").value = form.site_name.data
@@ -270,7 +268,7 @@ def add_news():
         else:
             return redirect(url_for("news"))
     elif form.validate_on_submit():
-        saved_cover = save_file(file=form.cover.data, formates=["png", "jpg", "jpeg", "webp"])
+        saved_cover = save_file(file=form.cover.data)
         news_post = News(title=form.title.data, body=form.body.data, cover=saved_cover)
         db.session.add(news_post)
         db.session.commit()
@@ -326,7 +324,7 @@ def add_document():
         else:
             return redirect(url_for("documents"))
     elif form.validate_on_submit():
-        file = save_file(file=form.document.data, formates=["pdf", "pptx"])
+        file = save_file(file=form.document.data)
         new_document = Documents(title=form.title.data, file=file)
         db.session.add(new_document)
         db.session.commit()
