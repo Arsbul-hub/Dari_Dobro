@@ -592,9 +592,8 @@ def gallery():
         if action == "remove":
             image = Gallery.query.get(request.args.get('id'))
             db.session.delete(image)
-            remove_file(image.file)
             db.session.commit()
-
+            remove_file(image.file)
         return redirect(url_for("gallery"))
 
     return render_template("gallery.html", user=current_user, gallery_list=Gallery.query.all())

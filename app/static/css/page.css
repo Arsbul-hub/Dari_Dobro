@@ -1,8 +1,26 @@
+
+body {
+
+    margin: 0;
+    padding: 0;
+    font-variant: normal;
+    font-size: 16px;
+    background-color: rgb(229 248 255);
+    min-height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    font-family: "OpenSans";
+}
 a, input, label {
     -webkit-tap-highlight-color: transparent;
+    
 }
-body {
-    font-family: "OpenSans";
+a {
+    color: #787878;
+    text-decoration: none;
+    outline: 0;
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;

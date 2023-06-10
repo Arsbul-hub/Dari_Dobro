@@ -4,11 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Изменение названия главного шаблона">
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Фиксы багов">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/admin_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin_panel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/build_cms_front.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/animals_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/animals_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/animals_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/animals_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/animals_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/background_image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/empty_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/logo-blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/no_avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/ok.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/qr/vk_group.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/telegram.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/vk.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/логотип (3) (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/IMG-20230512-WA0006.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/contacts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,13 +149,6 @@
       <workItem from="1680438160543" duration="237000" />
       <workItem from="1683980423769" duration="594000" />
       <workItem from="1685015487838" duration="3000" />
-    </task>
-    <task id="LOCAL-00006" summary="Исправление багов с бд">
-      <created>1682485436152</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1682485436152</updated>
     </task>
     <task id="LOCAL-00007" summary="Изменены названия шаблонов с русского на английский во избежание дальнейших багов.&#10;Исправлен баг с отображением страницы профиля, в том числе и на мобильных устройствах">
       <created>1682487051598</created>
@@ -474,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686403136206</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Фиксы багов">
+      <created>1686409669899</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1686409669899</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +527,6 @@
     <MESSAGE value="Исправлены баги. Правка стилей. Добавлено разделение животных на мальчиков и девочек, кошек и собак." />
     <MESSAGE value="Добавлено отображение возраста животного" />
     <MESSAGE value="Добавлены анимации" />
-    <MESSAGE value="Фиксы багов" />
     <MESSAGE value="Обновление иконки сайта" />
     <MESSAGE value="Добавлены файлы для сайта. &#10;Добавлена возможность редактировать название, сайта, отображаемое в поиске." />
     <MESSAGE value="Баг" />
@@ -517,24 +535,25 @@
     <MESSAGE value="Фикс бага, связанного с неправильным сохранением картинок: &quot;logo.png&quot; и &quot;background_image.png&quot;, в настройках сайта при сохранении" />
     <MESSAGE value="Небольшая правка стилей" />
     <MESSAGE value="Изменение названия главного шаблона" />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменение названия главного шаблона" />
+    <MESSAGE value="Фиксы багов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Фиксы багов" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>547</line>
+          <line>546</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>606</line>
+          <line>604</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/routes.py</url>
-          <line>504</line>
+          <line>503</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

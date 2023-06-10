@@ -1,36 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
-
     {% block head %}{% endblock %}
-    <meta name="yandex-verification" content="9bdaca495b0e0142" />
+    <link rel="icon" type="image/png" href="/static/images/favicon.png"/>
+    <meta name="yandex-verification" content="9bdaca495b0e0142"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
+    <!--Стили-->
     <link rel="stylesheet" type="text/css" href="/static/css/fonts.css">
-    <!--"/static/css/build_cms_front.css"-->
-    <link rel="stylesheet" type="text/css"
-          href="static/css/build_cms_front.css">
-    <script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script>
-
     <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/static/css/base.css">
-
     <link rel="stylesheet" type="text/css" href="/static/css/page.css">
     <link rel="stylesheet" type="text/css" href="/static/css/dialog.css">
-
     <link rel="stylesheet" type="text/css" href="/static/css/animations.css">
+    <!--Скрипты-->
     <script type="text/javascript" src="/static/js/dialog.js"></script>
     <script type="text/javascript" src="/static/js/base.js"></script>
     <script src="/static/js/jquery.js"></script>
-    <!--    <link rel="stylesheet" type="text/css" href="/static/css/adaptive.css">-->
-    <!--    <link rel="icon" href="/static/images/icon.ico">-->
-    <link rel="icon" href="/static/images/icon.png" type="image/png">
-    <link rel="icon" type="image/png" href="/static/images/favicon.png"/>
-    <!--    <meta name="msapplication-TileImage" content="/static/images/icon.ico">-->
     <script src="https://kit.fontawesome.com/6957c188ce.js" crossorigin="anonymous"></script>
     <script src="/static/js/site.js"></script>
     <script src="/static/js/navigation.js"></script>
+    <script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script>
+
 </head>
 <body>
 
@@ -58,7 +48,7 @@
 
                         </ul>
                     </li>
-                    <li><a >НАШИ ЖИВОТНЫЕ</a>
+                    <li><a>НАШИ ЖИВОТНЫЕ</a>
                         <ul class="submenu">
                             <li><a href="{{url_for('our_animals', gender='men')}}">Мальчики</a></li>
                             <li><a href="{{url_for('our_animals', gender='girl')}}">Девочки</a></li>
@@ -120,7 +110,7 @@
 
                         </ul>
                     </li>
-                    <li><a >НАШИ ЖИВОТНЫЕ</a>
+                    <li><a>НАШИ ЖИВОТНЫЕ</a>
                         <ul class="submenu">
                             <li><a href="{{url_for('our_animals', gender='girl')}}">Девочки</a></li>
                             <li><a href="{{url_for('our_animals', gender='men')}}">Мальчики</a></li>
