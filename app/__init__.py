@@ -11,7 +11,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager, current_user
 import pymorphy3
-import flaskfilemanager
+from app import filemanager
 
 application = Flask(__name__)
 application.config.from_object(Config)
@@ -36,7 +36,7 @@ def my_access_control_function():
     return current_user.is_authenticated
 
 
-flaskfilemanager.init(application,
+filemanager.init(application,
                       custom_config_json_path="static/json/filemanager.config.json",
                       access_control_function=my_access_control_function)
 

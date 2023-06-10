@@ -4,11 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Фикс бага, связанного с неправильным сохранением картинок: &quot;logo.png&quot; и &quot;background_image.png&quot;, в настройках сайта при сохранении">
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Небольшая правка стилей">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/contacts.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/contacts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/partners.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/partners.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/admin_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin_panel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/choose_animal_type.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/choose_animal_type.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/contacts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/documents.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/documents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/errors/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/errors/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/errors/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/errors/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/forms/add_animal.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/add_animal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/forms/add_document.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/add_document.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/forms/add_image.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/add_image.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/forms/add_materials.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/add_materials.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/forms/add_news.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/add_news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/forms/add_partner.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/add_partner.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/forms/add_smi_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/add_smi_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/forms/add_social_network.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/add_social_network.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/forms/edit_contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/edit_contacts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/forms/edit_page_description.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/edit_page_description.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/forms/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/forms/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/forms/site_settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forms/site_settings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/gallery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/help_money.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/help_money.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/materials.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/materials.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/opeka.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/opeka.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/our_animals.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/our_animals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/partners.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/partners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/show_animal.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/show_animal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/show_news.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/show_news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/smi_posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/smi_posts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/volunteer.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/volunteer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,30 +65,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Arsbul Programming/Desktop/дари добро/app/static/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Arsbul Programming/Desktop/дари добро/app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\images" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\loaded_media" />
-      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -129,13 +160,6 @@
       <workItem from="1680438160543" duration="237000" />
       <workItem from="1683980423769" duration="594000" />
       <workItem from="1685015487838" duration="3000" />
-    </task>
-    <task id="LOCAL-00004" summary="Адаптация почти всех страниц&#10;Пременён meta-тэг маштабирования&#10;Адаптация навигационной панели под мобмльное устройства&#10;+Исправление багов">
-      <created>1681710143092</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1681710143092</updated>
     </task>
     <task id="LOCAL-00005" summary="Исправление багов с бд">
       <created>1682062321320</created>
@@ -473,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686250509998</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Небольшая правка стилей">
+      <created>1686400777679</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1686400777680</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,12 +542,12 @@
     <MESSAGE value="Фиксы багов" />
     <MESSAGE value="Обновление иконки сайта" />
     <MESSAGE value="Добавлены файлы для сайта. &#10;Добавлена возможность редактировать название, сайта, отображаемое в поиске." />
-    <MESSAGE value="Небольшая правка стилей" />
     <MESSAGE value="Баг" />
     <MESSAGE value="Фиксы импортов и добавлен файл для запуска на хостинге &quot;рег ру&quot;" />
     <MESSAGE value="Фикс бага, связанного с возможностью любого пользователя обходить систему проверки авторизованности. (Был неправильно поставлен декоратор @login_required)&#10;Фикс бага, связанного с невозможностью доступа к загруженным файлам, у которых в названии русские симбволы. (Для хостинга &quot;Рег ру&quot;)&#10;Изменена названия маршрутов для страниц на английские." />
     <MESSAGE value="Фикс бага, связанного с неправильным сохранением картинок: &quot;logo.png&quot; и &quot;background_image.png&quot;, в настройках сайта при сохранении" />
-    <option name="LAST_COMMIT_MESSAGE" value="Фикс бага, связанного с неправильным сохранением картинок: &quot;logo.png&quot; и &quot;background_image.png&quot;, в настройках сайта при сохранении" />
+    <MESSAGE value="Небольшая правка стилей" />
+    <option name="LAST_COMMIT_MESSAGE" value="Небольшая правка стилей" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

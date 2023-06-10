@@ -216,7 +216,7 @@ def site_settings():
 # @login_required
 # @application.route("/Файловый менеджер")
 # def file_manager():
-#     filemanager_link = url_for('flaskfilemanager.index')
+#     filemanager_link = url_for('filemanager.index')
 #     print(filemanager_link)
 #     return redirect(filemanager_link)
 
