@@ -4,31 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Фиксы багов">
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Чистка от ненужных файлов">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/build_cms_front.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/animals_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/animals_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/animals_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/animals_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/animals_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/background_image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/empty_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/images/favicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/logo-blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/no_avatar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/ok.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/qr/vk_group.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/telegram.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/vk.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/логотип (3) (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/loaded_media/IMG-20230512-WA0006.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base_template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/images/dzen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/gallery.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,13 +129,6 @@
       <workItem from="1680438160543" duration="237000" />
       <workItem from="1683980423769" duration="594000" />
       <workItem from="1685015487838" duration="3000" />
-    </task>
-    <task id="LOCAL-00007" summary="Изменены названия шаблонов с русского на английский во избежание дальнейших багов.&#10;Исправлен баг с отображением страницы профиля, в том числе и на мобильных устройствах">
-      <created>1682487051598</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1682487051598</updated>
     </task>
     <task id="LOCAL-00008" summary="Удалены некоторые страницы.&#10;Изменена страница &quot;404&quot;">
       <created>1682487627077</created>
@@ -493,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686409669899</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Чистка от ненужных файлов">
+      <created>1686422457997</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1686422457997</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Подправка валидатора телефона" />
     <MESSAGE value="Подправка стилей" />
     <MESSAGE value="Исправление бага связанного с языком страниц (на некоторых был английский и google переводчик постоянно переводил русские страницы)&#10;Чистка проекта от лишних файлов" />
     <MESSAGE value="Исправление бага связанного с отображением новости" />
@@ -536,7 +515,8 @@
     <MESSAGE value="Небольшая правка стилей" />
     <MESSAGE value="Изменение названия главного шаблона" />
     <MESSAGE value="Фиксы багов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Фиксы багов" />
+    <MESSAGE value="Чистка от ненужных файлов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Чистка от ненужных файлов" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
