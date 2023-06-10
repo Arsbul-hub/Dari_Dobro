@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Фикс бага, связанного с неправильным сохранением картинок: &quot;logo.png&quot; и &quot;background_image.png&quot;, в настройках сайта при сохранении">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/contacts.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/contacts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/partners.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/partners.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,31 +34,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Arsbul Programming/Desktop/дари добро",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Arsbul Programming/Desktop/дари добро/app/static/images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\images" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\loaded_media" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\js" />
-      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\css" />
@@ -128,13 +129,6 @@
       <workItem from="1680438160543" duration="237000" />
       <workItem from="1683980423769" duration="594000" />
       <workItem from="1685015487838" duration="3000" />
-    </task>
-    <task id="LOCAL-00003" summary="Адаптация почти всех страниц&#10;Пременён meta-тэг маштабирования&#10;Адаптация навигационной панели под мобмльное устройства">
-      <created>1681652776020</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1681652776021</updated>
     </task>
     <task id="LOCAL-00004" summary="Адаптация почти всех страниц&#10;Пременён meta-тэг маштабирования&#10;Адаптация навигационной панели под мобмльное устройства&#10;+Исправление багов">
       <created>1681710143092</created>
@@ -472,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686250063889</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Фикс бага, связанного с неправильным сохранением картинок: &quot;logo.png&quot; и &quot;background_image.png&quot;, в настройках сайта при сохранении">
+      <created>1686250509998</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1686250509998</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

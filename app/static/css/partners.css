@@ -14,6 +14,7 @@
 }
 .partner {
     padding: 20px;
+    margin: 0 30px;
     width: 300px;
     padding-bottom: 20px;
 }
@@ -30,11 +31,11 @@
 .partners-list {
     display: flex;
     margin-top: 50px;
-    width: 60%;
+    /* width: 60%; */
     margin: 0 auto;
     justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row-reverse;
 }
 
@@ -46,16 +47,6 @@
     flex-wrap: wrap;
 }
 
-.tools a {
-  display: inline-flex;
-  justify-content: flex-end;
-  margin-left: 10px;
-}
-.tools {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
  hr {
     width: 90%!important;
     margin-top: 40px;
