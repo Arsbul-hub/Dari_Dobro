@@ -14,7 +14,12 @@
     <title>Не известно</title>
     {% endif %}
     {% endif %}
-    <meta name="Keywords" content="Покров, Дари добро, дари добро, покров волонтёры, волонтёры, помощь животным">
+    {% if site_data.description %}
+    <meta name="description" content="{{ BeautifulSoup(site_data.description, 'lxml').get_text()}}"/>
+    {% else %}
+    <meta name="description" content="Описание не задано"/>
+    {% endif %}
+
     <link rel="stylesheet" type="text/css" href="/static/css/index.css">
 
     {% if request.endpoint == "index" and allow_background_image == '1' %}
@@ -22,12 +27,6 @@
             #bg-image {
                 visibility: visible;
             }
-
-
-
-
-
-
     </style>
     {% endif %}
     {% endblock %}

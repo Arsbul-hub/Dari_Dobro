@@ -84,7 +84,7 @@
             <hr>
             <div class="buttons">
                 <a onclick="close_confirm_dialog({{animal.id}}, 'move');">Отмена</a>
-                <a href="{{url_for('our_animals', action='move_to_house',  id=animal.id)}}">Да</a>
+                <a href="{{url_for('our_animals', action='move_to_house', previous=request.full_path,  id=animal.id)}}">Да</a>
             </div>
         </dialog>
         <dialog id="image-dialog-{{animal.id}}" class="image-dialog">
@@ -182,11 +182,11 @@
             </div>
         </dialog>
         <dialog id="confirm-dialog-{{animal.id}}-move" class="confirm-dialog">
-            <p class="dialog-title">Вы действительно хотите вернуть л-это животное?</p>
+            <p class="dialog-title">Вы действительно хотите вернуть это животное?</p>
             <hr>
             <div class="buttons">
                 <a onclick="close_confirm_dialog({{animal.id}}, 'move');">Отмена</a>
-                <a href="{{url_for('our_animals', action='move_to_vet',  id=animal.id)}}">Да</a>
+                <a href="{{url_for('our_animals', action='move_to_vet', previous=request.full_path, id=animal.id)}}">Да</a>
             </div>
         </dialog>
         <dialog id="image-dialog-{{animal.id}}" class="image-dialog">

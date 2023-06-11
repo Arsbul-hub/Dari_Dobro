@@ -111,7 +111,7 @@ def index():
         allow_background_image = Config.query.get("allow_background_image").value
         site_name = Config.query.get("site_name").value
     return render_template("index.html", user=current_user, site_data=data, site_name=site_name,
-                           allow_background_image=allow_background_image)
+                           allow_background_image=allow_background_image, BeautifulSoup=BeautifulSoup)
 
 
 @application.route('/logout')
