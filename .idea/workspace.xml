@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Исправление бага, связанного с фоновой картинкой (она закрывала почти все элементы собой)">
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Фиксы багов">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/xml/robots.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/our_animals.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/our_animals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base_template.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,13 +128,6 @@
       <workItem from="1680438160543" duration="237000" />
       <workItem from="1683980423769" duration="594000" />
       <workItem from="1685015487838" duration="3000" />
-    </task>
-    <task id="LOCAL-00011" summary="Исправлен баг с формой настройкой сайта">
-      <created>1682617549251</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1682617549251</updated>
     </task>
     <task id="LOCAL-00012" summary="Исправлены некоторые баги&#10;Реализованно редактирование страниц: главная, стать опекуном, стать волонтёром и помочь финансово.&#10;Теперь для этого нужно войти в аккаунт и нажать на кнопку редактирования на соответствующей странице. &#10;Убрано редактирование текста главной страницы из страницы настроек сайта.">
       <created>1682795387385</created>
@@ -475,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686434901842</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Фиксы багов">
+      <created>1686490313026</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1686490313027</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,12 +510,12 @@
     <MESSAGE value="Фикс бага, связанного с неправильным сохранением картинок: &quot;logo.png&quot; и &quot;background_image.png&quot;, в настройках сайта при сохранении" />
     <MESSAGE value="Небольшая правка стилей" />
     <MESSAGE value="Изменение названия главного шаблона" />
-    <MESSAGE value="Фиксы багов" />
     <MESSAGE value="Чистка от ненужных файлов" />
     <MESSAGE value="Правки стилей" />
     <MESSAGE value="Добавлена возможность загрузки векторных изображений" />
     <MESSAGE value="Исправление бага, связанного с фоновой картинкой (она закрывала почти все элементы собой)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправление бага, связанного с фоновой картинкой (она закрывала почти все элементы собой)" />
+    <MESSAGE value="Фиксы багов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Фиксы багов" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
