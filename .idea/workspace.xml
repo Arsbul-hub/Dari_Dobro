@@ -4,10 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Фиксы багов">
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Обновлена иконка для сайта (новый формат svg)&#10;Правка стиля index.css">
+      <change afterPath="$PROJECT_DIR$/app/static/loaded_media/1MU7CXQY.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/loaded_media/31OZMU4B.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/loaded_media/8UE7MULK.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/loaded_media/BD0F0VSB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/loaded_media/GGTJIDE5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/loaded_media/GYVLPE79.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/loaded_media/J4B2UAJY.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/loaded_media/VVW0JY3Y.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/loaded_media/W0DSC03G.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/loaded_media/XQW1NXV4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/loaded_media/YCNGFX01.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/loaded_media/контакты.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/news.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/news.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/view_news.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/view_news.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,31 +47,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Arsbul Programming/Desktop/дари добро/app/templates&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Arsbul Programming/Desktop/дари добро",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро" />
+      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\loaded_media" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\templates" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app" />
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\images" />
-      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро" />
-      <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\loaded_media" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро\app\static\css" />
@@ -128,13 +142,6 @@
       <workItem from="1680438160543" duration="237000" />
       <workItem from="1683980423769" duration="594000" />
       <workItem from="1685015487838" duration="3000" />
-    </task>
-    <task id="LOCAL-00012" summary="Исправлены некоторые баги&#10;Реализованно редактирование страниц: главная, стать опекуном, стать волонтёром и помочь финансово.&#10;Теперь для этого нужно войти в аккаунт и нажать на кнопку редактирования на соответствующей странице. &#10;Убрано редактирование текста главной страницы из страницы настроек сайта.">
-      <created>1682795387385</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1682795387385</updated>
     </task>
     <task id="LOCAL-00013" summary="Исправлены некоторые баги.&#10;Добавлена страница с полезными материалами для просмотра + форма и страница для добавления и редактирования.&#10;Добавлена страница галереи, где можно просматривать фотографии и скачивать их + форма и страница для добавления и редактирования.&#10;Добавлена возможность редактировать добавляемые на сайт элементы: новости, животные, полезные материалы, партнёры, уставные документы, посты сми, фотографии.&#10;Добавлен файл &quot;admin_user.json&quot;, в котором хранится информация о базовом аккаунте администратора.">
       <created>1684242617139</created>
@@ -472,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686490313027</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Обновлена иконка для сайта (новый формат svg)&#10;Правка стиля index.css">
+      <created>1686688378722</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1686688378723</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -490,7 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправление бага со стилем диалогового окна в галерее" />
     <MESSAGE value="Доработка стилей галереи" />
     <MESSAGE value="Исправление бага со стилями на странице &quot;Полезная информация&quot; + правка формы." />
     <MESSAGE value="Исправление бага, связанного с новостями и с животными, изображение большого разрешения съезжало. + исправление бага с текстом под фотографиями. + правка стиля на странице просмотра 1 новости" />
@@ -515,7 +528,8 @@
     <MESSAGE value="Добавлена возможность загрузки векторных изображений" />
     <MESSAGE value="Исправление бага, связанного с фоновой картинкой (она закрывала почти все элементы собой)" />
     <MESSAGE value="Фиксы багов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Фиксы багов" />
+    <MESSAGE value="Обновлена иконка для сайта (новый формат svg)&#10;Правка стиля index.css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновлена иконка для сайта (новый формат svg)&#10;Правка стиля index.css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
