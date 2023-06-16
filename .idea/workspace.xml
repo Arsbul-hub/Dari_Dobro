@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Фиксы багов со стилями в новостях">
+    <list default="true" id="20afb429-6d2f-4260-8491-b3f47e60edb9" name="Changes" comment="Изменён формат иконки на .ico">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/images/favicon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/animals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/animals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/news.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/news.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/view_news.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/view_news.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/show_news.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/show_news.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,24 +35,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Arsbul Programming/Desktop/дари добро",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Arsbul Programming/Desktop/дари добро&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Arsbul Programming\Desktop\дари добро" />
@@ -129,13 +130,6 @@
       <workItem from="1680438160543" duration="237000" />
       <workItem from="1683980423769" duration="594000" />
       <workItem from="1685015487838" duration="3000" />
-    </task>
-    <task id="LOCAL-00014" summary="Немного подправлены страницы (оформление кода)">
-      <created>1684243181745</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1684243181745</updated>
     </task>
     <task id="LOCAL-00015" summary="Добавлен файловый менеджер. &#10;Исправлена ошибка при переходе в настройки сайта.&#10;Добавлена анимация для вкладок верхней панели навигации.&#10;Исправлен визуальный баг с отображением подменю на верхней панели навигации на странице &quot;Контакты&quot; + исправлен баг с анимацией qr кода.&#10;Добавлена возможность удаления аккаунта. &#10;При нажатии кнопки выхода из профиля или при нажатии удаления появляется диалоговое окно с подтверждением действия.&#10;Добавлены мини-иконки на кнопках на панели администратора.">
       <created>1684427630377</created>
@@ -473,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686839120441</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Изменён формат иконки на .ico">
+      <created>1686859338421</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1686859338422</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +492,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправление бага со стилями на странице &quot;Полезная информация&quot; + правка формы." />
     <MESSAGE value="Исправление бага, связанного с новостями и с животными, изображение большого разрешения съезжало. + исправление бага с текстом под фотографиями. + правка стиля на странице просмотра 1 новости" />
     <MESSAGE value="Исправлен баг, связанный с сохранением фонового изображения.&#10;Правка стиля формы" />
     <MESSAGE value="Исправлен баг, связанный с ошибкой в файле __init__.py на хостинге" />
@@ -516,7 +516,8 @@
     <MESSAGE value="Фиксы багов" />
     <MESSAGE value="Обновлена иконка для сайта (новый формат svg)&#10;Правка стиля index.css" />
     <MESSAGE value="Фиксы багов со стилями в новостях" />
-    <option name="LAST_COMMIT_MESSAGE" value="Фиксы багов со стилями в новостях" />
+    <MESSAGE value="Изменён формат иконки на .ico" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменён формат иконки на .ico" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
